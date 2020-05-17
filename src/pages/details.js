@@ -14,6 +14,7 @@ import { Input, Button, Icon } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Sound from 'react-native-sound';
 import { Html5Entities } from 'html-entities'; 
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -50,6 +51,7 @@ export const DetailsScreen = ({ navigation, route }) => {
   const [showSmash, setShowSmash]   = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
   const [savedAnswered, setSavedAnswered] = useState({});
   const [isAnswered, setIsAnswered] = useState(false);
+  const [enableScroll, setEnableScroll] = useState(true);
   const [scoreCard, setScoreCard] = useState({score: 0, total: 0, redoSlideIndex: 0, questionNo: 1});
 
   // LOCAL VARIABLE DECLARE
@@ -128,14 +130,20 @@ export const DetailsScreen = ({ navigation, route }) => {
       // CHECK WHETHER ITS COMPLETED SCREEN THEN HIDE THE PREVIOUS BUTTON
       if (state.data[index].type === Constant.GENERIC.LESSON_COMPLETED) {
           // DISABLE BACK BUTTON
-          setEnablePrevBtn(false);
+          setEnablePrevBtn(true);
+          // ENABLE / DISABLE SCROLLING
+          setEnableScroll(true);
           // TRIGGER ON COMPLETE FUNCTION AND SAVE THE COMPLETED LESSON INTO THE MOBILE STORAGE
           _onCompleted();
       } 
       // CHECK WHETHER USER IN RANDOM / CHOSE THE BEST INTRO SCREEN
       else if ([Constant.GENERIC.RANDOM_QUESTION_INTRO, Constant.GENERIC.CHOOSE_BEST_INTRO].indexOf(state.data[index].type) > -1 ) {
           // DISABLE BACK BUTTON
-          setEnablePrevBtn(false);
+          setEnablePrevBtn(true);
+          // DISABLE NEXT BUTTON
+          setEnableNextBtn(true);
+          // ENABLE / DISABLE SCROLLING
+          setEnableScroll(true);
           // FIND THE TOTAL QUESTIONS
           if (Constant.GENERIC.CHOOSE_BEST_INTRO === state.data[index].type) {
             // FINDING TOTAL BEST OF CHOISE QUESTION
@@ -164,6 +172,8 @@ export const DetailsScreen = ({ navigation, route }) => {
           setTimeout(() => { 
             playAudio(state.data[index].answer.audio);
           }, 500);
+          // ENABLE / DISABLE SCROLLING
+          setEnableScroll(false);
           // DISABLE BACK BUTTON
           setEnablePrevBtn(false);
           // DISABLE NEXT BUTTON
@@ -183,6 +193,10 @@ export const DetailsScreen = ({ navigation, route }) => {
           setIsAnswered(false);
           // DISABLE NEXT BUTTON
           setEnableNextBtn(false);
+          // DISABLE BACK BUTTON
+          setEnablePrevBtn(false);
+          // ENABLE / DISABLE SCROLLING
+          setEnableScroll(false);
       } 
        // CHECK WHETHER USER IN RANDOM  EXERCISE
       else if (Constant.GENERIC.RANDOM_QUESTION_EXERCISE === state.data[index].type) {
@@ -193,11 +207,15 @@ export const DetailsScreen = ({ navigation, route }) => {
           setEnablePrevBtn(false);
           // DISABLE NEXT BUTTON
           setEnableNextBtn(false);
+          // ENABLE / DISABLE SCROLLING
+          setEnableScroll(false);
       } else {
         // ENABLE BACK BUTTON
         setEnablePrevBtn(true);
         // ENABLE NEXT BUTTON
         setEnableNextBtn(true);
+        // ENABLE / DISABLE SCROLLING
+        setEnableScroll(true);
       }
   };
 
@@ -236,6 +254,8 @@ export const DetailsScreen = ({ navigation, route }) => {
     setEnablePrevBtn(true);
     // DISABLE NEXT BUTTON
     setEnableNextBtn(true);
+    // UPDATE THE LESSON AGAIN
+    //setState({...state, data:})
     // GO TO SLIDE 0, FIRST SLIDE
     this.AppIntroSlider.goToSlide(0);
     // SLIDE CHANGE FUNCTION
@@ -352,6 +372,8 @@ export const DetailsScreen = ({ navigation, route }) => {
   const nextSlide = (index) => {
     // MOVE TO ANOTHER SLIDE
     this.AppIntroSlider.goToSlide(index + 1);
+    // SLIDE CHANGE FUNCTION
+    _onSlideChange(index + 1);
   }
   
   /**
@@ -381,7 +403,10 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType2]} key={keyIndex}>
           <View style={styles.topContainer}>
-            <Text style={[styles.bigArabLetter]} >{ item.enableUnicode ? entities.decode(item.unicode) : item.ar}</Text>
+            <Text style={[styles.bigArabLetter]} >
+              { Utils.convert2Arabic(item) }
+            </Text>
+            <Image source={item.img} resizeMode={'contain'} style={[styles.arabicImg, item.showImg ? '' : styles.displayN]}/>
           </View>
           <View style={styles.bottomContainer}>
             <Icon containerStyle={styles.circleIcon} name="volume-up" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.audio)}/>
@@ -395,7 +420,8 @@ export const DetailsScreen = ({ navigation, route }) => {
             <View style={styles.noContainer}><Text style={styles.qno}>{scoreCard.questionNo}</Text></View>
             <View style={[styles.topContainer, styles.centerView, styles.pt15]}>
               <Text style={styles.slideLabel}>Pick the correct answer.</Text>
-              <Text style={[styles.bigArabLetter]} >{ item.answer.enableUnicode ? entities.decode(item.answer.unicode) : item.answer.ar}</Text>
+              <Text style={[styles.bigArabLetter]} >{ Utils.convert2Arabic(item.answer)}</Text>
+              <Image source={item.answer.img} resizeMode={'contain'} style={[styles.arabicImg, item.answer.showImg ? '' : styles.displayN]}/>
             </View>
             <View style={styles.bottomContainer}>
               <View style={{...styles.squareContainer, top: -80}}>
@@ -467,20 +493,21 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType2]} key={keyIndex}>
           <View style={{...styles.topContainer, top: -90}}>
-            <Text style={[styles.bigArabLetter]} >{ item.enableUnicode ? entities.decode(item.unicode) : item.ar}</Text>
+            <Text style={[styles.bigArabLetter]} >{ Utils.convert2Arabic(item) }</Text>
+            <Image source={item.img} resizeMode={'contain'} style={[styles.arabicImg, item.showImg ? '' : styles.displayN]}/>
           </View>
           <View style={styles.bottomContainer}>
             <View style={styles.squareContainer}>
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <View style={styles.slideSquare}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[0].enableUnicode ? entities.decode(item.data[0].unicode) : item.data[0].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[0], true)}</Text>
                     <Text style={styles.wSlideLabel}>Original</Text>
                   </View>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <View style={styles.slideSquare}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[1].enableUnicode ? entities.decode(item.data[1].unicode) : item.data[1].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[1], true)}</Text>
                     <Text style={styles.wSlideLabel}>Beginning</Text>
                   </View>
                 </View>
@@ -488,13 +515,13 @@ export const DetailsScreen = ({ navigation, route }) => {
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <View style={styles.slideSquare}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[2].enableUnicode ? entities.decode(item.data[2].unicode) : item.data[2].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[2], true)}</Text>
                     <Text style={styles.wSlideLabel}>Middle</Text>
                   </View>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <View style={styles.slideSquare}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[3].enableUnicode ? entities.decode(item.data[3].unicode) : item.data[3].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[3], true)}</Text>
                     <Text style={styles.wSlideLabel}>End</Text>
                   </View>
                 </View>
@@ -519,13 +546,13 @@ export const DetailsScreen = ({ navigation, route }) => {
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <TouchableOpacity style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[0], item.answer, index)}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[0].enableUnicode ? entities.decode(item.data[0].unicode) : item.data[0].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[0], true)}</Text>
                     <Text style={styles.wSlideLabel}></Text>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <TouchableOpacity style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[1], item.answer, index)}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[1].enableUnicode ? entities.decode(item.data[1].unicode) : item.data[1].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[1], true)}</Text>
                     <Text style={styles.wSlideLabel}></Text>
                   </TouchableOpacity>
                 </View>
@@ -533,13 +560,13 @@ export const DetailsScreen = ({ navigation, route }) => {
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <TouchableOpacity style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[2], item.answer, index)}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[2].enableUnicode ? entities.decode(item.data[2].unicode) : item.data[2].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[2], true)}</Text>
                     <Text style={styles.wSlideLabel}></Text>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <TouchableOpacity style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[3], item.answer, index)}>
-                    <Text style={styles.mediumArabLetter}>{ item.data[3].enableUnicode ? entities.decode(item.data[3].unicode) : item.data[3].ar}</Text>
+                    <Text style={styles.mediumArabLetter}>{ Utils.convert2Arabic(item.data[3], true)}</Text>
                     <Text style={styles.wSlideLabel}></Text>
                   </TouchableOpacity>
                 </View>
@@ -629,6 +656,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       <MHeader title={state.title}/>
       <View style={[styles.body, styles.p0, styles.p0]}>
         <AppIntroSlider
+        scrollEnabled={enableScroll}
         ref={ref => this.AppIntroSlider = ref}
         keyExtractor={_keyExtractor}
         dotClickEnabled={false}
@@ -645,9 +673,9 @@ export const DetailsScreen = ({ navigation, route }) => {
         renderPrevButton={_renderPrevButton}
         onSlideChange={_onSlideChange}
         onDone={_onCompleted}/>
-        <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
       </View>
       </SafeAreaView>
+      <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
     </View>
   );
 } 

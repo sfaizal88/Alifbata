@@ -39,6 +39,28 @@ export const isInternetConnected = () => {
     });
 };
 
+
+/**
+* Feature used to convert code to arabic
+*
+* @input  String content
+* @return String Formatted content url to anchor tag
+*/
+export const codeToArabic = (code) => {
+    return entities.decode(code)
+};
+
+
+/**
+* Feature used to show arabic
+*
+* @input  Object item
+* @return String 
+*/
+export const convert2Arabic = (item, avoidImg = false) => {
+    return item.showImg && !avoidImg ? '' : (item.enableUnicode ? entities.decode(item.unicode) : item.ar);
+};
+
 /**
 * Feature used to convert String to date
 *
@@ -97,6 +119,8 @@ export const convertToCapitalize = (name) => {
 */
 export const joinArabic = (arr) => {
   let output = "";
+  // REVERSE THE ARRAY
+  //arr.reverse();
   // LOOP THE ARRAY
   arr.forEach((item, index) => {
     // CHECKING WHEATHER UNICODE IS ON
@@ -135,7 +159,7 @@ export const alert = (title, message, labels, functions, styles) => {
 * @return Array   
 */
 export const createRandomQ = (data, count = 5, originalData, chapter) => {
-  console.log('---------------- LESSON STARTS ----------------');
+  //console.log('---------------- LESSON STARTS ----------------');
   // CHOSE THE ANSWER
   let answerIndex = -1;
   // PREVIOUS ANSWER
@@ -147,7 +171,7 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
     // ALL OPTIONS WITH CLONE
     let allOptionsData  = data.map(a => ({...a}));
     if (chapter === 'chapter1') {
-        console.log('Main Content Original ssss- ' + JSON.stringify(allOptionsData));
+        //console.log('Main Content Original ssss- ' + JSON.stringify(allOptionsData));
     }
     // LOOPING FOUR TIMES
     for(let i = 0; i < 4; i++) { 
@@ -168,21 +192,21 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
     // CHOSE THE ANSWER
     answerIndex = (selectedOptions.length === 1) ? 1 : Math.floor((Math.random() * (selectedOptions.length - 1)) + 1);
     if (chapter === 'chapter1') {
-      console.log('Start Previous Answer - ' + JSON.stringify(previousAnswer));
-      console.log('After Removing Previous Answer. length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
-      console.log('Currenct Answer - ' + JSON.stringify(selectedOptions[answerIndex]));
+      //console.log('Start Previous Answer - ' + JSON.stringify(previousAnswer));
+      //console.log('After Removing Previous Answer. length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
+      //console.log('Currenct Answer - ' + JSON.stringify(selectedOptions[answerIndex]));
     }
     // ADDING THE PREVIOUS ANSWER INTO THE ARRAY
     if (previousAnswer && selectedOptions.length < 4) {
         selectedOptions.push(previousAnswer);
         if (chapter === 'chapter1') {
-            console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
+            //console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
         }
     }
     // SAVING THE PREVIOUS ANSWER
     previousAnswer = selectedOptions[answerIndex];
     if (chapter === 'chapter1') {
-      console.log('Ends Previous Answer - ' + JSON.stringify(previousAnswer));
+      //console.log('Ends Previous Answer - ' + JSON.stringify(previousAnswer));
     }
     // ADD EXTRA
     if (selectedOptions.length < 4) {
@@ -209,7 +233,7 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
   output.unshift(Common.COMMON_SECTION[1]);
   // ADDING RANDOM GAME SCORE CARD
   output.push(Common.COMMON_SECTION[3]);
-  console.log('---------------- LESSON ENDS ----------------');
+  //console.log('---------------- LESSON ENDS ----------------');
   return output;
 }
 
@@ -253,7 +277,7 @@ export const createChoseQ = (data, count = 5, originalData, chapter) => {
     if (previousAnswer && selectedOptions.length < 4) {
         selectedOptions.push(previousAnswer);
         if (chapter === 'chapter1') {
-            console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
+            //console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
         }
     }
     // SAVING THE PREVIOUS ANSWER
@@ -367,6 +391,68 @@ export const lessonCompleted = (completedLesson, currenctLessonId) => {
 export const shuffle = (list) => {
   list.sort(() => Math.random() - 0.5);
   return list;
+}
+
+/**
+* Feature used to find total completed chapter
+*
+* @input  Array - Array of saved items
+* @input  Array - Array of all chapters
+* @return Array   
+*/
+export const totalCompletedChapter = (item, allChapter) => {
+  // DECLARE LOCAL VARIABLE
+  let completedChapter = 0;
+  // CHECK THE VALUES
+  item = item ? JSON.parse(item) : {};
+  // LOOPING THE MAIN ALL CHPATER DATAS
+  allChapter.forEach((chapter, chapterIndex) => {
+    //console.log("--------- CHAPTER STARTS ---------");
+    //console.log("Chapter - " + chapterIndex);
+    // BY DEFAULT CHAPTER COMPLETED FLAG IS TRUE
+    let chapterCompleted = true;
+    // LOOPING THE LESSON
+      //console.log('List of completed lesson - ' + item[chapter.id]);
+    allChapter[chapterIndex].data.forEach((lesson, lessonIndex) => {
+      //console.log('List of lesson - base' + JSON.stringify(lesson.id));
+      // CHECKING WHETHER LESSON ID EXIST IN THE COMPLETED LESSON STORAGE
+      if (typeof item[chapter.id] === 'undefined' || (item[chapter.id] && item[chapter.id].indexOf(lesson.id) === -1)) {
+        chapterCompleted = false;
+      }
+    });
+    // IF ALL THE LESSON COMPLETED
+    if (chapterCompleted) {
+        //console.log("Chapter - " + chapterIndex + ", completed");
+        completedChapter = completedChapter + 1;
+    }
+    //console.log("--------- CHAPTER ENDS ---------");
+  });
+  return completedChapter;
+}
+
+
+/**
+* Feature used to find total completed lessons
+*
+* @input  Array - Array of saved items
+* @input  Array - Array of all chapters
+* @return Array   
+*/
+export const totalCompletedLessons = (item, allChapter) => {
+  // DECLARE LOCAL VARIABLE
+  let completedLesson = 0;
+  // CHECK THE VALUES
+  item = item ? JSON.parse(item) : {};
+  // LOOPING THE MAIN ALL CHAPTERS DATAS
+  allChapter.forEach((chapter, chapterIndex) => {
+    // COUNTING MEDALS
+    //console.log("Chapter " + chapter.id + ", Lesson - " + item[chapter.id]);
+    // COUNTING MEDALS
+    completedLesson = (item[chapter.id]) ? completedLesson +  item[chapter.id].length : completedLesson;
+    //console.log("Completed lessong in chapter " + chapter.id + ", - " + completedLesson); 
+  });
+  //console.log('Completed Total - ' + completedLesson)
+  return completedLesson
 }
 
 /**

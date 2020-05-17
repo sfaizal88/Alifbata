@@ -47,7 +47,7 @@ export const LessonScreen = ({ navigation, route }) => {
   const [state, setState]                     = useState(route.params?.chapter ? route.params.chapter : []);
   const [completed, setCompleted]             = useState([]);
   const [showIntroPopup, setShowIntroPopup]   = useState(false);
-  const [listView, setListView]               = useState(false);
+  const [listView, setListView]               = useState(true);
 
   // DECLARE CONTEXT
   const appContextPayLoad = useContext(AppContext);
@@ -175,12 +175,12 @@ export const LessonScreen = ({ navigation, route }) => {
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
         <MHeader title={state.title} subtitle={state.desc}/>
-        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
-        <View style={[styles.body, styles.p0, listView ? styles.displayN : '', styles.pb50]}>
+        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%'}} underlayColor="transparent" />
+        <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
           <AppIntroSlider
             dotClickEnabled={false}
-            activeDotStyle={{backgroundColor: Colors.primary}} 
-            dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0.1)'}}
+            activeDotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}} 
+            dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
             showDoneButton={false} 
             showSkipButton={false} 
             showPrevButton={true}
@@ -189,7 +189,6 @@ export const LessonScreen = ({ navigation, route }) => {
             data={state.data}
             renderNextButton={_renderNextButton}
             renderPrevButton={_renderPrevButton}/>
-            <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
         </View>
         <View style={[styles.body, styles.pt10, listView ? '' : styles.displayN, styles.pb50]}>
           <ModelPopup show={showIntroPopup} isShowModel={setShowIntroPopup}/>
@@ -241,9 +240,10 @@ export const LessonScreen = ({ navigation, route }) => {
               ListEmptyComponent = {() => (
                 <Empty icon={'group'} title='No Chapter Found' subtitle='Try again later.'/>
               )}
-            keyExtractor = {(item, index) => 'chapterIndex_' + index.toString()}/>
-            <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
+            keyExtractor = {(item, index) => 'lessonId_' + item.id.toString() +'_lessonIndex_' + index.toString()}/>
+            
           </View>
+          <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
         </SafeAreaView>
       </>
     );

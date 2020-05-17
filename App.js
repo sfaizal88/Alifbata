@@ -30,8 +30,8 @@ import {reducer} from './src/reducer/commonReducer';
 // ALL NAVIGATION
 import { HomeNavigation  } from './src/component/navigation/homeNavigator';
 import { ChapterNavigation } from './src/component/navigation/chapterNavigator';
+import { QuizNavigation } from './src/component/navigation/quizNavigator';
 import {DashboardScreen} from './src/pages/dashboard';
-import { QuizScreen } from './src/pages/quiz';
 import { BadgeScreen } from './src/pages/badge';
 
 // ALL COMPONENT FILES
@@ -81,7 +81,7 @@ export default  App = ({navigation}) => {
             <Stack.Screen name="Intro" component={IntroScreen}  options={{...navigatorConfig}}/>
             <Stack.Screen name="Home" component={DashboardScreen}  options={{...navigatorConfig}} />
             <Stack.Screen name="Chapter" component={ChapterNavigation}  options={{...navigatorConfig}} />
-            <Stack.Screen name="Quiz" component={QuizScreen}  options={{...navigatorConfig}}/>
+            <Stack.Screen name="QuizNavigation" component={QuizNavigation}  options={{...navigatorConfig}}/>
             <Stack.Screen name="Badge" component={BadgeScreen}  options={{...navigatorConfig}}/>
           </Stack.Navigator>
         </NavigationContainer>

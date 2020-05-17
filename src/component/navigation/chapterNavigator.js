@@ -8,7 +8,7 @@
 *
 ***/
 // REACT NATIVE IMPORT
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import { Text, View } from 'react-native';
 import { Colors } from '../../shared/colors';
 import { NavigationContainer } from '@react-navigation/native';
@@ -18,16 +18,25 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ChapterScreen  } from '../../pages/chapter';
 import { LessonScreen  } from '../../pages/lesson';
 import { DetailsScreen  } from '../../pages/details';
-import { DashboardScreen } from '../../pages/dashboard';
 import { QuizScreen } from '../../pages/quiz';
+import { StepsScreen } from '../../pages/steps';
 
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
 
-export const ChapterNavigation = (props) => {
+export const ChapterNavigation = ({navigation}) => {
   
   // DECLARE NAVIGATION
   const Stack = createStackNavigator();
+
+  // USE EFFECT ON LOAD PROCESS
+  useEffect(() => {
+    // WHEN USER PRESS TAB, TRIGGER WILL OCCUR
+    navigation.addListener('focus', () => {
+      // LAND ON HOME PAGE
+      navigation.navigate('Chapter');
+    });
+  }, []);
 
   // LOCAL VARIABLE DECLARATION
   const config = {
@@ -72,11 +81,10 @@ export const ChapterNavigation = (props) => {
             headerForceInset: { top: 'never', bottom: 'never' },
             gestureDirection: 'vertical-inverted'
         }}>
-
-        <Stack.Screen name="Home" component={DashboardScreen}  options={{...navConfig, gestureDirection: 'vertical-inverted'}} />
-        <Stack.Screen name="Chapter" component={ChapterScreen}  options={{...navConfig, gestureDirection: 'vertical-inverted'}} />
-        <Stack.Screen name="Lesson" component={LessonScreen}    options={{...navConfig, gestureDirection: 'horizontal-inverted'}} />
-        <Stack.Screen name="Details" component={DetailsScreen}  options={{...navConfig, gestureDirection: 'horizontal-inverted'}}/>
+        <Stack.Screen name="Chapter" component={ChapterScreen}  options={{...navConfig}} />
+        <Stack.Screen name="Lesson" component={LessonScreen}    options={{...navConfig}} />
+        <Stack.Screen name="Details" component={DetailsScreen}  options={{...navConfig}}/>
+        <Stack.Screen name="Steps" component={StepsScreen}  options={{...navConfig}}/>
       </Stack.Navigator>
     </>
   );

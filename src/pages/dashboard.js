@@ -12,7 +12,8 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, Image, Dimensions, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
-import { ProgressCircle } from 'react-native-svg-charts'
+import { ProgressCircle } from 'react-native-svg-charts';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -29,6 +30,7 @@ import StarIcon from '../../assets/img/star.png';
 import { Loader  } from '../component/complex/loader';
 import { Empty  } from '../component/complex/empty';
 import { Menu  } from '../component/complex/menu';
+import { ModelPopup  } from '../component/complex/model';
 
 // DATA
 import * as Chapters from '../data/chapters';
@@ -44,11 +46,14 @@ import * as Storage from '../shared/storage';
 export const DashboardScreen = ({ navigation }) => {
 
   	// DECLARE STATE VARIABLE
-	const [isFetching, setIsFetching] = useState(false);
+	const [isFetching, setIsFetching]           = useState(false);
 	const [screenIsWaiting, setScreenIsWaiting] = useState(true);
-	const [state, setState] = useState(Chapters.allChapter);
-	const [awards, setAwards] = useState({trophy: 0, medals: 0, stars: 0});
-	const [showAwards, setShowAwards] = useState('T');// T, M ,S
+	const [state, setState]                     = useState(Chapters.allChapter);
+  	const [showIntroPopup, setShowIntroPopup]   = useState(true);
+	const [trophy, setTrophy]                   = useState(0);
+	const [medals, setMedals]                   = useState(0);
+	const [stars, setStars]                     = useState(0);
+	const [showAwards, setShowAwards]           = useState('T');// T, M ,S
 	// DECLARE CONTEXT
 	const appContextPayLoad = useContext(AppContext);
 	let width = Dimensions.get('window').width; 
@@ -83,31 +88,14 @@ export const DashboardScreen = ({ navigation }) => {
 	const getAllCompleted = () => {
 		// GET ALLOWED RATE FROM STORAGE
 		Storage._retrieveData(Constant.STORAGE.COMPLETED_LESSON).then(item => {
-			
-			// CHECK THE VALUES
-			item = Utils.isNotEmpty(item) ? JSON.parse(item) : {};
-			// TOTAL MEDALS
-			let totalMedals = 0;
-			// TOTAL TROPHY
-			let totalTrophy = 0;
-			// LOOPING THE MAIN ALL CHAPTERS DATAS
-			state.forEach((chapter, chapterIndex) => {
-				// BY DEFAULT CHAPTER COMPLETED FLAG IS TRUE
-				let chapterCompleted = true;
-				// LOOPING THE LESSON
-				state[chapterIndex].data.forEach((lesson, lessonIndex) => {
-					// CHECKING WHETHER LESSON ID EXIST IN THE COMPLETED LESSON STORAGE
-					if (!Utils.isNotEmpty(item[chapter.id]) || item[chapter.id].indexOf(lesson.id) === -1) {
-						chapterCompleted = false;
-					}
-				});
-				if (chapterCompleted) {
-					totalTrophy = totalTrophy + 1;
-				}
-				// COUNTING MEDALS
-				totalMedals = (item[chapter.id]) ? totalMedals +  item[chapter.id].length : totalMedals;
-			});		
-			setAwards({...awards, medals: totalMedals, trophy: totalTrophy});
+			// FIND TOTAL COMPLETED CHAPTERS
+			let completedChapters = Utils.totalCompletedChapter(item, Chapters.allChapter);
+			// SAVE INTO STATE
+			setTrophy(completedChapters);
+			// FIND TOTAL COMPLETED LESSONS
+			let completedLessons = Utils.totalCompletedLessons(item, Chapters.allChapter);
+			// SAVE INTO STATE
+			setMedals(completedLessons);
 		});
 	}
 
@@ -121,9 +109,9 @@ export const DashboardScreen = ({ navigation }) => {
 		// GET TOTAL STARS FROM STORAGE
 		Storage._retrieveData(Constant.STORAGE.COMPLETED_STARS).then(item => {
 			// CHECK THE VALUES
-    		item = (item) ? JSON.parse(item) : 0;//alert(item);
+    		item = (item) ? JSON.parse(item) : 0;
     		// UPDATE THE STATE
-    		setAwards({...awards, stars: item});
+    		setStars(item);
 		});
 	}
 
@@ -133,56 +121,55 @@ export const DashboardScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Assalamu alaykum" icon="dashboard"/>
-	    	<View style={[styles.body, styles.pt40, styles.overflowV]}>
-	    		
+	    	<ScrollView style={[styles.body, styles.pt40, styles.pb70]}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 	    			<Text style={styles.progressBarTitle}>Trophy</Text>
-	    			<Text style={styles.progressBarNo}>{awards.trophy}</Text>
-	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.red} strokeWidth={20}/>
+	    			<Text style={styles.progressBarNo}>{trophy}</Text>
+	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.green} strokeWidth={20}/>
 	    		</View>
 	    		<View style={[showAwards === 'M' ? '' : styles.displayN]}>
 	    			<Text style={styles.progressBarTitle}>Medals</Text>
-	    			<Text style={styles.progressBarNo}>{awards.medals}</Text>
+	    			<Text style={styles.progressBarNo}>{medals}</Text>
 	    			<ProgressCircle style={styles.progressBar} progress={0.7} progressColor={Colors.robinEggBlue} strokeWidth={20}/>
 	    		</View>
 	    		<View style={[showAwards === 'S' ? '' : styles.displayN]}>
 	    			<Text style={styles.progressBarTitle}>Stars</Text>
-	    			<Text style={styles.progressBarNo}>{awards.stars}</Text>
-	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.green} strokeWidth={20}/>
+	    			<Text style={styles.progressBarNo}>{stars}</Text>
+	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.red} strokeWidth={20}/>
 	    		</View>
 	    		<View style={[styles.rowDirection, styles.pt30]}>
 	    			<View style={[styles.flex1, styles.centerView]}>
 	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActiveBlue : '']} onPress={() => setShowAwards('M')} underlayColor="transparent" >
-	    					<Image source={MedalIcon} style={{width: 50, height: 50}} />
+	    					<Image source={MedalIcon} style={{width: RFValue(40), height: RFValue(40)}} />
 	    				</TouchableOpacity>
 	    			</View>
 	    			<View style={[styles.flex1, styles.centerView]}>
-	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActiveRed : '']} onPress={() => setShowAwards('T')} underlayColor="transparent" >
-	    					<Image source={WinnerIcon} style={{width: 50, height: 50}} />
+	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActiveGreen : '']} onPress={() => setShowAwards('T')} underlayColor="transparent" >
+	    					<Image source={WinnerIcon} style={{width: RFValue(40), height: RFValue(40)}} />
 	    				</TouchableOpacity>
 	    			</View>
 	    			<View style={[styles.flex1, styles.centerView]}>
-	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActiveGreen : '']} onPress={() => setShowAwards('S')} underlayColor="transparent" >
-	    					<Image source={StarIcon} style={{width: 50, height: 50}} />
+	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActiveRed : '']} onPress={() => setShowAwards('S')} underlayColor="transparent" >
+	    					<Image source={StarIcon} style={{width: RFValue(40), height: RFValue(40)}} />
 	    				</TouchableOpacity>
 	    			</View>
 	    		</View>
 	    		<View style={[styles.rowDirection, styles.mt40]}>
 	    			<TouchableOpacity style={[styles.boxtypeLeft]} onPress={() => navigation.navigate('Chapter')}>
 						<View style={[styles.rowDirection]}>
-	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl20]}>
+	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl15]}>
 								<Text style={[styles.dbBDesc, styles.whiteText]}>All Chapter</Text>
 								<Text style={[styles.dbDesc, styles.whiteText]}>Start Learning</Text>
 	    					</View>
-	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl5]}>
-	    						<Icon name="bullhorn" color={Colors.white} size={30} type='font-awesome'/>
+	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl10]}>
+	    						<Icon name="book" color={Colors.white} size={30}  type='octicon'/>
 	    					</View>
 	    				</View>
 	    			</TouchableOpacity>
 	    			<TouchableOpacity style={[styles.boxtypeRight]} onPress={() => navigation.navigate('Quiz')}>
 						<View style={[styles.rowDirection]}>
 	    					<View style={[styles.flex1, styles.centerView]}>
-	    						<Icon name="create" color={Colors.white} size={30}/>
+	    						<Icon name="light-bulb" color={Colors.white} size={30} type='octicon'/>
 	    					</View>
 	    					<View style={[styles.flex2, styles.centerView, styles.alignS]}>
 								<Text style={[styles.dbBDesc, styles.whiteText]}>Quiz Game</Text>
@@ -194,19 +181,21 @@ export const DashboardScreen = ({ navigation }) => {
 	    		<View style={[styles.rowDirection, styles.mt20]}>
 	    			<TouchableOpacity style={[styles.boxtypeLeft]} onPress={() => navigation.navigate('Badge')}>
 						<View style={[styles.rowDirection]}>
-	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl20]}>
+	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl15]}>
 								<Text style={[styles.dbBDesc, styles.whiteText]}>Badges</Text>
 								<Text style={[styles.dbDesc, styles.whiteText]}>All Rewards</Text>
 	    					</View>
-	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl5]}>
-	    						<Icon name="redeem" color={Colors.white} size={30}/>
+	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl10]}>
+	    						<Icon name="gift" color={Colors.white} size={30} type='octicon'/>
 	    					</View>
 	    				</View>
 	    			</TouchableOpacity>
 	    		</View>
-	        	<Menu navigation={navigation} activeMenu={'HOME'}></Menu>
-	        </View>
+	        </ScrollView>
+	        <ModelPopup/>
+	        <Menu navigation={navigation} activeMenu={'HOME'}></Menu>
 	  		</SafeAreaView>
 	  	</>
   	);
 }
+/*<ModelPopup show={showIntroPopup} isShowModel={setShowIntroPopup}/>*/

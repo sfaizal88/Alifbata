@@ -41,9 +41,6 @@ const layoutStyle ={
  		overflow: 'hidden'
 
 	},
-	safeViewAvoid: {
-		backgroundColor: Colors.white,
-	},
 	headerContainer: {
 	    height: 70,
 	    alignItems: 'center',
@@ -104,20 +101,6 @@ const layoutStyle ={
 		alignItems: 'flex-start',
 		justifyContent: 'center',
 		paddingHorizontal: 5
-	},
-	subheaderTitle: {
-		color: Colors.subheaderBgTitle,
-		fontSize: Setting.sxTextSize,
-		fontWeight: 'bold',
-		paddingHorizontal: 7,
-		textTransform: 'uppercase',
-		//letterSpacing: 1,
-		fontWeight: '600'
-	},
-	centerContainer: {
-		flex: 1,
-		flexDirection: 'row', 
-		alignItems: 'center'
 	}
 }
 /* LAYOUT - ENDS */
@@ -126,7 +109,7 @@ const navBarStyle ={
  	mainNavBar: {
  		backgroundColor: Colors.white, 
  		paddingBottom: 0, 
- 		width: '70%',
+ 		width: '100%',
  		//marginBottom: -25,
  		height: 'auto', 
  		paddingTop: 0, 
@@ -138,25 +121,7 @@ const navBarStyle ={
  		fontSize: Setting.usTextSize,
  		fontWeight: '600',
  		textTransform: 'uppercase'
- 	},
- 	topTabContainer: {
- 		backgroundColor: Colors.primary,
- 		borderBottomColor: Colors.primary,
- 		borderBottomWidth: 1
- 	},
- 	topTabLabel: {
- 		fontSize: Setting.xxsTextSize,
- 		fontWeight: '500',
- 		padding: 0,
- 	},
- 	topTab: {
- 		paddingTop: 0,
- 		width: 'auto',
- 		height: 45
- 	},
- 	topTabIndicator: {
- 		backgroundColor: Colors.white
- 	},
+ 	}
 }
 /* NAVIGATION BAR - ENDS */
 /* ERROR - STARTS */
@@ -273,7 +238,7 @@ const specialIconStyle = {
   		borderRadius: 30
   	},
   	qno: {
-  		fontSize: 17,
+  		fontSize: RFValue(17),
   		fontWeight: '700', 
   		color: Colors.white
   	},
@@ -334,6 +299,9 @@ const spacingStyle = {
 	pt5: {
 		paddingTop: 5
 	},
+	pt10: {
+		paddingTop: 10
+	},
 	pt15: {
 		paddingTop: 15
 	},
@@ -367,6 +335,9 @@ const spacingStyle = {
 	pb50: {
 		paddingBottom: 50
 	},
+	pb70: {
+		paddingBottom: 70
+	},
 	ptb0: {
 		paddingTop: 0,
 		paddingBottom: 0
@@ -376,6 +347,9 @@ const spacingStyle = {
 	},
 	pl10: {
 		paddingLeft: 10
+	},
+	pl15: {
+		paddingLeft: 15
 	},
 	pl20: {
 		paddingLeft: 20
@@ -442,59 +416,6 @@ const spacingStyle = {
 
 /* LIST - STARTS */
  const listStyle = {
- 	listType1Container: {
- 		flex: 1,
-		flexDirection: 'row',
-		justifyContent: 'flex-start',
-		height: 70,
-		margin: 0,
-		padding: 0,
-		paddingTop: 5,
-		paddingBottom: 5,
-		marginBottom: 10,
-		backgroundColor: Colors.white,
-		borderColor: Colors.borderColor,
-		borderWidth: 1,
-		shadowOffset:{  width: 0.5,  height: 0.5 },
-		shadowColor: Colors.fBorderColor,
-		shadowOpacity: 0.8,
-		borderLeftWidth: 5,
-		borderLeftColor: Colors.primary,
-		borderRadius: 5
- 	},
-	listType1LeftContainer: {
-		width: 50,
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	listType1LeftLabel: {
-		color: Colors.grayDarkest,
-		fontSize: Setting.lTextSize,
-		fontWeight: 'bold'
-	},
-	listType1RightContainer: {
-		width: 60,
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	listType1Content: {
-		flex: 1,
-		alignItems: 'flex-start',
-		justifyContent: 'center',
-		paddingHorizontal: 5,
-	},
-	listType1Title: {
-		fontSize: Setting.h6TextSize,
-		fontWeight: '500',
-		paddingBottom: 3,
-		color: Colors.grayDarkest,
-		textTransform: 'capitalize'
-	},
-	listType1Descr: {
-		fontSize: Setting.sxTextSize,
-		fontWeight: '500',
-		color: Colors.grayDark
-	},
 	listType2Container: {
  		flex: 1,
  		flexDirection: 'row',
@@ -541,26 +462,6 @@ const spacingStyle = {
 /* LIST FIELDS - ENDS */
 /* BOX - STARTS */
  const boxStyle = {
- 	containerBox: {
- 		borderColor: Colors.fBorderColor,
- 		borderWidth: 1,
- 		borderRadius: 5,
- 		padding: 5,
- 		paddingTop: 20,
- 		margin: 10,
- 		marginBottom: 20
- 	},
- 	containerBoxTitle: {
- 		fontSize: Setting.xxsTextSize,
- 		fontWeight: '600',
- 		textTransform: 'uppercase',
- 		color: Colors.grayDarkest,
-		position: 'absolute',
-		zIndex: 1,
-		top: -8,
-		left: 10,
-		backgroundColor: Colors.white
- 	},
 	offlineBox: {
 		backgroundColor: Colors.red,
 		height: 40 + Setting.STATUSBAR_HEIGHT,
@@ -599,32 +500,6 @@ const spacingStyle = {
 		lineHeight: 20,
 		paddingBottom: 10,
 		paddingTop: 20
-	},
-	greensBox: {
-		backgroundColor: Colors.green,
-		paddingTop: 3,
-		paddingBottom: 3,
-		paddingHorizontal: 5,
-		borderRadius: 5,
-		color: Colors.white,
-		fontSize: Setting.xxsTextSize,
-		fontWeight: '700',
-		marginBottom: 5,
-		overflow: 'hidden'
-	},
-	redsBox: {
-		backgroundColor: Colors.red,
-		padding: 5,
-		borderRadius: 5,
-		color: Colors.white,
-		fontSize: Setting.xxsTextSize,
-		fontWeight: '700',
-		marginBottom: 5,
-		overflow: 'hidden'
-	},
-	loginContainer: {
-		paddingHorizontal: '10%',
-		marginTop: '-10%'
 	},
 	boxtypeLeft: {
 		backgroundColor: Colors.primary,//Colors.gold,
@@ -717,6 +592,9 @@ const alignStyle = {
 	alignE: {
 		alignItems: "flex-end",
 	},
+	tCenter: {
+		textAlign: 'center'
+	},
 	displayN: {
 		display: 'none'
 	},
@@ -771,21 +649,6 @@ const flexStyle = {
 	}
 }
 /* FLEX - ENDS */
-/* GRID - STARTS */
-const gridStyle = {
-	grid: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        flex: 1,
-    },
-    gridItem: {
-        flexBasis: '50%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-}
-/* GRID - ENDS */
 /* SLIDER - STARTS */
 const sliderStyle = {
 	slide: {
@@ -799,7 +662,7 @@ const sliderStyle = {
 		shadowOpacity: 0.5,
     },
     slideTitle: {
-        fontSize: 42,
+        fontSize: RFValue(42),
         fontWeight: '700',
         color: Colors.grayDarkest,
 		alignSelf: 'center',
@@ -831,7 +694,7 @@ const sliderStyle = {
     },
     slideType2Title: {
     	top: -30,
-        fontSize: 130,
+        fontSize: RFValue(130),
         fontWeight: '700',
         //backgroundColor: '#ccc',
         textAlign: 'center',
@@ -910,8 +773,14 @@ const sliderStyle = {
 		top: 0,
     	bottom: 0,
     },
+    arabicImg: {
+		marginTop: 30,
+		height: RFValue(120),
+		width: RFValue(120),
+		marginBottom: 30,
+    },
     mediumArabLetter: {
-        fontSize: 40,
+        fontSize: RFValue(40),
         fontWeight: '700',
         color: Colors.white,
 		shadowOffset:{  width: 1,  height: 1  },
@@ -960,12 +829,11 @@ const sliderStyle = {
 		flexDirection: 'row'
     },
     infoMessage: {
-		fontSize: Setting.h6TextSize,
-		fontWeight: '500',
+		fontWeight: '400',
 		paddingBottom: 3,
 		color: Colors.grayDarkest,
 		textTransform: 'capitalize',
-		fontSize: 15,
+		fontSize: Setting.sTextSize,
 		paddingLeft: 10
     },
     infoIconContainer: {
@@ -1023,7 +891,7 @@ const pageStyle = {
 		color: Colors.grayDarkest,
 	},
 	ctitle: {
-		fontSize: 70,
+		fontSize: RFValue(70),
 		fontWeight: '300',
 		color: Colors.grayDarkest,
 	},
@@ -1071,7 +939,7 @@ const pageStyle = {
 	    alignItems: 'center',
  	},
  	prevNext: {
- 		fontSize: 80,
+ 		fontSize: RFValue(80),
  		color: Colors.fBorderColor,
  		fontWeight: '500'
  	},
@@ -1143,23 +1011,24 @@ const pageStyle = {
 	modelCenteredView: {
 		flex: 1,
 		justifyContent: "center",
-		alignItems: "center",
-		marginTop: 22
+		alignItems: "center"
 	},
 	modalView: {
 		margin: 20,
 		backgroundColor: "white",
 		borderRadius: 20,
 		padding: 35,
+		paddingLeft: 15,
+		paddingRight: 20,
 		alignItems: "center",
-		shadowColor: "#000",
+		/*shadowColor: "#000",
 		shadowOffset: {
 		  width: 0,
 		  height: 2
 		},
 		shadowOpacity: 0.25,
-		shadowRadius: 3.84,
-		elevation: 5
+		shadowRadius: 3.84,*/
+		//elevation: 5
 	},
 	smashModalView: {
 		margin: 20,
@@ -1177,27 +1046,52 @@ const pageStyle = {
 		paddingTop: 10,
 		paddingBottom: 20
 	},
-	modelsBox: {
-		width: 50,
-		margin: 5,
-		justifyContent: "flex-start",
-		height: 50
-	},
 	modelmTitle: {
-		fontSize: 50,
+		fontSize: RFValue(50),
         fontWeight: '700',
         color: Colors.grayDarkest,
         textAlign: 'center',
 
 	},
 	modellTitle: {
-		fontSize: 80,
+		fontSize: RFValue(80),
+	},
+	modellBody: {
+		paddingTop: 10,
+		paddingBottom: 10,
+		paddingHorizontal: 10,
+	},
+	modellText: {
+		fontWeight: '400',
+        color: Colors.grayDarkest,
+        fontSize: Setting.nTextSize,
+	},
+	modellSubText: {
+		fontWeight: '500',
+        color: Colors.grayDarkest,
+        fontSize: Setting.sTextSize,
 	},
     modelLabel: {
 		fontWeight: '600',
         color: Colors.grayDarkest,
         fontSize: Setting.nTextSize,
     },
+    modelClose: {
+    	position: 'absolute',
+    	top: RFValue(20),
+    	left: RFValue(20)
+    },
+    modelTable: {
+  		backgroundColor: '#ecf0f1',
+  		opacity: 0.8,
+  		paddingTop: 8,
+  		paddingBottom: 8,
+  		paddingHorizontal: 10,
+  		marginBottom: 8,
+  		borderRadius: 10,
+  		borderWidth: 1,
+  		borderColor: Colors.borderColor
+    }
 }
 /* MODEL POPUP - ENDS */
 
@@ -1338,9 +1232,9 @@ const pageStyle = {
 	dashBox1: {
 		backgroundColor: Colors.white,
 		borderWidth: 5,
-		padding: '10%',
+		padding: '12%',
 		borderRadius: 40,
-		paddingHorizontal: 12,
+		paddingHorizontal: 15,
 		shadowOffset:{  width: 0,  height: 0 },
 		shadowColor: Colors.fBorderColor,
 		shadowOpacity: 0.8,
@@ -1428,8 +1322,8 @@ const chapterSliderStyle = {
   		letterSpacing: 2
     },
     cSlideSubTitle: {
-        fontSize: RFValue(Setting.h6TextSize),
         fontWeight: '500',
+        fontSize: RFValue(Setting.h6TextSize),
         color: Colors.grayDarkest,
 		alignSelf: 'center',
 		textAlign: 'center',
@@ -1439,6 +1333,9 @@ const chapterSliderStyle = {
   		textShadowRadius: 1,
   		marginTop: '5%',
   		marginBottom: '1%'
+    },
+    cSlideMSubTitle: {        
+    	fontSize: RFValue(Setting.sTextSize),
     },
     cCircleContainerOuter: {
   		borderWidth: 40,
@@ -1586,7 +1483,7 @@ const menuStyle = {
 	},
 	menus: {
 		flexDirection: 'row',
-		width: 200,
+		width: 210,
 		backgroundColor: Colors.white,
 		shadowOffset:{  width: 0.5,  height: 0.5 },
 		shadowColor: Colors.grayDark,
@@ -1636,17 +1533,18 @@ const quizStyle = {
 /* BADGES - STARTS */
 const budgesStyle = {
 	badgeContainer: {
-        textAlign: 'center',
+		flex: 1,
+        textAlign: 'left',
         alignItems: "center",
 		justifyContent: "center",
 		borderWidth: 2,
-		backgroundColor: Colors.primary,
-		borderColor: Colors.primary,
 		marginHorizontal: '5%',
 		borderRadius: 70,
 		paddingTop: 10,
 		paddingBottom: 10,
-		opacity: 0.3
+		backgroundColor: 'transparent',
+		borderColor: 'transparent',
+		opacity: 1
 	},
 	activeBadge: {
 		opacity: 1
@@ -1654,44 +1552,59 @@ const budgesStyle = {
 	badgeLabel: {
 		fontSize: Setting.xxsTextSize,
 		fontWeight: '500',
-		color: Colors.white
+		color: Colors.grayDarkest,
+		marginTop: 5,
+        textAlign: 'center',
 	},
 	badge: {
-		width: 45,
-		height: 45,
-		//tintColor: 'gray',
-		//opacity: 0.3
-	},
-
-	badgeContainer1: {
-		backgroundColor: 'transparent',
-		borderColor: 'transparent',
-		opacity: 1
-	},
-	badge1: {
-		width: 45,
-		height: 45,
-        textAlign: 'center',
+		width: RFValue(45),
+		height: RFValue(45),
         alignItems: "center",
 		justifyContent: "center",
 		//tintColor: 'gray',
+		//opacity: 0.3
 	},
 	circleBadge: {
 		borderRadius: 70,
-		paddingTop: 15,
-		paddingBottom: 15,
-		paddingHorizontal: 15,
+		paddingTop: RFValue(10),
+		paddingBottom: RFValue(10),
+		paddingHorizontal: RFValue(10),
 		borderWidth: 2,
 		backgroundColor: Colors.primary,
 		borderColor: Colors.primary,
 		opacity: 0.3
 	},
-	activeBadge1: {
-		opacity: 1
+	squareBadgeContainer: {
+		flex: 1,
+        textAlign: 'left',
+        alignItems: "center",
+		justifyContent: "center",
+		margin: 5,
+		marginBottom: 10,
+		backgroundColor: 'transparent'
 	},
-	badgeLabel1: {
-		marginTop: 5,
-		color: Colors.grayDarkest
+	squareBadge: {
+		flex: 1,
+		width: '80%',
+		borderRadius: 5,
+		paddingTop: RFValue(20),
+		paddingBottom: RFValue(20),
+		paddingHorizontal: RFValue(20),
+		borderWidth: 2,
+		backgroundColor: Colors.primary,
+		borderColor: Colors.primary,
+        alignItems: "center",
+		justifyContent: "center",
+		borderRadius: 70,
+	},
+	squareBadgeImage: {
+		width: RFPercentage(10),
+		height: RFPercentage(10),
+        alignItems: "center",
+		justifyContent: "center",
+	},
+	badgeDown: {
+		top: RFValue(20)
 	}
 }
 /* BADGES - ENDS */
@@ -1705,7 +1618,6 @@ export const styles = StyleSheet.create({
 	...listStyle,
 	...boxStyle,
 	...alignStyle,
-	...gridStyle,
 	...flexStyle,
 	...sliderStyle,
 	...pageStyle,

@@ -19,18 +19,24 @@ const kasrahAudioPath     = '../../assets/data/audio/kasrah/';
 const dammaAudioPath      = '../../assets/data/audio/damma/';
 const fathatainAudioPath  = '../../assets/data/audio/fathatain/';
 const kasratainAudioPath  = '../../assets/data/audio/kasratain/';
-const dummatainAudioPath = '../../assets/data/audio/dummatain/';
+const dummatainAudioPath  = '../../assets/data/audio/dummatain/';
+const imgPathL2             = '../../assets/img/missing/lesson2/';
+const imgPathL3             = '../../assets/img/missing/lesson3/';
+const imgPathL4             = '../../assets/img/missing/lesson4/';
+const imgPathL5             = '../../assets/img/missing/lesson5/';
+const imgPathL6             = '../../assets/img/missing/lesson6/';
+const imgPathL7             = '../../assets/img/missing/lesson7/';
 
 // COMMON PAGE
 export const COMMON_SECTION = [
-	{key: 9950, en: '', ar: '', type: Constant.GENERIC.LESSON_COMPLETED}, // 0
-	{key: 9951, en: '', ar: '', type: Constant.GENERIC.RANDOM_QUESTION_INTRO}, // 1
-	{key: 9952, en: '', ar: '', type: Constant.GENERIC.CHOOSE_BEST_INTRO}, // 2
-	{key: 9953, en: '', ar: '', type: Constant.GENERIC.RANDOM_QUESTION_SCORE}, // 3
-	{key: 9954, en: '', ar: '', type: Constant.GENERIC.CHOOSE_BEST_SCORE}, // 4
-	{key: 9955, en: '', ar: '', type: Constant.GENERIC.QUIZ_INTRO}, // 5
-	{key: 9956, en: '', ar: '', type: Constant.GENERIC.QUIZ_SCORE}, // 6
-	{key: 9957, en: '', ar: '', type: Constant.GENERIC.QUIZ_COMPLETE} // 7
+	{id: 9950 ,key: 9950, en: '', ar: '', type: Constant.GENERIC.LESSON_COMPLETED}, // 0
+	{id: 9951 ,key: 9951, en: '', ar: '', type: Constant.GENERIC.RANDOM_QUESTION_INTRO}, // 1
+	{id: 9952 ,key: 9952, en: '', ar: '', type: Constant.GENERIC.CHOOSE_BEST_INTRO}, // 2
+	{id: 9953 ,key: 9953, en: '', ar: '', type: Constant.GENERIC.RANDOM_QUESTION_SCORE}, // 3
+	{id: 9954 ,key: 9954, en: '', ar: '', type: Constant.GENERIC.CHOOSE_BEST_SCORE}, // 4
+	{id: 9955 ,key: 9955, en: '', ar: '', type: Constant.GENERIC.QUIZ_INTRO}, // 5
+	{id: 9956 ,key: 9956, en: '', ar: '', type: Constant.GENERIC.QUIZ_SCORE}, // 6
+	{id: 9957 ,key: 9957, en: '', ar: '', type: Constant.GENERIC.QUIZ_COMPLETE} // 7
 ];
 
 // BASIC ARABIC ALPHABET
@@ -78,18 +84,18 @@ export const ARABIC_FATHA = [
 {key: 9, en: 'dha', ar: 'ذَ',  audio: require(fathaAudioPath + 'dha.mp3'), type: 'L'},
 {key: 10, en: 'ra', ar: 'رَ',  audio: require(fathaAudioPath + 'ra.mp3'), type: 'L'},
 {key: 11, en: 'za', ar: 'زَ',  audio: require(fathaAudioPath + 'za.mp3'), type: 'L'},
-{key: 12, en: 'sa', ar: 'سَ',  audio: require(fathaAudioPath + 'sa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1614;'},
-{key: 13, en: 'sha', ar: 'شَ',  audio: require(fathaAudioPath + 'sha.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1614;'},
-{key: 14, en: 'Sa', ar: 'صَ',  audio: require(fathaAudioPath + 'sa1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1614;'},
-{key: 15, en: 'Da', ar: 'ضَ',  audio: require(fathaAudioPath + 'da1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1614;'},
+{key: 12, en: 'sa', ar: 'سَ',  audio: require(fathaAudioPath + 'sa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1614;', showImg: true, img: require(imgPathL2 + 'sa.png')},
+{key: 13, en: 'sha', ar: 'شَ',  audio: require(fathaAudioPath + 'sha.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1614;', showImg: true, img: require(imgPathL2 + 'sha.png')},
+{key: 14, en: 'Sa', ar: 'صَ',  audio: require(fathaAudioPath + 'sa1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1614;', showImg: true, img: require(imgPathL2 + 'Sa1.png')},
+{key: 15, en: 'Da', ar: 'ضَ',  audio: require(fathaAudioPath + 'da1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1614;', showImg: true, img: require(imgPathL2 + 'Da.png')},
 {key: 16, en: 'Ta', ar: 'طَ',  audio: require(fathaAudioPath + 'ta1.mp3'), type: 'L'},
 {key: 17, en: 'Dha', ar: 'َظ',  audio: require(fathaAudioPath + 'za1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1614;'},// redo
 {key: 18, en: 'a‘', ar: 'عَ',  audio: require(fathaAudioPath + 'aa1.mp3'), type: 'L'},
 {key: 19, en: 'gha', ar: 'َغ',  audio: require(fathaAudioPath + 'gha.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1614;'},
-{key: 20, en: 'fa', ar: 'فَ',  audio: require(fathaAudioPath + 'fa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1614;'},
+{key: 20, en: 'fa', ar: 'فَ',  audio: require(fathaAudioPath + 'fa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1614;', showImg: true, img: require(imgPathL2 + 'fa.png')},
 {key: 21, en: 'qa', ar: 'َق',  audio: require(fathaAudioPath + 'qa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1614;'},
 {key: 22, en: 'ka', ar: 'كَ',  audio: require(fathaAudioPath + 'ka.mp3'), type: 'L', enableUnicode: true, unicode: '&#1603;&#1614;'},
-{key: 23, en: 'la', ar: 'لَ',  audio: require(fathaAudioPath + 'la.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1614;'},
+{key: 23, en: 'la', ar: 'لَ',  audio: require(fathaAudioPath + 'la.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1614;', showImg: true, img: require(imgPathL2 + 'la.png')},
 {key: 24, en: 'ma', ar: 'مَ',  audio: require(fathaAudioPath + 'ma.mp3'), type: 'L'},
 {key: 25, en: 'na', ar: 'نَ',  audio: require(fathaAudioPath + 'na.mp3'), type: 'L'},
 {key: 26, en: 'ha', ar: 'هَ',  audio: require(fathaAudioPath + 'ha1.mp3'), type: 'L'},
@@ -103,27 +109,27 @@ export const ARABIC_KASRAH = [
 {key: 2, en: 'bi', ar: 'بِ',   audio: require(kasrahAudioPath + 'bi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1576;&#1616;'},
 {key: 3, en: 'ti', ar: 'تِ',   audio: require(kasrahAudioPath + 'ti.mp3'), type: 'L'},
 {key: 4, en: 'thi', ar: 'ثِ',  audio: require(kasrahAudioPath + 'thi.mp3'), type: 'L'},
-{key: 5, en: 'ji', ar: 'ِج',  audio: require(kasrahAudioPath + 'ji.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#x0650;'},
-{key: 6, en: 'Hi', ar: 'حِ',  audio: require(kasrahAudioPath + 'hi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#x0650;'},
-{key: 7, en: 'khi', ar: 'خِ',  audio: require(kasrahAudioPath + 'khi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1616;'},
+{key: 5, en: 'ji', ar: 'ِج',  audio: require(kasrahAudioPath + 'ji.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#x0650;', showImg: true, img: require(imgPathL3 + 'ji.png')},
+{key: 6, en: 'Hi', ar: 'حِ',  audio: require(kasrahAudioPath + 'hi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#x0650;', showImg: true, img: require(imgPathL3 + 'Hi.png')},
+{key: 7, en: 'khi', ar: 'خِ',  audio: require(kasrahAudioPath + 'khi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1616;', showImg: true, img: require(imgPathL3 + 'khi.png')},
 {key: 8, en: 'di', ar: 'د',  audio: require(kasrahAudioPath + 'di.mp3'), type: 'L', enableUnicode: true, unicode: '&#1583;&#1616;'},// sound like thi
 {key: 9, en: 'dhi', ar: 'ذِ',  audio: require(kasrahAudioPath + 'dhi.mp3'), type: 'L'},
 {key: 10, en: 'ri', ar: 'رِ',  audio: require(kasrahAudioPath + 'ri.mp3'), type: 'L'},
 {key: 11, en: 'zi', ar: 'زِ',  audio: require(kasrahAudioPath + 'zi.mp3'), type: 'L'},
-{key: 12, en: 'si', ar: 'سِ',  audio: require(kasrahAudioPath + 'si.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1616;'},
-{key: 13, en: 'shi', ar: 'شِ',  audio: require(kasrahAudioPath + 'shi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1616;'},
-{key: 14, en: 'Si', ar: 'صِ',  audio: require(kasrahAudioPath + 'si1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1616;'},
-{key: 15, en: 'Di', ar: 'ضِ',  audio: require(kasrahAudioPath + 'di1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1616;'},
+{key: 12, en: 'si', ar: 'سِ',  audio: require(kasrahAudioPath + 'si.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1616;', showImg: true, img: require(imgPathL3 + 'si.png')},
+{key: 13, en: 'shi', ar: 'شِ',  audio: require(kasrahAudioPath + 'shi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1616;', showImg: true, img: require(imgPathL3 + 'shi.png')},
+{key: 14, en: 'Si', ar: 'صِ',  audio: require(kasrahAudioPath + 'si1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1616;', showImg: true, img: require(imgPathL3 + 'si1.png')},
+{key: 15, en: 'Di', ar: 'ضِ',  audio: require(kasrahAudioPath + 'di1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1616;', showImg: true, img: require(imgPathL3 + 'Di.png')},
 {key: 16, en: 'Ti', ar: 'طِ',  audio: require(kasrahAudioPath + 'ti1.mp3'), type: 'L'},
 {key: 17, en: 'Dhi', ar: 'ظِ',  audio: require(kasrahAudioPath + 'zi1.mp3'), type: 'L'},
-{key: 18, en: 'i‘', ar: 'ِع',  audio: require(kasrahAudioPath + 'ie1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1616;'},
-{key: 19, en: 'ghi', ar: 'غِ',  audio: require(kasrahAudioPath + 'ghi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1616;'},
-{key: 20, en: 'fi', ar: 'فِ',  audio: require(kasrahAudioPath + 'fi.mp3'), type: 'L'},
+{key: 18, en: 'i‘', ar: 'ِع',  audio: require(kasrahAudioPath + 'ie1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1616;', showImg: true, img: require(imgPathL3 + 'i.png')},
+{key: 19, en: 'ghi', ar: 'غِ',  audio: require(kasrahAudioPath + 'ghi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1616;', showImg: true, img: require(imgPathL3 + 'ghi.png')},
+{key: 20, en: 'fi', ar: 'فِ',  audio: require(kasrahAudioPath + 'fi.mp3'), type: 'L', showImg: true, img: require(imgPathL3 + 'fi.png')},
 {key: 21, en: 'qi', ar: 'ِق',  audio: require(kasrahAudioPath + 'qi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1616;'},
 {key: 22, en: 'ki', ar: 'كِ',  audio: require(kasrahAudioPath + 'ki.mp3'), type: 'L'},
-{key: 23, en: 'li', ar: 'ِل',  audio: require(kasrahAudioPath + 'li.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1616;'},
+{key: 23, en: 'li', ar: 'ِل',  audio: require(kasrahAudioPath + 'li.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1616;', showImg: true, img: require(imgPathL3 + 'li.png')},
 {key: 24, en: 'mi', ar: 'ِم',  audio: require(kasrahAudioPath + 'mi.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1616;'},
-{key: 25, en: 'ni', ar: 'نِ',  audio: require(kasrahAudioPath + 'ni.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1616;'},
+{key: 25, en: 'ni', ar: 'نِ',  audio: require(kasrahAudioPath + 'ni.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1616;', showImg: true, img: require(imgPathL3 + 'ni.png')},
 {key: 26, en: 'hi', ar: 'هِ',  audio: require(kasrahAudioPath + 'hi1.mp3'), type: 'L'},
 {key: 27, en: 'wi', ar: 'وِ',  audio: require(kasrahAudioPath + 'wi.mp3'), type: 'L'},
 {key: 28, en: 'yi', ar: 'يِ',  audio: require(kasrahAudioPath + 'ye.mp3'), type: 'L', enableUnicode: true, unicode: '&#1610;&#1616;'}
@@ -143,15 +149,15 @@ export const ARABIC_DAMMA = [
 {key: 9, en: 'dhu', ar: 'ُذ',  audio: require(dammaAudioPath + 'dhu.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;&#1615;'},
 {key: 10, en: 'ru', ar: 'رُ',  audio: require(dammaAudioPath + 'ru.mp3'), type: 'L'},
 {key: 11, en: 'zu', ar: 'زُ',  audio: require(dammaAudioPath + 'zu.mp3'), type: 'L'},
-{key: 12, en: 'su', ar: 'ُس',  audio: require(dammaAudioPath + 'su.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1615;'},
-{key: 13, en: 'shu', ar: 'شُ',  audio: require(dammaAudioPath + 'shu.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1615;'},
-{key: 14, en: 'Su', ar: 'صُ',  audio: require(dammaAudioPath + 'su1.mp3'), type: 'L'},
-{key: 15, en: 'Du', ar: 'ضُ',  audio: require(dammaAudioPath + 'du1.mp3'), type: 'L'},
+{key: 12, en: 'su', ar: 'ُس',  audio: require(dammaAudioPath + 'su.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1615;', showImg: true, img: require(imgPathL4 + 'su.png')},
+{key: 13, en: 'shu', ar: 'شُ',  audio: require(dammaAudioPath + 'shu.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1615;', showImg: true, img: require(imgPathL4 + 'shu.png')},
+{key: 14, en: 'Su', ar: 'صُ',  audio: require(dammaAudioPath + 'su1.mp3'), type: 'L', showImg: true, img: require(imgPathL4 + 'su1.png')},
+{key: 15, en: 'Du', ar: 'ضُ',  audio: require(dammaAudioPath + 'du1.mp3'), type: 'L', showImg: true, img: require(imgPathL4 + 'Du.png')},
 {key: 16, en: 'Tu', ar: 'ُط',  audio: require(dammaAudioPath + 'tu1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1615;'},
 {key: 17, en: 'Dhu', ar: 'ُظ',  audio: require(dammaAudioPath + 'zu1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1615;'},
 {key: 18, en: 'u‘', ar: 'عُ',  audio: require(dammaAudioPath + 'uu1.mp3'), type: 'L'},
 {key: 19, en: 'ghu', ar: 'غُ',  audio: require(dammaAudioPath + 'ghu.mp3'), type: 'L'},
-{key: 20, en: 'fu', ar: 'فُ',  audio: require(dammaAudioPath + 'fu.mp3'), type: 'L'},
+{key: 20, en: 'fu', ar: 'فُ',  audio: require(dammaAudioPath + 'fu.mp3'), type: 'L', showImg: true, img: require(imgPathL4 + 'fu.png')},
 {key: 21, en: 'qu', ar: 'قُ',  audio: require(dammaAudioPath + 'qu.mp3'), type: 'L'},// Someone coughing behind
 {key: 22, en: 'ku', ar: 'ُك',  audio: require(dammaAudioPath + 'ku.mp3'), type: 'L', enableUnicode: true, unicode: '&#1603;&#1615;'},// Redo
 {key: 23, en: 'lu', ar: 'لُ',  audio: require(dammaAudioPath + 'lu.mp3'), type: 'L'},
@@ -176,18 +182,18 @@ export const ARABIC_FATHATAIN = [
 {key: 9, en: 'dhan', ar: 'ُذ',  audio: require(fathatainAudioPath + 'zhun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;&#1611;'},
 {key: 10, en: 'ran', ar: 'رُ',  audio: require(fathatainAudioPath + 'run.mp3'), type: 'L', enableUnicode: true, unicode: '&#1585;&#1611;'},
 {key: 11, en: 'zan', ar: 'زُ',  audio: require(fathatainAudioPath + 'zun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;&#1611;'},
-{key: 12, en: 'san', ar: 'ُس',  audio: require(fathatainAudioPath + 'sun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1611;'},
-{key: 13, en: 'shan', ar: 'شُ',  audio: require(fathatainAudioPath + 'shun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1611;'},
-{key: 14, en: 'San', ar: 'صُ',  audio: require(fathatainAudioPath + 'suon.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1611;'},
-{key: 15, en: 'Dan', ar: 'ضُ',  audio: require(fathatainAudioPath + 'duon.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1611;'},
+{key: 12, en: 'san', ar: 'ُس',  audio: require(fathatainAudioPath + 'sun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1611;', showImg: true, img: require(imgPathL5 + 'san.png')},
+{key: 13, en: 'shan', ar: 'شُ',  audio: require(fathatainAudioPath + 'shun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1611;', showImg: true, img: require(imgPathL5 + 'shan.png')},
+{key: 14, en: 'San', ar: 'صُ',  audio: require(fathatainAudioPath + 'suon.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1611;', showImg: true, img: require(imgPathL5 + 'san1.png')},
+{key: 15, en: 'Dan', ar: 'ضُ',  audio: require(fathatainAudioPath + 'duon.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1611;', showImg: true, img: require(imgPathL5 + 'Dan.png')},
 {key: 16, en: 'Tan', ar: 'ُط',  audio: require(fathatainAudioPath + 'tuon.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1611;'},
 {key: 17, en: 'Dhan', ar: 'ُظ',  audio: require(fathatainAudioPath + 'zun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1611;'},
 {key: 18, en: 'a‘n', ar: 'عُ',  audio: require(fathatainAudioPath + 'uun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1611;'},
 {key: 19, en: 'ghan', ar: 'غُ',  audio: require(fathatainAudioPath + 'ghun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1611;'},
-{key: 20, en: 'fan', ar: 'فُ',  audio: require(fathatainAudioPath + 'fun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1611;'},
+{key: 20, en: 'fan', ar: 'فُ',  audio: require(fathatainAudioPath + 'fun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1611;', showImg: true, img: require(imgPathL5 + 'fan.png')},
 {key: 21, en: 'qan', ar: 'قُ',  audio: require(fathatainAudioPath + 'qun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1611;'},// Someone coughing behind
 {key: 22, en: 'kan', ar: 'ُك',  audio: require(fathatainAudioPath + 'kun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1603;&#1611;'},// Redo
-{key: 23, en: 'lan', ar: 'لُ',  audio: require(fathatainAudioPath + 'lan.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1611;'},
+{key: 23, en: 'lan', ar: 'لُ',  audio: require(fathatainAudioPath + 'lan.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1611;', showImg: true, img: require(imgPathL5 + 'lan.png')},
 {key: 24, en: 'man', ar: 'مُ',  audio: require(fathatainAudioPath + 'mun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1611;'},
 {key: 25, en: 'nan', ar: 'نُ',  audio: require(fathatainAudioPath + 'nun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1611;'},
 {key: 26, en: 'han', ar: 'ُه',  audio: require(fathatainAudioPath + 'hun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1607;&#1611;'},
@@ -201,27 +207,27 @@ export const ARABIC_KASRAHTAIN = [
 {key: 2, en: 'bin', ar: 'بٍ',   audio: require(kasratainAudioPath + 'bin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1576;&#1613;'},
 {key: 3, en: 'tin', ar: 'تٍ',   audio: require(kasratainAudioPath + 'tin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1578;&#1613;'},
 {key: 4, en: 'thin', ar: 'ثٍ',  audio: require(kasratainAudioPath + 'sin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1613;'},
-{key: 5, en: 'jin', ar: 'جٍ',  audio: require(kasratainAudioPath + 'jin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#1613;'},
-{key: 6, en: 'Hin', ar: 'حٍ',  audio: require(kasratainAudioPath + 'hin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#1613;'},
-{key: 7, en: 'khin', ar: 'خٍ',  audio: require(kasratainAudioPath + 'hhuin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1613;'},
+{key: 5, en: 'jin', ar: 'جٍ',  audio: require(kasratainAudioPath + 'jin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#1613;', showImg: true, img: require(imgPathL6 + 'jin.png')},
+{key: 6, en: 'Hin', ar: 'حٍ',  audio: require(kasratainAudioPath + 'hin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#1613;', showImg: true, img: require(imgPathL6 + 'Hin.png')},
+{key: 7, en: 'khin', ar: 'خٍ',  audio: require(kasratainAudioPath + 'hhuin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1613;', showImg: true, img: require(imgPathL6 + 'khin.png')},
 {key: 8, en: 'din', ar: 'دٍ',  audio: require(kasratainAudioPath + 'din.mp3'), type: 'L', enableUnicode: true, unicode: '&#1583;&#1613;'},
 {key: 9, en: 'dhin', ar: 'ٍذ',  audio: require(kasratainAudioPath + 'dhin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;&#1613;'},//Not said properly redo
 {key: 10, en: 'rin', ar: 'رُ',  audio: require(kasratainAudioPath + 'rin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1585;&#1613;'},
 {key: 11, en: 'zin', ar: 'زُ',  audio: require(kasratainAudioPath + 'zin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;&#1613;'},
-{key: 12, en: 'sin', ar: 'ُس',  audio: require(kasratainAudioPath + 'sin1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1613;'},
-{key: 13, en: 'shin', ar: 'شُ',  audio: require(kasratainAudioPath + 'shin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1613;'},
-{key: 14, en: 'Sin', ar: 'صُ',  audio: require(kasratainAudioPath + 'suin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1613;'},
-{key: 15, en: 'Din', ar: 'ضُ',  audio: require(kasratainAudioPath + 'duin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1613;'},//Not said properly redo
+{key: 12, en: 'sin', ar: 'ُس',  audio: require(kasratainAudioPath + 'sin1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1613;', showImg: true, img: require(imgPathL6 + 'sin.png')},
+{key: 13, en: 'shin', ar: 'شُ',  audio: require(kasratainAudioPath + 'shin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1613;', showImg: true, img: require(imgPathL6 + 'shin.png')},
+{key: 14, en: 'Sin', ar: 'صُ',  audio: require(kasratainAudioPath + 'suin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1613;', showImg: true, img: require(imgPathL6 + 'sin1.png')},
+{key: 15, en: 'Din', ar: 'ضُ',  audio: require(kasratainAudioPath + 'duin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1613;', showImg: true, img: require(imgPathL6 + 'din.png')},//Not said properly redo
 {key: 16, en: 'Tin', ar: 'ُط',  audio: require(kasratainAudioPath + 'tin1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1613;'},//Not said properly redo
 {key: 17, en: 'Dhin', ar: 'ُظ',  audio: require(kasratainAudioPath + 'zuin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1613;'},//Not said properly redo
-{key: 18, en: 'i‘n', ar: 'عُ',  audio: require(kasratainAudioPath + 'ayin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1613;'},
-{key: 19, en: 'ghin', ar: 'غُ',  audio: require(kasratainAudioPath + 'ghin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1613;'},
+{key: 18, en: 'i‘n', ar: 'عُ',  audio: require(kasratainAudioPath + 'ayin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1613;', showImg: true, img: require(imgPathL6 + 'in.png')},
+{key: 19, en: 'ghin', ar: 'غُ',  audio: require(kasratainAudioPath + 'ghin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1613;', showImg: true, img: require(imgPathL6 + 'ghin.png')},
 {key: 20, en: 'fin', ar: 'فُ',  audio: require(kasratainAudioPath + 'fin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1613;'},
 {key: 21, en: 'qin', ar: 'قُ',  audio: require(kasratainAudioPath + 'qin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1613;'},
 {key: 22, en: 'kin', ar: 'ُك',  audio: require(kasratainAudioPath + 'kin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1603;&#1613;'},
-{key: 23, en: 'lin', ar: 'لُ',  audio: require(kasratainAudioPath + 'lin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1613;'},
+{key: 23, en: 'lin', ar: 'لُ',  audio: require(kasratainAudioPath + 'lin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1613;', showImg: true, img: require(imgPathL6 + 'lin.png')},
 {key: 24, en: 'min', ar: 'مُ',  audio: require(kasratainAudioPath + 'min.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1613;'},
-{key: 25, en: 'nin', ar: 'نُ',  audio: require(kasratainAudioPath + 'nin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1613;'},
+{key: 25, en: 'nin', ar: 'نُ',  audio: require(kasratainAudioPath + 'nin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1613;', showImg: true, img: require(imgPathL6 + 'nin.png')},
 {key: 26, en: 'hin', ar: 'ُه',  audio: require(kasratainAudioPath + 'huin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1607;&#1613;'},
 {key: 27, en: 'win', ar: 'وُ',  audio: require(kasratainAudioPath + 'win.mp3'), type: 'L', enableUnicode: true, unicode: '&#1608;&#1613;'},
 {key: 28, en: 'yin', ar: 'يُ',  audio: require(kasratainAudioPath + 'yin.mp3'), type: 'L', enableUnicode: true, unicode: '&#1610;&#1613;'}
@@ -241,18 +247,18 @@ export const ARABIC_DAMMATAIN = [
 {key: 9, en: 'dhun', ar: 'ُذ',  audio: require(dummatainAudioPath + 'Zhun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;&#1612;'},
 {key: 10, en: 'run', ar: 'رُ',  audio: require(dummatainAudioPath + 'ron.mp3'), type: 'L', enableUnicode: true, unicode: '&#1585;&#1612;'},
 {key: 11, en: 'zun', ar: 'زُ',  audio: require(dummatainAudioPath + 'zun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;&#1612;'},
-{key: 12, en: 'sun', ar: 'ُس',  audio: require(dummatainAudioPath + 'sun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1612;'},
-{key: 13, en: 'shun', ar: 'شُ',  audio: require(dummatainAudioPath + 'shun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1612;'},
-{key: 14, en: 'Sun', ar: 'صُ',  audio: require(dummatainAudioPath + 'soun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1612;'},
-{key: 15, en: 'Dun', ar: 'ضُ',  audio: require(dummatainAudioPath + 'dun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1612;'},
+{key: 12, en: 'sun', ar: 'ُس',  audio: require(dummatainAudioPath + 'sun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1612;', showImg: true, img: require(imgPathL7 + 'sun.png')},
+{key: 13, en: 'shun', ar: 'شُ',  audio: require(dummatainAudioPath + 'shun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1612;', showImg: true, img: require(imgPathL7 + 'shun.png')},
+{key: 14, en: 'Sun', ar: 'صُ',  audio: require(dummatainAudioPath + 'soun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1612;', showImg: true, img: require(imgPathL7 + 'sun1.png')},
+{key: 15, en: 'Dun', ar: 'ضُ',  audio: require(dummatainAudioPath + 'dun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1612;', showImg: true, img: require(imgPathL7 + 'Dun.png')},
 {key: 16, en: 'Tun', ar: 'ُط',  audio: require(dummatainAudioPath + 'tun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1612;'},// Wrongly said, redo
 {key: 17, en: 'Dhun', ar: 'ُظ',  audio: require(dummatainAudioPath + 'zun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1612;'},
 {key: 18, en: 'u‘n', ar: 'عُ',  audio: require(dummatainAudioPath + 'uun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1612;'},
 {key: 19, en: 'ghun', ar: 'غُ',  audio: require(dummatainAudioPath + 'ghun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1594;&#1612;'},
-{key: 20, en: 'fun', ar: 'فُ',  audio: require(dummatainAudioPath + 'fun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1612;'},
+{key: 20, en: 'fun', ar: 'فُ',  audio: require(dummatainAudioPath + 'fun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1612;', showImg: true, img: require(imgPathL7 + 'fun.png')},
 {key: 21, en: 'qun', ar: 'قُ',  audio: require(dummatainAudioPath + 'qun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1612;'},// Redo
 {key: 22, en: 'kun', ar: 'ُك',  audio: require(dummatainAudioPath + 'kun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1603;&#1612;'},// Redo
-{key: 23, en: 'lun', ar: 'لُ',  audio: require(dummatainAudioPath + 'lun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1612;'},
+{key: 23, en: 'lun', ar: 'لُ',  audio: require(dummatainAudioPath + 'lun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1612;', showImg: true, img: require(imgPathL7 + 'lun.png')},
 {key: 24, en: 'mun', ar: 'مُ',  audio: require(dummatainAudioPath + 'mun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1612;'},
 {key: 25, en: 'nun', ar: 'نُ',  audio: require(dummatainAudioPath + 'nun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1606;&#1612;'},
 {key: 26, en: 'hun', ar: 'ُه',  audio: require(dummatainAudioPath + 'hun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1607;&#1612;'},
@@ -264,9 +270,9 @@ export const ARABIC_DAMMATAIN = [
 // FOUR TYPE ACROSS ONE LETTER
 export const ARABIC_4_TYPE = [
 	{...ARABIC_ALPHABET[0], key: 1, message: 'Original Format'}, // ISOATED
-	{...ARABIC_ALPHABET[0], key: 2, ar: 'ا', message: 'Beginning', enableUnicode: true, unicode: '&zwj;&zwj;&#1575;&zwj;&zwj;&#1614;&#1576;'}, // START
-	{...ARABIC_ALPHABET[0], key: 3, ar: 'ـا', message: 'Middle', enableUnicode: true, unicode: '&#1610;&#1612;'}, // MIDDLE
-	{...ARABIC_ALPHABET[0], key: 4, ar: 'ـا', message: 'End', enableUnicode: true, unicode: '&#1610;&#1612;'}, // END
+	{...ARABIC_ALPHABET[0], key: 2, ar: 'ا', message: 'Beginning'}, // START
+	{...ARABIC_ALPHABET[0], key: 3, ar: 'ـا', message: 'Middle'}, // MIDDLE
+	{...ARABIC_ALPHABET[0], key: 4, ar: 'ـا', message: 'End'}, // END
 
 	{...ARABIC_ALPHABET[1], key: 5, message: 'Original Format'},
 	{...ARABIC_ALPHABET[1], key: 6, ar: 'بـ', message: 'Beginning'},

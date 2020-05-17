@@ -26,8 +26,6 @@ import {AllSettingNavigation} from './settingNavigator';
 // ALL MODULE PAGE FILES
 import {DashboardScreen} from '../../pages/dashboard';
 import {ChapterScreen} from '../../pages/chapter';
-import {ProphetsScreen} from '../../pages/prophets';
-import {QuranScreen} from '../../pages/quran';
 
 export const HomeNavigation = (props) => {
 
@@ -68,7 +66,7 @@ export const HomeNavigation = (props) => {
         )
       }}
     />
-    <Tab.Screen name="Prophets" component={ProphetsScreen} 
+    <Tab.Screen name="Prophets" component={ChapterNavigation} 
       options = {{
         tabBarLabel: <Text style={styles.mainNavBarText}> Prophets </Text>,
         tabBarIcon: ({ focused, tintColor }) => (
@@ -76,7 +74,7 @@ export const HomeNavigation = (props) => {
         )
       }}
     />
-    <Tab.Screen name="Quran" component={QuranScreen} 
+    <Tab.Screen name="Quran" component={ChapterNavigation} 
       options = {{
         tabBarLabel: <Text style={styles.mainNavBarText}> Quran </Text>,
         tabBarIcon: ({ focused, tintColor }) => (

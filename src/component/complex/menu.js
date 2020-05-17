@@ -36,18 +36,21 @@ export const Menu = ( props ) => {
 	// RENDER HTML
 	return (
 		<View style={styles.menuContainer}>
-  			<View style={{...styles.menus }}>
+  			<View style={styles.menus}>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Home')}>
-            <Icon name="home" color={activeMenu === 'HOME' ? Colors.primary : Colors.grayDark} size={30} type='font-awesome'/>
+            <Icon name="home" color={activeMenu === 'HOME' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Chapter')}>
-            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.primary : Colors.grayDark} size={30} type='font-awesome'/>
+            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Quiz')}>
-            <Icon name="question" color={activeMenu === 'QUIZ' ? Colors.primary : Colors.grayDark} size={30} type='font-awesome'/>
+          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('QuizNavigation')}>
+            <Icon name="light-bulb" color={activeMenu === 'QUIZ' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Steps')}>
+            <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Badge')}>
-            <Icon name="redeem" color={activeMenu === 'BADGE' ? Colors.primary : Colors.grayDark} size={30}/>
+            <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
         </View>
   	</View>

@@ -165,7 +165,8 @@ export const ChapterScreen = ({ navigation }) => {
           	<Text style={[styles.progressBarTitle, item.active ? '' : styles.displayN]}>{'Chapter'}</Text>
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}>
             	<Icon name="check" color={Colors.white} size={30} type='octicon' containerStyle={Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedIcon : styles.displayN}/>
-            	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}><Text style={styles.cCircleNo}>{(index + 1)}</Text></View>
+            	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
+            	<Text style={styles.cCircleNo}>{(index + 1)}</Text></View>
             </TouchableOpacity>
             <Text style={styles.cSlideSubTitle}>{item.desc}</Text>
             <Text style={styles.cSlideChatLine}>{item.details}</Text>
@@ -202,8 +203,8 @@ export const ChapterScreen = ({ navigation }) => {
 				data={state}
 				renderNextButton={_renderNextButton}
 				renderPrevButton={_renderPrevButton}/>
-	        	<Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
 			</View>
+	        	<Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
 
 			<View style={[styles.body, styles.pt10, listView ? '' : styles.displayN, styles.pb50]}>
 		    	<FlatList data={state}
@@ -246,13 +247,9 @@ export const ChapterScreen = ({ navigation }) => {
 		        	ListEmptyComponent = {() => (
 		        		<Empty icon={'group'} title='No Chapter Found' subtitle='Try again later.'/>
 		        	)}
-		        keyExtractor = {(item, index) => 'chapterIndex_' + index.toString()}/>
+		        keyExtractor = {(item, index) => 'chapterId_' + item.id.toString() + '_chapterIndex_' + index.toString()}/>
 	        </View>
 			</SafeAreaView>
 	    </View>
   	);
 }
-
-/*
-<Icon name="check" color={completed.indexOf(item.id) > -1 ? Colors.green : Colors.fBorderColor} size={20} type='octicon' containerStyle={completed.indexOf(item.id) > -1 ? styles.completedBtnContainer : ''}/>
-*/

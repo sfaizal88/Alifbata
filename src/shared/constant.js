@@ -45,6 +45,8 @@ export const GENERIC = {
 	TYPE1_COMPLEX_CHOSE_COUNT: 10,
 	QUIZ_COUNT: 10,
 	ALPHABET_ORDER: [4, 5, 4, 4, 4, 4, 3],
+	PER_LESSON: 8,
+	TOTAL_LETTER_CHAPTER: 5,
 	BG_COLORS: [
 	'#c0392b', '#27ae60', '#16a085', '#8e44ad', '#2c3e50', 
 	'#f39c12', '#78e08f', '#60a3bc', '#B33771', '#BDC581', 

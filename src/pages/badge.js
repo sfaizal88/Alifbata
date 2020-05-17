@@ -12,6 +12,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, Image, Dimensions, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -98,46 +99,22 @@ export const BadgeScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Badges" icon="dashboard"/>
-	    	<View style={[styles.body, styles.pt40, styles.overflow]}>
+	    	<View style={[styles.body, styles.pt20, styles.overflow]}>
 	    		<FlatList data={Data.badges} extraData={Data.badges}
                     showsHorizontalScrollIndicator={true}
                     numColumns={3}
-                    renderItem = { ({item, i}) =>  (
-                      <View style={[styles.badgeContainer, styles.badgeContainer1]}>
-	    				<View style={[styles.circleBadge, completed.indexOf('chapter' + item.id) > -1 ? styles.activeBadge1 : '']}>
-							<Image source={item.img} style={styles.badge1}/>
+                    renderItem = { ({item, index}) =>  (
+                      <View style={styles.badgeContainer} key={index}>
+	    				<View style={[styles.circleBadge, completed.indexOf('chapter' + item.id) > -1 ? styles.activeBadge : '']}>
+							<Image source={item.img} style={styles.badge}/>
 							</View>
-							<Text style={[styles.badgeLabel, styles.badgeLabel1]}>{item.text}</Text>
+							<Text style={[styles.badgeLabel]}>{item.text}</Text>
 	    				</View>
                     )}
-                keyExtractor = {item => item.type}/>
-	        	<Menu navigation={navigation} activeMenu={'BADGES'}></Menu>
+                keyExtractor = {(item, index) => 'badgeIndex_' + index.toString()}/>
 	        </View>
 	  		</SafeAreaView>
+	  		<Menu navigation={navigation} activeMenu={'BADGE'}></Menu>
 	  	</>
   	);
-
-  	/*
-<View style={[styles.rowDirection, styles.mt20]}>
-	<View style={[styles.flex1, styles.badgeContainer, styles.badgeContainer1]}>
-		<View style={[styles.circleBadge, completed.indexOf("chapter4") > -1 ? styles.activeBadge1 : '']}>
-		<Image source={ChapterIcon4} style={styles.badge1}/>
-		</View>
-		<Text style={[styles.badgeLabel, styles.badgeLabel1]}>Power</Text>
-	</View>
-	<View style={[styles.flex1, styles.badgeContainer, styles.badgeContainer1]}>
-		<View style={[styles.circleBadge, completed.indexOf("chapter5") > -1 ? styles.activeBadge1 : '']}>
-		<Image source={ChapterIcon5} style={styles.badge1} />
-		</View>
-		<Text style={[styles.badgeLabel, styles.badgeLabel1]}>Memory</Text>
-	</View>
-	<View style={[styles.flex1, styles.badgeContainer, styles.badgeContainer1]}>
-		<View style={[styles.circleBadge, completed.indexOf("chapter6") > -1 ? styles.activeBadge1 : '']}>
-		<Image source={ChapterIcon2} style={styles.badge1} />
-		</View>
-		<Text style={[styles.badgeLabel, styles.badgeLabel1]}>Smart</Text>
-	</View>
-</View>
-
-  	*/
 }

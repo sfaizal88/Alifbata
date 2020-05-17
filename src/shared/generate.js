@@ -34,9 +34,22 @@ const entities = new Html5Entities();
 * @input  String  Chapter1, Chapter2...
 * @return Array   
 */
-export const generateChapter = (data, chapter, totalLByLesson = 6) => {
+export const generateChapter = (lessonData, chapter, totalLByLesson = 6, isShuffle = false, totalWords) => {
+  // ORIGINAL DATA FORMAT
+  let data          = lessonData.map(a => ({...a}));
   // ORIGINAL DATA
-  let originalData  = data.map(a => ({...a}));
+  let originalData  = lessonData.map(a => ({...a}));
+  // SHUFFLE AND FIXED LENGTH
+  if (isShuffle) {
+    // SHUFFLE
+    data.sort(() => Math.random() - 0.5);
+    // RESTRICT
+    data = data.slice(0, totalWords);
+    // SHUFFLE DATA
+    data.sort(() => Math.random() - 0.5);
+    // ORIGINAL DATA
+    originalData  = data.map(a => ({...a}));
+  }
   // FIND THE REMAINING NUMBER
   let reminder = (Array.isArray(totalLByLesson)) ? 0 : (data.length) % totalLByLesson;
   // REMOVE THE REMINING ITEM FROM AN ARRAY
@@ -86,7 +99,7 @@ export const generateChapter = (data, chapter, totalLByLesson = 6) => {
   output.push({
       id: output.length,
       title: 'Exercise',
-      desc: '',
+      desc: 'Practice your learning',
       get pageTitle() { return this.title +': '+ this.desc},
       chapter: chapter,
       bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -140,6 +153,8 @@ const generateLesson = (contentArry, lessonNo, chapter, data) => {
 export const generateQuiz = (data, count = 10) => {
   // ORIGINAL DATA
   let originalData  = data.map(a => ({...a}));
+  // SHUFFLE DATA
+  originalData.sort(() => Math.random() - 0.5);
   // EMPTY OUTPUT DECLARE
   let output = [];
   // HACK ARRAY EMPTY
@@ -155,6 +170,8 @@ export const generateQuiz = (data, count = 10) => {
     // PUSHING INTO THE MAIN LESSON
     output.push(quiz);
   });
+  // SHUFFLE
+  output.sort(() => Math.random() - 0.5);
   return output;
 }
 

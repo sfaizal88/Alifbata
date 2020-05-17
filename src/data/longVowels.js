@@ -17,6 +17,8 @@ import * as Constant from '../shared/constant';
 const alifLongVowelsAudioPath      = '../../assets/data/audio/longVowel/alif/';
 const wawLongVowelsAudioPath     = '../../assets/data/audio/longVowel/waw/';
 const yaaLongVowelsAudioPath      = '../../assets/data/audio/longVowel/yaa/';
+const imgPathL10             = '../../assets/img/missing/lesson10/';
+const imgPathL11             = '../../assets/img/missing/lesson11/';
 
 // BASIC ARABIC ALPHABET LONG VOWELS WITH ALIF
 export const ARABIC_LONG_VOWELS_WITH_ALIF = [
@@ -31,10 +33,10 @@ export const ARABIC_LONG_VOWELS_WITH_ALIF = [
 {key: 9, en: 'dhaa', ar: 'ُذ',  audio: require(alifLongVowelsAudioPath + '9.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;&#1614;&#1575;'},
 {key: 10, en: 'raa', ar: 'رُ',  audio: require(alifLongVowelsAudioPath + '10.mp3'), type: 'L', enableUnicode: true, unicode: '&#1585;&#1614;&#1575;'},
 {key: 11, en: 'zaa', ar: 'زُ',  audio: require(alifLongVowelsAudioPath + '11.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;&#1614;&#1575;'},
-{key: 12, en: 'saa', ar: 'ُس',  audio: require(alifLongVowelsAudioPath + '12.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1614;&#1575;'},
-{key: 13, en: 'shaa', ar: 'شُ',  audio: require(alifLongVowelsAudioPath + '13.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1614;&#1575;'},
-{key: 14, en: 'Saa', ar: 'صُ',  audio: require(alifLongVowelsAudioPath + '14.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1614;&#1575;'},
-{key: 15, en: 'Daa', ar: 'ضُ',  audio: require(alifLongVowelsAudioPath + '15.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1614;&#1575;'},
+{key: 12, en: 'saa', ar: 'ُس',  audio: require(alifLongVowelsAudioPath + '12.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1614;&#1575;', showImg: true, img: require(imgPathL10 + 'saa.png')},
+{key: 13, en: 'shaa', ar: 'شُ',  audio: require(alifLongVowelsAudioPath + '13.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1614;&#1575;', showImg: true, img: require(imgPathL10 + 'shaa.png')},
+{key: 14, en: 'Saa', ar: 'صُ',  audio: require(alifLongVowelsAudioPath + '14.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1614;&#1575;', showImg: true, img: require(imgPathL10 + 'saa1.png')},
+{key: 15, en: 'Daa', ar: 'ضُ',  audio: require(alifLongVowelsAudioPath + '15.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1614;&#1575;', showImg: true, img: require(imgPathL10 + 'Daa.png')},
 {key: 16, en: 'Taa', ar: 'ُط',  audio: require(alifLongVowelsAudioPath + '16.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1614;&#1575;'},
 {key: 17, en: 'Dhaa', ar: 'ُظ',  audio: require(alifLongVowelsAudioPath + '17.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1614;&#1575;'},
 {key: 18, en: 'a’a', ar: 'عُ',  audio: require(alifLongVowelsAudioPath + '18.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1614;&#1575;'},
@@ -66,7 +68,7 @@ export const ARABIC_LONG_VOWELS_WITH_WAW = [
 {key: 12, en: 'suu', ar: 'ُس',  audio: require(wawLongVowelsAudioPath + '12.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1615;&#1608;'+Constant.SUKUN},
 {key: 13, en: 'shuu', ar: 'شُ',  audio: require(wawLongVowelsAudioPath + '13.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1615;&#1608;'+Constant.SUKUN},
 {key: 14, en: 'Suu', ar: 'صُ',  audio: require(wawLongVowelsAudioPath + '14.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1615;&#1608;'+Constant.SUKUN},
-{key: 15, en: 'Duu', ar: 'ضُ',  audio: require(wawLongVowelsAudioPath + '15.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1615;&#1608;'+Constant.SUKUN},
+{key: 15, en: 'Duu', ar: 'ضُ',  audio: require(wawLongVowelsAudioPath + '15.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1615;&#1608;'+Constant.SUKUN, showImg: true, img: require(imgPathL11 + 'Duu.png')},
 {key: 16, en: 'Tuu', ar: 'ُط',  audio: require(wawLongVowelsAudioPath + '16.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1615;&#1608;'+Constant.SUKUN},
 {key: 17, en: 'Dhuu', ar: 'ُظ',  audio: require(wawLongVowelsAudioPath + '17.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1615;&#1608;'+Constant.SUKUN},
 {key: 18, en: 'u’u', ar: 'عُ',  audio: require(wawLongVowelsAudioPath + '18.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1615;&#1608;'+Constant.SUKUN},

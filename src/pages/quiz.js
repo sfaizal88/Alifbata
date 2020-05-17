@@ -21,6 +21,9 @@ import { Loader  } from '../component/complex/loader';
 import { Menu  } from '../component/complex/menu';
 import { SmashScreen  } from '../component/complex/smashScreen';
 
+// DATA
+import * as QuizData from '../data/quiz';
+
 // ALL ICON
 import InfoIcon from '../../assets/img/help.png';
 import MedalIcon from '../../assets/img/medal.png';
@@ -45,36 +48,50 @@ import * as Quiz from '../data/quiz';
 export const QuizScreen = ({ navigation, route }) => {
 
     // DECLARE STATE VARIABLE
+	const [title, setTitle]                     = useState(route.params.quizData.title);
 	const [isFetching, setIsFetching]           = useState(false);
 	const [screenIsWaiting, setScreenIsWaiting] = useState(true);
-	const [state, setState]                     = useState(Quiz.data);
+	const [state, setState]                     = useState([]);
 	const [enablePrevBtn, setEnablePrevBtn]     = useState(true);
 	const [enableNextBtn, setEnableNextBtn]     = useState(true);
 	const [savedAnswered, setSavedAnswered]     = useState('');
   	const [isAnswered, setIsAnswered]           = useState(false);
+  	const [enableScroll, setEnableScroll]       = useState(true);
 	const [showSmash, setShowSmash]             = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
-	const [scoreCard, setScoreCard]             = useState({score: 0, total: Quiz.data.length - 3});
+	const [scoreCard, setScoreCard]             = useState({score: 0, total: state.length - 2});
 
 	// LOCAL VARIABLE DECLARE
-  	let allQuiz       = Quiz.data;
-	let _keyExtractor = (allQuiz) => allQuiz.id;
-	let score = scoreCard.score;
+	let score         = scoreCard.score;
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
-		  // UPDATE STATUS COLOR
-		  StatusBar.setBarStyle('light-content');
-		  // PULL DATA
-		  getAllData();
-		  // HIDE LOADER 
-		  setScreenIsWaiting(false);
+			// GENERATE QUIX
+			_generateQuiz(route.params.quizData.data);
+			// UPDATE STATUS COLOR
+			StatusBar.setBarStyle('light-content');
+			// HIDE LOADER 
+			setScreenIsWaiting(false);
 		});
 		// HIDE LOADER 
 		setScreenIsWaiting(false);
 	}, []);
   	
+  	/**
+	* GENERATE
+	* @input  Array - Array of oBJECT
+	* @return Array
+	*/
+	const _generateQuiz = (data) => {
+		// FORMATTED DATA
+		let quizData = QuizData.generateQuiz(data);
+		// UPDATE THE SCORE CARD
+		setScoreCard({...scoreCard, total: quizData.length -  2, questionNo: 1})
+		// SAVE THE STATE
+		setState(quizData);
+	}
+
 	/**
 	* SAVE ANSWER
 	* @input  Object Chosen answer from the option
@@ -145,23 +162,14 @@ export const QuizScreen = ({ navigation, route }) => {
 	}
 
 	/**
-	* Get all available data
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const getAllData = () => {
-		// UPDATE SINGLE CHAPATER FROM ROUTE PARAM
-		setState(Quiz.data);
-	}
-
-	/**
 	* WHEN USER WANT TO MOVE TO SPECIFIC SLIDE
 	*
 	* @input  NA
 	* @return NA
 	*/
 	const redoTest = () => {
+		// GENERATE QUIX
+		_generateQuiz(route.params.quizData.data);
 		// GO TO SLIDE 0, FIRST SLIDE
 		this.AppIntroSlider.goToSlide(0);
 		// SLIDE CHANGE FUNCTION
@@ -180,20 +188,23 @@ export const QuizScreen = ({ navigation, route }) => {
 		if ([Constant.GENERIC.QUIZ_INTRO].indexOf(state[index].type) > -1) {
 			setEnablePrevBtn(false);
 			setEnableNextBtn(true);
-			setScoreCard({...scoreCard, score: 0, total: 0});
+			setEnableScroll(true);
+			//this.AppIntroSlider.setNativeProps({ scrollEnabled: false });
+			setScoreCard({...scoreCard, score: 0});
 		} else if (state[index].type === Constant.GENERIC.QUIZ_SCORE) {
 			setEnablePrevBtn(false);
-			setEnableNextBtn(true);
+			setEnableNextBtn(false);
+			setEnableScroll(false);
 			// UPDATE THE STARS IN THE MOBILE STORAGE
           	Utils.saveStars('', '', score);
 		} else if (state[index].type === Constant.GENERIC.QUIZ_EXERCISE) {
 			setEnablePrevBtn(false);
 			setEnableNextBtn(false);
-			// UPDATE THE STARS IN THE MOBILE STORAGE
-          	Utils.saveStars('', '', score);
+			setEnableScroll(false);
 		} else if (state[index].type === Constant.GENERIC.QUIZ_COMPLETE) {
 			setEnablePrevBtn(true);
 			setEnableNextBtn(true);
+			setEnableScroll(true);
 		}
 		setSavedAnswered('');
 		setIsAnswered(false);
@@ -252,9 +263,9 @@ export const QuizScreen = ({ navigation, route }) => {
     if (item.type === Constant.GENERIC.QUIZ_INTRO) {
       return (
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
-          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Quiz'}</Text>
+          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
           <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.slideImage}/></View>
-          <Text style={[styles.slideDesc]}>{'Answer the following islamic question.\n \n Ready? Lets go!'}</Text>
+          <Text style={[styles.slideDesc]}>{'Test your Islamic knowledge by taking the quiz.\n \n Ready? Lets go!'}</Text>
         </View>
       );
     }  else if (item.type === Constant.GENERIC.QUIZ_SCORE) {
@@ -275,8 +286,8 @@ export const QuizScreen = ({ navigation, route }) => {
           </View>
           <View style={[styles.flex1, styles.centerViewLeft]}>
             <View style={styles.centerView}>
-              <Icon name="chevron-right" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => nextSlide(index)} containerStyle={[styles.mh20]}/>
-              <Text style={[styles.nextLessonLabel, styles.mt0, styles.mr0]}  onPress={() => nextSlide(index)} >Done</Text>
+              <Icon name="chevron-right" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => nextSlide(0)} containerStyle={[styles.mh20]}/>
+              <Text style={[styles.nextLessonLabel, styles.mt0, styles.mr0]}  onPress={() => nextSlide(0)} >Done</Text>
             </View>
           </View>
         </View>
@@ -286,9 +297,9 @@ export const QuizScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType2, styles.centerView]} key={keyIndex}>
         	
-	        <View style={styles.noContainer}><Text style={styles.qno}>{item.id}</Text></View>
+	        <View style={styles.noContainer}><Text style={styles.qno}>{index}</Text></View>
 	        	<Text style={styles.optionQuestion}>{item.question}</Text>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
+	            <TouchableOpacity  style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
 	            	<Text style={styles.lightBtnText} >{item.options[0].option}</Text>
 	            </TouchableOpacity>
 	            <TouchableOpacity style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
@@ -300,22 +311,22 @@ export const QuizScreen = ({ navigation, route }) => {
 	            <TouchableOpacity style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
 	            	<Text style={styles.lightBtnText} >{item.options[3].option}</Text>
 	            </TouchableOpacity>
-        </View>
+        	</View>
       );
     } 
   }
 
-  // RENDER HTML
+  // RENDER HTML //  pointerEvents={"none"}
   return (
     <View style={styles.appbg}>
       	<SmashScreen show={showSmash} isShowModel={setShowSmash}/>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
-        <MHeader title={'Quiz'}/>
+        <MHeader title={title}/>
         <View style={[styles.body, styles.p0]}>
           <AppIntroSlider
+          	scrollEnabled={enableScroll}
           	ref={ref => this.AppIntroSlider = ref}
-          	keyExtractor={_keyExtractor}
             dotClickEnabled={false}
             activeDotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}} 
             dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
@@ -328,11 +339,9 @@ export const QuizScreen = ({ navigation, route }) => {
             renderNextButton={_renderNextButton}
             renderPrevButton={_renderPrevButton}
             onSlideChange={_onSlideChange}/>
-
-
-            <Menu navigation={navigation} activeMenu={'QUIZ'}></Menu>
         </View>
         </SafeAreaView>
+        <Menu navigation={navigation} activeMenu={'QUIZ'}></Menu>
       </View>
     );
 }
