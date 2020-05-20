@@ -262,10 +262,7 @@ const specialIconStyle = {
   	},
   	disableOverlayLabel: {
   		position: 'absolute',
-  		fontSize: RFValue(50),
   		top: '5%',
-  		color: Colors.white,
-		fontWeight: 'bold',
 		justifyContent: 'center',
 		alignItems: 'center'
   	},
