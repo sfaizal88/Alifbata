@@ -9,11 +9,12 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useState, useEffect, useContext} from 'react';
-import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, Image, Dimensions, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
+import { RefreshControl, StyleSheet, Text, View , Modal, FlatList, TouchableHighlight, Image, Dimensions, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
 import { ProgressCircle } from 'react-native-svg-charts';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import SplashScreen from 'react-native-splash-screen'
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -30,7 +31,7 @@ import StarIcon from '../../assets/img/star.png';
 import { Loader  } from '../component/complex/loader';
 import { Empty  } from '../component/complex/empty';
 import { Menu  } from '../component/complex/menu';
-import { ModelPopup  } from '../component/complex/model';
+import { IntroModelPopup  } from '../component/model/introModel';
 
 // DATA
 import * as Chapters from '../data/chapters';
@@ -49,25 +50,38 @@ export const DashboardScreen = ({ navigation }) => {
 	const [isFetching, setIsFetching]           = useState(false);
 	const [screenIsWaiting, setScreenIsWaiting] = useState(true);
 	const [state, setState]                     = useState(Chapters.allChapter);
-  	const [showIntroPopup, setShowIntroPopup]   = useState(true);
+  	const [showIntroPopup, setShowIntroPopup]   = useState(false);
 	const [trophy, setTrophy]                   = useState(0);
 	const [medals, setMedals]                   = useState(0);
 	const [stars, setStars]                     = useState(0);
 	const [showAwards, setShowAwards]           = useState('T');// T, M ,S
+
+	// PERCENTAGE OF COMPLETED
+	const [perTrophy, setPerTrophy] = useState(Data.totalChapter);
+	const [perMedals, setPerMedals] = useState(Data.totalLesson);
+	const [perStars, setPerStars] = useState(Data.totalStars);
+	
 	// DECLARE CONTEXT
 	const appContextPayLoad = useContext(AppContext);
-	let width = Dimensions.get('window').width; 
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
 		// LOAD
 		getAllCompleted();
+		// LOAD
+		getTotalStars();
+		// HIDE LOADER 
+		setScreenIsWaiting(false);
+		// SET OPEN INTRO POPUP
+		setShowIntroPopup(true);
+	}, []);
+
+	// USE EFFECT ON LOAD PROCESS
+	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
-			// UPDATING THE PAGE TITLE
-			//navigation.setOptions({ title: 'Welcome to Alif Ba Ta' });
 			// LOAD
 			getAllCompleted();
 			// LOAD
@@ -75,9 +89,22 @@ export const DashboardScreen = ({ navigation }) => {
 			// HIDE LOADER 
 		  	setScreenIsWaiting(false);
 		});
-		// HIDE LOADER 
-		setScreenIsWaiting(false);
 	}, []);
+
+
+
+	// USE EFFECT ON LOAD PROCESS
+	useEffect(() => {
+        // HIDE SPLASH SCREEN ONCE PAGE LOADED
+        // WHEN USER ALREADY VISITED INTRO AND CLOSED POPUP THEN HIDE THE SPLASH SCREEN
+        Storage._retrieveData(Constant.STORAGE.VISITED).then(item => {
+			// CHECKING WHEATHER USER ALREADY VISISTED THE INTRO AND HIDE POPUP
+			// IF USER VISITED THEN HIDE SPLASH SCREEN
+			if (Utils.isNotEmpty(item)) {
+				setTimeout(() => { SplashScreen.hide(); }, 1000);
+			}
+        });
+    }, []);
 
 	/**
 	* Feature use to check completed lesson
@@ -115,87 +142,78 @@ export const DashboardScreen = ({ navigation }) => {
 		});
 	}
 
+	/**
+	* Close Intro popup
+	*
+	* @return NA
+	*/
+	const closeIntroPopup = () => {
+		// SET CLOSE INTRO POPUP
+		setShowIntroPopup(false);
+	}
+
 	// RENDER HTML
 	return (
 		<>
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
-	    	<MHeader title="Assalamu alaykum" icon="dashboard"/>
-	    	<ScrollView style={[styles.body, styles.pt40, styles.pb70]}>
+	    	<MHeader title="Assalamu Alaikum" icon="dashboard"/>
+	    	<ScrollView style={[styles.body, styles.pt30, styles.pb10, styles.ph0, styles.topDashboard]}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
-	    			<Text style={styles.progressBarTitle}>Trophy</Text>
-	    			<Text style={styles.progressBarNo}>{trophy}</Text>
-	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.green} strokeWidth={20}/>
-	    		</View>
-	    		<View style={[showAwards === 'M' ? '' : styles.displayN]}>
-	    			<Text style={styles.progressBarTitle}>Medals</Text>
-	    			<Text style={styles.progressBarNo}>{medals}</Text>
-	    			<ProgressCircle style={styles.progressBar} progress={0.7} progressColor={Colors.robinEggBlue} strokeWidth={20}/>
-	    		</View>
-	    		<View style={[showAwards === 'S' ? '' : styles.displayN]}>
-	    			<Text style={styles.progressBarTitle}>Stars</Text>
-	    			<Text style={styles.progressBarNo}>{stars}</Text>
-	    			<ProgressCircle style={styles.progressBar} progress={0.4} progressColor={Colors.red} strokeWidth={20}/>
-	    		</View>
-	    		<View style={[styles.rowDirection, styles.pt30]}>
-	    			<View style={[styles.flex1, styles.centerView]}>
-	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActiveBlue : '']} onPress={() => setShowAwards('M')} underlayColor="transparent" >
-	    					<Image source={MedalIcon} style={{width: RFValue(40), height: RFValue(40)}} />
+				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{10}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={10 / perTrophy} progressColor={Colors.darkYellow} strokeWidth={14}/>
+				</View>
+				<View style={[showAwards === 'M' ? '' : styles.displayN]}>
+				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Medals</Text>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{102}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={102/perMedals} progressColor={Colors.red} strokeWidth={14}/>
+				</View>
+				<View style={[showAwards === 'S' ? '' : styles.displayN]}>
+				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Stars</Text>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{1218}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={1218/perStars} progressColor={Colors.greenBlue} strokeWidth={14}/>
+				</View>
+				<View style={[styles.rowDirection, styles.pt30]}>
+				    <View style={[styles.flex1, styles.centerView]}>
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('M')} underlayColor="transparent" >
+				        <Image source={MedalIcon} style={styles.img25} />
+				      </TouchableOpacity>
+				    </View>
+				    <View style={[styles.flex1, styles.centerView]}>
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('T')} underlayColor="transparent" >
+				        <Image source={WinnerIcon} style={styles.img45} />
+				      </TouchableOpacity>
+				    </View>
+				    <View style={[styles.flex1, styles.centerView]}>
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('S')} underlayColor="transparent" >
+				        <Image source={StarIcon} style={styles.img25} />
+				      </TouchableOpacity>
+				    </View>
+				</View>
+	    		<View style={styles.bottomDashboard}>
+	    			<Text style={styles.dashboardTitle}>Train Your Skills</Text>
+	    			<Text style={styles.dashboardSubTitle}>Islamic Knowledge</Text>
+		    		<FlatList
+				    horizontal
+				    showsHorizontalScrollIndicator={false}
+				    data={Data.dashboardHelpList}
+				    renderItem = { ({item, index}) =>  (
+                      	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => navigation.navigate(item.path)}>
+	    					<Icon name={item.icon} color={item.color} size={70}  type='octicon' underlayColor="transparent" />
+	    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
+	    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
+							
 	    				</TouchableOpacity>
-	    			</View>
-	    			<View style={[styles.flex1, styles.centerView]}>
-	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActiveGreen : '']} onPress={() => setShowAwards('T')} underlayColor="transparent" >
-	    					<Image source={WinnerIcon} style={{width: RFValue(40), height: RFValue(40)}} />
-	    				</TouchableOpacity>
-	    			</View>
-	    			<View style={[styles.flex1, styles.centerView]}>
-	    				<TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActiveRed : '']} onPress={() => setShowAwards('S')} underlayColor="transparent" >
-	    					<Image source={StarIcon} style={{width: RFValue(40), height: RFValue(40)}} />
-	    				</TouchableOpacity>
-	    			</View>
+                    )}
+				    keyExtractor = {(item, index) => 'helpfullIndex_' + index.toString()}/>
+	    			
 	    		</View>
-	    		<View style={[styles.rowDirection, styles.mt40]}>
-	    			<TouchableOpacity style={[styles.boxtypeLeft]} onPress={() => navigation.navigate('Chapter')}>
-						<View style={[styles.rowDirection]}>
-	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl15]}>
-								<Text style={[styles.dbBDesc, styles.whiteText]}>All Chapter</Text>
-								<Text style={[styles.dbDesc, styles.whiteText]}>Start Learning</Text>
-	    					</View>
-	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl10]}>
-	    						<Icon name="book" color={Colors.white} size={30}  type='octicon'/>
-	    					</View>
-	    				</View>
-	    			</TouchableOpacity>
-	    			<TouchableOpacity style={[styles.boxtypeRight]} onPress={() => navigation.navigate('Quiz')}>
-						<View style={[styles.rowDirection]}>
-	    					<View style={[styles.flex1, styles.centerView]}>
-	    						<Icon name="light-bulb" color={Colors.white} size={30} type='octicon'/>
-	    					</View>
-	    					<View style={[styles.flex2, styles.centerView, styles.alignS]}>
-								<Text style={[styles.dbBDesc, styles.whiteText]}>Quiz Game</Text>
-								<Text style={[styles.dbDesc, styles.whiteText]}>Islamic Test</Text>
-	    					</View>
-	    				</View>
-	    			</TouchableOpacity>
-	    		</View>
-	    		<View style={[styles.rowDirection, styles.mt20]}>
-	    			<TouchableOpacity style={[styles.boxtypeLeft]} onPress={() => navigation.navigate('Badge')}>
-						<View style={[styles.rowDirection]}>
-	    					<View style={[styles.flex2, styles.centerView, styles.alignS, styles.pl15]}>
-								<Text style={[styles.dbBDesc, styles.whiteText]}>Badges</Text>
-								<Text style={[styles.dbDesc, styles.whiteText]}>All Rewards</Text>
-	    					</View>
-	    					<View style={[styles.flex1, styles.centerView, styles.alignS, styles.pl10]}>
-	    						<Icon name="gift" color={Colors.white} size={30} type='octicon'/>
-	    					</View>
-	    				</View>
-	    			</TouchableOpacity>
-	    		</View>
+	    		<IntroModelPopup show={showIntroPopup} handleClose={closeIntroPopup}/>
 	        </ScrollView>
-	        <ModelPopup/>
 	        <Menu navigation={navigation} activeMenu={'HOME'}></Menu>
 	  		</SafeAreaView>
 	  	</>
   	);
 }
-/*<ModelPopup show={showIntroPopup} isShowModel={setShowIntroPopup}/>*/
+/* {medals} {stars}*/

@@ -22,7 +22,6 @@ import AppContext from '../context/appContext';
 // ALL COMPONENT
 import { Loader  } from '../component/complex/loader';
 import { Empty  } from '../component/complex/empty';
-import { ModelPopup  } from '../component/complex/model';
 import { Menu  } from '../component/complex/menu';
 
 // ALL ICON
@@ -175,7 +174,7 @@ export const LessonScreen = ({ navigation, route }) => {
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
         <MHeader title={state.title} subtitle={state.desc}/>
-        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%'}} underlayColor="transparent" />
+        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
         <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
           <AppIntroSlider
             dotClickEnabled={false}
@@ -191,7 +190,6 @@ export const LessonScreen = ({ navigation, route }) => {
             renderPrevButton={_renderPrevButton}/>
         </View>
         <View style={[styles.body, styles.pt10, listView ? '' : styles.displayN, styles.pb50]}>
-          <ModelPopup show={showIntroPopup} isShowModel={setShowIntroPopup}/>
           <View style={[state.message ? '' : styles.displayN, styles.infoContainer]}>
             <View style={styles.infoIconContainer}>
               <Image source={InfoIcon} style={styles.dLType1LeftIcon} />

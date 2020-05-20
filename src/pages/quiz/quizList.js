@@ -43,7 +43,8 @@ export const QuizListScreen = ({ navigation }) => {
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
-		navigation.addListener('focus', () => {
+		navigation.addListener('focus', () => {// PULL DATA
+			setState(Data.quizList);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
 			// HIDE LOADER 
@@ -102,19 +103,25 @@ export const QuizListScreen = ({ navigation }) => {
         return (
           <View  underlayColor="transparent" style={styles.cSlide} key={'LIST_TYPE3_' + index}>
           	<View style={[styles.chapterLesOverlay]}></View>
+          	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}{'\nQuiz'}</Text>
-            <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent">
+            <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!item.active}>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
             		<Image source={item.img} style={{width: RFValue(80), height: RFValue(80)}}/>
             	</View>
             </TouchableOpacity>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.desc}</Text>
-            <Button onPress={() => _navigate(item)} 
-            	icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
-  				title={"Start"} 
-  				buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
+            <Button onPress={() => _navigate(item)}
+            	icon={<Icon name={'play'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
+  				title={item.active ? "Play" : "Coming Soon"} 
+  				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}
-  				titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
+  				titleStyle={[styles.cSlideBtnLabel, item.active ? styles.cSlideBtnLabelLight : '']}
+  				disabled={!item.active}
+  				disabledStyle={styles.cSlideBtn}
+  				disabledTitleStyle={styles.cSlideBtnLabel}
+  				/>
+  			<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }
@@ -125,11 +132,11 @@ export const QuizListScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="All Quiz" icon="dashboard"/>
-	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%'}} underlayColor="transparent" />
+	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider
-				dotClickEnabled={false}
+				dotClickEnabled={true}
 				activeDotStyle={{backgroundColor: Colors.primary}} 
 				dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}
 				showDoneButton={false} 

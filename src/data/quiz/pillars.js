@@ -190,5 +190,436 @@ options: Utils.shuffle([
 {id: 3, option: "6"},
 {id: 4, option: "3"}
 ])
+},
+
+{
+question: "According to the Five Pillars of Islam, every Muslim must?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Read the bible"},
+{id: 2, option: "Give zakat"},
+{id: 3, option: "Believe in many gods"},
+{id: 4, option: "Obey official priests"}
+])
+},
+{
+question: "Muslims travel to worship in the holy city of mecca at least once in their life if possible.  What is this?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Pilgramage"},
+{id: 2, option: "Charity"},
+{id: 3, option: "Belief"},
+{id: 4, option: "Prayer"}
+])
+},
+{
+question: "What is the Islamic declaration of faith in a single God and in Muhammad as his messenger called?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "Pilgramage"},
+{id: 2, option: "Charity"},
+{id: 3, option: "Belief"},
+{id: 4, option: "Prayer"}
+])
+},
+{
+question: "What is the act of giving part of their income to care for the poor called?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Pilgramage"},
+{id: 2, option: "Charity"},
+{id: 3, option: "Belief"},
+{id: 4, option: "Prayer"}
+])
+},
+{
+question: "Where was Muhammad born?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Medina"},
+{id: 2, option: "Constinople"},
+{id: 3, option: "Safavid"},
+{id: 4, option: "Mecca"}
+])
+},
+{
+question: "What does the running or swift walking of pilgrims seven times between the hills of Safaa and Marwah represent?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "The number of times the Prophet Muhammad performed the Hajj in his lifetime."},
+{id: 2, option: "The number of times the Prophet Abraham (PBUH) tried to build the Kaabah before he succeeded."},
+{id: 3, option: "The number of times Hagar ran back and forth between the hills searching for water for her son, Prophet Ishmael (PBUH)."},
+{id: 4, option: "The number of miles the Prophet Muhammad travelled from Medina to Mecca to perform the Hajj."}
+])
+},
+{
+question: "How many times do the Muslims circumambulate the Kaabah?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "1"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "7"}
+])
+},
+{
+question: "During which month is the Hajj performed?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Dul-Hijjah"},
+{id: 2, option: "Rajjab"},
+{id: 3, option: "Sha’ban"},
+{id: 4, option: "Ramadhan"}
+])
+},
+{
+question: "What do Muslims recite during and throughout the Hajj?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Al-Fatiha"},
+{id: 2, option: "Taalbiya"},
+{id: 3, option: "Declaration of Hajj"},
+{id: 4, option: "There is no specific recitation"}
+])
+},
+{
+question: "What is the name of the place where the pilgrims pelt stones on pillars representing the devil?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Al-Jamarat"},
+{id: 2, option: "Mina"},
+{id: 3, option: "Muzdalifa"},
+{id: 4, option: "None of the above"}
+])
+},
+{
+question: "How many times do Muslims have to perform Hajj in their lifetime?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Every year"},
+{id: 2, option: "Once in five years"},
+{id: 3, option: "Once in a decade"},
+{id: 4, option: "Once in their lifetime, if they are physically and financially able"}
+])
+},
+{
+question: "What is considered to be the most important part of the Hajj?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "When pilgrims circumambulate the Kaabah"},
+{id: 2, option: "When pilgrims stone the Pillars representing the devil"},
+{id: 3, option: "The day the pilgrims spend praying on the Plains of Arafah"},
+{id: 4, option: "Days spent in Mina and Muzdalifah"}
+])
+},
+{
+question: "Which Islamic principle does the Hajj demonstrate?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Importance of children"},
+{id: 2, option: "Equality and universal brotherhood"},
+{id: 3, option: "Importance of charity"},
+{id: 4, option: "Celebrations"}
+])
+},
+{
+question: "What is the state of purity in which all pilgrims enter Makkah for Hajj called?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Adhaan"},
+{id: 2, option: "Ihram"},
+{id: 3, option: "Istikhara"},
+{id: 4, option: "Ababa"}
+])
+},
+{
+question: "What should Muslims perform before offering salah (prayers)?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "Wearing of skull-cap"},
+{id: 2, option: "Wearing of perfume"},
+{id: 3, option: "Wudu (ablution)"},
+{id: 4, option: "Clipping of nails"}
+])
+},
+{
+question: "How many Fard (obligatory) Rakats are there in Fajr?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "2"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "How many Fard (obligatory) Rakats are there in Zuhr?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "2"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "How many Fard (obligatory) Rakats are there in Asr?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "2"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "How many Fard (obligatory) Rakats are there in Magrib?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "2"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "How many Fard (obligatory) Rakats are there in Isha?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "2"},
+{id: 2, option: "3"},
+{id: 3, option: "4"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "Who among Muslims have the privilege to stand in the first row for salah (prayers), behind the Imam?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Powerful men"},
+{id: 2, option: "Men from Saudi Arabia"},
+{id: 3, option: "White Men"},
+{id: 4, option: "There is no such privilege"}
+])
+},
+{
+question: "Which prayer does Allah mention in the Holy Qur'an to especially guard?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Fajr"},
+{id: 2, option: "Zuhr"},
+{id: 3, option: "Magrib"},
+{id: 4, option: "Asar"}
+])
+},
+{
+question: "Are women allowed to go to mosques to offer prayers?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "No, women are not allowed in the mosque"},
+{id: 2, option: "Women can only listen to prayers"},
+{id: 3, option: "Yes, women can offer prayers in mosques, provided there are separate facilities and provision"},
+{id: 4, option: "Women can pray in the mosque, standing right beside the men"}
+])
+},
+{
+question: "Which Surah (chapter) of the Quran is recited in every rakath of salah (prayers)?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "Al-Ikhlas (chapter 112)"},
+{id: 2, option: "An-Nas (chapter 114)"},
+{id: 3, option: "Al-Fatihah (chapter 1)"},
+{id: 4, option: "Al-Ala (chapter 87)"}
+])
+},
+{
+question: "What is the call for prayer called?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Adhan"},
+{id: 2, option: "Takbeer"},
+{id: 3, option: "Kalimah"},
+{id: 4, option: "Salah"}
+])
+},
+{
+question: "How do Muslims begin their prayers?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "By saying Bismillah"},
+{id: 2, option: "By saying Subhanallah"},
+{id: 3, option: "By saying Alhamdulillah"},
+{id: 4, option: "By saying Allahu Akbar"}
+])
+},
+{
+question: "What is the Obligatory Charity which is paid in the form of people’s staple food or grains before the Eid Prayers?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Sadaqah"},
+{id: 2, option: "Amanah"},
+{id: 3, option: "It is not required to pay charity"},
+{id: 4, option: "Zakat al-Fitr"}
+])
+},
+{
+question: "Which Pillar of Islam is Sawm (Fasting)?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "1st"},
+{id: 2, option: "5th"},
+{id: 3, option: "Sawn (Fasting) is not a Pillar"},
+{id: 4, option: "4th"}
+])
+},
+{
+question: "How long do Muslims fast every day during the month of Ramadhan?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "From dawn to sunset"},
+{id: 2, option: "Only during nights"},
+{id: 3, option: "From afternoon till sunset"},
+{id: 4, option: "From dawn to afternoon"}
+])
+},
+{
+question: "Which festival is celebrated after the month of fasting?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Eid-al-Fitr"},
+{id: 2, option: "Eid-al-Adha"},
+{id: 3, option: "Birthday of Prophet Muhammad (PBUH)"},
+{id: 4, option: "There is no festival after the month of fasting"}
+])
+},
+{
+question: "Who are exempted from fasting during the month of Ramadhan?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "Menstruating women"},
+{id: 2, option: "People who are travelling"},
+{id: 3, option: "People who are ill"},
+{id: 4, option: "All of the above"}
+])
+},
+{
+question: "What is the pre-dawn meal known?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Ifthar"},
+{id: 2, option: "Suhoor"},
+{id: 3, option: "Valimah"},
+{id: 4, option: "None of the above"}
+])
+},
+{
+question: "Which night is specified in the Quran as a night greater than 1,000 months?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "Night of Barat (Shab-e-Barat)"},
+{id: 2, option: "Last night of the month of Ramadhan"},
+{id: 3, option: "Night of Qadr (Laylat al-Qadr)"},
+{id: 4, option: "First night of the month of Ramadhan"}
+])
+},
+{
+question: "What is the Night Salah (Prayers) during the month of Ramadhan called?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "Ishraq"},
+{id: 2, option: "Taraweeh"},
+{id: 3, option: "Fard"},
+{id: 4, option: "There are no Night Prayers"}
+])
+},
+{
+question: "What is the meaning of Zakath?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "To spend"},
+{id: 2, option: "To receive"},
+{id: 3, option: "Purification"},
+{id: 4, option: "None of the above"}
+])
+},
+{
+question: "How many times is the word Zakath mentioned in the Quran?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "5"},
+{id: 2, option: "10"},
+{id: 3, option: "25"},
+{id: 4, option: "32"}
+])
+},
+{
+question: "What is the Nisab level for gold for which Zakath has to be paid?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "65"},
+{id: 2, option: "75"},
+{id: 3, option: "85"},
+{id: 4, option: "95"}
+])
+},
+{
+question: "How many categories of people are eligible to receive Zakath?",
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: "5"},
+{id: 2, option: "6"},
+{id: 3, option: "7"},
+{id: 4, option: "8"}
+])
+},
+{
+question: "Who is obligated to pay Zakath?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Muslims who possess wealth more than the Nisab level for a period of one full lunar year"},
+{id: 2, option: "All Muslims"},
+{id: 3, option: "Only business establishments"},
+{id: 4, option: "Zakath is not obligatory"}
+])
+},
+{
+question: "How frequently do Muslims have to pay Zakath?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Yearly"},
+{id: 2, option: "Half yearly"},
+{id: 3, option: "Every 3 months"},
+{id: 4, option: "Monthly"}
+])
+},
+{
+question: "What humanitarian and socio-political responsibility does Zakath encourage among Muslims?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "To organize get-togethers and parties"},
+{id: 2, option: "To spend money in travelling to new places"},
+{id: 3, option: "To redistribute wealth"},
+{id: 4, option: "To build new houses for themselves"}
+])
+},
+{
+question: "Can Zakath be given to those whose debts are greater than their income or wealth?",
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: "No, it is not permissible."},
+{id: 2, option: "Yes"},
+{id: 3, option: "Zakath should not be given to any person"},
+{id: 4, option: "None of the above"}
+])
+},
+{
+question: "How important is Zakath in Islam?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "So important that it forms the Third Pillar of Islam"},
+{id: 2, option: "Not so important"},
+{id: 3, option: "It is just a minor responsibility"},
+{id: 4, option: "None of the above"}
+])
 }
 ];

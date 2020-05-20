@@ -16,26 +16,26 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 // ALL PAGE FILES
-import { MHeader  } from './layout/header';
+import { MHeader  } from '../layout/header';
 
 // DATA
-import * as Steps from '../data/steps/steps';
+import * as Steps from '../../data/steps/steps';
 
 // ALL COMPONENT
-import { Loader  } from '../component/complex/loader';
-import { Empty  } from '../component/complex/empty';
-import { Menu  } from '../component/complex/menu';
+import { Loader  } from '../../component/complex/loader';
+import { Empty  } from '../../component/complex/empty';
+import { Menu  } from '../../component/complex/menu';
 
 // ALL SHARED FILES
-import { styles  } from '../shared/stylesheet';
-import { Colors } from '../shared/colors';
-import { Setting } from '../shared/setting';
-import * as Constant from '../shared/constant';
-import * as Utils from '../shared/utils';
-import * as Data from '../shared/data';
-import * as Storage from '../shared/storage';
+import { styles  } from '../../shared/stylesheet';
+import { Colors } from '../../shared/colors';
+import { Setting } from '../../shared/setting';
+import * as Constant from '../../shared/constant';
+import * as Utils from '../../shared/utils';
+import * as Data from '../../shared/data';
+import * as Storage from '../../shared/storage';
 
-export const StepsScreen = ({ navigation }) => {
+export const StepsListScreen = ({ navigation }) => {
 
   	// DECLARE STATE VARIABLE
 	const [isFetching, setIsFetching]           = useState(false);
@@ -47,6 +47,8 @@ export const StepsScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+			// PULL DATA
+			setState(Steps.data);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
 			// HIDE LOADER 
@@ -91,8 +93,8 @@ export const StepsScreen = ({ navigation }) => {
     * @return NA
     */
 	const _navigate = (data) => {
-		// NAVIGATING TO QUIZ SCREEN WITH SINGLE QUIZ OBJECT
-		navigation.navigate('Quiz', {quizData: data})
+		// NAVIGATING TO STEPS SCREEN WITH SINGLE QUIZ OBJECT
+		navigation.navigate('Steps', {stepsData: data})
 	}
 
 	/**
@@ -107,20 +109,23 @@ export const StepsScreen = ({ navigation }) => {
           	<View style={[styles.chapterLesOverlay]}></View>
           	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}</Text>
-            <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent">
+            <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!item.active}>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
-            		<Image source={item.img} style={{width: RFValue(80), height: RFValue(80)}}/>
+            		<Image source={item.img} style={styles.img80}/>
             	</View>
             </TouchableOpacity>
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
             <Button onPress={() => _navigate(item)} 
-            	icon={<Icon name={'play'} size={18} color={Colors.white} type='font-awesome'/>}
-  				title={"Coming Soon"} 
-  				buttonStyle={[styles.cSlideBtn]} 
+            	icon={<Icon name={'play'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
+  				title={item.active ? "Play" : "Coming Soon"} 
+  				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}
-  				titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabel]}/>
-  			<Text style={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]}>LOCKED</Text>
+  				titleStyle={[styles.cSlideBtnLabel, item.active ? styles.cSlideBtnLabelLight : '']}
+  				disabled={!item.active}
+  				disabledStyle={styles.cSlideBtn}
+  				disabledTitleStyle={styles.cSlideBtnLabel}/>
+  			<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }
@@ -135,7 +140,7 @@ export const StepsScreen = ({ navigation }) => {
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider
-				dotClickEnabled={false}
+				dotClickEnabled={true}
 				activeDotStyle={{backgroundColor: Colors.primary}} 
 				dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}
 				showDoneButton={false} 

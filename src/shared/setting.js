@@ -15,10 +15,12 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 const { StatusBarManager } = NativeModules;
 export const Setting = {
   usTextSize: RFValue(10),
+  xxxsTextSize: RFValue(11),
   xxsTextSize: RFValue(12),
   sxTextSize: RFValue(13),
   sTextSize: RFValue(14),
   nTextSize: RFValue(15),
+  nlTextSize: RFValue(16),
   xlTextSize: RFValue(40),
   vlTextSize: RFValue(80),
   lTextSize: RFValue(30),

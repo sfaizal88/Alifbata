@@ -15,34 +15,36 @@ import * as General from '../data/quiz/general';
 import * as Prophets from '../data/quiz/prophets';
 import * as Pillars from '../data/quiz/pillars';
 import * as Quran from '../data/quiz/quran';
+import * as Chapters from '../data/chapters';
 
+import { Colors } from './colors';
 // INTRO SLIDE DATA
 export const introSlides = [
   {
     key: 1,
     title: 'Learn',
     text: 'Learn Arabic alphabets with audio.',
-    image: require('../../assets/img/read.png'),
-    backgroundColor: '#0e8de2',
-    statusColor: '#1088da',
+    image: require('../../assets/img/prophets.png'),
+    backgroundColor: '#049991',
+    statusColor: '#049991',
     color: '#fff'
   },
   {
     key: 2,
-    title: 'Rewards',
-    text: 'Earn stars, trophies and medals as you complete the lessons and play games.',
-    image: require('../../assets/img/gift.png'),
-    backgroundColor: '#d06b60',
-    statusColor: '#d06b60',
+    title: 'Quiz',
+    text: 'Test your Islamic knowledge by taking our Quiz.',
+    image: require('../../assets/img/quiz.png'),
+    backgroundColor: '#e55039',
+    statusColor: '#e55039',
     color: '#fff'
   },
   {
     key: 3,
-    title: 'Quiz',
-    text: 'Test your Islamic knowledge by taking our Quiz.',
-    image: require('../../assets/img/quiz.png'),
-    backgroundColor: '#febe29',
-    statusColor: '#f5b523',
+    title: 'Rewards',
+    text: 'Earn stars, trophies and medals as you complete the lessons and play games.',
+    image: require('../../assets/img/gift.png'),
+    backgroundColor: '#45aaf2',
+    statusColor: '#45aaf2',
     color: '#fff'
   },
   {
@@ -78,58 +80,115 @@ export const quizList = [
   {
     id: 1,
     title: 'General',
-    desc: 'Used to truncate the text with an ellipsis after computing the text layout.',
-    data:  General.data,
+    desc: 'Islam is an Abrahamic monotheistic religion teaching that there is only one God, and that Muhammad is the last messenger of God.',
+    data:  [...General.data, ...Prophets.data, ...Pillars.data, ...Quran.data],
     img: require('../../assets/img/idea.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)], 
+    bgColor: '#34495e',
+    active: true 
   },
   {
     id: 2,
     title: 'Prophets of Islam',
-    desc: 'The View is now responding for touch events.',
+    desc: "Prophets in Islam are individuals who were sent by Allah to various communities in order to serve as examples of ideal human behavior and to spread Allah's message on Earth.",
     data:  Prophets.data,
     img: require('../../assets/img/prophets.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: '#049991',
+    active: true
   },
   {
     id: 3,
     title: 'The Pillars of Islam',
-    desc: 'If a parent View wants to prevent a child View from becoming responder on a touch start.',
+    desc: 'The Five Pillars of Islam are some basic acts in Islam, considered mandatory by believers, and are the foundation of Muslim life. Faith, Prayer, Zakat, Fasting and Hajj.',
     data:  Pillars.data,
     img: require('../../assets/img/pillars.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    active: true
   },
   {
     id: 4,
-    title: 'The Holey Quran',
-    desc: 'An integer that specifies where to end the selection.',
+    title: 'The Holy Quran',
+    desc: 'Islamic tradition says that Prophet Muhammad (pbuh) received his first revelation in the Cave of Hira during one of his isolated retreats to the mountains.',
     data:  Quran.data,
     img: require('../../assets/img/quran.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    active: true
+  },
+  {
+    id: 5,
+    title: 'Jannah',
+    desc: "Qur'an described as “gardens of pleasure” (Qur'an 31:8). People get to Paradise by living religiously, asking Allah for forgiveness and showing good actions in their life.",
+    data:  Quran.data,
+    img: require('../../assets/img/heaven.png'),
+    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    active: false
+  },
+  {
+    id: 6,
+    title: 'Jahannam',
+    desc: 'Afterlife place of punishment for evildoers. The punishments are carried in accordance with the degree of evil one has done during his life.',
+    data:  Quran.data,
+    img: require('../../assets/img/fire.png'),
+    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    active: false
+  },
+  {
+    id: 7,
+    title: 'Sunnah',
+    desc: 'Sayings and Teachings of Prophet Muhammad (pbuh).',
+    data:  Quran.data,
+    img: require('../../assets/img/heart.png'),
+    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    active: false
   }
 ]
 
-// INTRO MODEL DATA
-export const introModelList = [
+// TOTALS
+export const totalChapter = Chapters.allChapter.filter(item => {return item.active}).length;
+export const totalLesson = Chapters.allChapter.reduce((accumulator, currentValue) => {return accumulator + parseInt(currentValue.data.length)}, 0);
+export const totalStars = 5000;
+
+// DASHBOARD HELPFUL MENUS
+export const dashboardHelpList = [
   {
     id: 1,
-    title: 'General',
-    desc: 'Used to truncate the text with an ellipsis after computing the text layout.',
-    img: require('../../assets/img/medal.png')
+    title: 'All Chapters',
+    desc: 'Start Learning',
+    icon: 'book',
+    bgColor: '#2aabab',
+    color: '#fff',
+    active: true,
+    path: 'Chapter'
   },
   {
     id: 2,
-    title: 'Prophets of Islam',
-    desc: 'The View is now responding for touch events.',
-    img: require('../../assets/img/winner.png')
+    title: 'Quiz Game',
+    desc: 'Islamic Test',
+    icon: 'light-bulb',
+    bgColor: Colors.red,
+    color: '#fff',
+    active: true,
+    path: 'Quiz' 
   },
   {
     id: 3,
-    title: 'The Pillars of Islam',
-    desc: 'If a parent View wants to prevent a child View from becoming responder on a touch start.',
-    img: require('../../assets/img/star.png')
-  }
+    title: 'Badges',
+    desc: 'All Rewards',
+    icon: 'gift',
+    bgColor: '#f2b645',
+    color: '#fff',
+    active: true,
+    path: 'Badge' 
+  },
+  {
+    id: 4,
+    title: 'Knowledge',
+    desc: 'About Islam',
+    icon: 'broadcast',
+    bgColor: '#6972cf',
+    color: '#fff',
+    active: true,
+    path: 'Quiz' 
+  },
 ]
-
 // SafeAreaView setting
 export const SafeAreaViewSetting = {top: 'always'};

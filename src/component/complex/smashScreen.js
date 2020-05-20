@@ -19,6 +19,8 @@ import Sound from 'react-native-sound';
 import { styles  } from '../../shared/stylesheet';
 import { Colors } from '../../shared/colors';
 import { Setting } from '../../shared/setting';
+import * as Constant from '../../shared/constant';
+import * as Utils from '../../shared/utils';
 
 export const SmashScreen = (props) => {
   
@@ -31,40 +33,18 @@ export const SmashScreen = (props) => {
         content
   } = props
 
-  let audio = { WRONG: require('../../../assets/audio/wrong.mp3'), CORRECT: require('../../../assets/audio/correct.mp3')}
+  let audio = { WRONG: Constant.GENERIC.WRONG_AUDIO, CORRECT: Constant.GENERIC.CORRECT_AUDIO}
 
   // WHEN EVER SHOW PROPS CHANGES
   useEffect(() => {
     if (props.show.enable) {
-        playAudio(audio[props.show.audioType]);
+        Utils.playAudio(audio[props.show.audioType]);
         setTimeout(() => { 
           isShowModel({...show, enable: false});
-        }, 1500);
+        }, 1000);
     }
     console.log('Show / hide the model');
   }, [props.show.enable]);
-
-
-  /**
-  * PLAY AUDIO WHEN CLICK PLAY BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const playAudio = (path) => {
-    // LOAD AUDIO BY URL
-    var soundActive = new Sound(path,
-      (error, sound) => {
-        if (error) {
-          alert('error' + error.message);
-          return;
-        }
-        // WHEN LOADED FULLY, PLAY THE AUDIO
-        soundActive.play(() => {
-          soundActive.release();
-        });
-      });
-    }
 
   // RENDER HTML
   return (

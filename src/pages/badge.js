@@ -50,6 +50,9 @@ export const BadgeScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+			// ALL CHAPTERS
+			setState(Chapters.allChapter);
+			//Storage._clearAllStorage();
 			// LOAD
 			getAllCompleted();
 			// UPDATE STATUS COLOR
@@ -57,6 +60,12 @@ export const BadgeScreen = ({ navigation }) => {
 			// HIDE LOADER 
 		  	setScreenIsWaiting(false);
 		});
+	}, []);
+
+	// USE EFFECT ON LOAD PROCESS
+	useEffect(() => {
+		// LOAD
+		getAllCompleted();
 		// HIDE LOADER 
 		setScreenIsWaiting(false);
 	}, []);
@@ -86,7 +95,7 @@ export const BadgeScreen = ({ navigation }) => {
 				});
 				// IF ALL THE LESSON COMPLETED
 				if (chapterCompleted) {
-					console.log('Completed - ' + chapter.id);
+					//console.log('Completed - ' + chapter.id);
 					setCompleted(completed => [...completed, chapter.id]);
 				}
 			});

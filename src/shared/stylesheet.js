@@ -268,6 +268,9 @@ const specialIconStyle = {
 		fontWeight: 'bold',
 		justifyContent: 'center',
 		alignItems: 'center'
+  	},
+  	fLetter: {
+  		color: Colors.red
   	}
 }
 /* SPECIAL ICONS - ENDS */
@@ -286,6 +289,9 @@ const spacingStyle = {
 	},
 	ph0: {
 		paddingHorizontal: 0
+	},
+	ph10: {
+		paddingHorizontal: 10
 	},
 	ph20: {
 		paddingHorizontal: 20
@@ -408,6 +414,15 @@ const spacingStyle = {
 	mb40: {
 		marginBottom: 40
 	},
+	mh0: {
+		marginHorizontal: 0
+	},
+	mh5: {
+		marginHorizontal: 5
+	},
+	mh15: {
+		marginHorizontal: 15
+	},
 	mh20: {
 		marginHorizontal: 20
 	}
@@ -512,8 +527,9 @@ const spacingStyle = {
 		borderWidth: 1,
 		borderColor: Colors.primary,//Colors.gold,
 		borderLeftWidth: 0,
-		left: -10,
-		top: -33
+		left: 0,
+		top: -33,
+		marginRight: 10
 	},
 	boxtypeRight: {
 		backgroundColor: Colors.primary,//Colors.gold,
@@ -526,7 +542,8 @@ const spacingStyle = {
 		borderWidth: 1,
 		borderColor: Colors.primary,//Colors.gold,
 		borderRightWidth: 0,
-		right: -10
+		right: 0,
+		marginLeft: 10
 	},
 	boxtypeLeft2: {
 		backgroundColor: '#c44569',
@@ -571,6 +588,11 @@ const alignStyle = {
 		alignItems: "flex-end",
 		justifyContent: "center"
 	},
+	vColumn: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 	centerViewT: {
 		alignItems: "center",
 		justifyContent: "flex-start"
@@ -677,8 +699,8 @@ const sliderStyle = {
         alignItems: 'center',
     },
     slideImage: {
-        height: 180,
-        width: 180,
+        height: RFValue(180),
+        width: RFValue(180),
     },
     slideDesc: {
         fontSize: Setting.nTextSize,
@@ -911,11 +933,13 @@ const pageStyle = {
  		position: 'absolute',
  		bottom: (Setting.DEVICE_HEIGHT / 3) - 30,
  		right: 10,
+ 		fontWeight: 'bold'
  	},
  	buttonPrev: {
  		position: 'absolute',
  		bottom: (Setting.DEVICE_HEIGHT / 3) - 30,
- 		left: 10
+ 		left: 10,
+ 		fontWeight: 'bold'
  	},
  	nextBtn: {
  		color: Colors.white,
@@ -938,9 +962,23 @@ const pageStyle = {
 	    justifyContent: 'center',
 	    alignItems: 'center',
  	},
+ 	navDark: {
+ 		color: Colors.primary
+ 	},
+ 	buttonCircleLight: {
+ 		backgroundColor: Colors.white
+ 	},
+ 	buttonDone: {
+	    borderRadius: 20,
+	    width: 80,
+ 	},
  	prevNext: {
  		fontSize: RFValue(80),
  		color: Colors.fBorderColor,
+ 		fontWeight: '500'
+ 	},
+ 	doneBtn: {
+ 		fontSize: RFValue(16),
  		fontWeight: '500'
  	},
  	doneBtnLabel: {
@@ -995,7 +1033,7 @@ const pageStyle = {
  		backgroundColor: Colors.selectedOpt, 
  		borderColor: Colors.selectedOpt,
  	},
- 	correcntOption: {
+ 	correctOption: {
  		backgroundColor: Colors.green, 
  		borderColor: Colors.green,
  	},
@@ -1230,29 +1268,77 @@ const pageStyle = {
 		color: Colors.grayDarkest
 	},
 	dashBox1: {
-		backgroundColor: Colors.white,
-		borderWidth: 5,
 		padding: '12%',
 		borderRadius: 40,
 		paddingHorizontal: 15,
-		shadowOffset:{  width: 0,  height: 0 },
-		shadowColor: Colors.fBorderColor,
-		shadowOpacity: 0.8,
-		shadowRadius: 1,
-		borderColor: Colors.borderColor,
-		marginBottom: 20
+		marginBottom: 20,
+		backgroundColor: Colors.mainLightGray,
+		shadowOffset:{  width: 1,  height: 1  },
+		shadowColor: Colors.grayDarkest,
+		shadowOpacity: 0.4,
+		shadowRadius: 2
 	},
-	dashBoxActiveRed: {
-		backgroundColor: Colors.white,
-		borderColor: Colors.red,
+	dashBoxActive: {
+		backgroundColor: Colors.primary,
+		shadowColor: Colors.primary,
 	},
-	dashBoxActiveGreen: {
+	bottomDashboard: {
 		backgroundColor: Colors.white,
-		borderColor: Colors.green,
+		paddingBottom: 70,
+		paddingTop: 10,
+		borderTopLeftRadius: 20,
+		borderTopRightRadius: 20,
+		paddingLeft: 5,
+		//shadowOffset:{  width: -2,  height: -2  },
+		//shadowColor: Colors.grayDarkest,
+		//shadowOpacity: 0.4,
+		//shadowRadius: 2
 	},
-	dashBoxActiveBlue: {
-		backgroundColor: Colors.white,
-		borderColor: Colors.robinEggBlue,
+	topDashboard: {
+		backgroundColor:'#fff'
+	},
+	topDashboardText: {
+		color: Colors.primary
+	},
+	dashboardTitle: {
+		fontWeight: '600',
+		fontSize: Setting.h4TextSize,
+		color: Colors.primary,
+		marginHorizontal: 15
+	},
+	dashboardSubTitle: {
+		textTransform: 'uppercase',
+		fontWeight: '600',
+		fontSize: Setting.xxxsTextSize,
+		color: Colors.grayLight,
+		marginHorizontal: 15,
+		marginBottom: 25
+	},
+	skillContainer: {
+		marginBottom: 10,
+		width: 130,
+		borderRadius: 10,
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingTop: 30,
+		paddingBottom: 20,
+		height: 190,
+		paddingHorizontal: 6,
+		shadowOffset:{  width: 5,  height: 5  },
+		shadowColor: Colors.grayDarkest,
+		shadowOpacity: 0.4,
+		marginHorizontal: 15
+	},
+	skillTitle: {
+		fontSize: Setting.xxsTextSize,
+		textTransform: 'uppercase',
+		fontWeight: 'bold',
+		marginTop: 20
+	},
+	skillDesc: {
+		fontSize: Setting.xxsTextSize,
+		fontWeight: '500',
+		marginTop: 5
 	}
 }
 /* DASHBOARD - ENDS */
@@ -1328,9 +1414,6 @@ const chapterSliderStyle = {
 		alignSelf: 'center',
 		textAlign: 'center',
 		textTransform: 'uppercase',
-		textShadowColor: Colors.grayDark,
-  		textShadowOffset: {width: -0.5, height: -0.5},
-  		textShadowRadius: 1,
   		marginTop: '5%',
   		marginBottom: '1%'
     },
@@ -1445,13 +1528,13 @@ const chapterSliderStyle = {
 const chartStyle = {
 	progressBarTitle: {
 		width: '100%',
-		fontSize: Setting.h3TextSize,
-		fontWeight: '500',
 		paddingBottom: 30,
 		color: Colors.grayDarkest,
 		textTransform: 'uppercase',
 		textAlign: 'center',
 		letterSpacing: 1.5,
+		fontWeight: '600',
+		fontSize: Setting.h4TextSize,
 	},
 	progressBarNo: {
 		alignItems: "center",
@@ -1459,13 +1542,13 @@ const chartStyle = {
 		position: 'absolute',
 		width: '100%',
 		textAlign: 'center',
-		top: '47%',
-		fontSize: RFValue(55),
+		top: '50%',
+		fontSize: RFValue(45),
 		fontWeight: '600',
 		color: Colors.grayDarkest
 	},
 	progressBar: {
-		height: RFValue(210),
+		height: RFValue(160),
 		marginBottom: 0,
 	}
 }
@@ -1608,6 +1691,30 @@ const budgesStyle = {
 	}
 }
 /* BADGES - ENDS */
+/* IMAGES - STARTS */
+const imagesStyle = {
+	img120: {
+		width: RFValue(120),
+		height: RFValue(120)
+	},
+	img80: {
+		width: RFValue(80),
+		height: RFValue(80)
+	},
+	img45: {
+		width: RFValue(45),
+		height: RFValue(45)
+	},
+	img25: {
+		width: RFValue(25),
+		height: RFValue(25)
+	},
+	img200: {
+		width: RFValue(200),
+		height: RFValue(200)
+	},
+}
+/* IMAGES - ENDS */
 export const styles = StyleSheet.create({
 	...navBarStyle,
 	...errorStyle,
@@ -1629,5 +1736,6 @@ export const styles = StyleSheet.create({
 	...chartStyle,
 	...menuStyle,
 	...quizStyle,
-	...budgesStyle
+	...budgesStyle,
+	...imagesStyle
 });

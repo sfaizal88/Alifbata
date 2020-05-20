@@ -17,6 +17,7 @@ export const TYPE = {
 
 // DECLARE GENERIC CONSTANT
 export const GENERIC = {
+	COMPLETED: 1,
 	SUCCESS: 0,
 	FAILED:  -1,
 	TRUE:  1,
@@ -39,11 +40,13 @@ export const GENERIC = {
 	QUIZ_EXERCISE: 'QE',
 	QUIZ_SCORE: 'QS',
 	QUIZ_COMPLETE: 'QC',
-	TYPE1_RANDOMQ_COUNT: 4,
-	TYPE1_COMPLEX_RANDOMQ_COUNT: 10,
-	TYPE1_CHOSE_COUNT: 4,
-	TYPE1_COMPLEX_CHOSE_COUNT: 10,
-	QUIZ_COUNT: 10,
+	FOUR_LETTER_INTRO: '4LI',
+	FOUR_LETTER_INTRO_DETAILS: '4LID',
+	TYPE1_RANDOMQ_COUNT: 1,
+	TYPE1_COMPLEX_RANDOMQ_COUNT: 2,
+	TYPE1_CHOSE_COUNT: 1,
+	TYPE1_COMPLEX_CHOSE_COUNT: 2,
+	QUIZ_COUNT: 3,
 	ALPHABET_ORDER: [4, 5, 4, 4, 4, 4, 3],
 	PER_LESSON: 8,
 	TOTAL_LETTER_CHAPTER: 5,
@@ -53,13 +56,27 @@ export const GENERIC = {
 	'#34ace0', '#ffb142', '#6ab04c', '#eb4d4b', '#f53b57', 
 	'#ff793f', '#596275', '#e66767', '#f5cd79', '#f19066', 
 	'#EAB543', '#55E6C1', '#CAD3C8', '#3B3B98', '#58B19F', 
-	'#82589F', '#778ca3', '#2d98da', '#b8e994', '#079992', ]
+	'#82589F', '#778ca3', '#2d98da', '#b8e994', '#079992',],
+	SCORE_AUDIO: require('../../assets/audio/winner.mp3'),//winnerfinal
+	QUIZ_AUDIO: require('../../assets/audio/shorttick.mp3'),// quiz for long
+	WRONG_AUDIO: require('../../assets/audio/wrongdrum.mp3'),// wrong wrongdrum wrongsoft
+	CORRECT_AUDIO: require('../../assets/audio/correct.mp3'),// wrong wrongdrum wrongsoft
+	COMPLETE_AUDIO: require('../../assets/audio/yay.mp3'),
+	NUMBER: 'N',
+	TEXT: 'T',
+	F_LETTER_C: '&#1614;',
+	F_START: '&#1576;&#1614;',
+	F_END: '&#1576;&#1615;',
+	F_M_START: '&#1576;&#1614;',
+	F_M_END: '&#1576;&#1615;',
+
 };
 
 // DECLARE STORAGE CONSTANT
 export const STORAGE = {
 	COMPLETED_LESSON: 'completedLesson',
-	COMPLETED_STARS:  'completedStars'
+	COMPLETED_STARS:  'completedStars',
+	VISITED: 'visited'
 };
 
 // SUKUN

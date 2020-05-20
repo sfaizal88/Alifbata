@@ -18,8 +18,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ChapterScreen  } from '../../pages/chapter';
 import { LessonScreen  } from '../../pages/lesson';
 import { DetailsScreen  } from '../../pages/details';
-import { QuizScreen } from '../../pages/quiz';
-import { StepsScreen } from '../../pages/steps';
 
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
@@ -78,13 +76,11 @@ export const ChapterNavigation = ({navigation}) => {
               fontWeight: 'bold',
             },
             title: '',
-            headerForceInset: { top: 'never', bottom: 'never' },
-            gestureDirection: 'vertical-inverted'
+            headerForceInset: { top: 'never', bottom: 'never' }
         }}>
         <Stack.Screen name="Chapter" component={ChapterScreen}  options={{...navConfig}} />
         <Stack.Screen name="Lesson" component={LessonScreen}    options={{...navConfig}} />
         <Stack.Screen name="Details" component={DetailsScreen}  options={{...navConfig}}/>
-        <Stack.Screen name="Steps" component={StepsScreen}  options={{...navConfig}}/>
       </Stack.Navigator>
     </>
   );

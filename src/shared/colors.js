@@ -21,6 +21,8 @@ export const Colors = {
   activeListB: '#d9dce0',
   red: '#e74c3c',
   lightRed: '#eda2a7',
+  darkRed: '#f23d38',
+  darkYellow: '#f2b645',
   brown: '#4b4b4b',
   third: '#df683c',
   grayLightest: '#ecf0f1',
@@ -31,6 +33,7 @@ export const Colors = {
   grayMDark: '#636363',
   subheaderBg: '#e5e8ee',// e5e8ee 363a3d 5b6074 f8ebdb e6f0f1 f3c651 e5e8ee(i) e5e8ee(i) e5e8ee(i) e5e8ee(i) e5e8ee(i) e5e8ee(i)
   subheaderBgTitle: '#333',//333 fff fff 333 415c71 333 333(i) 333(i) 333(i) 333(i) 333(i) 333(i)
+  mainLightGray: '#ececec',
   borderColor: '#efefef', //e9eaec
   fBorderColor: '#d9dce0',
   lBorderColor: '#ccc',
@@ -40,9 +43,11 @@ export const Colors = {
   lightWhite: '#ecf0f1',
   primaryBG: '#e7e8ed',
   green: '#27ae60',
+  greenBlue: '#2aabab',
   link: '#2980b9',
   appBg: '#f0f4f8',
   darkSilver: '#95a5a6',
+  silver: '#bdc3c7',
   robinEggBlue: '#3498db',
   lightDisable: '#ccc',
   selectedOpt: '#3498db',

@@ -20,6 +20,7 @@ import { styles } from './src/shared/stylesheet';
 import { Colors } from './src/shared/colors';
 import * as Storage from './src/shared/storage';
 import * as Constant from './src/shared/constant';
+import * as Utils from './src/shared/utils';
 
 // ALL CONTEXT FILES
 import AppContext from './src/context/appContext';
@@ -33,6 +34,7 @@ import { ChapterNavigation } from './src/component/navigation/chapterNavigator';
 import { QuizNavigation } from './src/component/navigation/quizNavigator';
 import {DashboardScreen} from './src/pages/dashboard';
 import { BadgeScreen } from './src/pages/badge';
+import { StepsNavigation } from './src/component/navigation/stepsNavigator';
 
 // ALL COMPONENT FILES
 import { IntroScreen  } from './src/pages/intro';
@@ -65,11 +67,27 @@ export default  App = ({navigation}) => {
 
   // USE EFFECT ON LOAD PROCESS
   useEffect(() => {
+    //StatusBar.setHidden(true);
     // UPDATE STATUS COLOR
     StatusBar.setBarStyle('light-content');
     // COMMENTTED OUT HERE, TO AVOID FLICK WHILE LOGIN AUTH
     // HIDE SPLASH SCREEN ONCE PAGE LOADED
-    SplashScreen.hide();
+    //SplashScreen.hide();
+  }, []);
+
+  // USE EFFECT ON LOAD PROCESS
+  useEffect(() => {
+    // HIDE SPLASH SCREEN ONCE PAGE LOADED
+    // WHEN USER ALREADY VISITED INTRO AND CLOSED POPUP THEN HIDE THE SPLASH SCREEN
+    Storage._retrieveData(Constant.STORAGE.VISITED).then(item => {
+      console.log('App visited');
+      // CHECKING WHEATHER USER ALREADY VISISTED THE INTRO AND HIDE POPUP
+      // IF USER VISITED THEN HIDE SPLASH SCREEN
+      if (!Utils.isNotEmpty(item)) {
+        console.log('App Splash turned off');
+        SplashScreen.hide();
+      }
+    });
   }, []);
 
   // RENDER HTML
@@ -83,6 +101,7 @@ export default  App = ({navigation}) => {
             <Stack.Screen name="Chapter" component={ChapterNavigation}  options={{...navigatorConfig}} />
             <Stack.Screen name="QuizNavigation" component={QuizNavigation}  options={{...navigatorConfig}}/>
             <Stack.Screen name="Badge" component={BadgeScreen}  options={{...navigatorConfig}}/>
+            <Stack.Screen name="StepsNavigation" component={StepsNavigation}  options={{...navigatorConfig}}/>
           </Stack.Navigator>
         </NavigationContainer>
       </AppContext.Provider>

@@ -12,6 +12,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -55,10 +56,10 @@ export const ChapterScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+			// REGENERATE CHAPTER
+			setState(Chapters.allChapter);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
-			// UPDATING THE PAGE TITLE
-			//navigation.setOptions({ title: 'Learn Arabic Basics' });
 			// PULL ALL CHAPTER DATAS
 			getAllData();
 			// CHECK THE COMPLETED LIST
@@ -66,6 +67,12 @@ export const ChapterScreen = ({ navigation }) => {
 			// HIDE LOADER 
 		  	setScreenIsWaiting(false);
 		});
+	}, []);
+
+	// USE EFFECT ON LOAD PROCESS
+	useEffect(() => {
+		// REGENERATE CHAPTER
+		setState(Chapters.allChapter);
 		// HIDE LOADER 
 		setScreenIsWaiting(false);
 	}, []);
@@ -178,7 +185,7 @@ export const ChapterScreen = ({ navigation }) => {
   				disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}/>
-  				<Text style={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]}>LOCKED</Text>
+  				<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }

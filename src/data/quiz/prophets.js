@@ -172,7 +172,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'What did Prophet Noah (as) build?',
+question: 'What did Prophet Nuh (as) build?',
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: 'Ship'},
@@ -222,7 +222,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'What significant world event happened during Prophet Noah‘s (as) life time?',
+question: 'What significant world event happened during Prophet Nuh‘s (as) life time?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Earthquake'},

@@ -9,11 +9,14 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useEffect, useState} from 'react';
-import { Alert } from 'react-native';
+import { Alert, View, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
+import Sound from 'react-native-sound';
 
 // ALL SHARED FILES
+import { styles  } from './stylesheet';
 import { Colors } from './colors';
 import * as Constant from './constant';
 import * as Storage from './storage';
@@ -22,7 +25,8 @@ import * as Storage from './storage';
 import * as Common from '../data/common';
 
 // LOCAL OBJECT DECLARE
-const entities = new Html5Entities();
+const entities  = new Html5Entities();
+var soundActive = '';
 
 /**
 * Feature used to convert URL to html tags
@@ -52,6 +56,18 @@ export const codeToArabic = (code) => {
 
 
 /**
+* Check minimum pass mark
+*
+* @input  Integer received mark
+* @input  Integer minimum pass mark
+* @return Boolean 
+*/
+export const isPassed = (mark, minPass) => {
+    return (mark < minPass) ? false : true;
+};
+
+
+/**
 * Feature used to show arabic
 *
 * @input  Object item
@@ -61,6 +77,17 @@ export const convert2Arabic = (item, avoidImg = false) => {
     return item.showImg && !avoidImg ? '' : (item.enableUnicode ? entities.decode(item.unicode) : item.ar);
 };
 
+
+/**
+* Feature used to show arabic
+*
+* @input  Object item
+* @return String 
+*/
+export const convert2ArabicLang = (item, is4Letter = false) => {
+  let uniCode = is4Letter ? item.unicode + Constant.GENERIC.F_LETTER_C : item.unicode;
+    return item.enableUnicode ? entities.decode(uniCode) : item.ar;
+};
 /**
 * Feature used to convert String to date
 *
@@ -119,10 +146,12 @@ export const convertToCapitalize = (name) => {
 */
 export const joinArabic = (arr) => {
   let output = "";
+  // MAKING CLONE
+  let joinWords = arr.map(a => ({...a}));
   // REVERSE THE ARRAY
-  //arr.reverse();
+  joinWords.reverse();
   // LOOP THE ARRAY
-  arr.forEach((item, index) => {
+  joinWords.forEach((item, index) => {
     // CHECKING WHEATHER UNICODE IS ON
     let letter = (item.enableUnicode) ? entities.decode(item.unicode) : item.ar;
     // JOINING THE OUTPUT
@@ -325,17 +354,7 @@ export const saveStars = (chapter, lesson, stars) => {
     // CHECK THE VALUES
     item = (item) ? JSON.parse(item) : 0;
     // UPDATE THE COINS
-    item = item + stars
-    // CHECK THE VALUES
-    /*item = Utils.isNotEmpty(item) ? JSON.parse(item) : {};
-    // CHECK CHAPTER AVAILABLE
-    if (!item[chapter]) {
-        item[chapter] = {[lesson]: stars};
-    } else {
-        item[chapter][lesson] = stars;
-    }
-    Storage._storeData(Constant.STORAGE.COMPLETED_STARS, JSON.stringify(item));*/
-
+    item = item + stars;
     console.log('Newly updated stars - ' + item);
     Storage._storeData(Constant.STORAGE.COMPLETED_STARS, JSON.stringify(item));
   });
@@ -366,7 +385,7 @@ export const unlockChapter = (index, completedChapters, currenctChapterId) => {
   if (lastCompletedChapterId) {
      nextChapterToUnlock = "chapter".concat(parseInt(lastCompletedChapterId.replace("chapter", "")) + 1);
   }
-  return true;//(index <= 0 || completedChapters.indexOf(currenctChapterId) > -1 || currenctChapterId === nextChapterToUnlock)
+  return /*true;*/(index <= 0 || completedChapters.indexOf(currenctChapterId) > -1 || currenctChapterId === nextChapterToUnlock)
 }
 
 
@@ -473,5 +492,70 @@ export const unlockLesson = (index, completedLesson, currenctLessonId) => {
     // CREATING NEXT LESSON ID TO UNLOCK
     nextLessonToUnlock = parseInt(lastCompletedLessonId) + 1 ;
   }
-  return true;//(index === 0 || completedLesson.indexOf(currenctLessonId) > -1 || currenctLessonId === nextLessonToUnlock)
+  return /*true;*/(index === 0 || completedLesson.indexOf(currenctLessonId) > -1 || currenctLessonId === nextLessonToUnlock)
 }
+
+  /**
+  * RIGHT ARROW CUSTOMISE BUTTON
+  *
+  * @input  NA
+  * @return NA
+    <View>
+      <Icon name="angle-right" color={Colors.silver} iconStyle={styles.buttonNext} size={80} type="font-awesome" underlayColor="transparent"></Icon>
+    </View>
+  */
+  export const renderNextButton = () => {
+    return (
+      <View style={styles.buttonCircle}>
+        <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
+      </View>
+    );
+  }
+
+  /**
+  * LEFT ARROW CUSTOMISE BUTTON
+  *
+  * @input  NA
+  * @return NA
+    <View>
+      <Icon name="angle-left" color={Colors.silver}  iconStyle={styles.buttonPrev}  size={80} type="font-awesome" underlayColor="transparent"></Icon>
+    </View>
+  */
+  export const renderPrevButton = () => {
+    return (
+      <View style={styles.buttonCircle}>
+        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
+      </View>
+    );
+  }
+
+  /**
+  * PLAY AUDIO WHEN CLICK PLAY BUTTON
+  *
+  * @input  NA
+  * @return NA
+  */
+  export const playAudio = (path, volume = 2) => {
+    // LOAD AUDIO BY URL
+    soundActive = new Sound(path,
+      (error, sound) => {
+        if (error) {
+          alert('error' + error.message);
+          return;
+        }
+        // WHEN LOADED FULLY, PLAY THE AUDIO
+        soundActive.setVolume(volume).play(() => {
+          soundActive.release();
+        });
+      });
+    }
+
+  /**
+  * STOP AUDIO WHEN CLICK PLAY BUTTON
+  *
+  * @input  NA
+  * @return NA
+  */
+  export const stopAudio = () => {
+      soundActive.stop();
+  }

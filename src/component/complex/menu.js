@@ -38,19 +38,19 @@ export const Menu = ( props ) => {
 		<View style={styles.menuContainer}>
   			<View style={styles.menus}>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Home')}>
-            <Icon name="home" color={activeMenu === 'HOME' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="home" color={activeMenu === 'HOME' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Chapter')}>
-            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('QuizNavigation')}>
-            <Icon name="light-bulb" color={activeMenu === 'QUIZ' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="light-bulb" color={activeMenu === 'QUIZ' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Steps')}>
-            <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('StepsNavigation')}>
+            <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Badge')}>
-            <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.green : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
           </TouchableOpacity>
         </View>
   	</View>

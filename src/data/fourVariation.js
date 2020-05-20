@@ -26,7 +26,9 @@ export const data = [
 		chapter: chapter,
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		data: [
+			Common.COMMON_SECTION[9],
 			Common.ARABIC_4_VARIATION[0], 
+			Common.COMMON_SECTION[10],
 			Common.ARABIC_4_TYPE[0], 
 			Common.ARABIC_4_TYPE[1], 
 			Common.ARABIC_4_TYPE[2], 

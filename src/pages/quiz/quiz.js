@@ -14,35 +14,35 @@ import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 // ALL PAGE FILES
-import { MHeader  } from './layout/header';
+import { MHeader  } from '../layout/header';
 
 // ALL COMPONENT
-import { Loader  } from '../component/complex/loader';
-import { Menu  } from '../component/complex/menu';
-import { SmashScreen  } from '../component/complex/smashScreen';
+import { Loader  } from '../../component/complex/loader';
+import { Menu  } from '../../component/complex/menu';
+import { SmashScreen  } from '../../component/complex/smashScreen';
 
 // DATA
-import * as QuizData from '../data/quiz';
+import * as QuizData from '../../data/quiz';
 
 // ALL ICON
-import InfoIcon from '../../assets/img/help.png';
-import MedalIcon from '../../assets/img/medal.png';
-import ExamIcon from '../../assets/img/exam.png';
-import QuizIcon from '../../assets/img/quiz.png';
-import StarIcon from '../../assets/img/star.png';
+import InfoIcon from '../../../assets/img/help.png';
+import MedalIcon from '../../../assets/img/medal.png';
+import ExamIcon from '../../../assets/img/exam.png';
+import QuizIcon from '../../../assets/img/quiz.png';
+import StarIcon from '../../../assets/img/star.png';
 
 // ALL SHARED FILES
-import { styles  } from '../shared/stylesheet';
-import { Setting  } from '../shared/setting';
-import { Colors } from '../shared/colors';
-import * as Constant from '../shared/constant';
-import * as Utils from '../shared/utils';
-import * as Data from '../shared/data';
-import * as Storage from '../shared/storage';
-import * as Generate from '../shared/generate';
+import { styles  } from '../../shared/stylesheet';
+import { Setting  } from '../../shared/setting';
+import { Colors } from '../../shared/colors';
+import * as Constant from '../../shared/constant';
+import * as Utils from '../../shared/utils';
+import * as Data from '../../shared/data';
+import * as Storage from '../../shared/storage';
+import * as Generate from '../../shared/generate';
 
 // ALL DATA
-import * as Quiz from '../data/quiz';
+import * as Quiz from '../../data/quiz';
 
 
 export const QuizScreen = ({ navigation, route }) => {
@@ -52,11 +52,12 @@ export const QuizScreen = ({ navigation, route }) => {
 	const [isFetching, setIsFetching]           = useState(false);
 	const [screenIsWaiting, setScreenIsWaiting] = useState(true);
 	const [state, setState]                     = useState([]);
-	const [enablePrevBtn, setEnablePrevBtn]     = useState(true);
-	const [enableNextBtn, setEnableNextBtn]     = useState(true);
+	const [enablePrevBtn, setEnablePrevBtn]     = useState(false);
+	const [enableNextBtn, setEnableNextBtn]     = useState(false);
 	const [savedAnswered, setSavedAnswered]     = useState('');
   	const [isAnswered, setIsAnswered]           = useState(false);
-  	const [enableScroll, setEnableScroll]       = useState(true);
+  	const [correctAnswer, setCorrectAnswer]     = useState('');
+  	const [enableScroll, setEnableScroll]       = useState(false);
 	const [showSmash, setShowSmash]             = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
 	const [scoreCard, setScoreCard]             = useState({score: 0, total: state.length - 2});
 
@@ -125,16 +126,22 @@ export const QuizScreen = ({ navigation, route }) => {
 		  // SHOW SMASH SCREEN
 		  setShowSmash({...showSmash, enable: true, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
 		}
+		// SHOW CORRECT ANSWER
+		setTimeout(() => { 
+			setCorrectAnswer(answer);
+		}, 300);
 		// MOVE TO NEXT QUESTION
 		setTimeout(() => { 
-		  // UPDATE THE SCORE STATE
-		  setScoreCard({...scoreCard, score: score});
-		  // MOVE TO ANOTHER SLIDE
-		  this.AppIntroSlider.goToSlide(currentSlideIndex + 1);
-		  // UPDATE ANSWER FLAG
-		  setIsAnswered(false);
-		  // SAVE ANSWER INTO THE STATE
-		  setSavedAnswered('');
+			// RESET THE CORRECT ANSWER
+			setCorrectAnswer('');
+			// UPDATE THE SCORE STATE
+			setScoreCard({...scoreCard, score: score});
+			// MOVE TO ANOTHER SLIDE
+			this.AppIntroSlider.goToSlide(currentSlideIndex + 1);
+			// UPDATE ANSWER FLAG
+			setIsAnswered(false);
+			// SAVE ANSWER INTO THE STATE
+			setSavedAnswered('');
 		}, 2000);
 		// SLIDE CHANGE FUNCTION
 		setTimeout(() => { _onSlideChange(currentSlideIndex + 1); }, 2200);
@@ -148,6 +155,8 @@ export const QuizScreen = ({ navigation, route }) => {
 	const nextSlide = (index) => {
 		// MOVE TO ANOTHER SLIDE
 		this.AppIntroSlider.goToSlide(index + 1);
+	    // SLIDE CHANGE FUNCTION
+	    _onSlideChange(index + 1);
 	}
 
 	/**
@@ -187,9 +196,8 @@ export const QuizScreen = ({ navigation, route }) => {
 		// CHECK WHETHER ITS COMPLETED SCREEN THEN HIDE THE PREVIOUS BUTTON
 		if ([Constant.GENERIC.QUIZ_INTRO].indexOf(state[index].type) > -1) {
 			setEnablePrevBtn(false);
-			setEnableNextBtn(true);
-			setEnableScroll(true);
-			//this.AppIntroSlider.setNativeProps({ scrollEnabled: false });
+			setEnableNextBtn(false);
+			setEnableScroll(false);
 			setScoreCard({...scoreCard, score: 0});
 		} else if (state[index].type === Constant.GENERIC.QUIZ_SCORE) {
 			setEnablePrevBtn(false);
@@ -197,16 +205,23 @@ export const QuizScreen = ({ navigation, route }) => {
 			setEnableScroll(false);
 			// UPDATE THE STARS IN THE MOBILE STORAGE
           	Utils.saveStars('', '', score);
+         	// PLAY THE AUDIO
+          	Utils.playAudio(Constant.GENERIC.SCORE_AUDIO);
 		} else if (state[index].type === Constant.GENERIC.QUIZ_EXERCISE) {
 			setEnablePrevBtn(false);
 			setEnableNextBtn(false);
 			setEnableScroll(false);
+         	// PLAY THE AUDIO
+         	Utils.playAudio(Constant.GENERIC.QUIZ_AUDIO, 0.1);
 		} else if (state[index].type === Constant.GENERIC.QUIZ_COMPLETE) {
-			setEnablePrevBtn(true);
-			setEnableNextBtn(true);
-			setEnableScroll(true);
+			setEnablePrevBtn(false);
+			setEnableNextBtn(false);
+			setEnableScroll(false);
+         	// PLAY THE AUDIO
+          	Utils.playAudio(Constant.GENERIC.COMPLETE_AUDIO);
 		}
 		setSavedAnswered('');
+		setCorrectAnswer('');
 		setIsAnswered(false);
 
 	}
@@ -225,34 +240,6 @@ export const QuizScreen = ({ navigation, route }) => {
 	}
 
   /**
-  * RIGHT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderNextButton = () => {
-    return (
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
-  /**
-  * LEFT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderPrevButton = () => {
-    return (  
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
-  /**
   * Feature used to generate each slide
   *
   * @input  Object - Slider object
@@ -265,7 +252,12 @@ export const QuizScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
           <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.slideImage}/></View>
-          <Text style={[styles.slideDesc]}>{'Test your Islamic knowledge by taking the quiz.\n \n Ready? Lets go!'}</Text>
+          <Text style={[styles.slideDesc]}>{'Test your Islamic knowledge.\n \n Ready? Lets go!'}</Text>
+          <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+              title={"Start"} 
+              buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
+              containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
+              titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
         </View>
       );
     }  else if (item.type === Constant.GENERIC.QUIZ_SCORE) {
@@ -276,21 +268,17 @@ export const QuizScreen = ({ navigation, route }) => {
           <Image source={StarIcon} style={styles.slideType3Image}/>
         </View>
         <Text style={styles.slideType3Title}>Masha Allah</Text>
-        <Text style={styles.slideType3Desc}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou Won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>.</Text>
+        <Text style={styles.slideType3Desc}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou Won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. Redo the Quiz for more new questions.</Text>
          <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <View style={[styles.flex1, styles.centerViewRight]}>
-            <View style={styles.centerView}>
-              <Icon name="refresh" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={redoTest} containerStyle={[styles.mh20]}/>
-              <Text style={[styles.redoLabel, styles.mt0, styles.mr0]} onPress={redoQuiz}>Replay Game</Text>
-            </View>
+            <Button onPress={redoTest} icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+              title={"Replay"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
+              containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
+              titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
+	          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+	          title={"All Quiz"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
+	          containerStyle={[styles.cSlideBtnContainer, styles.ph10]} iconRight={true}
+	          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
           </View>
-          <View style={[styles.flex1, styles.centerViewLeft]}>
-            <View style={styles.centerView}>
-              <Icon name="chevron-right" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => nextSlide(0)} containerStyle={[styles.mh20]}/>
-              <Text style={[styles.nextLessonLabel, styles.mt0, styles.mr0]}  onPress={() => nextSlide(0)} >Done</Text>
-            </View>
-          </View>
-        </View>
       </View>
       );
     } else if (item.type === Constant.GENERIC.QUIZ_EXERCISE) {
@@ -299,17 +287,17 @@ export const QuizScreen = ({ navigation, route }) => {
         	
 	        <View style={styles.noContainer}><Text style={styles.qno}>{index}</Text></View>
 	        	<Text style={styles.optionQuestion}>{item.question}</Text>
-	            <TouchableOpacity  style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
-	            	<Text style={styles.lightBtnText} >{item.options[0].option}</Text>
+	            <TouchableOpacity  style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[0].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
+	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[0].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
-	            	<Text style={styles.lightBtnText} >{item.options[1].option}</Text>
+	            <TouchableOpacity style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[1].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
+	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[1].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
-	            	<Text style={styles.lightBtnText} >{item.options[2].option}</Text>
+	            <TouchableOpacity style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[2].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
+	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[2].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
-	            	<Text style={styles.lightBtnText} >{item.options[3].option}</Text>
+	            <TouchableOpacity style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[3].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
+	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[3].option}</Text>
 	            </TouchableOpacity>
         	</View>
       );
@@ -336,8 +324,8 @@ export const QuizScreen = ({ navigation, route }) => {
             showNextButton={enableNextBtn} 
             renderItem={generateItem} 
             data={state}
-            renderNextButton={_renderNextButton}
-            renderPrevButton={_renderPrevButton}
+            renderNextButton={Utils.renderNextButton}
+            renderPrevButton={Utils.renderPrevButton}
             onSlideChange={_onSlideChange}/>
         </View>
         </SafeAreaView>
@@ -345,3 +333,9 @@ export const QuizScreen = ({ navigation, route }) => {
       </View>
     );
 }
+
+/*
+
+<Icon name="refresh" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={redoTest} containerStyle={[styles.mh20]}/>
+<Text style={[styles.redoLabel, styles.mt0, styles.mr0]} onPress={redoQuiz}>Replay Game</Text>
+*/

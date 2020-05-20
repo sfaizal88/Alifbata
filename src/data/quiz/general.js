@@ -202,46 +202,6 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many Fard (obligatory) Rakats are there in Dhur?",
-answer: 3,
-options: Utils.shuffle([
-{id: 1, option: "2"},
-{id: 2, option: "3"},
-{id: 3, option: "4"},
-{id: 4, option: "8"}
-])
-},
-{
-question: "How many Fard (obligatory) Rakats are there in Asr?",
-answer: 3,
-options: Utils.shuffle([
-{id: 1, option: "2"},
-{id: 2, option: "3"},
-{id: 3, option: "4"},
-{id: 4, option: "8"}
-])
-},
-{
-question: "How many Fard (obligatory) Rakats are there in Magrib?",
-answer: 2,
-options: Utils.shuffle([
-{id: 1, option: "2"},
-{id: 2, option: "3"},
-{id: 3, option: "4"},
-{id: 4, option: "8"}
-])
-},
-{
-question: "How many Fard (obligatory) Rakats are there in Isha?",
-answer: 3,
-options: Utils.shuffle([
-{id: 1, option: "2"},
-{id: 2, option: "3"},
-{id: 3, option: "4"},
-{id: 4, option: "8"}
-])
-},
-{
 question: "What do we say  when we sneeze?",
 answer: 2,
 options: Utils.shuffle([

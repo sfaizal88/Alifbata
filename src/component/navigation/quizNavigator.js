@@ -16,7 +16,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // ALL MODULE PAGE FILES
 import { QuizListScreen  } from '../../pages/quiz/quizList';
-import { QuizScreen } from '../../pages/quiz';
+import { QuizScreen } from '../../pages/quiz/quiz';
 
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
@@ -75,8 +75,7 @@ export const QuizNavigation = ({navigation}) => {
               fontWeight: 'bold',
             },
             title: '',
-            headerForceInset: { top: 'never', bottom: 'never' },
-            gestureDirection: 'vertical-inverted'
+            headerForceInset: { top: 'never', bottom: 'never' }
         }}>
 
         <Stack.Screen name="Quiz" component={QuizScreen}  options={{...navConfig}} />

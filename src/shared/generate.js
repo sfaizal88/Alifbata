@@ -96,22 +96,40 @@ export const generateChapter = (lessonData, chapter, totalLByLesson = 6, isShuff
   }
 
   // ADDING THE FINALO EXERCISE SCREEN
-  output.push({
-      id: output.length,
-      title: 'Exercise',
-      desc: 'Practice your learning',
-      get pageTitle() { return this.title +': '+ this.desc},
-      chapter: chapter,
-      bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-      data: [
-      ...Utils.createRandomQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT, originalData, chapter),
-      ...Utils.createChoseQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_CHOSE_COUNT, originalData, chapter),
-      Common.COMMON_SECTION[0]
-      ]
-  });
+  output.push(
+    generateExercise(originalData, output.length, chapter)
+  );
   return output;
 }
 
+/**
+* Feature used to generate lesson
+*
+* @input  Array    Specific Lesson array of object
+* @input  Integer  Lesson No.
+* @input  Array    Chapter No.
+* @return Object   
+*/
+const generateExercise = (originalData, lessonNo, chapter) => {
+  return {
+      id: lessonNo,
+      title: 'Exercise',
+      desc: 'Practice your learning',
+      get pageTitle() { return this.title +': '+ this.desc},
+      isExercise: true,
+      chapter,
+      bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+      value: originalData,
+      data: [
+      ...Utils.createRandomQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT, originalData, chapter),
+      ...Utils.createChoseQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_CHOSE_COUNT, originalData, chapter),
+      Common.COMMON_SECTION[8]
+      ]
+  };
+}
+export const generateExerciseUI = (originalData, lessonNo, chapter) => {
+  return generateExercise(originalData, lessonNo, chapter);
+}
 
 /**
 * Feature used to generate lesson
@@ -128,8 +146,11 @@ const generateLesson = (contentArry, lessonNo, chapter, data) => {
     title: 'Lesson ' + (lessonNo + 1),
     desc: Utils.joinArabic(contentArry),
     get pageTitle() { return this.title +': '+ this.desc},
+    isExercise: false,
     chapter: chapter,
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    value: contentArry,
+    allData: data,
     data: [
       ...contentArry, 
       // NEED MINIMUM 4 SIZE FO CONTENT ARRY
@@ -139,6 +160,10 @@ const generateLesson = (contentArry, lessonNo, chapter, data) => {
       Common.COMMON_SECTION[0]
     ]
   };
+}
+export const generateLessonUI = (contentArry, lessonNo, chapter, data) => {
+  lessonNo = lessonNo - 1;
+  return generateLesson(contentArry, lessonNo, chapter, data);
 }
 
 /**
