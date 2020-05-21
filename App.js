@@ -71,23 +71,6 @@ export default  App = ({navigation}) => {
     // UPDATE STATUS COLOR
     StatusBar.setBarStyle('light-content');
     // COMMENTTED OUT HERE, TO AVOID FLICK WHILE LOGIN AUTH
-    // HIDE SPLASH SCREEN ONCE PAGE LOADED
-    //SplashScreen.hide();
-  }, []);
-
-  // USE EFFECT ON LOAD PROCESS
-  useEffect(() => {
-    // HIDE SPLASH SCREEN ONCE PAGE LOADED
-    // WHEN USER ALREADY VISITED INTRO AND CLOSED POPUP THEN HIDE THE SPLASH SCREEN
-    Storage._retrieveData(Constant.STORAGE.VISITED).then(item => {
-      console.log('App visited');
-      // CHECKING WHEATHER USER ALREADY VISISTED THE INTRO AND HIDE POPUP
-      // IF USER VISITED THEN HIDE SPLASH SCREEN
-      if (!Utils.isNotEmpty(item)) {
-        console.log('App Splash turned off');
-        SplashScreen.hide();
-      }
-    });
   }, []);
 
   // RENDER HTML

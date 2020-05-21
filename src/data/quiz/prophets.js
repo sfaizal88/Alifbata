@@ -82,7 +82,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'What was the name of Prophet Muhammd (pbuh) babysitter/ wet nurse as a child?',
+question: 'What was the name of Prophet Muhammad (pbuh) babysitter/ wet nurse as a child?',
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'Kulsuma'},
@@ -232,7 +232,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'Where was the quran 1st revealed to Prophet Muhammad (Pbuh)?',
+question: 'Where was the Quran 1st revealed to Prophet Muhammad (Pbuh)?',
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'In his house'},
@@ -275,10 +275,10 @@ options: Utils.shuffle([
 question: 'Who was Prophet Ibrahim‘s grandson?',
 answer: 2,
 options: Utils.shuffle([
-{id: 1, option: 'Yunus (As)'},
-{id: 2, option: 'Yaqub (As)'},
-{id: 3, option: 'Harun (As)'},
-{id: 4, option: 'Ishaq (As)'}
+{id: 1, option: 'Yunus (as)'},
+{id: 2, option: 'Yaqub (as)'},
+{id: 3, option: 'Harun (as)'},
+{id: 4, option: 'Ishaq (as)'}
 ])
 },
 {
@@ -286,7 +286,7 @@ question: 'What revelation was revealed to Prophet Eesa (as) ?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Quran'},
-{id: 2, option: 'PSALMS (Zaboor)'},
+{id: 2, option: 'Zabur (PSALMS)'},
 {id: 3, option: 'Injeel (Bible)'},
 {id: 4, option: 'Torah (Taurat)'}
 ])
@@ -296,23 +296,23 @@ question: 'What revelation was revealed to Prophet Musa (as)?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Quran'},
-{id: 2, option: 'Bible (Injeel)'},
+{id: 2, option: 'Injeel (Bible)'},
 {id: 3, option: 'Torah ( Taurat)'},
 {id: 4, option: 'Dead Sea scrolls'}
 ])
 },
 {
 question: 'What revelation was revealed to Dawud (as) ?',
-answer: 4,
+answer: 1,
 options: Utils.shuffle([
-{id: 1, option: 'PSALMS (Zuboor)'},
-{id: 2, option: 'Bible (Injeel)'},
+{id: 1, option: 'Zabur (PSALMS)'},
+{id: 2, option: 'Injeel (Bible)'},
 {id: 3, option: 'Dead Sea scrolls (Kitab)'},
 {id: 4, option: 'Torah (Taurat)'}
 ])
 },
 {
-question: 'Name the angel who revealed the quran to Muhammad (pbuh)?',
+question: 'Name the angel who revealed the Quran to Muhammad (pbuh)?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Angel Mikaeel'},
@@ -382,8 +382,8 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'How many prophets existed?',
-answer: 4,
+question: 'How many prophet names mentioned in the Quran?',
+answer: 1,
 options: Utils.shuffle([
 {id: 1, option: '25'},
 {id: 2, option: '67'},
@@ -456,7 +456,7 @@ question: "Who is the last messenger in Islam?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: 'Ayub (as)'},
-{id: 2, option: 'Muhammad (as)'},
+{id: 2, option: 'Muhammad (pbuh)'},
 {id: 3, option: 'Yunus (as)'},
 {id: 4, option: 'Yaqub (as)'}
 ])
@@ -501,7 +501,7 @@ options: Utils.shuffle([
 {id: 4, option: "Abu Sufyan"}
 ])
 },
-{
+/*{
 question: "How many wives did Prophet Muhammad (as) have?",
 answer: 4,
 options: Utils.shuffle([
@@ -510,7 +510,7 @@ options: Utils.shuffle([
 {id: 3, option: "10"},
 {id: 4, option: "13"}
 ])
-},
+},*/
 {
 question: "Who was the first daughter of Prophet Muhammad (as)?",
 answer: 1,
@@ -592,7 +592,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many people fought in the Battle of Badr along with Prophet Muhammad (as)?",
+question: "How many people fought in the Battle of Badr along with Prophet Muhammad (pbuh)?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "313"},
@@ -633,7 +633,7 @@ options: Utils.shuffle([
 },
 {
 question: "Which prophet died in heaven?",
-answer: 3,
+answer: 2,
 options: Utils.shuffle([
 {id: 1, option: 'Ibrahim (as)'},
 {id: 2, option: 'Idris (as)'},
@@ -662,7 +662,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many prophets names mentioned in the Qur'an?",
+question: "How many prophets names mentioned in the Quran?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "24"},
@@ -671,6 +671,5 @@ options: Utils.shuffle([
 {id: 4, option: "27"}
 ])
 },
-
 ]
 

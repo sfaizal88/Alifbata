@@ -16,6 +16,7 @@ import { Icon } from 'react-native-elements';
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
 import { Colors } from '../../shared/colors';
+import * as Sound from '../../shared/sound';
 
 export const Menu = ( props ) => {
   const {
@@ -29,6 +30,8 @@ export const Menu = ( props ) => {
   * @return NA
   */
   const _navigate = (path) => {
+    // PLAY THE CLICK AUDIO
+    Sound.mainMenuClicked();
     // NAVIGATING TO LESSON SCREEN WITH SINGAPORE CHAPTER OBJECT
     props.navigation.navigate(path);
   }

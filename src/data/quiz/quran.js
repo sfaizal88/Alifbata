@@ -131,7 +131,7 @@ options: Utils.shuffle([
 {id: 4, option: "Prophet Muhammad (PBUH)"}
 ])
 },
-{
+/*{
 question: "In which language was the Holy Quran revealed?",
 answer: 4,
 options: Utils.shuffle([
@@ -140,7 +140,7 @@ options: Utils.shuffle([
 {id: 3, option: "Latin"},
 {id: 4, option: "Arabic"}
 ])
-},
+},*/
 {
 question: "Who is mentioned in the Quran, who has the right to be worshiped?",
 answer: 4,
@@ -182,7 +182,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which of these animals is NOT mentioned in the Qurʾan?",
+question: "Which of these animals is NOT mentioned in the Quran?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Giraffe"},
@@ -192,7 +192,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which is the only month mentioned in the Qurʾan?",
+question: "Which is the only month mentioned in the Quran?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "Muharram"},
@@ -202,7 +202,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Who is the only woman to be mentioned in the Qurʾan by name?",
+question: "Who is the only woman to be mentioned in the Quran by name?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "Khadijah"},
@@ -221,7 +221,7 @@ options: Utils.shuffle([
 {id: 4, option: "Surah Yusuf"}
 ])
 },
-{
+/*{
 question: "Which Surah has the name 'Allah' in every verse?",
 answer: 4,
 options: Utils.shuffle([
@@ -230,7 +230,7 @@ options: Utils.shuffle([
 {id: 3, option: "Surah Yusuf"},
 {id: 4, option: "Surah Al-Mujadilah"}
 ])
-},
+},*/
 {
 question: "Which surah is considered as one third (1/3) of the Quran?",
 answer: 3,
@@ -285,7 +285,7 @@ options: Utils.shuffle([
 question: "Which Surah is regarded as the Heart of the Quran?",
 answer: 1,
 options: Utils.shuffle([
-{id: 1, option: "Surah Ya Seen"},
+{id: 1, option: "Surah Yaseen"},
 {id: 2, option: "Surah Muhammad"},
 {id: 3, option: "Surah Ikhlas"},
 {id: 4, option: "Surah Ar-Rahman"}
@@ -295,13 +295,13 @@ options: Utils.shuffle([
 question: "Which Surah was revealed twice?",
 answer: 1,
 options: Utils.shuffle([
-{id: 1, option: 'Surah Fatiha'},
+{id: 1, option: 'Surah al-Fatiha'},
 {id: 2, option: 'Surah Baqara'},
 {id: 3, option: 'Surah Alaqa'},
 {id: 4, option: 'Surah Nas'}
 ])
 },
-{
+/*{
 question: "On which day did the first revelation descend?",
 answer: 3,
 options: Utils.shuffle([
@@ -310,7 +310,7 @@ options: Utils.shuffle([
 {id: 3, option: "Monday"},
 {id: 4, option: "Saturday"}
 ])
-},
+},*/
 {
 question: "Where was the first Surah revealed?",
 answer: 3,
@@ -380,7 +380,7 @@ options: Utils.shuffle([
 {id: 3, option: "Laylat al-Raghaib"},
 {id: 4, option: "Laylat al-Miraj"}
 ])
-},
+},/*
 {
 question: "What is the scale or measure of one’s dignity according to the Quran?",
 answer: 2,
@@ -390,10 +390,10 @@ options: Utils.shuffle([
 {id: 3, option: "Beauty"},
 {id: 4, option: "Strength"}
 ])
-},
+},*/
 {
 question: "In which Surah (Chapter) of the Quran Bismillah is repeated twice?",
-answer: 3,
+answer: 1,
 options: Utils.shuffle([
 {id: 1, option: 'Surah An-Naml'},
 {id: 2, option: 'Surah Al-Baqarah'},
@@ -483,7 +483,7 @@ options: Utils.shuffle([
 },
 {
 question: "In which Surah of the Quran do you find ‘Ayat-ul-Kursi’ verse?",
-answer: 3,
+answer: 2,
 options: Utils.shuffle([
 {id: 1, option: 'Surah An-Naml'},
 {id: 2, option: 'Surah Al-Baqarah'},
@@ -491,6 +491,7 @@ options: Utils.shuffle([
 {id: 4, option: 'Surah Nas'}
 ])
 },
+/*
 {
 question: "What will be our condition on ‘The Day of the Judgement’ according to the Quran?",
 answer: 2,
@@ -520,7 +521,7 @@ options: Utils.shuffle([
 {id: 3, option: "Ummul Qura"},
 {id: 4, option: "All of the above"}
 ])
-},
+},*/
 {
 question: "Whose Generation is known as “Bani Israeel” according to the Quran?",
 answer: 2,
@@ -570,7 +571,7 @@ options: Utils.shuffle([
 {id: 3, option: "9"},
 {id: 4, option: "6"}
 ])
-},
+},/*
 {
 question: "Prophet Muhammad (pbuh) said one who wants to know about the Day of Judgement as if he/she has seen it with his/her own eyes should read this/these Surah(s).",
 answer: 3,
@@ -580,7 +581,7 @@ options: Utils.shuffle([
 {id: 3, option: "Surah Al-Inshiqaq"},
 {id: 4, option: "Surah Al-Fathihah"}
 ])
-},
+},*/
 {
 question: "Which of these mosques are mentioned in the Quran?",
 answer: 4,
@@ -590,7 +591,7 @@ options: Utils.shuffle([
 {id: 3, option: "Masjid Al-Aqsa and Quba"},
 {id: 4, option: "All of the above"}
 ])
-},
+},/*
 {
 question: "What was the interval between the 1st and 2nd revelation to Prophet Muhammad (as)?",
 answer: 1,
@@ -600,6 +601,6 @@ options: Utils.shuffle([
 {id: 3, option: "6 months"},
 {id: 4, option: "3 months"}
 ])
-}
+}*/
 ];
 

@@ -39,8 +39,8 @@ export const ARABIC_TWO_LETTER = [
 {key: 19, en: 'khiyu', audio: require(twoLetterAudioPathPart1 + '3-5.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1616;&#1610;&#1615;'},
 {key: 20, en: 'khuya', audio: require(twoLetterAudioPathPart1 + '3-6.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1615;&#1610;&#1614;'},
 {key: 21, en: 'khiya', audio: require(twoLetterAudioPathPart1 + '3-7.mp3'), type: 'L', enableUnicode: true, unicode: '&#1582;&#1616;&#1610;&#1614;'},
-{key: 22, en: 'thiHa', audio: require(twoLetterAudioPathPart1 + '4-1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1616;&#1581;&#1614;'},
-{key: 23, en: 'thaHu', audio: require(twoLetterAudioPathPart1 + '4-2.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1614;&#1581;&#1615;'},
+{key: 22, en: 'fiHa', audio: require(twoLetterAudioPathPart1 + '4-1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1616;&#1581;&#1614;'},
+{key: 23, en: 'faHu', audio: require(twoLetterAudioPathPart1 + '4-2.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1614;&#1581;&#1615;'},
 //{key: 24, en: 'thuHi', audio: require(twoLetterAudioPathPart1 + '4-3.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1615;&#1581;&#1616;'},
 
 {key: 25, en: 'thuTi', audio: require(twoLetterAudioPathPart1 + '4-4.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1615;&#1591;&#1616;'},
@@ -53,7 +53,7 @@ export const ARABIC_TWO_LETTER = [
 {key: 32, en: 'midu', audio: require(twoLetterAudioPathPart1 + '5-4.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1616;&#1583;&#1615;'},
 
 {key: 33, en: 'mudi', audio: require(twoLetterAudioPathPart1 + '5-5.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1615;&#1583;&#1616;'},
-{key: 34, en: 'mada', audio: require(twoLetterAudioPathPart1 + '5-6.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1583;&#1614;'},
+{key: 34, en: 'madha', audio: require(twoLetterAudioPathPart1 + '5-6.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1584;&#1614;'},
 //{key: 35, en: 'mata', audio: require(twoLetterAudioPathPart1 + '5-7.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1577;&#1614;'}, // REMOVE
 {key: 36, en: 'lidhu', audio: require(twoLetterAudioPathPart1 + '6-5.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1616;&#1584;&#1615;'},
 {key: 37, en: 'ludhi', audio: require(twoLetterAudioPathPart1 + '6-6.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1615;&#1584;&#1616;'},

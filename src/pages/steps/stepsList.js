@@ -34,6 +34,7 @@ import * as Constant from '../../shared/constant';
 import * as Utils from '../../shared/utils';
 import * as Data from '../../shared/data';
 import * as Storage from '../../shared/storage';
+import * as Sound from '../../shared/sound';
 
 export const StepsListScreen = ({ navigation }) => {
 
@@ -93,6 +94,8 @@ export const StepsListScreen = ({ navigation }) => {
     * @return NA
     */
 	const _navigate = (data) => {
+	    // PLAY THE CLICK AUDIO
+	    Sound.mainMenuClicked();
 		// NAVIGATING TO STEPS SCREEN WITH SINGLE QUIZ OBJECT
 		navigation.navigate('Steps', {stepsData: data})
 	}
@@ -117,7 +120,7 @@ export const StepsListScreen = ({ navigation }) => {
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
             <Button onPress={() => _navigate(item)} 
-            	icon={<Icon name={'play'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
+            	icon={<Icon name={item.active ? 'play' : 'lock'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
   				title={item.active ? "Play" : "Coming Soon"} 
   				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}

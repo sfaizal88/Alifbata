@@ -88,18 +88,22 @@ export const IntroModelPopup = (props) => {
               <Text style={styles.modelTitle}>Assalamu Alaikum</Text>
             </View>
             <View style={[styles.modellBody]}>
-              <Text style={[styles.modellText, styles.tCenter]}>Before we start the course, we would like to share about rewards. You will receive rewards, whenever you complete a chapter, lesson, answer a quiz, or complete a game.</Text>
+              <Text style={[styles.modellText, styles.tCenter]}>Before we start the course, we would like to introduce about rewards and feature of the app. You will receive rewards, whenever you complete a chapter, lesson, quiz or game.</Text>
                 <View style={[styles.rowDirection, styles.mt20, styles.modelTable]}>
                   <View style={[styles.w50, styles.centerView]}><Image source={WinnerIcon} style={{width: RFValue(30), height: RFValue(30)}}/></View>
-                  <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>On Completing each chapter, you will receive a <Text style={styles.darkHigh}>Trophy</Text> and a special <Text style={styles.darkHigh}>Badge.</Text></Text></View>
+                  <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>On completing a chapter, you will receive a <Text style={styles.darkHigh}>Trophy</Text> and a special <Text style={styles.darkHigh}>Badge.</Text></Text></View>
                 </View>
                 <View style={[styles.rowDirection, styles.modelTable]}>
                   <View style={[styles.w50, styles.centerView]}><Image source={MedalIcon} style={{width: RFValue(30), height: RFValue(30)}}/></View>
-                  <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>On Completing each lesson, you will receive a <Text style={styles.darkHigh}>Medal.</Text></Text></View>
+                  <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>On completing a lesson, you will receive a <Text style={styles.darkHigh}>Medal.</Text></Text></View>
                 </View>
                 <View style={[styles.rowDirection, styles.modelTable]}>
                   <View style={[styles.w50, styles.centerView]}><Image source={StarIcon} style={{width: RFValue(30), height: RFValue(30)}}/></View>
                   <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>For every correct answer, you will receive one <Text style={styles.darkHigh}>Star.</Text></Text></View>
+                </View>
+                <View style={[styles.rowDirection, styles.modelTable]}>
+                  <View style={[styles.w50, styles.centerView]}><Icon name="volume-up" color={Colors.primary} size={35} type="font-awesome" underlayColor="transparent"/></View>
+                  <View style={[styles.flex1, styles.pl5]}><Text style={styles.modellSubText}>While doing the lessons, click on this <Text style={styles.darkHigh}>audio icon</Text> to hear the audio again.</Text></View>
                 </View>
             </View>
             <TouchableHighlight onPress={() => close()} style={[styles.btn, styles.primaryBtn]}>

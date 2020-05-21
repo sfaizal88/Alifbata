@@ -7,7 +7,8 @@
 * @date   - 4 May 2020
 * https://central-mosque.com/index.php/Arabic/rules-of-tajweed.html
 * https://www.key-shortcut.com/en/writing-systems/%EF%BA%95%EF%BA%8F%D8%A2-arabic-alphabet
-* Covert mp4 to mp3 https://audio.online-convert.com/convert/mp4-to-mp3
+* Covert mp4 to mp3 https://audio.online-convert.com/convert/mp4-to-mp3 https://online-audio-converter.com/
+* https://onlinepngtools.com/create-transparent-png
 ***/
 // ALL SHARED FILES
 import * as Constant from '../shared/constant';
@@ -39,7 +40,10 @@ export const COMMON_SECTION = [
 	{id: 9957 ,key: 9957, en: '', ar: '', type: Constant.GENERIC.QUIZ_COMPLETE}, // 7
 	{id: 9958 ,key: 9958, en: '', ar: '', type: Constant.GENERIC.CHAPTER_COMPLETE}, // 8
 	{id: 9959 ,key: 9959, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_INTRO}, // 9
-	{id: 9960 ,key: 9960, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_INTRO_DETAILS} // 10
+	{id: 9960 ,key: 9960, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_INTRO_DETAILS}, // 10
+	{id: 9961 ,key: 9961, en: '', ar: '', type: Constant.GENERIC.EXERCISE_INTRO}, // 11
+	{id: 9962 ,key: 9962, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_LESSON_COMPLETE}, // 12
+	{id: 9963 ,key: 9963, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_CHAPTER_COMPLETE} // 13
 ];
 
 // BASIC ARABIC ALPHABET
@@ -76,7 +80,7 @@ export const ARABIC_ALPHABET = [
 
 // ARABIC LETTERS WITH FATHA
 export const ARABIC_FATHA = [
-{key: 1, en: 'a', ar: 'اَ', audio: require(fathaAudioPath + 'aa.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;'},
+{key: 1, en: 'a', ar: 'اَ', audio: require(fathaAudioPath + 'aa.mp3'), type: 'L'},
 {key: 2, en: 'ba', ar: 'بَ',   audio: require(fathaAudioPath + 'ba.mp3'), type: 'L'},// redo sound like pa
 {key: 3, en: 'ta', ar: 'تَ',   audio: require(fathaAudioPath + 'ta.mp3'), type: 'L'},
 {key: 4, en: 'tha', ar: 'ثَ',  audio: require(fathaAudioPath + 'tha.mp3'), type: 'L'},
@@ -252,8 +256,8 @@ export const ARABIC_DAMMATAIN = [
 {key: 11, en: 'zun', ar: 'زُ',  audio: require(dummatainAudioPath + 'zun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;&#1612;'},
 {key: 12, en: 'sun', ar: 'ُس',  audio: require(dummatainAudioPath + 'sun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1612;', showImg: true, img: require(imgPathL7 + 'sun.png')},
 {key: 13, en: 'shun', ar: 'شُ',  audio: require(dummatainAudioPath + 'shun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;&#1612;', showImg: true, img: require(imgPathL7 + 'shun.png')},
-{key: 14, en: 'Sun', ar: 'صُ',  audio: require(dummatainAudioPath + 'soun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1612;', showImg: true, img: require(imgPathL7 + 'sun1.png')},
-{key: 15, en: 'Dun', ar: 'ضُ',  audio: require(dummatainAudioPath + 'dun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1612;', showImg: true, img: require(imgPathL7 + 'Dun.png')},
+{key: 14, en: 'Sun', ar: 'صُ',  audio: require(dummatainAudioPath + 'soun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1590;&#1612;', showImg: true, img: require(imgPathL7 + 'sun1.png')},
+{key: 15, en: 'Dun', ar: 'ضُ',  audio: require(dummatainAudioPath + 'dun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1612;', showImg: true, img: require(imgPathL7 + 'Dun.png')},
 {key: 16, en: 'Tun', ar: 'ُط',  audio: require(dummatainAudioPath + 'tun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1591;&#1612;'},// Wrongly said, redo
 {key: 17, en: 'Dhun', ar: 'ُظ',  audio: require(dummatainAudioPath + 'zun1.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1612;'},
 {key: 18, en: 'u‘n', ar: 'عُ',  audio: require(dummatainAudioPath + 'uun.mp3'), type: 'L', enableUnicode: true, unicode: '&#1593;&#1612;'},

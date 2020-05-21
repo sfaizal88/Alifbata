@@ -203,7 +203,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Name the longest Surah in the quran?',
+		question: 'Name the longest Surah in the Quran?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Surah Yasin'},
@@ -233,7 +233,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Name the shortest surah in the quran?',
+		question: 'Name the shortest surah in the Quran?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Surah Ikhlas'},
@@ -403,7 +403,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Where was the quran 1st revealed to Prophet Muhammad (Pbuh)?',
+		question: 'Where was the Quran 1st revealed to Prophet Muhammad (Pbuh)?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'In his house'},
@@ -483,7 +483,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Name the angel who revealed the quran to Muhammad (pbuh)?',
+		question: 'Name the angel who revealed the Quran to Muhammad (pbuh)?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Angel Mikaeel'},
@@ -493,7 +493,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'How many verses are there in the quran?',
+		question: 'How many verses are there in the Quran?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: '6,236'},

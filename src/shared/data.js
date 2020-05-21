@@ -22,39 +22,52 @@ import { Colors } from './colors';
 export const introSlides = [
   {
     key: 1,
+    isLastPage: false,
     title: 'Learn',
     text: 'Learn Arabic alphabets with audio.',
     image: require('../../assets/img/prophets.png'),
     backgroundColor: '#049991',
     statusColor: '#049991',
-    color: '#fff'
+    color: Colors.white
   },
   {
     key: 2,
-    title: 'Quiz',
-    text: 'Test your Islamic knowledge by taking our Quiz.',
-    image: require('../../assets/img/quiz.png'),
-    backgroundColor: '#e55039',
-    statusColor: '#e55039',
-    color: '#fff'
-  },
-  {
-    key: 3,
-    title: 'Rewards',
-    text: 'Earn stars, trophies and medals as you complete the lessons and play games.',
-    image: require('../../assets/img/gift.png'),
-    backgroundColor: '#45aaf2',
-    statusColor: '#45aaf2',
-    color: '#fff'
-  },
-  {
-    key: 4,
+    isLastPage: false,
     title: 'Badges',
     text: 'Collect a badge for every chapter completed.',
     image: require('../../assets/img/medal.png'),
     backgroundColor: '#34495e',
     statusColor: '#2c3e50',
-    color: '#fff'
+    color: Colors.white
+  },
+  {
+    key: 3,
+    isLastPage: false,
+    title: 'Rewards',
+    text: 'Earn stars, trophies and medals as you complete the lessons and play games.',
+    image: require('../../assets/img/gift.png'),
+    backgroundColor: '#45aaf2',
+    statusColor: '#45aaf2',
+    color: Colors.white
+  },{
+    key: 4,
+    isLastPage: false,
+    title: 'Quiz',
+    text: 'Test your Islamic knowledge by taking our Quiz.',
+    image: require('../../assets/img/quiz.png'),
+    backgroundColor: '#e55039',
+    statusColor: '#e55039',
+    color: Colors.white
+  },
+  {
+    key: 5,
+    isLastPage: true,
+    title: '',
+    text: '',
+    image: require('../../assets/img/medal.png'),
+    backgroundColor: '#3c6382',
+    statusColor: '#2c3e50',
+    color: Colors.white
   },
 ];
 
@@ -80,16 +93,16 @@ export const quizList = [
   {
     id: 1,
     title: 'General',
-    desc: 'Islam is an Abrahamic monotheistic religion teaching that there is only one God, and that Muhammad is the last messenger of God.',
+    desc: 'Islam, which means submission to God, is a monotheistic religion, believing in one God (i.e. Allah).',
     data:  [...General.data, ...Prophets.data, ...Pillars.data, ...Quran.data],
     img: require('../../assets/img/idea.png'),
     bgColor: '#34495e',
-    active: true 
+    active: true
   },
   {
     id: 2,
     title: 'Prophets of Islam',
-    desc: "Prophets in Islam are individuals who were sent by Allah to various communities in order to serve as examples of ideal human behavior and to spread Allah's message on Earth.",
+    desc: "Prophets are individuals sent by Allah to various communities to serve as examples of ideal human behavior and to spread Allah's message on Earth.",
     data:  Prophets.data,
     img: require('../../assets/img/prophets.png'),
     bgColor: '#049991',
@@ -97,8 +110,8 @@ export const quizList = [
   },
   {
     id: 3,
-    title: 'The Pillars of Islam',
-    desc: 'The Five Pillars of Islam are some basic acts in Islam, considered mandatory by believers, and are the foundation of Muslim life. Faith, Prayer, Zakat, Fasting and Hajj.',
+    title: 'Pillars of Islam',
+    desc: "Basic mandatory acts in Islam and the foundation of Muslim life. The five Pillars are Faith, Prayer, Zakat, Fasting and Hajj.",
     data:  Pillars.data,
     img: require('../../assets/img/pillars.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -107,7 +120,7 @@ export const quizList = [
   {
     id: 4,
     title: 'The Holy Quran',
-    desc: 'Islamic tradition says that Prophet Muhammad (pbuh) received his first revelation in the Cave of Hira during one of his isolated retreats to the mountains.',
+    desc: 'The Holy Quran was revealed to Prophet Muhammad (pbuh) in the Cave of Hira.',
     data:  Quran.data,
     img: require('../../assets/img/quran.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -116,7 +129,7 @@ export const quizList = [
   {
     id: 5,
     title: 'Jannah',
-    desc: "Qur'an described as “gardens of pleasure” (Qur'an 31:8). People get to Paradise by living religiously, asking Allah for forgiveness and showing good actions in their life.",
+    desc: "The after-life paradise, described as “gardens of pleasure” in the Quran (31:8), is achieved by living religiously, asking Allah’s forgiveness and doing good deeds in this life.",
     data:  Quran.data,
     img: require('../../assets/img/heaven.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -125,7 +138,7 @@ export const quizList = [
   {
     id: 6,
     title: 'Jahannam',
-    desc: 'Afterlife place of punishment for evildoers. The punishments are carried in accordance with the degree of evil one has done during his life.',
+    desc: 'The after-life hell to punish the evildoers. Punishments are carried in accordance with the degree of evil one has done during his life.',
     data:  Quran.data,
     img: require('../../assets/img/fire.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -134,7 +147,7 @@ export const quizList = [
   {
     id: 7,
     title: 'Sunnah',
-    desc: 'Sayings and Teachings of Prophet Muhammad (pbuh).',
+    desc: 'Sayings and teachings of Prophet Muhammad (pbuh).',
     data:  Quran.data,
     img: require('../../assets/img/heart.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
@@ -167,7 +180,7 @@ export const dashboardHelpList = [
     bgColor: Colors.red,
     color: '#fff',
     active: true,
-    path: 'Quiz' 
+    path: 'QuizNavigation' 
   },
   {
     id: 3,
@@ -187,7 +200,7 @@ export const dashboardHelpList = [
     bgColor: '#6972cf',
     color: '#fff',
     active: true,
-    path: 'Quiz' 
+    path: 'StepsNavigation' 
   },
 ]
 // SafeAreaView setting

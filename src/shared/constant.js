@@ -42,14 +42,17 @@ export const GENERIC = {
 	QUIZ_COMPLETE: 'QC',
 	FOUR_LETTER_INTRO: '4LI',
 	FOUR_LETTER_INTRO_DETAILS: '4LID',
-	TYPE1_RANDOMQ_COUNT: 1,
-	TYPE1_COMPLEX_RANDOMQ_COUNT: 2,
-	TYPE1_CHOSE_COUNT: 1,
-	TYPE1_COMPLEX_CHOSE_COUNT: 2,
-	QUIZ_COUNT: 3,
+	FOUR_LETTER_LESSON_COMPLETE: '4LC',
+	FOUR_LETTER_CHAPTER_COMPLETE: '4CC',
+	EXERCISE_INTRO: 'EXI',
+	TYPE1_RANDOMQ_COUNT: 2,
+	TYPE1_COMPLEX_RANDOMQ_COUNT: 10,
+	TYPE1_CHOSE_COUNT: 2,
+	TYPE1_COMPLEX_CHOSE_COUNT: 10,
+	QUIZ_COUNT: 15,
 	ALPHABET_ORDER: [4, 5, 4, 4, 4, 4, 3],
 	PER_LESSON: 8,
-	TOTAL_LETTER_CHAPTER: 5,
+	TOTAL_LETTER_CHAPTER: 6,
 	BG_COLORS: [
 	'#c0392b', '#27ae60', '#16a085', '#8e44ad', '#2c3e50', 
 	'#f39c12', '#78e08f', '#60a3bc', '#B33771', '#BDC581', 
@@ -62,6 +65,8 @@ export const GENERIC = {
 	WRONG_AUDIO: require('../../assets/audio/wrongdrum.mp3'),// wrong wrongdrum wrongsoft
 	CORRECT_AUDIO: require('../../assets/audio/correct.mp3'),// wrong wrongdrum wrongsoft
 	COMPLETE_AUDIO: require('../../assets/audio/yay.mp3'),
+	SCORE_SAD_AUDIO: require('../../assets/audio/incomplete.mp3'),//
+	MENU_CLICK_AUDIO: require('../../assets/audio/menu-sparkle-clicked.mp3'),// menu-sparkle-clicked menu-clicked
 	NUMBER: 'N',
 	TEXT: 'T',
 	F_LETTER_C: '&#1614;',

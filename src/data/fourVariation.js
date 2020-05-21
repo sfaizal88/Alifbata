@@ -14,7 +14,6 @@ import * as Common from './common';
 
 // DECLARE LOCAL VARIABLE
 const chapter = 'chapter8';
-const randomObj = {id: 1, type: 'R', data: Common.ARABIC_DAMMATAIN};
 
 // CHAPTER 7 DATAS
 export const data = [
@@ -33,7 +32,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[1], 
 			Common.ARABIC_4_TYPE[2], 
 			Common.ARABIC_4_TYPE[3],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -59,7 +58,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[13], 
 			Common.ARABIC_4_TYPE[14], 
 			Common.ARABIC_4_TYPE[15],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -85,7 +84,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[25], 
 			Common.ARABIC_4_TYPE[26], 
 			Common.ARABIC_4_TYPE[27],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -116,7 +115,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[41], 
 			Common.ARABIC_4_TYPE[42], 
 			Common.ARABIC_4_TYPE[43],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -147,7 +146,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[57], 
 			Common.ARABIC_4_TYPE[58], 
 			Common.ARABIC_4_TYPE[59],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -178,7 +177,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[73], 
 			Common.ARABIC_4_TYPE[74], 
 			Common.ARABIC_4_TYPE[75],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -204,7 +203,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[85], 
 			Common.ARABIC_4_TYPE[86], 
 			Common.ARABIC_4_TYPE[87],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -230,7 +229,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[97], 
 			Common.ARABIC_4_TYPE[98], 
 			Common.ARABIC_4_TYPE[99],
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[12]
 		]
 	}, 
 	{
@@ -256,22 +255,7 @@ export const data = [
 			Common.ARABIC_4_TYPE[109], 
 			Common.ARABIC_4_TYPE[110], 
 			Common.ARABIC_4_TYPE[111],
-			Common.COMMON_SECTION[0]
-		]
-	}, 
-	{
-		id: 10,
-		title: 'Exercise',
-		desc: 'Arabic Alphabet',
-		get pageTitle() { return this.title +': '+ this.desc},
-		chapter: chapter,
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-		data: [
-			{id: 1, ...randomObj}, {id: 2, ...randomObj}, {id: 3, ...randomObj},
-			{id: 4, ...randomObj}, {id: 5, ...randomObj}, {id: 6, ...randomObj},
-			{id: 7, ...randomObj}, {id: 8, ...randomObj}, {id: 9, ...randomObj},
-			{id: 10, ...randomObj}, {id: 11, ...randomObj}, {id: 12, ...randomObj},
-			Common.COMMON_SECTION[0]
+			Common.COMMON_SECTION[13]
 		]
 	}
 ]

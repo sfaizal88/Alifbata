@@ -26,7 +26,6 @@ import * as Common from '../data/common';
 
 // LOCAL OBJECT DECLARE
 const entities  = new Html5Entities();
-var soundActive = '';
 
 /**
 * Feature used to convert URL to html tags
@@ -188,7 +187,6 @@ export const alert = (title, message, labels, functions, styles) => {
 * @return Array   
 */
 export const createRandomQ = (data, count = 5, originalData, chapter) => {
-  //console.log('---------------- LESSON STARTS ----------------');
   // CHOSE THE ANSWER
   let answerIndex = -1;
   // PREVIOUS ANSWER
@@ -199,9 +197,6 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
     let selectedOptions = [];
     // ALL OPTIONS WITH CLONE
     let allOptionsData  = data.map(a => ({...a}));
-    if (chapter === 'chapter1') {
-        //console.log('Main Content Original ssss- ' + JSON.stringify(allOptionsData));
-    }
     // LOOPING FOUR TIMES
     for(let i = 0; i < 4; i++) { 
       // CHOSING THE OPTION INDEX FROM MAIN DATA LIST
@@ -218,35 +213,36 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
           return item.key !== previousAnswer.key && item.en !== previousAnswer.en;
         });
     }
+    // SHUFFLE OPTIONS
+    selectedOptions.sort(() => Math.random() - 0.5);
     // CHOSE THE ANSWER
     answerIndex = (selectedOptions.length === 1) ? 1 : Math.floor((Math.random() * (selectedOptions.length - 1)) + 1);
-    if (chapter === 'chapter1') {
-      //console.log('Start Previous Answer - ' + JSON.stringify(previousAnswer));
-      //console.log('After Removing Previous Answer. length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
-      //console.log('Currenct Answer - ' + JSON.stringify(selectedOptions[answerIndex]));
-    }
     // ADDING THE PREVIOUS ANSWER INTO THE ARRAY
     if (previousAnswer && selectedOptions.length < 4) {
         selectedOptions.push(previousAnswer);
-        if (chapter === 'chapter1') {
-            //console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
-        }
     }
     // SAVING THE PREVIOUS ANSWER
     previousAnswer = selectedOptions[answerIndex];
-    if (chapter === 'chapter1') {
-      //console.log('Ends Previous Answer - ' + JSON.stringify(previousAnswer));
-    }
     // ADD EXTRA
     if (selectedOptions.length < 4) {
       // TAKING EXTRA NEEDED COUNT
       let extraOptionCount = 4 - selectedOptions.length;
+      // OPTIONS ARRAY ID
+      let optionsArray = selectedOptions.map(item => {
+        return item.key;
+      });
+      // ALL OPTIONS WITH CLONE
+      let extraAllData = originalData.map(a => ({...a}));
+      // REMOVE OPTION VALUE FROM EXTRA DATA
+      extraAllData = extraAllData.filter(item => {
+        return optionsArray.indexOf(item.key) === -1
+      })
       // LOOPING EXTRA NEEDED COUNT
       for (let i = 0; i < extraOptionCount; i++) { 
         // CHOSING THE OPTION INDEX FROM MAIN DATA LIST
-        let optionIndex = Math.floor((Math.random() * (originalData.length - 1)) + 1);
+        let optionIndex = Math.floor((Math.random() * (extraAllData.length - 1)) + 1);
         // REMOVING SELECTED INDEX FROM MAIN OPTION
-        let option      = originalData.slice(optionIndex, optionIndex + 1);
+        let option      = extraAllData.slice(optionIndex, optionIndex + 1);
         // PUSHING INOT MAIN OPTIONS
         selectedOptions.push(...option);
       }
@@ -262,7 +258,6 @@ export const createRandomQ = (data, count = 5, originalData, chapter) => {
   output.unshift(Common.COMMON_SECTION[1]);
   // ADDING RANDOM GAME SCORE CARD
   output.push(Common.COMMON_SECTION[3]);
-  //console.log('---------------- LESSON ENDS ----------------');
   return output;
 }
 
@@ -300,14 +295,13 @@ export const createChoseQ = (data, count = 5, originalData, chapter) => {
           return item.key !== previousAnswer.key && item.en !== previousAnswer.en;
         });
     }
+    // SHUFFLE OPTIONS
+    selectedOptions.sort(() => Math.random() - 0.5);
     // CHOSE THE ANSWER
     answerIndex = (selectedOptions.length === 1) ? 1 : Math.floor((Math.random() * (selectedOptions.length - 1)) + 1);
     // ADDING THE PREVIOUS ANSWER INTO THE ARRAY
     if (previousAnswer && selectedOptions.length < 4) {
         selectedOptions.push(previousAnswer);
-        if (chapter === 'chapter1') {
-            //console.log('After Adding Previous Answer again length - ' + selectedOptions.length + ', data - ' + JSON.stringify(selectedOptions));
-        }
     }
     // SAVING THE PREVIOUS ANSWER
     previousAnswer = selectedOptions[answerIndex];
@@ -315,12 +309,22 @@ export const createChoseQ = (data, count = 5, originalData, chapter) => {
     if (selectedOptions.length < 4) {
       // TAKING EXTRA NEEDED COUNT
       let extraOptionCount = 4 - selectedOptions.length;
+      // OPTIONS ARRAY ID
+      let optionsArray = selectedOptions.map(item => {
+        return item.key;
+      });
+      // ALL OPTIONS WITH CLONE
+      let extraAllData = originalData.map(a => ({...a}));
+      // REMOVE OPTION VALUE FROM EXTRA DATA
+      extraAllData = extraAllData.filter(item => {
+        return optionsArray.indexOf(item.key) === -1
+      })
       // LOOPING EXTRA NEEDED COUNT
       for (let i = 0; i < extraOptionCount; i++) { 
         // CHOSING THE OPTION INDEX FROM MAIN DATA LIST
-        let optionIndex = Math.floor((Math.random() * (originalData.length - 1)) + 1);
+        let optionIndex = Math.floor((Math.random() * (extraAllData.length - 1)) + 1);
         // REMOVING SELECTED INDEX FROM MAIN OPTION
-        let option      = originalData.slice(optionIndex, optionIndex + 1);
+        let option      = extraAllData.slice(optionIndex, optionIndex + 1);
         // PUSHING INOT MAIN OPTIONS
         selectedOptions.push(...option);
       }
@@ -385,7 +389,7 @@ export const unlockChapter = (index, completedChapters, currenctChapterId) => {
   if (lastCompletedChapterId) {
      nextChapterToUnlock = "chapter".concat(parseInt(lastCompletedChapterId.replace("chapter", "")) + 1);
   }
-  return /*true;*/(index <= 0 || completedChapters.indexOf(currenctChapterId) > -1 || currenctChapterId === nextChapterToUnlock)
+  return true;//(index <= 0 || completedChapters.indexOf(currenctChapterId) > -1 || currenctChapterId === nextChapterToUnlock)
 }
 
 
@@ -426,14 +430,10 @@ export const totalCompletedChapter = (item, allChapter) => {
   item = item ? JSON.parse(item) : {};
   // LOOPING THE MAIN ALL CHPATER DATAS
   allChapter.forEach((chapter, chapterIndex) => {
-    //console.log("--------- CHAPTER STARTS ---------");
-    //console.log("Chapter - " + chapterIndex);
     // BY DEFAULT CHAPTER COMPLETED FLAG IS TRUE
     let chapterCompleted = true;
     // LOOPING THE LESSON
-      //console.log('List of completed lesson - ' + item[chapter.id]);
     allChapter[chapterIndex].data.forEach((lesson, lessonIndex) => {
-      //console.log('List of lesson - base' + JSON.stringify(lesson.id));
       // CHECKING WHETHER LESSON ID EXIST IN THE COMPLETED LESSON STORAGE
       if (typeof item[chapter.id] === 'undefined' || (item[chapter.id] && item[chapter.id].indexOf(lesson.id) === -1)) {
         chapterCompleted = false;
@@ -441,10 +441,8 @@ export const totalCompletedChapter = (item, allChapter) => {
     });
     // IF ALL THE LESSON COMPLETED
     if (chapterCompleted) {
-        //console.log("Chapter - " + chapterIndex + ", completed");
         completedChapter = completedChapter + 1;
     }
-    //console.log("--------- CHAPTER ENDS ---------");
   });
   return completedChapter;
 }
@@ -465,12 +463,8 @@ export const totalCompletedLessons = (item, allChapter) => {
   // LOOPING THE MAIN ALL CHAPTERS DATAS
   allChapter.forEach((chapter, chapterIndex) => {
     // COUNTING MEDALS
-    //console.log("Chapter " + chapter.id + ", Lesson - " + item[chapter.id]);
-    // COUNTING MEDALS
     completedLesson = (item[chapter.id]) ? completedLesson +  item[chapter.id].length : completedLesson;
-    //console.log("Completed lessong in chapter " + chapter.id + ", - " + completedLesson); 
   });
-  //console.log('Completed Total - ' + completedLesson)
   return completedLesson
 }
 
@@ -484,7 +478,7 @@ export const totalCompletedLessons = (item, allChapter) => {
 */
 export const unlockLesson = (index, completedLesson, currenctLessonId) => {
   // FIND THE LAST COMPLATED LESSON ID
-  let lastCompletedLessonId = (completedLesson) ? completedLesson[completedLesson.length - 1] : '';
+  let lastCompletedLessonId = completedLesson.length;//(completedLesson) ? completedLesson[completedLesson.length - 1] : '';
   // DECLARE LOCAL VARIABLE
   let nextLessonToUnlock    = '';
   // CHECK WHEATHER TO UNLOCK
@@ -535,9 +529,9 @@ export const unlockLesson = (index, completedLesson, currenctLessonId) => {
   * @input  NA
   * @return NA
   */
-  export const playAudio = (path, volume = 2) => {
+  export const playAudio = (path, volume = 1) => {
     // LOAD AUDIO BY URL
-    soundActive = new Sound(path,
+    let soundActive = new Sound(path,
       (error, sound) => {
         if (error) {
           alert('error' + error.message);
@@ -549,13 +543,3 @@ export const unlockLesson = (index, completedLesson, currenctLessonId) => {
         });
       });
     }
-
-  /**
-  * STOP AUDIO WHEN CLICK PLAY BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  export const stopAudio = () => {
-      soundActive.stop();
-  }

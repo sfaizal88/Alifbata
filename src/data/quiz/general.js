@@ -123,7 +123,7 @@ options: Utils.shuffle([
 },
 {
 question: "Which angel guards the gates of Heaven?",
-answer: 3,
+answer: 2,
 options: Utils.shuffle([
 {id: 1, option: 'Angel Mikaeel'},
 {id: 2, option: 'Riḍwan'},
@@ -148,7 +148,7 @@ options: Utils.shuffle([
 {id: 1, option: "Ali ibn Abi Talib"},
 {id: 2, option: "Umar ibn Al-Khattab"},
 {id: 3, option: "Uthman ibn Affan"},
-{id: 4, option: "Muhammad (as)"}
+{id: 4, option: "Muhammad (pbuh)"}
 ])
 },
 {
@@ -202,7 +202,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "What do we say  when we sneeze?",
+question: "What do we say when we sneeze?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "Allahu Akbar"},
@@ -259,16 +259,6 @@ options: Utils.shuffle([
 {id: 2, option: "Qabil"},
 {id: 3, option: "Habil"},
 {id: 4, option: "Adam (as)"}
-])
-},
-{
-question: "Which Angel blows the trumpet?",
-answer: 3,
-options: Utils.shuffle([
-{id: 1, option: "Jibril"},
-{id: 2, option: "Mika'il"},
-{id: 3, option: "Israfil"},
-{id: 4, option: "Mailk ul Maut"}
 ])
 }
 ]

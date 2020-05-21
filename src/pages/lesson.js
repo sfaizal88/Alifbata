@@ -37,6 +37,7 @@ import * as Utils from '../shared/utils';
 import * as Data from '../shared/data';
 import * as Storage from '../shared/storage';
 import * as Generate from '../shared/generate';
+import * as Sound from '../shared/sound';
 
 export const LessonScreen = ({ navigation, route }) => {
 
@@ -55,6 +56,7 @@ export const LessonScreen = ({ navigation, route }) => {
   useEffect(() => {
     // WHEN USER PRESS TAB, TRIGGER WILL OCCUR
     navigation.addListener('focus', () => {
+      console.log('Chapters -' + JSON.stringify(state))
       // UPDATE STATUS COLOR
       StatusBar.setBarStyle('light-content');
       // SHOW POPUP ON EVERY TIME
@@ -77,6 +79,8 @@ export const LessonScreen = ({ navigation, route }) => {
   * @return NA
   */
   const _navigate = (lesson) => {
+    // PLAY THE CLICK AUDIO
+    Sound.mainMenuClicked();
     // NAVIGATING TO DETAILS SCREEN WITH SINGLE LESSONS OBJECT
     navigation.navigate('Details', {lesson})
   }
@@ -221,7 +225,7 @@ export const LessonScreen = ({ navigation, route }) => {
                     <Text style={styles.dLType1Desc} numberOfLines={1}>{item.desc}</Text>
                   </View>
                   <View style={styles.dLType1RightContainer}>
-                    <Button onPress={() => _navigate(item)} icon={<Icon name={(index === 0 || completed.indexOf(item.id) > -1) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
+                    <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
                     title={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? "Done" : "Start") : 'Locked'} 
                     buttonStyle={[styles.dLType1RightBtn, Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
                     containerStyle={styles.dLType1RightBtnContainer}

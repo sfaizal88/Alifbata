@@ -38,7 +38,7 @@ export const SmashScreen = (props) => {
   // WHEN EVER SHOW PROPS CHANGES
   useEffect(() => {
     if (props.show.enable) {
-        Utils.playAudio(audio[props.show.audioType]);
+        Utils.playAudio(audio[props.show.audioType], 0.3);
         setTimeout(() => { 
           isShowModel({...show, enable: false});
         }, 1000);

@@ -31,7 +31,6 @@ import StarIcon from '../../assets/img/star.png';
 import { Loader  } from '../component/complex/loader';
 import { Empty  } from '../component/complex/empty';
 import { Menu  } from '../component/complex/menu';
-import { IntroModelPopup  } from '../component/model/introModel';
 
 // DATA
 import * as Chapters from '../data/chapters';
@@ -43,6 +42,7 @@ import * as Constant from '../shared/constant';
 import * as Utils from '../shared/utils';
 import * as Data from '../shared/data';
 import * as Storage from '../shared/storage';
+import * as Sound from '../shared/sound';
 
 export const DashboardScreen = ({ navigation }) => {
 
@@ -152,6 +152,32 @@ export const DashboardScreen = ({ navigation }) => {
 		setShowIntroPopup(false);
 	}
 
+	/**
+    * Navigate between screen
+    *
+    * @input  Object - Single chapter details object
+    * @return NA
+    */
+	const _navigate = (path) => {
+	    // PLAY THE CLICK AUDIO
+	    Sound.mainMenuClicked();
+		// NAVIGATING TO DIFFERENT PATH
+		navigation.navigate(path)
+	}
+
+	/**
+    * Toggle between awards
+    *
+    * @input  Object - Single chapter details object
+    * @return NA
+    */
+	const _toggleAwards = (code) => {
+	    // PLAY THE CLICK AUDIO
+	    Sound.mainMenuClicked();
+		// SAVE THE AWARDS
+		setShowAwards(code);
+	}
+
 	// RENDER HTML
 	return (
 		<>
@@ -161,32 +187,32 @@ export const DashboardScreen = ({ navigation }) => {
 	    	<ScrollView style={[styles.body, styles.pt30, styles.pb10, styles.ph0, styles.topDashboard]}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>
-				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{10}</Text>
-				    <ProgressCircle style={styles.progressBar} progress={10 / perTrophy} progressColor={Colors.darkYellow} strokeWidth={14}/>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{trophy}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={trophy / perTrophy} progressColor={Colors.darkYellow} strokeWidth={14}/>
 				</View>
 				<View style={[showAwards === 'M' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Medals</Text>
-				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{102}</Text>
-				    <ProgressCircle style={styles.progressBar} progress={102/perMedals} progressColor={Colors.red} strokeWidth={14}/>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{medals}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={medals/perMedals} progressColor={Colors.red} strokeWidth={14}/>
 				</View>
 				<View style={[showAwards === 'S' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Stars</Text>
-				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{1218}</Text>
-				    <ProgressCircle style={styles.progressBar} progress={1218/perStars} progressColor={Colors.greenBlue} strokeWidth={14}/>
+				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{stars}</Text>
+				    <ProgressCircle style={styles.progressBar} progress={stars/perStars} progressColor={Colors.greenBlue} strokeWidth={14}/>
 				</View>
 				<View style={[styles.rowDirection, styles.pt30]}>
 				    <View style={[styles.flex1, styles.centerView]}>
-				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('M')} underlayColor="transparent" >
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('M')} underlayColor="transparent" >
 				        <Image source={MedalIcon} style={styles.img25} />
 				      </TouchableOpacity>
 				    </View>
 				    <View style={[styles.flex1, styles.centerView]}>
-				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('T')} underlayColor="transparent" >
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'T' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('T')} underlayColor="transparent" >
 				        <Image source={WinnerIcon} style={styles.img45} />
 				      </TouchableOpacity>
 				    </View>
 				    <View style={[styles.flex1, styles.centerView]}>
-				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActive : '']} onPress={() => setShowAwards('S')} underlayColor="transparent" >
+				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('S')} underlayColor="transparent" >
 				        <Image source={StarIcon} style={styles.img25} />
 				      </TouchableOpacity>
 				    </View>
@@ -199,7 +225,7 @@ export const DashboardScreen = ({ navigation }) => {
 				    showsHorizontalScrollIndicator={false}
 				    data={Data.dashboardHelpList}
 				    renderItem = { ({item, index}) =>  (
-                      	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => navigation.navigate(item.path)}>
+                      	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => _navigate(item.path)}>
 	    					<Icon name={item.icon} color={item.color} size={70}  type='octicon' underlayColor="transparent" />
 	    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
 	    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
@@ -209,11 +235,9 @@ export const DashboardScreen = ({ navigation }) => {
 				    keyExtractor = {(item, index) => 'helpfullIndex_' + index.toString()}/>
 	    			
 	    		</View>
-	    		<IntroModelPopup show={showIntroPopup} handleClose={closeIntroPopup}/>
 	        </ScrollView>
 	        <Menu navigation={navigation} activeMenu={'HOME'}></Menu>
 	  		</SafeAreaView>
 	  	</>
   	);
 }
-/* {medals} {stars}*/

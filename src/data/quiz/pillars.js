@@ -73,10 +73,10 @@ options: Utils.shuffle([
 },
 {
 question: "What is Belief (Shahadah)?",
-answer: 3,
+answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "Recitation of Quran"},
-{id: 2, option: "Declaration of faith in a single God (Allah) and in Muhammad as his messenger"},
+{id: 2, option: "Declaration of faith in a single God (Allah) and in Muhammad pbuh as his messenger"},
 {id: 3, option: "Declaration that there is no God"},
 {id: 4, option: "Recitation of Quran during Prayers"}
 ])
@@ -132,7 +132,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "What does niyyah mean?",
+question: "What does niyyah (Niyyat) mean?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "A wedding contract"},
@@ -203,7 +203,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Muslims travel to worship in the holy city of mecca at least once in their life if possible.  What is this?",
+question: "Muslims travel to worship in the holy city of mecca at least once in their life if possible. What is this?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Pilgramage"},
@@ -233,7 +233,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Where was Muhammad born?",
+question: "Where was Muhammad pbuh born?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "Medina"},
@@ -308,18 +308,8 @@ answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "When pilgrims circumambulate the Kaabah"},
 {id: 2, option: "When pilgrims stone the Pillars representing the devil"},
-{id: 3, option: "The day the pilgrims spend praying on the Plains of Arafah"},
+{id: 3, option: "The day the pilgrims spend praying on the Plains of Mount Arafat"},
 {id: 4, option: "Days spent in Mina and Muzdalifah"}
-])
-},
-{
-question: "Which Islamic principle does the Hajj demonstrate?",
-answer: 2,
-options: Utils.shuffle([
-{id: 1, option: "Importance of children"},
-{id: 2, option: "Equality and universal brotherhood"},
-{id: 3, option: "Importance of charity"},
-{id: 4, option: "Celebrations"}
 ])
 },
 {
@@ -400,16 +390,6 @@ options: Utils.shuffle([
 {id: 2, option: "Men from Saudi Arabia"},
 {id: 3, option: "White Men"},
 {id: 4, option: "There is no such privilege"}
-])
-},
-{
-question: "Which prayer does Allah mention in the Holy Qur'an to especially guard?",
-answer: 4,
-options: Utils.shuffle([
-{id: 1, option: "Fajr"},
-{id: 2, option: "Zuhr"},
-{id: 3, option: "Magrib"},
-{id: 4, option: "Asar"}
 ])
 },
 {
@@ -551,17 +531,17 @@ options: Utils.shuffle([
 {id: 3, option: "25"},
 {id: 4, option: "32"}
 ])
-},
+},/*
 {
 question: "What is the Nisab level for gold for which Zakath has to be paid?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "65"},
 {id: 2, option: "75"},
-{id: 3, option: "85"},
+{id: 3, option: "87.48"},
 {id: 4, option: "95"}
 ])
-},
+},*/
 {
 question: "How many categories of people are eligible to receive Zakath?",
 answer: 4,

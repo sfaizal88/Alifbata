@@ -680,6 +680,11 @@ const sliderStyle = {
 		shadowColor: Colors.grayDarkest,
 		shadowOpacity: 0.5,
     },
+    slideNoShadow: {
+		shadowOffset:{  width: 0,  height: 0  },
+		shadowColor: 'transparent',
+		shadowOpacity: 0,
+    },
     slideTitle: {
         fontSize: RFValue(42),
         fontWeight: '700',
@@ -798,13 +803,23 @@ const sliderStyle = {
 		width: RFValue(120),
 		marginBottom: 30,
     },
+    smallArabicImg: {
+		marginTop: 0,
+		height: RFValue(45),
+		width: RFValue(45),
+		marginBottom: 20,
+		backgroundColor: 'transparent',
+    },
     mediumArabLetter: {
-        fontSize: RFValue(40),
+        fontSize: RFValue(35),
         fontWeight: '700',
         color: Colors.white,
 		shadowOffset:{  width: 1,  height: 1  },
 		shadowColor: Colors.grayDarkest,
 		shadowOpacity: 0.5
+    },
+    whiteImage: {
+    	tintColor: Colors.white
     },
     slideSquare: {
     	width: 90,
@@ -1126,6 +1141,10 @@ const pageStyle = {
   		borderRadius: 10,
   		borderWidth: 1,
   		borderColor: Colors.borderColor
+    },
+    modelTableDark: {
+  		backgroundColor: Colors.primary,
+  		borderColor: Colors.primary
     }
 }
 /* MODEL POPUP - ENDS */
@@ -1266,14 +1285,12 @@ const pageStyle = {
 	},
 	dashBox1: {
 		padding: '12%',
-		borderRadius: 40,
+		borderRadius: 50,
 		paddingHorizontal: 15,
 		marginBottom: 20,
 		backgroundColor: Colors.mainLightGray,
-		shadowOffset:{  width: 1,  height: 1  },
-		shadowColor: Colors.grayDarkest,
-		shadowOpacity: 0.4,
-		shadowRadius: 2
+		borderWidth: 6,
+		borderColor: '#f2f3f4'
 	},
 	dashBoxActive: {
 		backgroundColor: Colors.primary,
@@ -1710,6 +1727,14 @@ const imagesStyle = {
 		width: RFValue(200),
 		height: RFValue(200)
 	},
+	img30: {
+		width: RFValue(30),
+		height: RFValue(30)
+	},
+    img120: {
+        height: RFValue(120),
+        width: RFValue(120),
+    },
 }
 /* IMAGES - ENDS */
 export const styles = StyleSheet.create({

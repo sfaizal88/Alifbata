@@ -112,15 +112,16 @@ export const generateChapter = (lessonData, chapter, totalLByLesson = 6, isShuff
 */
 const generateExercise = (originalData, lessonNo, chapter) => {
   return {
-      id: lessonNo,
+      id: lessonNo + 1,
       title: 'Exercise',
-      desc: 'Practice your learning',
+      desc: 'Test what you learned',
       get pageTitle() { return this.title +': '+ this.desc},
       isExercise: true,
       chapter,
       bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
       value: originalData,
       data: [
+      Common.COMMON_SECTION[11],
       ...Utils.createRandomQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT, originalData, chapter),
       ...Utils.createChoseQ(originalData, Constant.GENERIC.TYPE1_COMPLEX_CHOSE_COUNT, originalData, chapter),
       Common.COMMON_SECTION[8]

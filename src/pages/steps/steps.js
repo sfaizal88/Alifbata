@@ -109,7 +109,7 @@ export const StepsScreen = ({ navigation, route }) => {
               icon={<Icon name={'angle-right'} size={25} color={Colors.grayDarkest} type='font-awesome'/>}
               title={ "Next" } 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
-              containerStyle={styles.cSlideBtnContainer}
+              containerStyle={styles.cSlideBtnContainer, styles.displayN}
               titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}
               iconRight={true}/>
           </View>

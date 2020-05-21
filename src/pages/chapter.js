@@ -13,6 +13,7 @@ import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, 
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import SplashScreen from 'react-native-splash-screen'
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -35,6 +36,7 @@ import * as Constant from '../shared/constant';
 import * as Utils from '../shared/utils';
 import * as Data from '../shared/data';
 import * as Storage from '../shared/storage';
+import * as Sound from '../shared/sound';
 
 // ALL ICON
 import MedalIcon from '../../assets/img/medal.png';
@@ -56,6 +58,10 @@ export const ChapterScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+			// SAVE IN MOBILE STORAGE
+    		Storage._storeData(Constant.STORAGE.VISITED, JSON.stringify(Constant.GENERIC.COMPLETED));
+    		// TURN OFF THE SPLASH SCREEN
+    		SplashScreen.hide();
 			// REGENERATE CHAPTER
 			setState(Chapters.allChapter);
 			// UPDATE STATUS COLOR
@@ -75,6 +81,10 @@ export const ChapterScreen = ({ navigation }) => {
 		setState(Chapters.allChapter);
 		// HIDE LOADER 
 		setScreenIsWaiting(false);
+		// SAVE IN MOBILE STORAGE
+    	Storage._storeData(Constant.STORAGE.VISITED, JSON.stringify(Constant.GENERIC.COMPLETED));
+    	// TURN OFF THE SPLASH SCREEN
+    	SplashScreen.hide();
 	}, []);
 	
 	/**
@@ -115,6 +125,8 @@ export const ChapterScreen = ({ navigation }) => {
     * @return NA
     */
 	const _navigate = (chapter) => {
+	    // PLAY THE CLICK AUDIO
+	    Sound.mainMenuClicked();
 		// NAVIGATING TO LESSON SCREEN WITH SINGLE CHAPTER OBJECT
 		navigation.navigate('Lesson', {chapter})
 	}
@@ -178,7 +190,7 @@ export const ChapterScreen = ({ navigation }) => {
             <Text style={styles.cSlideSubTitle}>{item.desc}</Text>
             <Text style={styles.cSlideChatLine}>{item.details}</Text>
             <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) || !item.active ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
-  				title={!item.active || !Utils.unlockChapter(index, completed, item.id) ? 'Locked' : (Utils.chapterCompleted(completed, item.id) ? "Complete" : "Start")} 
+  				title={!item.active || !Utils.unlockChapter(index, completed, item.id) ? (item.active ? 'Locked': 'Coming Soon') : (Utils.chapterCompleted(completed, item.id) ? "Complete" : "Start")} 
   				buttonStyle={[styles.cSlideBtn, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
   				containerStyle={styles.cSlideBtnContainer}
   				titleStyle={[styles.cSlideBtnLabel, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.cSlideBtnLabel : styles.cSlideBtnLabelLight) : '']}
@@ -238,7 +250,7 @@ export const ChapterScreen = ({ navigation }) => {
 					    		</View>
 					    		<View style={styles.dLType1RightContainer}>
 					    			<Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
-  									title={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? "Done" : "Start") : 'Locked'} 
+  									title={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? "Done" : "Start") : (item.active ? 'Locked': 'Coming Soon')} 
   									buttonStyle={[styles.dLType1RightBtn, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
   									containerStyle={styles.dLType1RightBtnContainer}
   									titleStyle={[styles.dLType1RightBtnLabel, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.dLType1RightBtnLabel : styles.cSlideBtnLabelLight) : '']}

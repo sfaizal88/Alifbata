@@ -51,7 +51,7 @@ const sukunAudioPathPart4 = '../../assets/data/audio/sukun/part4/';
 // SUKUN VARIABLE , SHOULD NOT MULTIPLE OF 8
 export const ARABIC_SUKUN = [
 // PART 1 STARTS
-{key: 1, en: 'ab', audio: require(sukunAudioPathPart1 + 'ab.mp3'), type: 'L', enableUnicode: true, unicode: '&#1575;&#1614;&#1576;'+Constant.SUKUN},
+//{key: 1, en: 'Hab', audio: require(sukunAudioPathPart1 + 'ab.mp3'), type: 'L', enableUnicode: true, unicode: '&#1575;&#1614;&#1576;'+Constant.SUKUN},
 {key: 2, en: 'lab', audio: require(sukunAudioPathPart1 + 'lab.mp3'), type: 'L', enableUnicode: true, unicode: '&#1604;&#1614;&#1576;'+Constant.SUKUN},
 {key: 3, en: 'sab', audio: require(sukunAudioPathPart1 + 'sab.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;&#1614;&#1576;'+Constant.SUKUN},
 {key: 4, en: 'hab', audio: require(sukunAudioPathPart1 + 'Hab.mp3'), type: 'L', enableUnicode: true, unicode: '&#1607;&#1614;&#1576;'+Constant.SUKUN},
@@ -144,7 +144,7 @@ export const ARABIC_SUKUN = [
 {key: 75, en: 'maDh', audio: require(sukunAudioPathPart2 + 'maDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1592;'+Constant.SUKUN},
 {key: 76, en: 'jaDh', audio: require(sukunAudioPathPart2 + 'jaDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#1614;&#1592;'+Constant.SUKUN},
 {key: 77, en: 'HaDh', audio: require(sukunAudioPathPart2 + 'HaDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#1614;&#1592;'+Constant.SUKUN},
-{key: 78, en: 'daDh', audio: require(sukunAudioPathPart2 + 'dadh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1614;&#1592;'+Constant.SUKUN},
+//{key: 78, en: 'daDh', audio: require(sukunAudioPathPart2 + 'dadh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1614;&#1592;'+Constant.SUKUN},
 {key: 79, en: 'qaDh', audio: require(sukunAudioPathPart2 + 'qadh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1602;&#1614;&#1592;'+Constant.SUKUN},
 {key: 80, en: 'yad', audio: require(sukunAudioPathPart2 + 'yad.mp3'), type: 'L', enableUnicode: true, unicode: '&#1610;&#1614;&#1583;'+Constant.SUKUN},
 
