@@ -95,7 +95,6 @@ export const BadgeScreen = ({ navigation }) => {
 				});
 				// IF ALL THE LESSON COMPLETED
 				if (chapterCompleted) {
-					//console.log('Completed - ' + chapter.id);
 					setCompleted(completed => [...completed, chapter.id]);
 				}
 			});

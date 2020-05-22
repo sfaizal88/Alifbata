@@ -112,7 +112,7 @@ export const generateChapter = (lessonData, chapter, totalLByLesson = 6, isShuff
 */
 const generateExercise = (originalData, lessonNo, chapter) => {
   return {
-      id: lessonNo + 1,
+      id: parseInt(lessonNo) + 1,
       title: 'Exercise',
       desc: 'Test what you learned',
       get pageTitle() { return this.title +': '+ this.desc},
@@ -143,7 +143,7 @@ export const generateExerciseUI = (originalData, lessonNo, chapter) => {
 */
 const generateLesson = (contentArry, lessonNo, chapter, data) => {
   return {
-    id: lessonNo + 1,
+    id: parseInt(lessonNo) + 1,
     title: 'Lesson ' + (lessonNo + 1),
     desc: Utils.joinArabic(contentArry),
     get pageTitle() { return this.title +': '+ this.desc},
@@ -163,7 +163,7 @@ const generateLesson = (contentArry, lessonNo, chapter, data) => {
   };
 }
 export const generateLessonUI = (contentArry, lessonNo, chapter, data) => {
-  lessonNo = lessonNo - 1;
+  lessonNo = parseInt(lessonNo) - 1;
   return generateLesson(contentArry, lessonNo, chapter, data);
 }
 

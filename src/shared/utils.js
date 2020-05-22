@@ -42,6 +42,23 @@ export const isInternetConnected = () => {
     });
 };
 
+/**
+* Feature used to convert URL to html tags
+*
+* @input  String content
+* @return String Formatted content url to anchor tag
+*/
+export const shuffleMaxWords = (originalData, maxWord) => {
+    let data = originalData.map(a => ({...a}));
+    // SHUFFLE
+    data.sort(() => Math.random() - 0.5);
+    // RESTRICT
+    data = data.slice(0, maxWord);
+    // SHUFFLE DATA
+    data.sort(() => Math.random() - 0.5);
+    return data;
+};  
+
 
 /**
 * Feature used to convert code to arabic
@@ -359,7 +376,6 @@ export const saveStars = (chapter, lesson, stars) => {
     item = (item) ? JSON.parse(item) : 0;
     // UPDATE THE COINS
     item = item + stars;
-    console.log('Newly updated stars - ' + item);
     Storage._storeData(Constant.STORAGE.COMPLETED_STARS, JSON.stringify(item));
   });
 }
@@ -478,7 +494,17 @@ export const totalCompletedLessons = (item, allChapter) => {
 */
 export const unlockLesson = (index, completedLesson, currenctLessonId) => {
   // FIND THE LAST COMPLATED LESSON ID
-  let lastCompletedLessonId = completedLesson.length;//(completedLesson) ? completedLesson[completedLesson.length - 1] : '';
+  let lastCompletedLessonId = (completedLesson) ? completedLesson[completedLesson.length - 1] : '';
+  // CHECK WHEATHER LAST LESSON AND TOTAL LESSON ARE EQUAL
+  if (completedLesson.length > 0 && lastCompletedLessonId !== completedLesson.length) {
+    //console.log('Completed lesson - ' + completedLesson);
+    //console.log('Not equal lastCompletedLessonId - ' + lastCompletedLessonId + ', completedLesson.length - ' + completedLesson.length);
+    //console.log('Unlock next lesson before - ' + (parseInt(lastCompletedLessonId) + 1));
+    // REMOVE UNWATED LESSON
+    completedLesson = removeUnwantedLesson(completedLesson);
+    lastCompletedLessonId = completedLesson.length;
+    //console.log('Unlock next lesson after - ' + (parseInt(lastCompletedLessonId) + 1));
+  }
   // DECLARE LOCAL VARIABLE
   let nextLessonToUnlock    = '';
   // CHECK WHEATHER TO UNLOCK
@@ -487,6 +513,19 @@ export const unlockLesson = (index, completedLesson, currenctLessonId) => {
     nextLessonToUnlock = parseInt(lastCompletedLessonId) + 1 ;
   }
   return /*true;*/(index === 0 || completedLesson.indexOf(currenctLessonId) > -1 || currenctLessonId === nextLessonToUnlock)
+}
+
+const removeUnwantedLesson = (completedLesson) => {
+  completedLesson = completedLesson.filter(item => {
+    if (item > completedLesson.length) {
+      console.log('Remove the item - ' + item);
+    }
+    return item <= completedLesson.length;
+  });
+
+  //SORTING THE ARRAY ONCE
+  completedLesson.sort();
+  return completedLesson;
 }
 
   /**

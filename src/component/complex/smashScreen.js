@@ -43,7 +43,6 @@ export const SmashScreen = (props) => {
           isShowModel({...show, enable: false});
         }, 1000);
     }
-    console.log('Show / hide the model');
   }, [props.show.enable]);
 
   // RENDER HTML

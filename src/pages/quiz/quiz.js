@@ -252,7 +252,7 @@ export const QuizScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
           <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.img120}/></View>
-          <Text style={[styles.slideDesc]}>{'Quiz will have 15 questions. Keep attempting the quiz for more new questions.\n \n Ready? Lets go!'}</Text>
+          <Text style={[styles.slideDesc]}>{'Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. Keep attempting the quiz for more new questions.\n \n Ready? Lets go!'}</Text>
           <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 

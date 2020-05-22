@@ -82,7 +82,7 @@ export const ARABIC_SUKUN = [
 {key: 26, en: 'maj', audio: require(sukunAudioPathPart1 + 'maj.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1580;'+Constant.SUKUN},
 {key: 27, en: 'maq', audio: require(sukunAudioPathPart1 + 'maq.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1602;'+Constant.SUKUN},
 {key: 28, en: 'thaq', audio: require(sukunAudioPathPart1 + 'thaq.mp3'), type: 'L', enableUnicode: true, unicode: '&#1579;&#1614;&#1602;'+Constant.SUKUN},
-{key: 29, en: 'faq', audio: require(sukunAudioPathPart1 + 'faq.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1614;&#1602;'+Constant.SUKUN},
+//{key: 29, en: 'faq', audio: require(sukunAudioPathPart1 + 'faq.mp3'), type: 'L', enableUnicode: true, unicode: '&#1601;&#1614;&#1602;'+Constant.SUKUN},
 {key: 30, en: 'baq', audio: require(sukunAudioPathPart1 + 'baq.mp3'), type: 'L', enableUnicode: true, unicode: '&#1576;&#1614;&#1602;'+Constant.SUKUN},
 {key: 31, en: 'bal', audio: require(sukunAudioPathPart1 + 'bal.mp3'), type: 'L', enableUnicode: true, unicode: '&#1576;&#1614;&#1604;'+Constant.SUKUN},
 {key: 32, en: 'mal', audio: require(sukunAudioPathPart1 + 'mal.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1604;'+Constant.SUKUN},
@@ -141,7 +141,7 @@ export const ARABIC_SUKUN = [
 //bash, baS, taS, taD, taT, taDh
 {key: 73, en: 'Saf', audio: require(sukunAudioPathPart2 + 'Sagh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;&#1614;&#1601;'+Constant.SUKUN},
 {key: 74, en: 'maf', audio: require(sukunAudioPathPart2 + 'magh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1601;'+Constant.SUKUN},
-{key: 75, en: 'maDh', audio: require(sukunAudioPathPart2 + 'maDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1592;'+Constant.SUKUN},
+//{key: 75, en: 'maDh', audio: require(sukunAudioPathPart2 + 'maDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1605;&#1614;&#1592;'+Constant.SUKUN},
 {key: 76, en: 'jaDh', audio: require(sukunAudioPathPart2 + 'jaDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1580;&#1614;&#1592;'+Constant.SUKUN},
 {key: 77, en: 'HaDh', audio: require(sukunAudioPathPart2 + 'HaDh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1581;&#1614;&#1592;'+Constant.SUKUN},
 //{key: 78, en: 'daDh', audio: require(sukunAudioPathPart2 + 'dadh.mp3'), type: 'L', enableUnicode: true, unicode: '&#1592;&#1614;&#1592;'+Constant.SUKUN},

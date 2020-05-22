@@ -46,10 +46,6 @@ export const OfflineInternet = (props) => {
 	}, []);
 
 	const _handleAppStateChange = nextAppState => {
-		if (appState.match(/inactive|background/) && nextAppState === "active") {
-		  	console.log("App has come to the foreground!");
-		}
-		console.log('App status - ' + nextAppState);
 		// WHEN THE APP IS CLOSED AND OPENED
 		if (Constant.GENERIC.APP_CLOSED === nextAppState) {
 			// CLEAR MOBILE STORAGE

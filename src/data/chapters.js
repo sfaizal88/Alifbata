@@ -114,7 +114,7 @@ export const allChapter = [
 	},
 	{ 
 		id: 'chapter9',
-		data: Generate.generateChapter(Sukun.ARABIC_SUKUN, 'chapter9', Constant.GENERIC.PER_LESSON, true, Constant.GENERIC.PER_LESSON * Constant.GENERIC.TOTAL_LETTER_CHAPTER),
+		data: Generate.generateChapter(Utils.shuffleMaxWords(Sukun.ARABIC_SUKUN, Constant.GENERIC.PER_LESSON * Constant.GENERIC.TOTAL_LETTER_CHAPTER), 'chapter9', Constant.GENERIC.PER_LESSON),
 		title: 'Chapter 9',
 		desc: 'Sukun',
 		pageTitle: 'Chapter 9: Sukun',
@@ -158,7 +158,7 @@ export const allChapter = [
 	},
 	{ 
 		id: 'chapter13',
-		data: Generate.generateChapter(TwoLetter.ARABIC_TWO_LETTER, 'chapter13', Constant.GENERIC.PER_LESSON, true, Constant.GENERIC.PER_LESSON * Constant.GENERIC.TOTAL_LETTER_CHAPTER),
+		data: Generate.generateChapter(Utils.shuffleMaxWords(TwoLetter.ARABIC_TWO_LETTER, Constant.GENERIC.PER_LESSON * Constant.GENERIC.TOTAL_LETTER_CHAPTER), 'chapter13', Constant.GENERIC.PER_LESSON),
 		title: 'Chapter 13',
 		desc: 'Two Letter Practice',
 		pageTitle: 'Chapter 13: Two Letter Practice',

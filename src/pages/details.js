@@ -62,6 +62,8 @@ export const DetailsScreen = ({ navigation, route }) => {
   // LOCAL VARIABLE DECLARE
   let score   = scoreCard.score;
   let passPer = 60;
+  let randomExerciseStarted   = false;
+  let questionExerciseStarted = false;
 
   // LOCAL OBJECT DECLARE
   const entities = new Html5Entities();
@@ -114,7 +116,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       // CHECK WHEATHER AUDIOO AVAILABLE
       setTimeout(() => { playAudio(state.data[index].audio) }, 200);
       // CHECK WHETHER ITS COMPLETED SCREEN THEN HIDE THE PREVIOUS BUTTON
-      if ([Constant.GENERIC.CHAPTER_COMPLETE, Constant.GENERIC.LESSON_COMPLETED].indexOf(state.data[index].type) > -1) {
+      if ([Constant.GENERIC.CHAPTER_COMPLETE, Constant.GENERIC.LESSON_COMPLETED, Constant.GENERIC.FOUR_LETTER_LESSON_COMPLETE, Constant.GENERIC.FOUR_LETTER_CHAPTER_COMPLETE].indexOf(state.data[index].type) > -1) {
           // DISABLE BACK BUTTON
           setEnablePrevBtn(false);
           // ENABLE / DISABLE SCROLLING
@@ -134,16 +136,20 @@ export const DetailsScreen = ({ navigation, route }) => {
           setEnableScroll(false);
           // FIND THE TOTAL QUESTIONS
           if (Constant.GENERIC.CHOOSE_BEST_INTRO === state.data[index].type) {
+            // UPDATING THE FLAG
+            questionExerciseStarted = false;
             // FINDING TOTAL BEST OF CHOISE QUESTION
             var totalBestOfChoiceQ = state.data.filter(item => {
               return item.type === Constant.GENERIC.CHOOSE_BEST_EXERCISE;
             });
             setTimeout(() => { 
-            // UPDATING IN THE STATE
+            // UPDATING IN THE STATE scoreCard.total
               setScoreCard({...scoreCard, score: 0, total: totalBestOfChoiceQ.length, redoSlideIndex: index, questionNo: 1, minPass: Math.round((totalBestOfChoiceQ.length/100) * passPer)});
               setIsAnswered(false);
             }, 1000);
           } else {
+            //UPDATING THE FLAG
+            randomExerciseStarted   = false;
             // FINDING TOTAL BEST OF CHOISE QUESTION
             var totalRandomQ = state.data.filter(item => {
               return item.type === Constant.GENERIC.RANDOM_QUESTION_EXERCISE;
@@ -159,6 +165,16 @@ export const DetailsScreen = ({ navigation, route }) => {
       }
       // CHECK WHETHER USER IN CHOSE THE BEST EXERCISE SCREEN
       else if (Constant.GENERIC.CHOOSE_BEST_EXERCISE === state.data[index].type) {
+          // UPDATING THE FLAG
+          if (!questionExerciseStarted && scoreCard.total === 0) {
+              console.log('Question was zero');
+              // FINDING TOTAL BEST OF CHOISE QUESTION
+              var totalQuestion = state.data.filter(item => {
+                return item.type === Constant.GENERIC.CHOOSE_BEST_EXERCISE;
+              });
+              setScoreCard({...scoreCard, total: totalQuestion.length});
+              questionExerciseStarted = true;
+          }
           // PLAY FIRST AUDIO
           setTimeout(() => { 
             playAudio(state.data[index].answer.audio);
@@ -195,6 +211,16 @@ export const DetailsScreen = ({ navigation, route }) => {
       } 
       // CHECK WHETHER USER IN RANDOM  EXERCISE
       else if (Constant.GENERIC.RANDOM_QUESTION_EXERCISE === state.data[index].type) {
+          // UPDATING THE FLAG
+          if (!randomExerciseStarted && scoreCard.total === 0) {
+              console.log('Question was zero');
+              // FINDING TOTAL BEST OF CHOISE QUESTION
+              var totalQuestion = state.data.filter(item => {
+                return item.type === Constant.GENERIC.RANDOM_QUESTION_EXERCISE;
+              });
+              setScoreCard({...scoreCard, total: totalQuestion.length});
+              randomExerciseStarted = true;
+          }
           // RESETING THE SAVED ANSWERED AND IS ANSWERED FLAG
           setSavedAnswered({}); 
           setIsAnswered(false);
@@ -233,14 +259,23 @@ export const DetailsScreen = ({ navigation, route }) => {
       Storage._retrieveData(Constant.STORAGE.COMPLETED_LESSON).then(item => {
         // CHECK THE VALUES
         item = Utils.isNotEmpty(item) ? JSON.parse(item) : {};
+        //console.log('Completed lesson - ' + state.id);
         //CHECK WHETHER CHAPTER EXISTS
         if (!item[state.chapter]) {
             // IF EMPTY, ADD THE COMPLETED LESSON ID TO THE MOBILE STORAGE 
             item[state.chapter] = [state.id]
-        } else if (item[state.chapter].indexOf(state.id) === -1) {
+        } else if (item[state.chapter].indexOf(state.id) === -1) {//9
+          let totalCompletedLesson = item[state.chapter].length + 1; // 7> 8
+          // CHECK WHEATHER LAST LESSON AND TOTAL LESSON ARE EQUAL
+          if (state.id !== totalCompletedLesson) {//9/=8
+            //console.log('Lesson id - ' + state.id + ', not proper with list - ' + totalCompletedLesson);
+            item[state.chapter].push(totalCompletedLesson);
+          } else {
             // IF NOT, PUSH THE COMPLETED LESSON ID TO THE MOBILE STORAGE
             item[state.chapter].push(state.id);
+          }
         }
+        //console.log('After completing chatper - ' + item[state.chapter]);
         // SAVING THE VALUE IN MOBILE STORAGE 
         Storage._storeData(Constant.STORAGE.COMPLETED_LESSON, JSON.stringify(item));
       });
@@ -274,7 +309,6 @@ export const DetailsScreen = ({ navigation, route }) => {
   */
   const redoTest = () => {
     if (!state.isExercise) {
-    console.log('It not exercise chapter');
     // REGENERATE EXERCISE
     setState({...state, ...Generate.generateLessonUI(state.value, state.id, state.chapter, state.allData)});
     // DISABLE BACK BUTTON
@@ -303,21 +337,17 @@ export const DetailsScreen = ({ navigation, route }) => {
   * @input  NA
   * @return NA
   */
-  const redoExercise = (index = 0) => {
-    console.log('It exercise chapter');
+  const redoExercise = (pageIndex = 0) => {
     // REGENERATE EXERCISE
     setState({...state, ...Generate.generateExerciseUI(state.value, state.id, state.chapter)});
     // DISABLE BACK BUTTON
     setEnablePrevBtn(true);
     // DISABLE NEXT BUTTON
     setEnableNextBtn(true);
-    // UPDATE THE LESSON AGAIN
-    //setState({...state, data:})
     // GO TO SLIDE 0, FIRST SLIDE
-    this.AppIntroSlider.goToSlide(index);
+    this.AppIntroSlider.goToSlide(pageIndex);
     // SLIDE CHANGE FUNCTION
-    setTimeout(() => { _onSlideChange(index); }, 500);
-    
+    _onSlideChange(pageIndex);
   }
 
 
@@ -549,7 +579,7 @@ export const DetailsScreen = ({ navigation, route }) => {
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>You won a <Text style={styles.darkHigh}>{Data.badges[parseInt(state.chapter.replace("chapter", "")) - 1].text}</Text> badge and a <Text style={styles.darkHigh}>Trophy</Text> to celebrate!</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={redoExercise}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => redoExercise(0)}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Redo"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
@@ -798,7 +828,7 @@ export const DetailsScreen = ({ navigation, route }) => {
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Chapter \n Exercise'}</Text>
           <View style={styles.vColumn}>
             <View style={styles.slideImageContainer}><Image source={QuestionIcon} style={styles.slideImage}/></View>
-            <Text style={[styles.slideDesc]}><Text style={styles.darkHigh}>10 questions</Text> in each game. You have to get at least <Text style={styles.darkHigh}>5 correct answers</Text> in each game to complete <Text style={styles.darkHigh}>Chapter {state.chapter.replace("chapter", "")}.</Text>{'\n\n All the best!'}</Text>
+            <Text style={[styles.slideDesc]}><Text style={styles.darkHigh}>{Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT} questions</Text> in each game. You have to get at least <Text style={styles.darkHigh}>{Math.round((Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT/100) * passPer)} correct answers</Text> in each game to complete <Text style={styles.darkHigh}>Chapter {state.chapter.replace("chapter", "")}.</Text>{'\n\n All the best!'}</Text>
             <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 

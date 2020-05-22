@@ -37,7 +37,6 @@ export const IntroModelPopup = (props) => {
 
   // USE EFFECT ON LOAD PROCESS
   useEffect(() => {
-    console.log('Intero popup  normal foicused');
     // CHECK USER
     checkUserVisited();
   }, []);
@@ -53,11 +52,9 @@ export const IntroModelPopup = (props) => {
     // HIDE SPLASH SCREEN ONCE PAGE LOADED
     // WHEN USER ALREADY VISITED INTRO AND CLOSED POPUP THEN HIDE THE SPLASH SCREEN
     Storage._retrieveData(Constant.STORAGE.VISITED).then(item => {
-      console.log('Intro Popup visited');
       // CHECKING WHEATHER USER ALREADY VISISTED THE INTRO AND HIDE POPUP
       // IF USER VISITED THEN HIDE SPLASH SCREEN
       if (Utils.isNotEmpty(item)) {
-          console.log('Intro Popup Closed');
           props.handleClose();
       }
     });

@@ -56,7 +56,6 @@ export const LessonScreen = ({ navigation, route }) => {
   useEffect(() => {
     // WHEN USER PRESS TAB, TRIGGER WILL OCCUR
     navigation.addListener('focus', () => {
-      console.log('Chapters -' + JSON.stringify(state))
       // UPDATE STATUS COLOR
       StatusBar.setBarStyle('light-content');
       // SHOW POPUP ON EVERY TIME
