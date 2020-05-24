@@ -257,7 +257,7 @@ export const QuizScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
           <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.img120}/></View>
-          <Text style={[styles.slideDesc]}>Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. Keep attempting the quiz for more new questions.{'\n \n Ready? Lets go!'}</Text>
+          <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. Keep attempting the quiz for more new questions.{'\n \n Ready? Lets go!'}</Text>
           <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
@@ -273,15 +273,15 @@ export const QuizScreen = ({ navigation, route }) => {
           <Image source={StarIcon} style={styles.slideType3Image}/>
         </View>
         <Text style={styles.slideType3Title}>Masha Allah</Text>
-        <Text style={styles.slideType3Desc}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. Redo the Quiz for more new questions.</Text>
-         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
+        <Text style={[styles.slideType3Desc, Utils.isIpad() ? styles.descM : '', Utils.isIpad() ? styles.mb0: '']}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. Redo the Quiz for more new questions.</Text>
+         <View style={[styles.slideImageContainer, styles.rowDirection, Utils.isIpad() ? '' : styles.mt15]}>
             <Button onPress={redoTest} icon={<Icon name={'refresh'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Replay"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
-              containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
+              containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']}
               titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
 	          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
 	          title={"All Quiz"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
-	          containerStyle={[styles.cSlideBtnContainer, styles.ph10]} iconRight={true}
+	          containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']} iconRight={true}
 	          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
           </View>
       </View>

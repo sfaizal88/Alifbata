@@ -15,6 +15,7 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 // ALL SHARED FILES
 import { Colors } from './colors';
 import { Setting } from './setting';
+import  * as Utils from './utils';
 
 /* LAYOUT - STARTS */
 const layoutStyle ={
@@ -28,9 +29,9 @@ const layoutStyle ={
 	},
 	body: {
 		flex: 1,
-		paddingTop: 10,
-		paddingBottom: 10,
-		paddingHorizontal: 10,
+		paddingTop: Utils.isIpad() ? RFValue(10) : 10,
+		paddingBottom: Utils.isIpad() ? RFValue(10) : 10,
+		paddingHorizontal: Utils.isIpad() ? RFValue(5) : 5,
         flexDirection: 'column',
     	backgroundColor: Colors.white,//Colors.appBg
     	marginHorizontal: 10,
@@ -42,7 +43,7 @@ const layoutStyle ={
 
 	},
 	headerContainer: {
-	    height: 70,
+	    height: RFValue(55),
 	    alignItems: 'center',
 	    justifyContent: 'center',
 	    backgroundColor: Colors.primary
@@ -275,6 +276,27 @@ const specialIconStyle = {
 
 /* SPACING - STARTS */
 const spacingStyle = {
+	t80n: {
+		top: RFValue(-80)
+	},
+	t90n: {
+		top: RFValue(-90)
+	},
+	t100n: {
+		top: RFValue(-100)
+	},
+	t120n: {
+		top: RFValue(-120)
+	},
+	t130nRF: {
+		top: -130
+	},
+	t150nRF: {
+		top: -150
+	},
+	t230nRF: {
+		top: -230
+	},
 	p0: {
 		padding: 0,
 		paddingTop: 0,
@@ -317,6 +339,9 @@ const spacingStyle = {
 	},
 	pt40: {
 		paddingTop: 40
+	},
+	pt50: {
+		paddingTop: 50
 	},
 	pb0: {
 		paddingBottom: 0
@@ -711,7 +736,7 @@ const sliderStyle = {
         color: Colors.grayDarkest,
 		textAlign: 'center',
 		top: 30,
-		paddingHorizontal: 40,
+		paddingHorizontal: Utils.isIpad() ? 70 : 40,
 		lineHeight: 25
     },
     slideType2: {
@@ -784,7 +809,7 @@ const sliderStyle = {
 		paddingTop: 20
     },
     bigArabLetter: {
-        fontSize: RFValue(100),
+        fontSize: Utils.isIpad() ? RFValue(80) : RFValue(100),
         fontWeight: '700',
         color: Colors.grayDarkest,
 		shadowOffset:{  width: 1,  height: 1  },
@@ -792,7 +817,7 @@ const sliderStyle = {
 		shadowOpacity: 0.5,
         width: '100%',
         textAlign: 'center',
-		paddingTop: 30,
+		paddingTop: Utils.isIpad() ? 40 : 30,
 		paddingBottom: 30,
 		paddingHorizontal: 20,
 		top: 0,
@@ -897,6 +922,11 @@ const sliderStyle = {
 		textAlign: 'center',
 		paddingHorizontal: 40,
     },
+    descM: {
+    	padding: 40,
+    	marginHorizontal: 70,
+    	lineHeight: 40,
+    }
 }
 /* SLIDER - ENDS */
 /* PAGE - STARTS */
@@ -974,6 +1004,7 @@ const pageStyle = {
 	    borderRadius: RFValue(20),
 	    justifyContent: 'center',
 	    alignItems: 'center',
+	    bottom: Utils.isIpad() ? RFValue(10) : 0
  	},
  	navDark: {
  		color: Colors.primary
@@ -1176,11 +1207,11 @@ const pageStyle = {
 		borderRadius: RFValue(20),
 		paddingTop: 20,
 		paddingBottom: 20,
-		height: 75,
+		height: Utils.isIpad() ? RFValue(50) : 75,
 		marginBottom: 15
 	},
 	dLType1LeftContainer: {
-		width: 70,
+		width: Utils.isIpad() ? RFValue(50) : 70,
 		alignItems: 'center',
 		justifyContent: 'center',
 		paddingLeft: 5,
@@ -1206,8 +1237,8 @@ const pageStyle = {
  		top: -10
  	},
 	dLType1LeftIcon: {
-		width: 30,
-		height: 30,
+		width: Utils.isIpad() ? RFValue(25) : 30,
+		height: Utils.isIpad() ? RFValue(25) : 30,
 	},
 	dLType1Content: {
 		paddingLeft: 5,
@@ -1256,6 +1287,9 @@ const pageStyle = {
 		paddingTop: 2,
 		textTransform: 'uppercase',
 		color: Colors.white
+	},
+	arabEn: {
+		paddingTop: 50
 	}
 }
 /* DATA LIST - ENDS */
@@ -1366,7 +1400,7 @@ const pageStyle = {
 		justifyContent: 'center',
 		paddingTop: 30,
 		paddingBottom: 20,
-		height: 190,
+		height: Utils.isIpad() ? RFValue(150) : 190,
 		paddingHorizontal: 6,
 		shadowOffset:{  width: 5,  height: 5  },
 		shadowColor: Colors.grayDarkest,
@@ -1452,8 +1486,8 @@ const chapterSliderStyle = {
   		letterSpacing: 2
     },
     cSlideSubTitle: {
-        fontWeight: '500',
-        fontSize: RFValue(Setting.h6TextSize),
+        fontWeight: Utils.isIpad() ? 'bold' : '500',
+        fontSize: Utils.isIpad() ? Setting.h6TextSize : Setting.nTextSize,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
 		textAlign: 'center',
@@ -1462,7 +1496,7 @@ const chapterSliderStyle = {
   		marginBottom: '1%'
     },
     cSlideMSubTitle: {        
-    	fontSize: RFValue(Setting.sTextSize),
+    	fontSize: Setting.sTextSize,
     },
     cCircleContainerOuter: {
   		borderWidth: RFValue(40),
@@ -1523,7 +1557,7 @@ const chapterSliderStyle = {
         fontWeight: '400',
         color: Colors.grayDark,
 		textAlign: 'center',
-		paddingHorizontal: 30
+		paddingHorizontal: Utils.isIpad() ? 70 : 30
     },
     cSlideBtnContainer: {
 		paddingHorizontal: 30,
@@ -1603,7 +1637,7 @@ const menuStyle = {
 		alignItems: "center",
 		justifyContent: "center",
 		position: 'absolute',
-		bottom: 17,
+		bottom: Utils.isIpad() ? RFValue(17) : 17,
 		marginHorizontal: 70,
 		left: 0,
 		right: 0
@@ -1635,7 +1669,7 @@ const quizStyle = {
         fontSize: Setting.h6TextSize,
         textAlign: 'center',
         marginTop: 20,
-        marginBottom: 30,
+        marginBottom: Utils.isIpad() ? RFValue(30) : 30,
         paddingHorizontal: RFPercentage(5),
         top: '-5%'
 	},

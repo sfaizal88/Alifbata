@@ -9,7 +9,9 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useEffect, useState} from 'react';
-import { Alert, View, Text } from 'react-native';
+import { Alert, View, Text, Platform, PlatformIOSStatic, Dimensions } from 'react-native';
+//import {isTablet} from 'react-native-device-info';
+import Device from 'react-native-device-detection';
 import { Icon } from 'react-native-elements';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
@@ -26,7 +28,9 @@ import * as Storage from './storage';
 import * as Common from '../data/common';
 
 // LOCAL OBJECT DECLARE
-const entities  = new Html5Entities();
+const entities        = new Html5Entities();
+const {height, width} = Dimensions.get('window'); 
+const aspectRatio     = height/width;
 
 /**
 * Feature used to convert URL to html tags
@@ -485,6 +489,18 @@ export const totalCompletedLessons = (item, allChapter) => {
   return completedLesson
 }
 
+/**
+* Feature used to find wheather its ipad or not
+*
+* @return Array   
+*/
+export const isIpad = () => {
+  let isPad = false;
+  if (Platform.OS === 'ios' && Device.isTablet) {
+    isPad = true;
+  }
+  return isPad
+}
 /**
 * Feature check wheather to unlock the lesson
 *

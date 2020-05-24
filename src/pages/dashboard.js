@@ -184,7 +184,7 @@ export const DashboardScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Assalamu Alaikum" icon="dashboard"/>
-	    	<ScrollView style={[styles.body, styles.pt30, styles.pb10, styles.ph0, styles.topDashboard]}>
+	    	<ScrollView style={[styles.body, styles.pt30, styles.pb10, styles.topDashboard]}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>
 				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{trophy}</Text>
@@ -226,7 +226,7 @@ export const DashboardScreen = ({ navigation }) => {
 				    data={Data.dashboardHelpList}
 				    renderItem = { ({item, index}) =>  (
                       	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => _navigate(item.path)}>
-	    					<Icon name={item.icon} color={item.color} size={70}  type='octicon' underlayColor="transparent" />
+	    					<Icon name={item.icon} color={item.color} size={RFValue(45)}  type='octicon' underlayColor="transparent" />
 	    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
 	    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
 							
