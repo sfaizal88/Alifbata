@@ -338,7 +338,7 @@ options: Utils.shuffle([
 {id: 1, option: "Al-Furqaan"},
 {id: 2, option: "Al-Kitaab"},
 {id: 3, option: "Al-Zikr"},
-{id: 4, option: "All of the above"}
+{id: 4, option: "All of the options"}
 ])
 },
 {
@@ -417,8 +417,8 @@ answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Clean and recommended to be with Wudhu (ablution)"},
 {id: 2, option: "Fasting"},
-{id: 3, option: "None of the above"},
-{id: 4, option: "Both of the above"}
+{id: 3, option: "None of the options"},
+{id: 4, option: "Both the options"}
 ])
 },
 {
@@ -457,8 +457,8 @@ answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "Iblees"},
 {id: 2, option: "Ash-Shaitaan"},
-{id: 3, option: "Both of the above"},
-{id: 4, option: "None of the above"}
+{id: 3, option: "Both the options"},
+{id: 4, option: "None of the options"}
 ])
 },
 {
@@ -519,7 +519,7 @@ options: Utils.shuffle([
 {id: 1, option: "Bakkah"},
 {id: 2, option: "Baladul Ameen"},
 {id: 3, option: "Ummul Qura"},
-{id: 4, option: "All of the above"}
+{id: 4, option: "All of the options"}
 ])
 },*/
 {
@@ -589,7 +589,7 @@ options: Utils.shuffle([
 {id: 1, option: "Masjid Al-Zirar"},
 {id: 2, option: "Masjid Al-Haram and Al-Nabi"},
 {id: 3, option: "Masjid Al-Aqsa and Quba"},
-{id: 4, option: "All of the above"}
+{id: 4, option: "All of the options"}
 ])
 },/*
 {

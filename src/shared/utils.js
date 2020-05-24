@@ -14,6 +14,7 @@ import { Icon } from 'react-native-elements';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
 import Sound from 'react-native-sound';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL SHARED FILES
 import { styles  } from './stylesheet';
@@ -540,7 +541,7 @@ const removeUnwantedLesson = (completedLesson) => {
   export const renderNextButton = () => {
     return (
       <View style={styles.buttonCircle}>
-        <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
+        <Icon name="angle-right" iconStyle={styles.nextBtn} size={RFValue(28)} type="font-awesome" underlayColor="transparent"></Icon>
       </View>
     );
   }
@@ -557,7 +558,7 @@ const removeUnwantedLesson = (completedLesson) => {
   export const renderPrevButton = () => {
     return (
       <View style={styles.buttonCircle}>
-        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
+        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={RFValue(28)} type="font-awesome" underlayColor="transparent"></Icon>
       </View>
     );
   }

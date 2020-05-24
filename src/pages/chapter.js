@@ -143,34 +143,6 @@ export const ChapterScreen = ({ navigation }) => {
 	}
 
 	/**
-	* RIGHT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderNextButton = () => {
-		return (
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
-
-	/**
-	* LEFT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderPrevButton = () => {
-		return (  
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
-
-	/**
     * Feature used to generate each slide
     *
     * @input  Object - Slider object
@@ -183,13 +155,13 @@ export const ChapterScreen = ({ navigation }) => {
           	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
           	<Text style={[styles.progressBarTitle, item.active ? '' : styles.displayN]}>{'Chapter'}</Text>
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}>
-            	<Icon name="check" color={Colors.white} size={30} type='octicon' containerStyle={Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedIcon : styles.displayN}/>
+            	<Icon name="check" color={Colors.white} size={RFValue(30)} type='octicon' containerStyle={Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedIcon : styles.displayN}/>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
             	<Text style={styles.cCircleNo}>{(index + 1)}</Text></View>
             </TouchableOpacity>
             <Text style={styles.cSlideSubTitle}>{item.desc}</Text>
             <Text style={styles.cSlideChatLine}>{item.details}</Text>
-            <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) || !item.active ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
+            <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={RFValue(15)} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) || !item.active ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
   				title={!item.active || !Utils.unlockChapter(index, completed, item.id) ? (item.active ? 'Locked': 'Coming Soon') : (Utils.chapterCompleted(completed, item.id) ? "Complete" : "Start")} 
   				buttonStyle={[styles.cSlideBtn, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
   				containerStyle={styles.cSlideBtnContainer}
@@ -208,7 +180,7 @@ export const ChapterScreen = ({ navigation }) => {
 			<Loader show={screenIsWaiting} />
 			<SafeAreaView style={styles.safeViewContainer}>
 			<MHeader title="All Chapters" icon="book"/>
-			<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
+			<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" iconStyle={{display: 'none'}}/>
 			<View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
 				<AppIntroSlider
 				dotClickEnabled={false}
@@ -220,8 +192,8 @@ export const ChapterScreen = ({ navigation }) => {
 				showNextButton={true} 
 				renderItem={generateItem} 
 				data={state}
-				renderNextButton={_renderNextButton}
-				renderPrevButton={_renderPrevButton}/>
+				renderNextButton={Utils.renderNextButton}
+				renderPrevButton={Utils.renderPrevButton}/>
 			</View>
 	        	<Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>
 
@@ -249,7 +221,7 @@ export const ChapterScreen = ({ navigation }) => {
 					    			<Text style={styles.dLType1Desc} numberOfLines={1}>{item.desc}</Text>
 					    		</View>
 					    		<View style={styles.dLType1RightContainer}>
-					    			<Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
+					    			<Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={RFValue(15)} color={Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
   									title={Utils.unlockChapter(index, completed, item.id) ? (Utils.chapterCompleted(completed, item.id) ? "Done" : "Start") : (item.active ? 'Locked': 'Coming Soon')} 
   									buttonStyle={[styles.dLType1RightBtn, Utils.unlockChapter(index, completed, item.id)  ? (Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
   									containerStyle={styles.dLType1RightBtnContainer}

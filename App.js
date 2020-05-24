@@ -21,6 +21,7 @@ import { Colors } from './src/shared/colors';
 import * as Storage from './src/shared/storage';
 import * as Constant from './src/shared/constant';
 import * as Utils from './src/shared/utils';
+//import { AppUpdate  } from './src/component/complex/appUpdate';
 
 // ALL CONTEXT FILES
 import AppContext from './src/context/appContext';
@@ -73,7 +74,7 @@ export default  App = ({navigation}) => {
     // COMMENTTED OUT HERE, TO AVOID FLICK WHILE LOGIN AUTH
   }, []);
 
-  // RENDER HTML
+  // RENDER HTML <AppUpdate/>
   return (
     <>
       <AppContext.Provider value={{...state, updateAppContext}}>

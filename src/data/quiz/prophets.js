@@ -65,7 +65,7 @@ options: Utils.shuffle([
 question: 'Who was prophet Yusuf‘s (as) father?',
 answer: 2,
 options: Utils.shuffle([
-{id: 1, option: 'Prophet Ayub (as)'},
+{id: 1, option: 'Prophet Ayyub (as)'},
 {id: 2, option: 'Prophet Yaqoob (as)'},
 {id: 3, option: 'Prophet Musa (as)'},
 {id: 4, option: 'Prophet Ibrahim (as)'}
@@ -115,7 +115,7 @@ options: Utils.shuffle([
 question: 'What prophet was Musa (as) father in law?',
 answer: 3,
 options: Utils.shuffle([
-{id: 1, option: 'Ayub (as)'},
+{id: 1, option: 'Ayyub (as)'},
 {id: 2, option: 'Ibrahim (as)'},
 {id: 3, option: 'Shuaib (as)'},
 {id: 4, option: 'Yusuf (as)'}
@@ -182,7 +182,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'What is the name of Prophet Eesa (as) grandmother?',
+question: 'What is the name of Prophet Isa (as) grandmother?',
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'Maryam'},
@@ -192,7 +192,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'Prophet Eesa (as) had a cousin of a similar age who was a prophet too, can you name him?',
+question: 'Prophet Isa (as) had a cousin of a similar age who was a prophet too, can you name him?',
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'Muhammad (pbuh)'},
@@ -245,8 +245,8 @@ options: Utils.shuffle([
 question: 'Name the prophet who was swallowed by a whale?',
 answer: 3,
 options: Utils.shuffle([
-{id: 1, option: 'Ayub (as)'},
-{id: 2, option: 'Suhaib (as)'},
+{id: 1, option: 'Ayyub (as)'},
+{id: 2, option: 'Shuaib (as)'},
 {id: 3, option: 'Yunus (as)'},
 {id: 4, option: 'Yaqub (as)'}
 ])
@@ -282,7 +282,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'What revelation was revealed to Prophet Eesa (as) ?',
+question: 'What revelation was revealed to Prophet Isa (as) ?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Quran'},
@@ -322,7 +322,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'How many years was their between Prophet Muhammad (pbuh) and Prophet Eesa (as)?',
+question: 'How many years was their between Prophet Muhammad (pbuh) and Prophet Isa (as)?',
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: '1000'},
@@ -372,13 +372,13 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'How many years ago was Prophet Muhammad (pbuh) alive?',
-answer: 3,
+question: 'In which period was Prophet Muhammad (pbuh) alive?',
+answer: 1,
 options: Utils.shuffle([
-{id: 1, option: '1500'},
-{id: 2, option: '1420'},
-{id: 3, option: '1441'},
-{id: 4, option: '1250'}
+{id: 1, option: '570 CE to 632 CE'},
+{id: 2, option: 'Before 500 CE'},
+{id: 3, option: '470 CE to 532 CE'},
+{id: 4, option: 'None of the options'}
 ])
 },
 {
@@ -392,7 +392,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: 'At what age did Prophet Eesa (as) talk?',
+question: 'At what age did Prophet Isa (as) talk?',
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: '14'},
@@ -415,8 +415,8 @@ options: Utils.shuffle([
 question: "Which prophet was thrown into a well?",
 answer: 3,
 options: Utils.shuffle([
-{id: 1, option: 'Ayub (as)'},
-{id: 2, option: 'Suhaib (as)'},
+{id: 1, option: 'Ayyub (as)'},
+{id: 2, option: 'Shuaib (as)'},
 {id: 3, option: 'Yusuf (as)'},
 {id: 4, option: 'Yaqub (as)'}
 ])
@@ -425,8 +425,8 @@ options: Utils.shuffle([
 question: "Which prophet was swallowed by a whale?",
 answer: 4,
 options: Utils.shuffle([
-{id: 1, option: 'Ayub (as)'},
-{id: 2, option: 'Suhaib (as)'},
+{id: 1, option: 'Ayyub (as)'},
+{id: 2, option: 'Shuaib (as)'},
 {id: 3, option: 'Yaqub (as)'},
 {id: 4, option: 'Yunus (as)'}
 ])
@@ -455,7 +455,7 @@ options: Utils.shuffle([
 question: "Who is the last messenger in Islam?",
 answer: 2,
 options: Utils.shuffle([
-{id: 1, option: 'Ayub (as)'},
+{id: 1, option: 'Ayyub (as)'},
 {id: 2, option: 'Muhammad (pbuh)'},
 {id: 3, option: 'Yunus (as)'},
 {id: 4, option: 'Yaqub (as)'}
@@ -669,6 +669,65 @@ options: Utils.shuffle([
 {id: 2, option: "22"},
 {id: 3, option: "25"},
 {id: 4, option: "27"}
+])
+},{
+question: 'What creation is Shaytaan?',
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: 'Human'},
+{id: 2, option: 'Angel'},
+{id: 3, option: 'Animal'},
+{id: 4, option: 'Jinn'}
+])
+},
+{
+question: 'What does the word Islam mean?',
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: 'Religion'},
+{id: 2, option: 'Muslim'},
+{id: 3, option: 'Peace'},
+{id: 4, option: 'A person that submits to God'}
+])
+},
+{
+question: 'What does the word Muslim mean?',
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: 'A peaceful person'},
+{id: 2, option: 'A religious person'},
+{id: 3, option: 'A follower of the religion of Islam'},
+{id: 4, option: 'Other'}
+])
+},
+{
+question: 'What does Zam Zam mean?',
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: 'Holy water'},
+{id: 2, option: 'Water well'},
+{id: 3, option: 'To drink'},
+{id: 4, option: 'Stop'}
+])
+},
+{
+question: 'Which Angel will blow the horn to signal the final days?',
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: 'Jibraeel'},
+{id: 2, option: 'Mikaeel'},
+{id: 3, option: 'Mailk ul Moat'},
+{id: 4, option: 'Israfeel'}
+])
+},
+{
+question: 'Linguistically what does Shariah mean?',
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: 'Islamic Law'},
+{id: 2, option: 'Death penalty'},
+{id: 3, option: 'A water source'},
+{id: 4, option: 'Holy Quran'}
 ])
 },
 ]

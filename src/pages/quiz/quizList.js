@@ -56,34 +56,6 @@ export const QuizListScreen = ({ navigation }) => {
 	}, []);
 
 	/**
-	* RIGHT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderNextButton = () => {
-		return (
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
-
-	/**
-	* LEFT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderPrevButton = () => {
-		return (  
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
-
-	/**
     * Navigate between screen
     *
     * @input  Object - Single quiz details object
@@ -115,7 +87,7 @@ export const QuizListScreen = ({ navigation }) => {
             </TouchableOpacity>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.desc}</Text>
             <Button onPress={() => _navigate(item)}
-            	icon={<Icon name={item.active ? 'play' : 'lock'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
+            	icon={<Icon name={item.active ? 'play' : 'lock'} size={RFValue(15)} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
   				title={item.active ? "Play" : "Coming Soon"} 
   				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}
@@ -135,7 +107,7 @@ export const QuizListScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="All Quiz" icon="dashboard"/>
-	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
+	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} iconStyle={{display: 'none'}} underlayColor="transparent" />
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider
@@ -148,8 +120,8 @@ export const QuizListScreen = ({ navigation }) => {
 				showNextButton={true} 
 				renderItem={generateItem} 
 				data={state}
-				renderNextButton={_renderNextButton}
-				renderPrevButton={_renderPrevButton}/>
+				renderNextButton={Utils.renderNextButton}
+				renderPrevButton={Utils.renderPrevButton}/>
 			</View>
 
 	    	<View style={[styles.body, styles.pt20, styles.overflow, listView ? '' : styles.displayN, styles.pb50]}>
@@ -188,23 +160,3 @@ export const QuizListScreen = ({ navigation }) => {
 	  	</>
   	);
 }
-/*
-<TouchableOpacity key={index} onPress={() => _navigate(item)}  underlayColor="transparent" 
-	style={{flex: 1, flexDirection: 'row', margin: 5, backgroundColor: Colors.primary, borderRadius: 10, paddingRight: 10, paddingTop: 10, paddingBottom: 10}}>
-	<View style={{width: 80, alignItems: "center", justifyContent: "center", paddingHorizontal: 5}}>
-		<Image source={item.img} style={{width: RFValue(40), height: RFValue(40)}}/>
-	</View>
-	<View style={{flex: 1, alignItems: "flex-start", justifyContent: "center"}}>
-		<Text style={{fontSize: Setting.sTextSize, fontWeight: '600', color: Colors.white}}>{item.title}</Text>
-		<Text numberOfLines={1} style={{fontSize: Setting.sxTextSize, fontWeight: '300', color: Colors.white, paddingTop: 3}}>{item.desc}</Text>
-	</View>
-</TouchableOpacity>
-
-numColumns={1}
-<TouchableOpacity key={index} onPress={() => _navigate(item)}  underlayColor="transparent"  style={[styles.squareBadgeContainer, (index % 2 === 1) ? styles.badgeDown: '']}>
-	<View style={[styles.squareBadge]}>
-		<Image source={item.img} style={styles.squareBadgeImage}/>
-	</View>
-	<Text style={[styles.badgeLabel]}>{item.title}</Text>
-</TouchableOpacity>
-*/

@@ -66,7 +66,7 @@ export const data = [
 		question: 'Who was prophet Yusuf‘s (as) father?',
 		answer: 2,
 		options: Utils.shuffle([
-			{id: 1, option: 'Prophet Ayub (as)'},
+			{id: 1, option: 'Prophet Ayyub (as)'},
 			{id: 2, option: 'Prophet Yaqoob (as)'},
 			{id: 3, option: 'Prophet Musa (as)'},
 			{id: 4, option: 'Prophet Ibrahim (as)'}
@@ -103,7 +103,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'What was the name of Prophet Muhammd (pbuh) babysitter/ wet nurse as a child?',
+		question: 'What was the name of Prophet Muhammad (pbuh) babysitter/ wet nurse as a child?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Kulsuma'},
@@ -136,7 +136,7 @@ export const data = [
 		question: 'What prophet was Musa (as) father in law?',
 		answer: 3,
 		options: Utils.shuffle([
-			{id: 1, option: 'Ayub (as)'},
+			{id: 1, option: 'Ayyub (as)'},
 			{id: 2, option: 'Ibrahim (as)'},
 			{id: 3, option: 'Shuaib (as)'},
 			{id: 4, option: 'Yusuf (as)'}
@@ -343,7 +343,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'What is the name of Prophet Eesa (as) grandmother?',
+		question: 'What is the name of Prophet Isa (as) grandmother?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Maryam'},
@@ -353,7 +353,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Prophet Eesa (as) had a cousin of a similar age who was a prophet too, can you name him?',
+		question: 'Prophet Isa (as) had a cousin of a similar age who was a prophet too, can you name him?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Muhammad (pbuh)'},
@@ -416,8 +416,8 @@ export const data = [
 		question: 'Name the prophet who was swallowed by a whale?',
 		answer: 3,
 		options: Utils.shuffle([
-			{id: 1, option: 'Ayub (as)'},
-			{id: 2, option: 'Suhaib (as)'},
+			{id: 1, option: 'Ayyub (as)'},
+			{id: 2, option: 'Shuaib (as)'},
 			{id: 3, option: 'Yunus (as)'},
 			{id: 4, option: 'Yaqub (as)'}
 		])
@@ -453,7 +453,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'What revelation was revealed to Prophet Eesa (as) ?',
+		question: 'What revelation was revealed to Prophet Isa (as) ?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Quran'},
@@ -543,7 +543,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'How many years was their between Prophet Muhammad and Prophet Eesa?',
+		question: 'How many years was their between Prophet Muhammad (pbuh) and Prophet Isa (as)?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: '1000'},
@@ -558,7 +558,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: 'Sulaiman'},
 			{id: 2, option: 'Harun'},
-			{id: 3, option: 'Shueb'},
+			{id: 3, option: 'Shuaib'},
 			{id: 4, option: 'Danyaal'}
 		])
 	},
@@ -623,7 +623,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'At what age did Prophet Eesa (as) talk?',
+		question: 'At what age did Prophet Isa (as) talk?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: '14'},

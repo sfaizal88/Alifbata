@@ -260,5 +260,35 @@ options: Utils.shuffle([
 {id: 3, option: "Habil"},
 {id: 4, option: "Adam (as)"}
 ])
+},
+{
+question: "What is the Arabic word for “book”?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Kitab"},
+{id: 2, option: "Injeel"},
+{id: 3, option: "Zabur"},
+{id: 4, option: "Torah"}
+])
+},
+{
+question: "What are the angels made from?",
+answer: 1,
+options: Utils.shuffle([
+{id: 1, option: "Light"},
+{id: 2, option: "Fire"},
+{id: 3, option: "Clay"},
+{id: 4, option: "None of the options"}
+])
+},
+{
+question: "There are groups of people that are not questioned by the angels in their graves. Who are they?",
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: "Prophets"},
+{id: 2, option: "Martyrs"},
+{id: 3, option: "All of the options"},
+{id: 4, option: "Non-pubescent children"}
+])
 }
 ]

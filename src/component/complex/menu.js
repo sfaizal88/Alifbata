@@ -12,6 +12,7 @@
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
 import { Icon } from 'react-native-elements';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
@@ -41,19 +42,19 @@ export const Menu = ( props ) => {
 		<View style={styles.menuContainer}>
   			<View style={styles.menus}>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Home')}>
-            <Icon name="home" color={activeMenu === 'HOME' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="home" color={activeMenu === 'HOME' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Chapter')}>
-            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="book" color={activeMenu === 'CHAPTER' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('QuizNavigation')}>
-            <Icon name="light-bulb" color={activeMenu === 'QUIZ' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="light-bulb" color={activeMenu === 'QUIZ' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('StepsNavigation')}>
-            <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Badge')}>
-            <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.greenBlue : Colors.grayDark} size={27} type='octicon'/>
+            <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
           </TouchableOpacity>
         </View>
   	</View>

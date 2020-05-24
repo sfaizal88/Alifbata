@@ -52,12 +52,12 @@ export const data = [
 	},
 	{
 	id: 5,
-	title: "Prophet Salih (A.S)",
+	title: "Prophet Saleh (A.S)",
 	titleType: Constant.GENERIC.TEXT,
 	desc: 'Miracle of a Pregnant\nShe-Camel',
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 	img: require(imgURL + '5.png'),
-	details: 'Salih (A.S) called the people of Thamud to worship one God and let go of their idol worshipping. To prove the greatness of God, they asked Salih (A.S) to make a pregnant she-camel appear from the mountains. By the will of Allah SWT, Salih (A.S) performed this miracle. However, people continued as disbelievers and some of them killed the camel. As a punishment, Allah SWT destroyed them with sound waves.',
+	details: 'Saleh (A.S) called the people of Thamud to worship one God and let go of their idol worshipping. To prove the greatness of God, they asked Saleh (A.S) to make a pregnant she-camel appear from the mountains. By the will of Allah SWT, Saleh (A.S) performed this miracle. However, people continued as disbelievers and some of them killed the camel. As a punishment, Allah SWT destroyed them with sound waves.',
 	},
 	{
 	id: 6,
@@ -104,17 +104,17 @@ export const data = [
 	desc: 'Separation from Son\nfor 30+ years', 
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)], 
 	img: require(imgURL + '10.png'), 
-	details: "Yaqub (A.S) had 12 children, one of whom was Prophet Yousuf (A.S). He was separated from Yousuf (A.S) for 30+ years as a test of his faith. Before his death, Yaqub (A.S) had a will to his sons to worship and submit only to the Almighty Allah SWT. This is stated in Surah Al-Baqarah (2:133).", 
+	details: "Yaqub (A.S) had 12 children, one of whom was Prophet Yusuf (A.S). He was separated from Yusuf (A.S) for 30+ years as a test of his faith. Before his death, Yaqub (A.S) had a will to his sons to worship and submit only to the Almighty Allah SWT. This is stated in Surah Al-Baqarah (2:133).", 
 	}, 
 
 	{ 
 	id: 11, 
-	title: "Prophet Yousuf (A.S)", 
+	title: "Prophet Yusuf (A.S)", 
 	titleType: Constant.GENERIC.TEXT, 
 	desc: 'Beauty & Dream Interpreter', 
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)], 
 	img: require(imgURL + '11.png'), 
-	details: 'Yousuf (A.S) was his father’s favourite as he was blessed with beauty and prophethood by Allah SWT. The 10 older half-brothers became jealous of him and threw him into the well. Although Yousuf’s (A.S) life was filled with difficulties, he always sought refuge in Allah SWT and was blessed with exceptional knowledge, wisdom and dream interpretation skills.', 
+	details: 'Yusuf (A.S) was his father’s favourite as he was blessed with beauty and prophethood by Allah SWT. The 10 older half-brothers became jealous of him and threw him into the well. Although Yusuf’s (A.S) life was filled with difficulties, he always sought refuge in Allah SWT and was blessed with exceptional knowledge, wisdom and dream interpretation skills.', 
 	}, 
 
 	{ 

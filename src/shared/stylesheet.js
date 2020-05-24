@@ -60,7 +60,7 @@ const layoutStyle ={
 	},
 	stackheaderLeftContainer: {
 		left: 15,
-		top: 0
+		top: RFValue(20)
 	},
 	headerTitle: {
 		fontSize: Setting.sTextSize,
@@ -217,7 +217,7 @@ const specialIconStyle = {
   		backgroundColor: Colors.borderColor,
   		padding: 15,
   		paddingHorizontal: 18,
-  		borderRadius: 40
+  		borderRadius: RFValue(40)
   	},
   	score: {
   		fontSize: Setting.scoreSize,
@@ -232,15 +232,16 @@ const specialIconStyle = {
   		position: 'absolute',
   		right: 10,
   		top: 10,
-  		padding: 10,
-  		paddingHorizontal: 15,
+  		padding: RFValue(10),
+  		paddingHorizontal: RFValue(15),
   		backgroundColor: Colors.primary,
-  		borderRadius: 30
+  		borderRadius: RFValue(30)
   	},
   	qno: {
   		fontSize: RFValue(17),
   		fontWeight: '700', 
-  		color: Colors.white
+  		color: Colors.white,
+        fontSize: Setting.sTextSize,
   	},
   	overflowV: {
  		overflow: 'visible'
@@ -254,7 +255,7 @@ const specialIconStyle = {
   		width: '100%',
   		backgroundColor: 'rgba(0, 0, 0, 0.4)',
   		opacity: 0.7,
-  		borderRadius: 100,
+  		borderRadius: RFValue(100),
   		borderTopRightRadius: 0,
   		borderTopLeftRadius: 0,
   		alignItems: 'center',
@@ -530,7 +531,7 @@ const spacingStyle = {
 	},
 	boxtypeRight: {
 		backgroundColor: Colors.primary,//Colors.gold,
-		borderRadius: 10,
+		borderRadius: RFValue(10),
 		borderTopRightRadius: 0,
 		borderBottomRightRadius: 0,
 		paddingTop: 10,
@@ -742,8 +743,8 @@ const sliderStyle = {
         alignItems: 'center',
     },
     slideType3Image: {
-        height: 180,
-        width: 180,
+        height: RFValue(180),
+        width: RFValue(180),
     },
     slideType3Title: {
         fontSize: Setting.h4TextSize,
@@ -822,8 +823,8 @@ const sliderStyle = {
     	tintColor: Colors.white
     },
     slideSquare: {
-    	width: 90,
-    	height: 90,
+    	width: RFValue(90),
+    	height: RFValue(90),
     	borderWidth: 1,
     	backgroundColor: Colors.blueDark,
 		alignItems: 'center',
@@ -832,7 +833,7 @@ const sliderStyle = {
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
         margin: 5,
-        borderRadius: 10,
+        borderRadius: RFValue(10),
         borderColor: Colors.blueDarkest,
         shadowOffset:{  width: 0.5,  height: 0.5  },
         shadowColor: Colors.blueDarkest, 
@@ -914,7 +915,7 @@ const pageStyle = {
 		justifyContent: 'center',
 		borderWidth: 1,
 		borderColor: Colors.borderColor,
-		borderRadius: 10,
+		borderRadius: RFValue(10),
 		shadowOffset:{  width: 2,  height: 2  },
 		shadowColor: Colors.borderColor,
 		shadowOpacity: 0.5,
@@ -966,11 +967,11 @@ const pageStyle = {
  		alignItems: 'center'
  	},
  	buttonCircle: {
-		width: 40,
-	    height: 40,
+		width: RFValue(35),
+	    height: RFValue(35),
 	    backgroundColor: Colors.primary,
 	    opacity: 0.4,
-	    borderRadius: 20,
+	    borderRadius: RFValue(20),
 	    justifyContent: 'center',
 	    alignItems: 'center',
  	},
@@ -981,7 +982,7 @@ const pageStyle = {
  		backgroundColor: Colors.white
  	},
  	buttonDone: {
-	    borderRadius: 20,
+	    borderRadius: RFValue(20),
 	    width: 80,
  	},
  	prevNext: {
@@ -1000,20 +1001,20 @@ const pageStyle = {
  		//backgroundColor: Colors.grayLightest,
  		padding: 10,
  		paddingHorizontal: 15,
- 		borderRadius: 50
+ 		borderRadius: RFValue(50)
  	},
  	completedBtnContainer: {
  		//backgroundColor: Colors.grayLightest,
  		padding: 5,
  		paddingHorizontal: 9,
- 		borderRadius: 50
+ 		borderRadius: RFValue(50)
  	},
  	btn: {
  		backgroundColor: Colors.primary,
- 		paddingTop: 10,
- 		paddingBottom: 10,
- 		paddingHorizontal: 15,
- 		borderRadius: 5,
+ 		paddingTop: RFValue(10),
+ 		paddingBottom: RFValue(10),
+ 		paddingHorizontal: RFValue(15),
+ 		borderRadius: RFValue(5),
  		marginHorizontal: 4
  	},
  	btnDisable: {
@@ -1028,6 +1029,11 @@ const pageStyle = {
  	secondaryBtn: {
  		backgroundColor: Colors.borderColor,
  	},
+ 	lightBtnTextLarge: {
+ 		color: Colors.white,
+ 		fontSize: Setting.nTextSize,
+ 		fontWeight: '600'
+ 	},
  	lightBtnText: {
  		color: Colors.white,
  		fontSize: Setting.sTextSize,
@@ -1039,6 +1045,11 @@ const pageStyle = {
  	darkBtnText: {
  		color: Colors.grayDarkest,
  		fontSize: Setting.sTextSize,
+ 		fontWeight: '600'
+ 	},
+ 	darkBtnTextLarge: {
+ 		color: Colors.grayDarkest,
+ 		fontSize: Setting.nTextSize,
  		fontWeight: '600'
  	},
  	selectedOption: {
@@ -1066,7 +1077,7 @@ const pageStyle = {
 	modalView: {
 		margin: 20,
 		backgroundColor: "white",
-		borderRadius: 20,
+		borderRadius: RFValue(20),
 		padding: 35,
 		paddingLeft: 15,
 		paddingRight: 20,
@@ -1138,7 +1149,7 @@ const pageStyle = {
   		paddingBottom: 8,
   		paddingHorizontal: 10,
   		marginBottom: 8,
-  		borderRadius: 10,
+  		borderRadius: RFValue(10),
   		borderWidth: 1,
   		borderColor: Colors.borderColor
     },
@@ -1162,7 +1173,7 @@ const pageStyle = {
 		shadowOffset:{  width: 1,  height: 1 },
 		shadowColor: Colors.fBorderColor,
 		shadowOpacity: 0.8,
-		borderRadius: 20,
+		borderRadius: RFValue(20),
 		paddingTop: 20,
 		paddingBottom: 20,
 		height: 75,
@@ -1178,18 +1189,18 @@ const pageStyle = {
 	dLType1LeftIconContainer: {
 		padding: 10,
 		backgroundColor: Colors.grayDark,
-		borderRadius: 50,
+		borderRadius: RFValue(50),
 	},
 	dLType1LeftIconContainerActive: {
 		padding: 10,
 		backgroundColor: Colors.robinEggBlue,
-		borderRadius: 50,
+		borderRadius: RFValue(50),
 	},
  	dLType1CompletedBtnContainer: {
  		backgroundColor: Colors.green,
  		padding: 4,
  		paddingHorizontal: 7,
- 		borderRadius: 30,
+ 		borderRadius: RFValue(30),
  		position: 'absolute',
  		right: -10,
  		top: -10
@@ -1211,23 +1222,25 @@ const pageStyle = {
 	dLType1Desc: {
 		fontSize: Setting.xxsTextSize,
 		fontWeight: '500',
-		color: Colors.grayDark
+		color: Colors.grayDark,
+		textAlign: 'left',
 	},
 	dLType1RightContainer: {
-		width: 120,
+		width: RFValue(120),
 		paddingRight: 10,
 		alignItems: 'center',
 		justifyContent: 'center',
+		paddingTop: RFValue(11)
 	},
 	dLType1RightBtnContainer: {
-		width: 100,
+		width: RFValue(100),
 		paddingHorizontal: 0,
 		marginHorizontal: 0
 	},
 	dLType1RightBtn: {
 		backgroundColor: Colors.grayDark,
-		borderRadius: 20,
-		height: 40,
+		borderRadius: RFValue(20),
+		height: RFValue(35),
 		paddingHorizontal: 0,
 		marginHorizontal: 0
 	},
@@ -1257,7 +1270,7 @@ const pageStyle = {
 		marginTop: 20,
 		marginHorizontal: 20,
 		marginBottom: 10,
-		borderRadius: 10,
+		borderRadius: RFValue(10),
 		shadowOffset:{  width: 0.5,  height: 0.5 },
 		shadowColor: Colors.fBorderColor,
 		shadowOpacity: 0.8,
@@ -1285,12 +1298,29 @@ const pageStyle = {
 	},
 	dashBox1: {
 		padding: '12%',
-		borderRadius: 50,
-		paddingHorizontal: 15,
+		borderRadius: RFValue(100),
+		width: RFValue(75),
 		marginBottom: 20,
 		backgroundColor: Colors.mainLightGray,
 		borderWidth: 6,
-		borderColor: '#f2f3f4'
+		borderColor: '#f2f3f4',
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingTop: RFValue(15),
+		paddingBottom: RFValue(15)
+	},
+	dashBoxSmall: {
+		padding: '12%',
+		borderRadius: RFValue(100),
+		width: RFValue(70),
+		marginBottom: 20,
+		backgroundColor: Colors.mainLightGray,
+		borderWidth: 6,
+		borderColor: '#f2f3f4',
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingTop: RFValue(15),
+		paddingBottom: RFValue(15)
 	},
 	dashBoxActive: {
 		backgroundColor: Colors.primary,
@@ -1300,8 +1330,8 @@ const pageStyle = {
 		backgroundColor: Colors.white,
 		paddingBottom: 70,
 		paddingTop: 10,
-		borderTopLeftRadius: 20,
-		borderTopRightRadius: 20,
+		borderTopLeftRadius: RFValue(20),
+		borderTopRightRadius: RFValue(20),
 		paddingLeft: 5,
 		//shadowOffset:{  width: -2,  height: -2  },
 		//shadowColor: Colors.grayDarkest,
@@ -1330,8 +1360,8 @@ const pageStyle = {
 	},
 	skillContainer: {
 		marginBottom: 10,
-		width: 130,
-		borderRadius: 10,
+		width: RFValue(120),
+		borderRadius: RFValue(10),
 		alignItems: 'center',
 		justifyContent: 'center',
 		paddingTop: 30,
@@ -1388,8 +1418,8 @@ const pageStyle = {
   		right: 0,
   		width: '100%',
   		backgroundColor: '#ecf0f1',
-  		opacity: 0.8,
-  		borderRadius: 100,
+  		opacity: 0.3,
+  		borderRadius: RFValue(100),
   		borderTopRightRadius: 0,
   		borderTopLeftRadius: 0,
   		alignItems: 'center',
@@ -1435,15 +1465,15 @@ const chapterSliderStyle = {
     	fontSize: RFValue(Setting.sTextSize),
     },
     cCircleContainerOuter: {
-  		borderWidth: 40,
-        borderRadius: 130,
+  		borderWidth: RFValue(40),
+        borderRadius: RFValue(130),
     },
     cCircleContainer: {
         justifyContent: 'center',
         alignItems: 'center',
   		width: RFValue(140),
   		height: RFValue(140),
-        borderRadius: 100,
+        borderRadius: RFValue(100),
   		opacity: 0.9,
 		shadowOffset:{  width: 0,  height: 0 },
 		shadowColor: Colors.fBorderColor,
@@ -1452,8 +1482,8 @@ const chapterSliderStyle = {
 		borderWidth: 10,
     },
     cCircleContainerSmallOuter: {
-  		borderWidth: 40,
-        borderRadius: 110,
+  		borderWidth: RFValue(40),
+        borderRadius: RFValue(110),
     },
     cCircleContainerSmall: {
   		width: RFValue(90),
@@ -1479,7 +1509,7 @@ const chapterSliderStyle = {
 		lineHeight: 25
     },
     cSlideDescContainer: {
-    	borderRadius: 40,
+    	borderRadius: RFValue(40),
     	borderWidth: 2,
     	backgroundColor: Colors.primary,
     	borderColor: Colors.primary,
@@ -1502,9 +1532,9 @@ const chapterSliderStyle = {
     },
 	cSlideBtn: {
 		backgroundColor: Colors.grayDark,
-		borderRadius: 30,
-		height: 50,
-		paddingHorizontal: 30,
+		borderRadius: RFValue(30),
+		height: RFValue(40),
+		paddingHorizontal: RFValue(20),
 		marginHorizontal: 0,
 	},
 	cSlideBtnActive: {
@@ -1527,7 +1557,7 @@ const chapterSliderStyle = {
  		backgroundColor: Colors.green,
  		padding: 4,
  		paddingHorizontal: 10,
- 		borderRadius: 30,
+ 		borderRadius: RFValue(30),
  		position: 'absolute',
  		right: -30,
  		top: -30
@@ -1556,7 +1586,7 @@ const chartStyle = {
 		position: 'absolute',
 		width: '100%',
 		textAlign: 'center',
-		top: '50%',
+		top: '50%',//RFPercentage
 		fontSize: RFValue(45),
 		fontWeight: '600',
 		color: Colors.grayDarkest
@@ -1580,15 +1610,17 @@ const menuStyle = {
 	},
 	menus: {
 		flexDirection: 'row',
-		width: 210,
+		width: RFValue(210),
 		backgroundColor: Colors.white,
 		shadowOffset:{  width: 0.5,  height: 0.5 },
 		shadowColor: Colors.grayDark,
 		shadowOpacity: 0.8,
-		borderRadius: 50,
+		borderRadius: RFValue(50),
 		paddingTop: 10,
 		paddingBottom: 10,
 		paddingHorizontal: 5,
+		//borderWidth: 1,
+		//borderColor: Colors.grayDark
 	},
 	activeMenuItem: {
 		color: Colors.green
@@ -1604,25 +1636,25 @@ const quizStyle = {
         textAlign: 'center',
         marginTop: 20,
         marginBottom: 30,
-        paddingHorizontal: '5%',
+        paddingHorizontal: RFPercentage(5),
         top: '-5%'
 	},
  	optionContainer: {
  		backgroundColor: Colors.primary,
- 		paddingTop: 13,
- 		paddingBottom: 13,
- 		paddingHorizontal: 30,
- 		borderRadius: 10,
+ 		paddingTop: RFValue(13),
+ 		paddingBottom: RFValue(13),
+ 		paddingHorizontal: RFValue(30),
+ 		borderRadius: RFValue(10),
  		marginHorizontal: 4,
- 		marginBottom: 15,
+ 		marginBottom: RFValue(15),
 		shadowOffset:{  width: 0.5,  height: 0.5 },
 		shadowColor: Colors.grayDark,
 		shadowOpacity: 0.8,
-		minWidth: 200,
+		minWidth: RFValue(200),
         textAlign: 'center',
         alignItems: "center",
 		justifyContent: "center",
-        marginHorizontal: '5%',
+        marginHorizontal: RFPercentage(5),
         top: '-5%'
  	},
 }
@@ -1636,7 +1668,7 @@ const budgesStyle = {
 		justifyContent: "center",
 		borderWidth: 2,
 		marginHorizontal: '5%',
-		borderRadius: 70,
+		borderRadius: RFValue(70),
 		paddingTop: 10,
 		paddingBottom: 10,
 		backgroundColor: 'transparent',
@@ -1654,15 +1686,15 @@ const budgesStyle = {
         textAlign: 'center',
 	},
 	badge: {
-		width: RFValue(45),
-		height: RFValue(45),
+		width: RFPercentage(6),
+		height: RFPercentage(6),
         alignItems: "center",
 		justifyContent: "center",
 		//tintColor: 'gray',
 		//opacity: 0.3
 	},
 	circleBadge: {
-		borderRadius: 70,
+		borderRadius: RFValue(70),
 		paddingTop: RFValue(10),
 		paddingBottom: RFValue(10),
 		paddingHorizontal: RFValue(10),
@@ -1716,12 +1748,12 @@ const imagesStyle = {
 		height: RFValue(80)
 	},
 	img45: {
-		width: RFValue(45),
-		height: RFValue(45)
+		width: RFPercentage(5),
+		height: RFPercentage(5)
 	},
 	img25: {
-		width: RFValue(25),
-		height: RFValue(25)
+		width: RFPercentage(4),
+		height: RFPercentage(4)
 	},
 	img200: {
 		width: RFValue(200),
@@ -1730,11 +1762,7 @@ const imagesStyle = {
 	img30: {
 		width: RFValue(30),
 		height: RFValue(30)
-	},
-    img120: {
-        height: RFValue(120),
-        width: RFValue(120),
-    },
+	}
 }
 /* IMAGES - ENDS */
 export const styles = StyleSheet.create({

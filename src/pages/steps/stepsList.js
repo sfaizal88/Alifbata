@@ -59,33 +59,6 @@ export const StepsListScreen = ({ navigation }) => {
 		setScreenIsWaiting(false);
 	}, []);
 
-	/**
-	* RIGHT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderNextButton = () => {
-		return (
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
-
-	/**
-	* LEFT ARROW CUSTOMISE BUTTON
-	*
-	* @input  NA
-	* @return NA
-	*/
-	const _renderPrevButton = () => {
-		return (  
-		  <View style={styles.buttonCircle}>
-		    <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-		  </View>
-		);
-	}
 
 	/**
     * Navigate between screen
@@ -120,7 +93,7 @@ export const StepsListScreen = ({ navigation }) => {
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
             <Button onPress={() => _navigate(item)} 
-            	icon={<Icon name={item.active ? 'play' : 'lock'} size={18} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
+            	icon={<Icon name={item.active ? 'play' : 'lock'} size={RFValue(15)} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
   				title={item.active ? "Play" : "Coming Soon"} 
   				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}
@@ -152,8 +125,8 @@ export const StepsListScreen = ({ navigation }) => {
 				showNextButton={true} 
 				renderItem={generateItem} 
 				data={state}
-				renderNextButton={_renderNextButton}
-				renderPrevButton={_renderPrevButton}/>
+				renderNextButton={Utils.renderNextButton}
+				renderPrevButton={Utils.renderPrevButton}/>
 			</View>
 	  		</SafeAreaView>
 	  		<Menu navigation={navigation} activeMenu={'STEPS'}></Menu>

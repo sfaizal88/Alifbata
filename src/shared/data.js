@@ -92,15 +92,6 @@ export const badges = [
 export const quizList = [
   {
     id: 1,
-    title: 'General',
-    desc: 'Islam, which means submission to God, is a monotheistic religion, believing in one God (i.e. Allah).',
-    data:  [...General.data, ...Prophets.data, ...Pillars.data, ...Quran.data],
-    img: require('../../assets/img/idea.png'),
-    bgColor: '#34495e',
-    active: true
-  },
-  {
-    id: 2,
     title: 'Prophets of Islam',
     desc: "Prophets are individuals sent by Allah to various communities to serve as examples of ideal human behavior and to spread Allah's message on Earth.",
     data:  Prophets.data,
@@ -109,21 +100,30 @@ export const quizList = [
     active: true
   },
   {
-    id: 3,
+    id: 2,
     title: 'Pillars of Islam',
     desc: "Basic mandatory acts in Islam and the foundation of Muslim life. The five Pillars are Faith, Prayer, Zakat, Fasting and Hajj.",
     data:  Pillars.data,
     img: require('../../assets/img/pillars.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: Colors.primary,
     active: true
   },
   {
-    id: 4,
+    id: 3,
     title: 'The Holy Quran',
     desc: 'The Holy Quran was revealed to Prophet Muhammad (pbuh) in the Cave of Hira.',
     data:  Quran.data,
     img: require('../../assets/img/quran.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: Colors.red,
+    active: true
+  },
+  {
+    id: 4,
+    title: 'General',
+    desc: 'Islam, which means submission to God, is a monotheistic religion, believing in one God (i.e. Allah).',
+    data:  [...General.data, ...Prophets.data, ...Pillars.data, ...Quran.data],
+    img: require('../../assets/img/idea.png'),
+    bgColor: '#34495e',
     active: true
   },
   {

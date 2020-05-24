@@ -50,7 +50,7 @@ export const GENERIC = {
 	TYPE1_COMPLEX_RANDOMQ_COUNT: 10,
 	TYPE1_CHOSE_COUNT: 2,
 	TYPE1_COMPLEX_CHOSE_COUNT: 10,
-	QUIZ_COUNT: 15,
+	QUIZ_COUNT: 10,
 	ALPHABET_ORDER: [4, 5, 4, 4, 4, 4, 3],
 	PER_LESSON: 8,
 	TOTAL_LETTER_CHAPTER: 6,
@@ -82,7 +82,8 @@ export const GENERIC = {
 export const STORAGE = {
 	COMPLETED_LESSON: 'completedLesson',
 	COMPLETED_STARS:  'completedStars',
-	VISITED: 'visited'
+	VISITED: 'visited',
+	QUIZ_QUESTION_COUNT: 'quizQuestionCount',
 };
 
 // SUKUN

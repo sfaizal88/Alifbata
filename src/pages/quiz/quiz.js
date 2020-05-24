@@ -12,6 +12,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from '../layout/header';
@@ -59,7 +60,7 @@ export const QuizScreen = ({ navigation, route }) => {
   	const [correctAnswer, setCorrectAnswer]     = useState('');
   	const [enableScroll, setEnableScroll]       = useState(false);
 	const [showSmash, setShowSmash]             = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
-	const [scoreCard, setScoreCard]             = useState({score: 0, total: state.length - 2});
+	const [scoreCard, setScoreCard]             = useState({score: 0, total: Constant.GENERIC.QUIZ_COUNT});
 
 	// LOCAL VARIABLE DECLARE
 	let score         = scoreCard.score;
@@ -67,14 +68,14 @@ export const QuizScreen = ({ navigation, route }) => {
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
-		navigation.addListener('focus', () => {
+		//navigation.addListener('focus', () => {
 			// GENERATE QUIX
-			_generateQuiz(route.params.quizData.data);
+			_generateQuiz(route.params.quizData);
 			// UPDATE STATUS COLOR
 			StatusBar.setBarStyle('light-content');
 			// HIDE LOADER 
 			setScreenIsWaiting(false);
-		});
+		//});
 		// HIDE LOADER 
 		setScreenIsWaiting(false);
 	}, []);
@@ -84,13 +85,17 @@ export const QuizScreen = ({ navigation, route }) => {
 	* @input  Array - Array of oBJECT
 	* @return Array
 	*/
-	const _generateQuiz = (data) => {
-		// FORMATTED DATA
-		let quizData = QuizData.generateQuiz(data);
-		// UPDATE THE SCORE CARD
-		setScoreCard({...scoreCard, total: quizData.length -  2, questionNo: 1})
-		// SAVE THE STATE
-		setState(quizData);
+	const _generateQuiz = (quizObj) => {
+		Storage._retrieveData(Constant.STORAGE.QUIZ_QUESTION_COUNT + '_' + quizObj.id).then(item => {
+    		// CHECK THE VALUES
+    		let quizCount = Utils.isNotEmpty(item) ? JSON.parse(item) : 0;
+			// FORMATTED DATA
+			let quizData = QuizData.generateQuiz(quizObj.data, quizObj.id, quizCount);
+			console.log('Stored index in quiz file TOALL - ' + (quizData.length - 2));
+    		console.log('------------------ENDS------------------');
+			// SAVE THE STATE
+			setState(quizData);
+		});
 	}
 
 	/**
@@ -178,7 +183,7 @@ export const QuizScreen = ({ navigation, route }) => {
 	*/
 	const redoTest = () => {
 		// GENERATE QUIX
-		_generateQuiz(route.params.quizData.data);
+		_generateQuiz(route.params.quizData);
 		// GO TO SLIDE 0, FIRST SLIDE
 		this.AppIntroSlider.goToSlide(0);
 		// SLIDE CHANGE FUNCTION
@@ -252,8 +257,8 @@ export const QuizScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
           <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.img120}/></View>
-          <Text style={[styles.slideDesc]}>{'Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. Keep attempting the quiz for more new questions.\n \n Ready? Lets go!'}</Text>
-          <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Text style={[styles.slideDesc]}>Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. Keep attempting the quiz for more new questions.{'\n \n Ready? Lets go!'}</Text>
+          <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
               containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
@@ -270,11 +275,11 @@ export const QuizScreen = ({ navigation, route }) => {
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. Redo the Quiz for more new questions.</Text>
          <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-            <Button onPress={redoTest} icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+            <Button onPress={redoTest} icon={<Icon name={'refresh'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Replay"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
               containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
               titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-	          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+	          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
 	          title={"All Quiz"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
 	          containerStyle={[styles.cSlideBtnContainer, styles.ph10]} iconRight={true}
 	          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>

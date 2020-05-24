@@ -491,7 +491,7 @@ export const DetailsScreen = ({ navigation, route }) => {
             </Text>
           </View>
           <View style={styles.bottomContainer}>
-            <Icon containerStyle={[styles.circleIcon, item.audio ? '' : styles.displayN]} name="volume-up" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.audio)}/>
+            <Icon containerStyle={[styles.circleIcon, item.audio ? '' : styles.displayN]} name="volume-up" color={Colors.primary} size={RFValue(35)} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.audio)}/>
             <Text style={[styles.slideDesc, styles.slideType2Desc, item.audio ? styles.pt15 : styles.pt30]}>{entities.decode('&#8220;')} {item.en} {entities.decode('&#8221;')} {item.message ? '(' + item.message + ')' : ''}</Text>
           </View>
         </View>
@@ -506,28 +506,28 @@ export const DetailsScreen = ({ navigation, route }) => {
               <Image source={item.answer.img} resizeMode={'contain'} style={[styles.arabicImg, item.answer.showImg ? '' : styles.displayN]}/>
             </View>
             <View style={styles.bottomContainer}>
-              <View style={{...styles.squareContainer, top: -80}}>
+              <View style={{...styles.squareContainer, top: RFValue(-80)}}>
                 <View style={styles.rowDirection}>
                   <View style={[styles.flex1, styles.alignE]}>
                     <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[0])}>
-                      <Icon name="volume-up" color={Colors.white} size={40} type="font-awesome" underlayColor="transparent"/>
+                      <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                   <View style={[styles.flex1, styles.alignS]}>
                     <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[1])}>
-                      <Icon name="volume-up" color={Colors.white} size={40} type="font-awesome" underlayColor="transparent"/>
+                      <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                 </View>
                 <View style={styles.rowDirection}>
                   <View style={[styles.flex1, styles.alignE]}>
                     <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[2])}>
-                      <Icon name="volume-up" color={Colors.white} size={40} type="font-awesome" underlayColor="transparent"/>
+                      <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                   <View style={[styles.flex1, styles.alignS, item.data[3] ? '' : styles.displayN]}>
                     <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[3])}>
-                      <Icon name="volume-up" color={Colors.white} size={40} type="font-awesome" underlayColor="transparent"/>
+                      <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -535,12 +535,12 @@ export const DetailsScreen = ({ navigation, route }) => {
                 <View style={[styles.rowDirection, styles.mt20, styles.w100]}>
                   <View style={[styles.flex1, styles.alignE]}>
                     <TouchableOpacity style={[styles.btn, styles.successBtn]} onPress={() => playAudio(item.answer.audio)}>
-                      <Text style={styles.lightBtnText}>Help</Text>
+                      <Text style={styles.lightBtnTextLarge}>Help</Text>
                     </TouchableOpacity>
                   </View>
                   <View style={[styles.flex1, styles.alignS]}>
                     <TouchableOpacity style={[styles.btn, styles.secondaryBtn]}  disabled={!isAnswered} onPress={() => _findAnswer(savedAnswered, item.answer, index)}>
-                      <Text style={[styles.darkBtnText, isAnswered ? '' : styles.disableBtnText]}>Submit</Text>
+                      <Text style={[styles.darkBtnTextLarge, isAnswered ? '' : styles.disableBtnText]}>Submit</Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -552,16 +552,16 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType3]} key={keyIndex}>
         <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{state.title}{'\nCompleted'}</Text>
-        <View style={styles.slideType3ImageContainer}><Image source={MedalIcon} style={styles.slideType3Image}/></View>
+        <View style={styles.slideType3ImageContainer}><Image source={MedalIcon} style={styles.img120}/></View>
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>Here's a <Text style={styles.darkHigh}>Medal</Text> to celebrate!</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={redoLesson}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={redoLesson}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Redo"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
-            title={"All Lessons"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
+          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
+            title={"Next Lesson"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
         </View>
@@ -579,11 +579,11 @@ export const DetailsScreen = ({ navigation, route }) => {
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>You won a <Text style={styles.darkHigh}>{Data.badges[parseInt(state.chapter.replace("chapter", "")) - 1].text}</Text> badge and a <Text style={styles.darkHigh}>Trophy</Text> to celebrate!</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={() => redoExercise(0)}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => redoExercise(0)}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Redo"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Chapters"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
@@ -594,16 +594,16 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType3]} key={keyIndex}>
         <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{state.title}{'\nCompleted'}</Text>
-        <View style={styles.slideType3ImageContainer}><Image source={MedalIcon} style={styles.slideType3Image}/></View>
+        <View style={styles.slideType3ImageContainer}><Image source={MedalIcon} style={styles.img120}/></View>
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>Here's a <Text style={styles.darkHigh}>Medal</Text> to celebrate!</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={() => nextSlide(-1)}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(-1)}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Redo"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
-            title={"All Lessons"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
+          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
+            title={"Next Lesson"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
         </View>
@@ -621,11 +621,11 @@ export const DetailsScreen = ({ navigation, route }) => {
         <Text style={styles.slideType3Title}>Masha Allah</Text>
         <Text style={styles.slideType3Desc}>You won a <Text style={styles.darkHigh}>{Data.badges[parseInt(state.chapter.replace("chapter", "")) - 1].text}</Text> badge and a <Text style={styles.darkHigh}>Trophy</Text> to celebrate!</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={() => nextSlide(-1)}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(-1)}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Redo"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Chapters"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
@@ -635,7 +635,7 @@ export const DetailsScreen = ({ navigation, route }) => {
     }  else if (item.type === Constant.GENERIC.FOUR_LETTER_EXERCISE) {
       return (
         <View style={[styles.slide, styles.slideType2]} key={keyIndex}>
-          <View style={{...styles.topContainer, top: -90}}>
+          <View style={{...styles.topContainer, top: RFValue(-90)}}>
             <Text style={[styles.bigArabLetter]} >{ Utils.convert2Arabic(item) }</Text>
             <Image source={item.img} resizeMode={'contain'} style={[styles.arabicImg, item.showImg ? '' : styles.displayN]}/>
           </View>
@@ -670,7 +670,7 @@ export const DetailsScreen = ({ navigation, route }) => {
                 </View>
               </View>
               <View style={[styles.columnDirection, styles.centerView, styles.mt20]}>
-                <Icon containerStyle={[styles.circleIcon, styles.w75]} name="volume-up" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.audio)}/>
+                <Icon containerStyle={[styles.circleIcon]} name="volume-up" color={Colors.primary} size={RFValue(35)} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.audio)}/>
                 <Text style={[styles.slideDesc, styles.slideType2Desc, styles.pt15]}>{entities.decode('&#8220;')} {item.en} {entities.decode('&#8221;')}</Text>
               </View>
             </View>
@@ -681,7 +681,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={[styles.slide, styles.slideType2]} key={keyIndex}>
           <View style={styles.noContainer}><Text style={styles.qno}>{scoreCard.questionNo}</Text></View>
-          <View style={{...styles.topContainer, top: -80, justifyContent: 'center'}}>
+          <View style={{...styles.topContainer, top: RFValue(-80), justifyContent: 'center'}}>
             <Text style={styles.slideLabel}>Pick the correct answer.</Text>
           </View>
           <View style={styles.bottomContainer}>
@@ -715,7 +715,7 @@ export const DetailsScreen = ({ navigation, route }) => {
                 </View>
               </View>
               <View style={[styles.columnDirection, styles.centerView, styles.mt20]}>
-                <Icon containerStyle={[styles.circleIcon, styles.w75]} name="volume-up" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.answer.audio)}/>
+                <Icon containerStyle={styles.circleIcon} name="volume-up" color={Colors.primary} size={RFValue(35)} type="font-awesome" underlayColor="transparent" onPress={() => playAudio(item.answer.audio)}/>
                 <Text style={[styles.slideDesc, styles.slideType2Desc, styles.pt15]}>{entities.decode('&#8220;')} {item.answer.en} {entities.decode('&#8221;')}</Text>
               </View>
             </View>
@@ -726,9 +726,9 @@ export const DetailsScreen = ({ navigation, route }) => {
       return (
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Guess \n the Sound'}</Text>
-          <View style={styles.slideImageContainer}><Image source={ListenIcon} style={styles.slideImage}/></View>
+          <View style={styles.slideImageContainer}><Image source={ListenIcon} style={styles.img120}/></View>
           <Text style={[styles.slideDesc]}>{"Pick the correct audio for the arabic letter shown and click on 'Submit'. Click on 'Help' for assistance.\n \n Ready? Lets go!"}</Text>
-          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
           title={"Start"} 
           buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
           containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
@@ -741,7 +741,7 @@ export const DetailsScreen = ({ navigation, route }) => {
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Alphabet\nPosition'}</Text>
           <View style={styles.slideImageContainer}><Image source={DifferentIcon} style={styles.img120}/></View>
           <Text style={[styles.slideDesc]}>{'The basic 28 Arabic alphabets change shape according to their position in a word. The 4 positions are Isolated and Beginning, Middle & End of word. In each lesson of this chapter, the Arabic letter will be shown in these positions.'}</Text>
-          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Start"} 
             buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
             containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
@@ -754,7 +754,7 @@ export const DetailsScreen = ({ navigation, route }) => {
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Alphabet\nPosition Example'}</Text>
           <View style={styles.slideImageContainer}><Image source={DifferentIcon} style={styles.img120}/></View>
           <Text style={[styles.slideDesc]}>{"We saw the shape of Alif in 4 different positions. Next, we will see how Alif (Red Color) will look in these positions in a word. This is repeated for the other Arabic alphabets in the following lessons."}</Text>
-          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
           title={"Next"} 
           buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
           containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
@@ -766,9 +766,9 @@ export const DetailsScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Guess \n the Letter'}</Text>
           <View style={styles.vColumn}>
-            <View style={styles.slideImageContainer}><Image source={OptionIcon} style={styles.slideImage}/></View>
+            <View style={styles.slideImageContainer}><Image source={OptionIcon} style={styles.img120}/></View>
             <Text style={[styles.slideDesc]}>{"Pick the correct arabic letter for the audio given.\n \n Ready? Lets go!"}</Text>
-            <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+            <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
               containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
@@ -788,11 +788,11 @@ export const DetailsScreen = ({ navigation, route }) => {
         <Text style={[styles.slideType3Desc, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>.</Text>
         <Text style={[styles.slideType3Desc, !Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. You have to get at least <Text style={styles.darkHigh}>{scoreCard.minPass} correct answer(s)</Text> to complete the game and earn <Text style={styles.darkHigh}>Star(s)</Text>.</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-            <Button onPress={redoTest}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+            <Button onPress={redoTest}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Replay"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
               containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
               titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-              <Button onPress={() => nextSlide(index)} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+              <Button onPress={() => nextSlide(index)} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
                 title={"Next"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
                 containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
                 titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
@@ -811,11 +811,11 @@ export const DetailsScreen = ({ navigation, route }) => {
         <Text style={[styles.slideType3Desc, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>.</Text>
         <Text style={[styles.slideType3Desc, !Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. You have to get at least <Text style={styles.darkHigh}>{scoreCard.minPass} correct answer(s)</Text> to complete the game and earn <Text style={styles.darkHigh}>Star(s)</Text>.</Text>
         <View style={[styles.slideImageContainer, styles.rowDirection, styles.mt15]}>
-          <Button onPress={redoTest}  icon={<Icon name={'refresh'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={redoTest}  icon={<Icon name={'refresh'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Replay"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10]}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          <Button onPress={() => nextSlide(index)} icon={<Icon name={'chevron-right'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+          <Button onPress={() => nextSlide(index)} icon={<Icon name={'chevron-right'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Next"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
             containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isPassed(scoreCard.score, scoreCard.minPass) ? '' : styles.displayN]} iconRight={true}
             titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
@@ -827,9 +827,9 @@ export const DetailsScreen = ({ navigation, route }) => {
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Chapter \n Exercise'}</Text>
           <View style={styles.vColumn}>
-            <View style={styles.slideImageContainer}><Image source={QuestionIcon} style={styles.slideImage}/></View>
+            <View style={styles.slideImageContainer}><Image source={QuestionIcon} style={styles.img120}/></View>
             <Text style={[styles.slideDesc]}><Text style={styles.darkHigh}>{Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT} questions</Text> in each game. You have to get at least <Text style={styles.darkHigh}>{Math.round((Constant.GENERIC.TYPE1_COMPLEX_RANDOMQ_COUNT/100) * passPer)} correct answers</Text> in each game to complete <Text style={styles.darkHigh}>Chapter {state.chapter.replace("chapter", "")}.</Text>{'\n\n All the best!'}</Text>
-            <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={18} color={Colors.grayDarkest} type='font-awesome'/>}
+            <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={"Start"} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
               containerStyle={[styles.cSlideBtnContainer, styles.mt50]}

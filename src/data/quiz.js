@@ -15,10 +15,10 @@ import * as Common from './common';
 import * as Generate from '../shared/generate';
 
 // QUIZ
-export const generateQuiz = (data) => {
+export const generateQuiz = (data, quizId, quizCount) => {
 	return [
 	Common.COMMON_SECTION[5],
-	...Generate.generateQuiz(data, Constant.GENERIC.QUIZ_COUNT),
+	...Generate.generateQuiz(data, quizId, quizCount),
 	Common.COMMON_SECTION[6]
 	]
 };

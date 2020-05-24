@@ -289,7 +289,7 @@ options: Utils.shuffle([
 {id: 1, option: "Al-Jamarat"},
 {id: 2, option: "Mina"},
 {id: 3, option: "Muzdalifa"},
-{id: 4, option: "None of the above"}
+{id: 4, option: "None of the options"}
 ])
 },
 {
@@ -479,7 +479,7 @@ options: Utils.shuffle([
 {id: 1, option: "Menstruating women"},
 {id: 2, option: "People who are travelling"},
 {id: 3, option: "People who are ill"},
-{id: 4, option: "All of the above"}
+{id: 4, option: "All of the options"}
 ])
 },
 {
@@ -489,7 +489,7 @@ options: Utils.shuffle([
 {id: 1, option: "Ifthar"},
 {id: 2, option: "Suhoor"},
 {id: 3, option: "Valimah"},
-{id: 4, option: "None of the above"}
+{id: 4, option: "None of the options"}
 ])
 },
 {
@@ -519,7 +519,7 @@ options: Utils.shuffle([
 {id: 1, option: "To spend"},
 {id: 2, option: "To receive"},
 {id: 3, option: "Purification"},
-{id: 4, option: "None of the above"}
+{id: 4, option: "None of the options"}
 ])
 },
 {
@@ -589,7 +589,7 @@ options: Utils.shuffle([
 {id: 1, option: "No, it is not permissible."},
 {id: 2, option: "Yes"},
 {id: 3, option: "Zakath should not be given to any person"},
-{id: 4, option: "None of the above"}
+{id: 4, option: "None of the options"}
 ])
 },
 {
@@ -599,7 +599,37 @@ options: Utils.shuffle([
 {id: 1, option: "So important that it forms the Third Pillar of Islam"},
 {id: 2, option: "Not so important"},
 {id: 3, option: "It is just a minor responsibility"},
-{id: 4, option: "None of the above"}
+{id: 4, option: "None of the options"}
 ])
-}
+},
+{
+question: 'What is a hadith?',
+answer: 2,
+options: Utils.shuffle([
+{id: 1, option: 'Verses from the Quran'},
+{id: 2, option: 'Saying and or traditions of Prophet Muhammad (pbuh)'},
+{id: 3, option: 'Books'},
+{id: 4, option: 'Notes'}
+])
+},
+{
+question: 'In how many days did Allah create the Heavens and the Earth?',
+answer: 4,
+options: Utils.shuffle([
+{id: 1, option: '7 days'},
+{id: 2, option: '11 days'},
+{id: 3, option: '3 days'},
+{id: 4, option: '6 days'}
+])
+},
+{
+question: 'Why did Shaytan not bow down to Adam (as) when asked by Allah ?',
+answer: 3,
+options: Utils.shuffle([
+{id: 1, option: 'Because Shaytan was scared'},
+{id: 2, option: 'Because Shaytan was unable to'},
+{id: 3, option: 'Due to pride'},
+{id: 4, option: 'Due to sorrow'}
+])
+},
 ];

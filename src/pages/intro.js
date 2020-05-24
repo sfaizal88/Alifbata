@@ -142,7 +142,8 @@ export const IntroScreen = ({navigation}) => {
                       <Text style={{...styles.modellText, ...styles.tCenter, color: item.color}}>Before we start the course, we would like to introduce the rewards and features of the app. You will receive rewards, whenever you complete a chapter, lesson, quiz or game.</Text>
                         <View style={[styles.rowDirection, styles.mt20, styles.modelTable, styles.modelTableDark]}>
                           <View style={[styles.w50, styles.centerView]}><Image source={WinnerIcon} style={styles.img30}/></View>
-                          <View style={[styles.flex1, styles.pl5]}><Text style={{...styles.modellSubText, color: item.color}}>On completing a chapter, you will receive a <Text style={{...styles.darkHigh, color: item.color}}>Trophy</Text> and a special <Text style={{...styles.darkHigh, color: item.color}}>Badge.</Text></Text></View>
+                          <View style={[styles.flex1, styles.pl5]}>
+                            <Text style={{...styles.modellSubText, color: item.color}}>On completing a chapter, you will receive a <Text style={{...styles.darkHigh, color: item.color}}>Trophy</Text> and a special <Text style={{...styles.darkHigh, color: item.color}}>Badge.</Text></Text></View>
                         </View>
                         <View style={[styles.rowDirection, styles.modelTable, styles.modelTableDark]}>
                           <View style={[styles.w50, styles.centerView]}><Image source={MedalIcon} style={styles.img30}/></View>
@@ -162,7 +163,6 @@ export const IntroScreen = ({navigation}) => {
         }
     }
     
-    // RENDER HTML
     return (
     <>  
         <AppIntroSlider 

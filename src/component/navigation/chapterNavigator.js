@@ -73,7 +73,7 @@ export const ChapterNavigation = ({navigation}) => {
             headerStyle: {...styles.stackHeader},
             headerTintColor: Colors.white,
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: 'bold'
             },
             title: '',
             headerForceInset: { top: 'never', bottom: 'never' }

@@ -9,7 +9,7 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useEffect, useState} from 'react';
-import { Alert } from 'react-native';
+import { Alert, AsyncStorage } from 'react-native';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
 import { Icon } from 'react-native-elements';
@@ -176,22 +176,21 @@ export const generateLessonUI = (contentArry, lessonNo, chapter, data) => {
 * @input  Integer  Entire Chapter details
 * @return Object   
 */
-export const generateQuiz = (data, count = 10) => {
+export const generateQuiz = (data, quizId, quizCount) => {
   // ORIGINAL DATA
   let originalData  = data.map(a => ({...a}));
-  // SHUFFLE DATA
-  originalData.sort(() => Math.random() - 0.5);
   // EMPTY OUTPUT DECLARE
   let output = [];
-  // HACK ARRAY EMPTY
-  let totalArray = Array.apply(null, Array(count));
+  // FECTH NEW QUESTIONS
+  let questions = fetchQuizQuestion(originalData, quizId, quizCount);
   // LOOP THE ARRAY
-  totalArray.forEach((item, index) => {
+  questions.forEach((item, index) => {
+    console.log('Question No. ' + (index + 1) + ', Question - ' + item.question);
     // LOCAL VARIABLE
     let quiz = {
       id:   index + 1,
       type: Constant.GENERIC.QUIZ_EXERCISE,
-      ...originalData[index]
+      ...questions[index]
     }
     // PUSHING INTO THE MAIN LESSON
     output.push(quiz);
@@ -200,6 +199,39 @@ export const generateQuiz = (data, count = 10) => {
   output.sort(() => Math.random() - 0.5);
   return output;
 }
+
+/**
+* Generate question limit and check wheather question or repeated or not
+*
+* @input  Array    All questions
+* @input  Integer  Quid Id.
+* @input  Integer  Start Index.
+* @input  Integer  Question limit
+* @return Object   
+*/
+const fetchQuizQuestion = (originalData, quizId, value, count = Constant.GENERIC.QUIZ_COUNT) => {
+
+    console.log('------------------STARTS------------------');
+    console.log('Original Data count - ' + originalData.length);
+    // CHECK THE VALUES
+    let item       = Utils.isNotEmpty(value) ? JSON.parse(value) : 0;
+    let endIndex   = parseInt(item) + parseInt(count);
+    //CHECK HERE ALSO ONCE
+    item = ((originalData.length > endIndex) && originalData[endIndex - 1]) ? item : 0;
+    endIndex   = parseInt(item) + parseInt(count);
+    console.log('Quiz Start Index - ' + item);
+    console.log('Quiz End Index - ' + endIndex);
+    // SUBSTRING 
+    let newQuestion    = originalData.slice(item, endIndex);
+    let nextFinalIndex = endIndex + count;
+    console.log('Total Question - ' + newQuestion.length);
+    // CHECKING 
+    endIndex = (originalData.length <= nextFinalIndex && originalData[nextFinalIndex - 1]) ? 0 : endIndex;
+    // SAVE INTO THE MOBILE STORAGE
+    AsyncStorage.setItem(Constant.STORAGE.QUIZ_QUESTION_COUNT + '_' + quizId, JSON.stringify(endIndex));
+    //RETURN THE ARRAY
+    return newQuestion;
+};
 
 /**
 * Feature used to create lesson intro 

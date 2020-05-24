@@ -12,6 +12,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from './layout/header';
@@ -116,34 +117,6 @@ export const LessonScreen = ({ navigation, route }) => {
   }
 
   /**
-  * RIGHT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderNextButton = () => {
-    return (
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
-  /**
-  * LEFT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderPrevButton = () => {
-    return (  
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
-  /**
   * Feature used to generate each slide
   *
   * @input  Object - Slider object
@@ -159,7 +132,7 @@ export const LessonScreen = ({ navigation, route }) => {
             <View style={{...styles.cCircleContainer, ...styles.cCircleContainerSmall, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}><Text style={[styles.cCircleNo, styles.cCircleNoSmall]}>{(index + 1)}</Text></View>
           </TouchableOpacity>
           <Text style={{...styles.cSlideChatLine, ...styles.mt20, fontSize: Setting.h1TextSize, ...styles.mb10}}>{item.desc}</Text>
-          <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
+          <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={RFValue(15)} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
         title={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? "Complete" : "Start") : 'Locked'} 
         buttonStyle={[styles.cSlideBtn, Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
         containerStyle={styles.cSlideBtnContainer}
@@ -177,7 +150,7 @@ export const LessonScreen = ({ navigation, route }) => {
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
         <MHeader title={state.title} subtitle={state.desc}/>
-        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
+        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}}  iconStyle={{display: 'none'}} underlayColor="transparent" />
         <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
           <AppIntroSlider
             dotClickEnabled={false}
@@ -189,8 +162,8 @@ export const LessonScreen = ({ navigation, route }) => {
             showNextButton={true} 
             renderItem={generateItem} 
             data={state.data}
-            renderNextButton={_renderNextButton}
-            renderPrevButton={_renderPrevButton}/>
+            renderNextButton={Utils.renderNextButton}
+            renderPrevButton={Utils.renderPrevButton}/>
         </View>
         <View style={[styles.body, styles.pt10, listView ? '' : styles.displayN, styles.pb50]}>
           <View style={[state.message ? '' : styles.displayN, styles.infoContainer]}>
@@ -215,7 +188,7 @@ export const LessonScreen = ({ navigation, route }) => {
                   <View style={[styles.dLType1]} key={'LESSON_' + index}>
                   <View style={styles.dLType1LeftContainer}>
                     <View style={Utils.unlockLesson(index, completed, item.id) ? styles.dLType1LeftIconContainerActive : styles.dLType1LeftIconContainer}>
-                      <Icon name="check" color={Colors.white} size={17} type='octicon' containerStyle={Utils.lessonCompleted(completed, item.id) ? styles.dLType1CompletedBtnContainer : styles.displayN}/>
+                      <Icon name="check" color={Colors.white} size={RFValue(14)} type='octicon' containerStyle={Utils.lessonCompleted(completed, item.id) ? styles.dLType1CompletedBtnContainer : styles.displayN}/>
                       <Image source={MedalIcon} style={styles.dLType1LeftIcon}/>
                     </View>
                   </View>
@@ -224,7 +197,7 @@ export const LessonScreen = ({ navigation, route }) => {
                     <Text style={styles.dLType1Desc} numberOfLines={1}>{item.desc}</Text>
                   </View>
                   <View style={styles.dLType1RightContainer}>
-                    <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={18} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
+                    <Button onPress={() => _navigate(item)} icon={<Icon name={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? 'check' : 'play') : 'lock'} size={RFValue(15)} color={Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? Colors.white : Colors.grayDarkest) : Colors.white} type='font-awesome'/>}
                     title={Utils.unlockLesson(index, completed, item.id) ? (Utils.lessonCompleted(completed, item.id) ? "Done" : "Start") : 'Locked'} 
                     buttonStyle={[styles.dLType1RightBtn, Utils.unlockLesson(index, completed, item.id)  ? (Utils.lessonCompleted(completed, item.id) ? styles.cSlideCompletedBtn : styles.cSlideBtnActive) : '']} 
                     containerStyle={styles.dLType1RightBtnContainer}

@@ -12,6 +12,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL PAGE FILES
 import { MHeader  } from '../layout/header';
@@ -52,35 +53,6 @@ export const StepsScreen = ({ navigation, route }) => {
   }, []);
 
 
-
-  /**
-  * RIGHT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderNextButton = () => {
-    return (
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-right" iconStyle={styles.nextBtn} size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
-  /**
-  * LEFT ARROW CUSTOMISE BUTTON
-  *
-  * @input  NA
-  * @return NA
-  */
-  const _renderPrevButton = () => {
-    return (  
-      <View style={styles.buttonCircle}>
-        <Icon name="angle-left" iconStyle={styles.prevBtn}  size={30} type="font-awesome" underlayColor="transparent"></Icon>
-      </View>
-    );
-  }
-
   /**
   * LEFT ARROW CUSTOMISE BUTTON
   *
@@ -106,7 +78,7 @@ export const StepsScreen = ({ navigation, route }) => {
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
             <Button onPress={() => _slideMove(index + 1)} 
-              icon={<Icon name={'angle-right'} size={25} color={Colors.grayDarkest} type='font-awesome'/>}
+              icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={ "Next" } 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
               containerStyle={styles.cSlideBtnContainer, styles.displayN}
@@ -135,8 +107,8 @@ export const StepsScreen = ({ navigation, route }) => {
             showNextButton={true} 
             renderItem={generateItem} 
             data={state.data}
-            renderNextButton={_renderNextButton}
-            renderPrevButton={_renderPrevButton}/>
+            renderNextButton={Utils.renderNextButton}
+            renderPrevButton={Utils.renderPrevButton}/>
         </View>
           <Menu navigation={navigation} activeMenu={'STEPS'}></Menu>
         </SafeAreaView>

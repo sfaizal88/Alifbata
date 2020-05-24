@@ -58,7 +58,7 @@ export const ARABIC_ALPHABET = [
 {key: 8, en: 'daal', ar: 'د',  audio: require(alphabetAudioPath + 'dal.mp3'), type: 'L', enableUnicode: true, unicode: '&#1583;'},
 {key: 9, en: 'dhaal', ar: 'ذ',  audio: require(alphabetAudioPath + 'thal.mp3'), type: 'L', enableUnicode: true, unicode: '&#1584;'},
 {key: 10, en: 'ra', ar: 'ر',  audio: require(alphabetAudioPath + 'ra.mp3'), type: 'L', enableUnicode: true, unicode: '&#1585;'},
-{key: 11, en: 'za', ar: 'ز',  audio: require(alphabetAudioPath + 'zay.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;'},
+{key: 11, en: 'zay', ar: 'ز',  audio: require(alphabetAudioPath + 'zay.mp3'), type: 'L', enableUnicode: true, unicode: '&#1586;'},
 {key: 12, en: 'seen', ar: 'س',  audio: require(alphabetAudioPath + 'seen.mp3'), type: 'L', enableUnicode: true, unicode: '&#1587;'},
 {key: 13, en: 'sheen', ar: 'ش',  audio: require(alphabetAudioPath + 'sheen.mp3'), type: 'L', enableUnicode: true, unicode: '&#1588;'},
 {key: 14, en: 'Saad', ar: 'ص',  audio: require(alphabetAudioPath + 'saad.mp3'), type: 'L', enableUnicode: true, unicode: '&#1589;'},

@@ -202,7 +202,7 @@ export const DashboardScreen = ({ navigation }) => {
 				</View>
 				<View style={[styles.rowDirection, styles.pt30]}>
 				    <View style={[styles.flex1, styles.centerView]}>
-				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'M' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('M')} underlayColor="transparent" >
+				      <TouchableOpacity style={[styles.dashBoxSmall, showAwards === 'M' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('M')} underlayColor="transparent" >
 				        <Image source={MedalIcon} style={styles.img25} />
 				      </TouchableOpacity>
 				    </View>
@@ -212,7 +212,7 @@ export const DashboardScreen = ({ navigation }) => {
 				      </TouchableOpacity>
 				    </View>
 				    <View style={[styles.flex1, styles.centerView]}>
-				      <TouchableOpacity style={[styles.dashBox1, showAwards === 'S' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('S')} underlayColor="transparent" >
+				      <TouchableOpacity style={[styles.dashBoxSmall, showAwards === 'S' ? styles.dashBoxActive : '']} onPress={() => _toggleAwards('S')} underlayColor="transparent" >
 				        <Image source={StarIcon} style={styles.img25} />
 				      </TouchableOpacity>
 				    </View>
