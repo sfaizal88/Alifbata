@@ -57,7 +57,7 @@ export const data = [
 	desc: 'Miracle of a Pregnant\nShe-Camel',
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 	img: require(imgURL + '5.png'),
-	details: 'Saleh (A.S) called the people of Thamud to worship one God and let go of their idol worshipping. To prove the greatness of God, they asked Saleh (A.S) to make a pregnant she-camel appear from the mountains. By the will of Allah SWT, Saleh (A.S) performed this miracle. However, people continued as disbelievers and some of them killed the camel. As a punishment, Allah SWT destroyed them with sound waves.',
+	details: 'Saleh (A.S) called the people of Thamud to worship one God and let go of their idol worshipping. To prove the greatness of God, they asked Saleh (A.S) to make a pregnant she-camel appear from the mountains. By the will of Allah SWT, Saleh (A.S) performed this miracle. However, the people continued as disbelievers and some of them killed the camel. As a punishment, Allah SWT destroyed them with sound waves.',
 	},
 	{
 	id: 6,
@@ -75,7 +75,7 @@ export const data = [
 	desc: 'The Greatest Sacrifice',
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 	img: require(imgURL + '7.png'),
-	details: 'As a test of his faith, Ibrahim (A.S) was commanded by Allah SWT’s (through a dream) to sacrifice his son, Ismail (A.S). Ismail (A.S) was taken to a place and laid down for sacrifice. Since both Ibrahim (A.S) and Ismail (A.S) submitted to Allah SWT’s will, a sheep was sent fo sacrifice in place of Ibrahim (A.S).',
+	details: 'As a test of his faith, Ibrahim (A.S) was commanded by Allah SWT’s (through a dream) to sacrifice his son, Ismail (A.S). Ismail (A.S) was taken to a place and laid down for sacrifice. Since both Ibrahim (A.S) and Ismail (A.S) submitted to Allah SWT’s will, a sheep was sent for sacrifice in place of Ibrahim (A.S).',
 	},
 	{ 
 	id: 8, 
@@ -84,7 +84,7 @@ export const data = [
 	desc: 'Twin Births', 
 	bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)], 
 	img: require(imgURL + '8.png'), 
-	details: "Prophet Ishaq's (A.S) wife was a barren woman. However, through his prayers and the will of Allah SWT, his wife finally gave birth to twins - 'Iishuu (ancestor of the Romans) and Ya'qub (ancestor of the Children of Israel.)", 
+	details: "Prophet Ishaq's (A.S) wife was a barren woman. However, through his prayers and the will of Allah SWT, his wife finally gave birth to twins - Iishuu (ancestor of the Romans) and Yaqub (ancestor of the Children of Israel.)", 
 	}, 
 
 	{ 
