@@ -18,6 +18,9 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 // ALL PAGE FILES
 import { MHeader  } from './../layout/header';
 
+// DATA
+import * as Quiz from '../../data/quiz';
+
 // ALL COMPONENT
 import { Loader  } from '../../component/complex/loader';
 import { Empty  } from '../../component/complex/empty';
@@ -38,14 +41,14 @@ export const QuizListScreen = ({ navigation }) => {
   	// DECLARE STATE VARIABLE
 	const [isFetching, setIsFetching]           = useState(false);
 	const [screenIsWaiting, setScreenIsWaiting] = useState(true);
-	const [state, setState]                     = useState(Data.quizList);
+	const [state, setState]                     = useState(Quiz.quizList);
   	const [listView, setListView]               = useState(false);
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {// PULL DATA
-			setState(Data.quizList);
+			setState(Quiz.quizList);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
 			// HIDE LOADER 
@@ -78,7 +81,7 @@ export const QuizListScreen = ({ navigation }) => {
         return (
           <View  underlayColor="transparent" style={styles.cSlide} key={'LIST_TYPE3_' + index}>
           	<View style={[styles.chapterLesOverlay]}></View>
-          	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
+          	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}{'\nQuiz'}</Text>
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!item.active}>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
@@ -96,7 +99,7 @@ export const QuizListScreen = ({ navigation }) => {
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}
   				/>
-  			<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
+  			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }
@@ -107,7 +110,7 @@ export const QuizListScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="All Quiz" icon="dashboard"/>
-	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} iconStyle={{display: 'none'}} underlayColor="transparent" />
+	    	<Icon iconStyle={styles.displayN} name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} iconStyle={{display: 'none'}} underlayColor="transparent" />
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider
@@ -123,38 +126,6 @@ export const QuizListScreen = ({ navigation }) => {
 				renderNextButton={Utils.renderNextButton}
 				renderPrevButton={Utils.renderPrevButton}/>
 			</View>
-
-	    	<View style={[styles.body, styles.pt20, styles.overflow, listView ? '' : styles.displayN, styles.pb50]}>
-	    		<FlatList data={state} extraData={state}
-                    showsHorizontalScrollIndicator={true}
-                    
-                    renderItem = { ({item, index}) =>  (
-                      	<TouchableOpacity key={'LIST_TYPE1_' + index} onPress={() => _navigate(item)}  underlayColor="transparent" 
-                      	style={{flex: 1, flexDirection: 'row', margin: 5, backgroundColor: Colors.primary, borderRadius: 10, paddingRight: 10, paddingTop: 10, paddingBottom: 10}}>
-	    					<View style={{width: 80, alignItems: "center", justifyContent: "center", paddingHorizontal: 5}}>
-								<Image source={item.img} style={{width: RFValue(40), height: RFValue(40)}}/>
-							</View>
-							<View style={{flex: 1, alignItems: "flex-start", justifyContent: "center"}}>
-								<Text style={{fontSize: Setting.sTextSize, fontWeight: '600', color: Colors.white}}>{item.title}</Text>
-								<Text numberOfLines={1} style={{fontSize: Setting.sxTextSize, fontWeight: '300', color: Colors.white, paddingTop: 3}}>{item.desc}</Text>
-							</View>
-	    				</TouchableOpacity>
-                    )}
-                keyExtractor = {(item, index) => 'quizIndex_type1_' + index.toString()}/>
-                <FlatList data={state} extraData={state}
-                    showsHorizontalScrollIndicator={true}
-                    numColumns={2}
-                    renderItem = { ({item, index}) =>  (
-                      	<TouchableOpacity key={'LIST_TYPE2_' + index} onPress={() => _navigate(item)}  underlayColor="transparent"  style={[styles.squareBadgeContainer, (index % 2 === 1) ? styles.badgeDown: '']}>
-							<View style={[styles.squareBadge]}>
-								<Image source={item.img} style={styles.squareBadgeImage}/>
-							</View>
-							<Text style={[styles.badgeLabel]}>{item.title}</Text>
-						</TouchableOpacity>
-                    )}
-                keyExtractor = {(item, index) => 'quizIndex_type2_' + index.toString()}/>
-
-	        </View>
 	  		</SafeAreaView>
 	  		<Menu navigation={navigation} activeMenu={'QUIZ'}></Menu>
 	  	</>

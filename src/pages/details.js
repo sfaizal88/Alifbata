@@ -468,7 +468,7 @@ export const DetailsScreen = ({ navigation, route }) => {
   * @types  L (Letter learning), R (Random letter exercise), C (Completed Page)
   */
   const generateItem = ({ item, index }) => {
-    let keyIndex = 'DETAILS_' + index + Math.floor((Math.random() * 200) + 1);
+    let keyIndex = ('DETAILS_' + index + Math.floor((Math.random() * 200) + 1)).toString();
     if (item.type === Constant.GENERIC.LETTER_LESSON) {
       return (
         <View style={[styles.slide, styles.slideType2]} key={keyIndex}>
@@ -509,24 +509,24 @@ export const DetailsScreen = ({ navigation, route }) => {
               <View style={[styles.squareContainer, Utils.isIpad() ? styles.t80n : styles.t80n]}>
                 <View style={styles.rowDirection}>
                   <View style={[styles.flex1, styles.alignE]}>
-                    <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[0])}>
+                    <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[0])}>
                       <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                   <View style={[styles.flex1, styles.alignS]}>
-                    <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[1])}>
+                    <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[1])}>
                       <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                 </View>
                 <View style={styles.rowDirection}>
                   <View style={[styles.flex1, styles.alignE]}>
-                    <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[2])}>
+                    <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[2])}>
                       <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
                   <View style={[styles.flex1, styles.alignS, item.data[3] ? '' : styles.displayN]}>
-                    <TouchableOpacity underlayColor="transparent" style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[3])}>
+                    <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _saveAnswer(item.data[3])}>
                       <Icon name="volume-up" color={Colors.white} size={RFValue(35)} type="font-awesome" underlayColor="transparent"/>
                     </TouchableOpacity>
                   </View>
@@ -688,13 +688,13 @@ export const DetailsScreen = ({ navigation, route }) => {
             <View style={[styles.squareContainer, Utils.isIpad() ? styles.t120n : styles.t150nRF]}>
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
-                  <TouchableOpacity style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[0], item.answer, index)}>
+                  <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[0], item.answer, index)}>
                     <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[0])}</Text>
                     <Image source={item.data[0].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[0].showImg ? '' : styles.displayN]}/>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
-                  <TouchableOpacity style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[1], item.answer, index)}>
+                  <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[1], item.answer, index)}>
                     <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[1])}</Text>
                     <Image source={item.data[1].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[1].showImg ? '' : styles.displayN]}/>
                   </TouchableOpacity>
@@ -702,13 +702,13 @@ export const DetailsScreen = ({ navigation, route }) => {
               </View>
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
-                  <TouchableOpacity style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[2], item.answer, index)}>
+                  <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[2], item.answer, index)}>
                     <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[2])}</Text>
                     <Image source={item.data[2].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[2].showImg ? '' : styles.displayN]}/>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
-                  <TouchableOpacity style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[3], item.answer, index)}>
+                  <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[3], item.answer, index)}>
                     <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[3])}</Text>
                     <Image source={item.data[3].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[3].showImg ? '' : styles.displayN]}/>
                   </TouchableOpacity>

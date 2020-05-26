@@ -10,6 +10,7 @@
 // REACT NATIVE IMPORT
 import React, {useEffect, useState} from 'react';
 import { Alert, AsyncStorage } from 'react-native';
+//import AsyncStorage from '@react-native-community/async-storage';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
 import { Icon } from 'react-native-elements';

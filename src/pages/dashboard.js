@@ -66,6 +66,8 @@ export const DashboardScreen = ({ navigation }) => {
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
+	    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+	    StatusBar.setBackgroundColor(Colors.primary);
 		// LOAD
 		getAllCompleted();
 		// LOAD
@@ -80,6 +82,8 @@ export const DashboardScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+		    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+		    StatusBar.setBackgroundColor(Colors.primary);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
 			// LOAD
@@ -184,7 +188,7 @@ export const DashboardScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Assalamu Alaikum" icon="dashboard"/>
-	    	<ScrollView style={[styles.body, styles.pt30, styles.pb10, styles.topDashboard]}>
+	    	<ScrollView style={[styles.body, styles.pt30]}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>
 				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{trophy}</Text>
@@ -217,24 +221,23 @@ export const DashboardScreen = ({ navigation }) => {
 				      </TouchableOpacity>
 				    </View>
 				</View>
-	    		<View style={styles.bottomDashboard}>
-	    			<Text style={styles.dashboardTitle}>Train Your Skills</Text>
-	    			<Text style={styles.dashboardSubTitle}>Islamic Knowledge</Text>
-		    		<FlatList
-				    horizontal
-				    showsHorizontalScrollIndicator={false}
-				    data={Data.dashboardHelpList}
-				    renderItem = { ({item, index}) =>  (
-                      	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => _navigate(item.path)}>
-	    					<Icon name={item.icon} color={item.color} size={RFValue(45)}  type='octicon' underlayColor="transparent" />
-	    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
-	    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
-							
-	    				</TouchableOpacity>
-                    )}
-				    keyExtractor = {(item, index) => 'helpfullIndex_' + index.toString()}/>
+    			<Text style={styles.dashboardTitle}>Train Your Skills</Text>
+    			<Text style={styles.dashboardSubTitle}>Islamic Knowledge</Text>
+	    		<FlatList
+	    		nestedScrollEnabled = {false}
+			    horizontal
+			    showsHorizontalScrollIndicator={false}
+			    data={Data.dashboardHelpList}
+			    renderItem = { ({item, index}) =>  (
+                  	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => _navigate(item.path)}>
+    					<Icon name={item.icon} color={item.color} size={RFValue(45)}  type='octicon' underlayColor="transparent" />
+    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
+    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
+						
+    				</TouchableOpacity>
+                )}
+			    keyExtractor = {(item, index) => ('helpfullIndex_' + index).toString()}/>
 	    			
-	    		</View>
 	        </ScrollView>
 	        <Menu navigation={navigation} activeMenu={'HOME'}></Menu>
 	  		</SafeAreaView>

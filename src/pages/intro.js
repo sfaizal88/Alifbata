@@ -44,6 +44,8 @@ export const IntroScreen = ({navigation}) => {
           if (Utils.isNotEmpty(item)) {
             onFinished();
           } else {
+            // SETTING THE BACKGROUND
+            StatusBar.setBackgroundColor(Data.introSlides[0].backgroundColor);
             SplashScreen.hide();
           }
         });
@@ -72,6 +74,22 @@ export const IntroScreen = ({navigation}) => {
           <View style={[styles.buttonCircle, styles.buttonCircleLight]}>
             <Icon name="angle-right" iconStyle={[styles.nextBtn, styles.navDark]} size={30} type="font-awesome" underlayColor="transparent"></Icon>
           </View>
+        );
+    }
+
+
+    /**
+    * DONE ARROW CUSTOMISE BUTTON
+    *
+    * @input  NA
+    * @return NA
+    */
+    const _renderDoneButton = () => {
+        return (
+          <View style={[styles.buttonCircle, styles.buttonCircleLight, styles.buttonDone]}>
+            <Text style={styles.doneBtn}>Done</Text>
+          </View>
+          
         );
     }
 
@@ -104,18 +122,18 @@ export const IntroScreen = ({navigation}) => {
     }
 
     /**
-    * DONE ARROW CUSTOMISE BUTTON
+    * ON SLIDE CHANGE
     *
     * @input  NA
     * @return NA
     */
-    const _renderDoneButton = () => {
-        return (
-          <View style={[styles.buttonCircle, styles.buttonCircleLight, styles.buttonDone]}>
-            <Text style={styles.doneBtn}>Done<Icon name="angle-left" iconStyle={[styles.prevBtn, styles.navDark]}  size={30} type="font-awesome" underlayColor="transparent"></Icon></Text>
-          </View>
-        );
+    const _onSlideChange = (index, lastIndex) => {
+        if (Utils.isAndroid) {
+            StatusBar.setBackgroundColor(Data.introSlides[index].backgroundColor);
+        }
     }
+
+
 
     /**
     * Feature used to generate each slide
@@ -124,9 +142,10 @@ export const IntroScreen = ({navigation}) => {
     * @return Tags
     */
     const generateItem = ({ item, index }) => {
+        let keyIndex = ('INTRO_' + index).toString();
         if (!item.isLastPage) {
             return (
-              <View style={{...styles.slide, backgroundColor: item.backgroundColor}}>
+              <View style={{...styles.slide, backgroundColor: item.backgroundColor}} key={keyIndex}>
                 <Text style={{...styles.slideTitle, color: item.color}}>{item.title}</Text>
                 <View style={styles.slideImageContainer}><Image source={item.image} style={styles.slideImage}/></View>
                 <Text style={{...styles.slideDesc, color: item.color}}>{item.text}</Text>
@@ -134,7 +153,7 @@ export const IntroScreen = ({navigation}) => {
             );
         } else if (item.isLastPage) {
             return (
-                <View style={{...styles.slide, ...styles.slideNoShadow, ...styles.ph20, backgroundColor: item.backgroundColor}}>
+                <View style={{...styles.slide, ...styles.slideNoShadow, ...styles.ph20, backgroundColor: item.backgroundColor}} key={keyIndex}>
                     <View  style={styles.modelTitleContainer}>
                     <Text style={{...styles.modelTitle, color: item.color}}>Assalamu Alaikum</Text>
                     </View>
@@ -157,6 +176,7 @@ export const IntroScreen = ({navigation}) => {
                           <View style={[styles.w50, styles.centerView]}><Icon name="volume-up" color={Colors.white} size={35} type="font-awesome" underlayColor="transparent"/></View>
                           <View style={[styles.flex1, styles.pl5]}><Text style={{...styles.modellSubText, color: item.color}}>While doing the lessons, click on this <Text style={{...styles.darkHigh, color: item.color}}>audio icon</Text> to hear the audio again.</Text></View>
                         </View>
+
                     </View>
                 </View>
             );
@@ -168,14 +188,16 @@ export const IntroScreen = ({navigation}) => {
         <AppIntroSlider 
             showPrevButton={true} 
             showSkipButton={false} 
+            showDoneButton={true}
             renderItem={generateItem} 
             data={Data.introSlides} 
             onDone={onFinished} 
             onSkip={onFinished}
             renderNextButton={_renderNextButton}
             renderPrevButton={_renderPrevButton}
-            renderDoneButton={_renderDoneButton}
             renderSkipButton={_renderSkipButton}
+            renderDoneButton={_renderDoneButton}
+            onSlideChange={_onSlideChange}
         />
     </>
     );

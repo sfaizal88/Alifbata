@@ -149,10 +149,11 @@ export const ChapterScreen = ({ navigation }) => {
     * @return Tags
     */
     const generateItem = ({ item, index }) => {
+    	let keyIndex = ('CHAPTER_' + index + Math.floor((Math.random() * 200) + 1)).toString();
         return (
-          <View  underlayColor="transparent" style={styles.cSlide}>
+          <View  underlayColor="transparent" style={styles.cSlide} key={keyIndex}>
           	<View style={[styles.chapterLesOverlay]}></View>
-          	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
+          	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<Text style={[styles.progressBarTitle, item.active ? '' : styles.displayN]}>{'Chapter'}</Text>
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}>
             	<Icon name="check" color={Colors.white} size={RFValue(30)} type='octicon' containerStyle={Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedIcon : styles.displayN}/>
@@ -169,7 +170,7 @@ export const ChapterScreen = ({ navigation }) => {
   				disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}/>
-  				<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
+  			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }
@@ -180,7 +181,7 @@ export const ChapterScreen = ({ navigation }) => {
 			<Loader show={screenIsWaiting} />
 			<SafeAreaView style={styles.safeViewContainer}>
 			<MHeader title="All Chapters" icon="book"/>
-			<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" iconStyle={{display: 'none'}}/>
+			<Icon iconStyle={styles.displayN} name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" iconStyle={{display: 'none'}}/>
 			<View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
 				<AppIntroSlider
 				dotClickEnabled={false}
@@ -238,7 +239,7 @@ export const ChapterScreen = ({ navigation }) => {
 		        	ListEmptyComponent = {() => (
 		        		<Empty icon={'group'} title='No Chapter Found' subtitle='Try again later.'/>
 		        	)}
-		        keyExtractor = {(item, index) => 'chapterId_' + item.id.toString() + '_chapterIndex_' + index.toString()}/>
+		        keyExtractor = {(item, index) => ('chapterId_' + item.id + '_chapterIndex_' + index).toString()}/>
 	        </View>
 			</SafeAreaView>
 	    </View>

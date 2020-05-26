@@ -15,6 +15,16 @@ import * as Utils from '../../shared/utils';
 //STEPS
 import * as Wudu from './wudu';
 import * as ProphetNames from './prophetnames';
+import * as Drinking from './drinking';
+import * as FastingBenefit from './fastingBenefit';
+import * as Sunnah from './sunnah';
+import * as Hajj from './hajj';
+import * as Mahram from './mahram';
+import * as Pillars from './pillars';
+import * as FridaySunnah from './fridaySunnah';
+import * as Quran from './quran';
+import * as Umrah from './umrah';
+import * as Verse from './verse';
 
 
 // ALL CHAPTER
@@ -31,6 +41,26 @@ export const data = [
 		details: "Prophets are individuals who were sent by Allah to various communities to serve as examples of ideal human behavior and to spread God's message on Earth. ",
 	},
 	{
+		id: 11,
+		title: 'Quran Verses',
+		data: Verse.data,
+		desc: 'Five Life-Changing\nVerses of the Quran',
+		bgColor: '#bdc480',
+		active: false,
+		img: require('../../../assets/img/steps/verse.png'),
+		details: ' Each and every verse of Quran is a gem. However, there are few which life-changing.',
+	},
+	{
+		id: 10,
+		title: 'Benefits of Fasting',
+		data: FastingBenefit.data,
+		desc: 'Benefit of\nfasting during Ramadan',
+		bgColor: '#60a3bc',
+		active: false,
+		img: require('../../../assets/img/steps/fasting.png'),
+		details: 'Fasting develops the quality of righteousness (taqwa) by making Muslims abstain from sinful deeds and training them to control our thoughts and desires.',
+	},
+	{
 		id: 2,
 		title: 'Wudu',
 		data: Wudu.data,
@@ -43,7 +73,7 @@ export const data = [
 	{
 		id: 3,
 		title: 'Umrah',
-		data: [],
+		data: Umrah.data,
 		desc: 'How to perform Umrah',
 		bgColor: '#bee99d',
 		active: false,
@@ -53,7 +83,7 @@ export const data = [
 	{
 		id: 4,
 		title: 'Hajj',
-		data: [],
+		data: Hajj.data,
 		desc: 'How to perform Hajj',
 		bgColor: '#3c6382',
 		active: false,
@@ -63,7 +93,7 @@ export const data = [
 	{
 		id: 5,
 		title: 'Drinking Water',
-		data: [],
+		data: Drinking.data,
 		desc: 'Drinking Water the Sunnah Way',
 		bgColor: '#cf6a87',
 		active: false,
@@ -73,7 +103,7 @@ export const data = [
 	{
 		id: 6,
 		title: 'Major Sunnah',
-		data: [],
+		data: Sunnah.data,
 		desc: 'Major Sunnah in Islam',
 		bgColor: '#34495e',
 		active: false,
@@ -83,7 +113,7 @@ export const data = [
 	{
 		id: 7,
 		title: 'Friday Sunnah',
-		data: [],
+		data: FridaySunnah.data,
 		desc: 'Virtues and \n Sunnah acts of Jummah',
 		bgColor: '#c44569',
 		active: false,
@@ -93,7 +123,7 @@ export const data = [
 	{
 		id: 8,
 		title: 'Five Pillars',
-		data: [],
+		data: Pillars.data,
 		desc: 'Five Pillars of Islam',
 		bgColor: '#35ace0',
 		active: false,
@@ -103,7 +133,7 @@ export const data = [
 	{
 		id: 9,
 		title: 'Quran Knowledge',
-		data: [],
+		data: Quran.data,
 		desc: 'How much do you know about Quran?',
 		bgColor: '#079992',
 		active: false,
@@ -111,29 +141,9 @@ export const data = [
 		details: "The Holy Quran was revealed to Prophet Muhammad (pbuh) in the Cave of Hira.",
 	},
 	{
-		id: 10,
-		title: 'Benefits of Fasting',
-		data: [],
-		desc: 'Benefit of\nfasting during Ramadan',
-		bgColor: '#60a3bc',
-		active: false,
-		img: require('../../../assets/img/steps/fasting.png'),
-		details: 'Fasting develops the quality of righteousness (taqwa) by making Muslims abstain from sinful deeds and training them to control our thoughts and desires.',
-	},
-	{
-		id: 11,
-		title: 'Quran Verses',
-		data: [],
-		desc: 'Five Life-Changing\nVerses of the Quran',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-		active: false,
-		img: require('../../../assets/img/steps/verse.png'),
-		details: ' Each and every verse of Quran is a gem. However, there are few which life-changing.',
-	},
-	{
 		id: 12,
 		title: 'Mahram',
-		data: [],
+		data: Mahram.data,
 		desc: 'Know your Mahram\nin Islam',
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		active: false,

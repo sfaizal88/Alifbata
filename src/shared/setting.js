@@ -10,6 +10,7 @@
 // REACT NATIVE IMPORT
 import { Dimensions, StatusBar, Platform, NativeModules } from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import {fontStyles} from './fonts';
 
 // DECALRE SETTING VARIABLE
 const { StatusBarManager } = NativeModules;
@@ -36,5 +37,13 @@ export const Setting = {
   STATUSBAR_HEIGHT: Platform.OS === 'ios' ? 40 : StatusBarManager.HEIGHT,
   APPBAR_HEIGHT: Platform.OS === 'ios' ? 44 : 56,
   DEVICE_WIDTH: Dimensions.get('window').width,
-  DEVICE_HEIGHT: Dimensions.get('window').height
+  DEVICE_HEIGHT: Dimensions.get('window').height,
+  fontWeight100: fontStyles.fontWeight100, // Not used at all
+  fontWeight200: fontStyles.fontWeight200, // Not used at all
+  fontWeight300: fontStyles.fontWeight300,
+  fontWeight400: fontStyles.fontWeight400,
+  fontWeight500: fontStyles.fontWeight500,
+  fontWeight600: fontStyles.fontWeight600,
+  fontWeight700: fontStyles.fontWeight700,
+  fontWeightBold: fontStyles.fontWeightBold,
 };

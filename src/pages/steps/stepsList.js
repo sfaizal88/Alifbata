@@ -82,8 +82,8 @@ export const StepsListScreen = ({ navigation }) => {
     const generateItem = ({ item, index }) => {
         return (
           <View  underlayColor="transparent" style={styles.cSlide} key={'LIST_TYPE3_' + index}>
+          	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<View style={[styles.chapterLesOverlay]}></View>
-          	<View style={[styles.disableOverlay, !item.active ? '' : styles.displayN]}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}</Text>
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!item.active}>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
@@ -93,6 +93,7 @@ export const StepsListScreen = ({ navigation }) => {
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
             <Button onPress={() => _navigate(item)} 
+            	underlayColor="transparent"
             	icon={<Icon name={item.active ? 'play' : 'lock'} size={RFValue(15)} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
   				title={item.active ? "Play" : "Coming Soon"} 
   				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
@@ -101,18 +102,18 @@ export const StepsListScreen = ({ navigation }) => {
   				disabled={!item.active}
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}/>
-  			<Icon containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
+  			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
           </View>
         );
     }
 
-	// RENDER HTML
+	// RENDER HTML 
 	return (
 		<>
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Islamic Knowledge" icon="dashboard"/>
-	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
+	    	<Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} iconStyle={styles.displayN} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}}  underlayColor="transparent" />
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider

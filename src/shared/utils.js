@@ -501,6 +501,16 @@ export const isIpad = () => {
   }
   return isPad
 }
+
+/**
+* Feature used to find wheather its android or not
+*
+* @return Array   
+*/
+export const isAndroid = () => {
+  return Platform.OS === 'android' ? true : false;
+}
+
 /**
 * Feature check wheather to unlock the lesson
 *

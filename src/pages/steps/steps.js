@@ -77,6 +77,7 @@ export const StepsScreen = ({ navigation, route }) => {
             <Image source={item.img} style={styles.img120}/>
             <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
+            <Text style={[styles.cSlideChatMinLine, styles.mt10, item.moreDetails ? '' : styles.displayN]}>{item.moreDetails}</Text>
             <Button onPress={() => _slideMove(index + 1)} 
               icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={ "Next" } 
@@ -94,10 +95,9 @@ export const StepsScreen = ({ navigation, route }) => {
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
         <MHeader title={state.title} subtitle={state.desc}/>
-        <Icon name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
+        <Icon iconStyle={styles.displayN} name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
         <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
           <AppIntroSlider
-            ref={ref => this.AppIntroSlider = ref}
             dotClickEnabled={false}
             activeDotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}} 
             dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}

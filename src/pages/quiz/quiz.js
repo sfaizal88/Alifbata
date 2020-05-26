@@ -292,16 +292,16 @@ export const QuizScreen = ({ navigation, route }) => {
         	
 	        <View style={styles.noContainer}><Text style={styles.qno}>{index}</Text></View>
 	        	<Text style={styles.optionQuestion}>{item.question}</Text>
-	            <TouchableOpacity  style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[0].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
+	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[0].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
 	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[0].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[1].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
+	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[1].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
 	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[1].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[2].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
+	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[2].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
 	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[2].option}</Text>
 	            </TouchableOpacity>
-	            <TouchableOpacity style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[3].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
+	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[3].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
 	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[3].option}</Text>
 	            </TouchableOpacity>
         	</View>

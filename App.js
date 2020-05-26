@@ -13,7 +13,7 @@ import React, {useEffect, useState, useContext, useReducer} from 'react';
 import { Text, View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen';
 
 // ALL SHARED FILES
 import { styles } from './src/shared/stylesheet';
@@ -30,7 +30,6 @@ import AppContext from './src/context/appContext';
 import {reducer} from './src/reducer/commonReducer';
 
 // ALL NAVIGATION
-import { HomeNavigation  } from './src/component/navigation/homeNavigator';
 import { ChapterNavigation } from './src/component/navigation/chapterNavigator';
 import { QuizNavigation } from './src/component/navigation/quizNavigator';
 import {DashboardScreen} from './src/pages/dashboard';
@@ -69,6 +68,8 @@ export default  App = ({navigation}) => {
   // USE EFFECT ON LOAD PROCESS
   useEffect(() => {
     //StatusBar.setHidden(true);
+    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+    StatusBar.setBackgroundColor(Colors.primary);
     // UPDATE STATUS COLOR
     StatusBar.setBarStyle('light-content');
     // COMMENTTED OUT HERE, TO AVOID FLICK WHILE LOGIN AUTH

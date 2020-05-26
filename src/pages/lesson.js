@@ -123,8 +123,9 @@ export const LessonScreen = ({ navigation, route }) => {
   * @return Tags
   */
   const generateItem = ({ item, index }) => {
+      let keyIndex = ('LESSON_' + index + Math.floor((Math.random() * 200) + 1)).toString();
       return (
-        <View  underlayColor="transparent" style={styles.cSlide}>
+        <View  underlayColor="transparent" style={styles.cSlide} key={keyIndex}>
           <View style={[styles.chapterLesOverlay]}></View>
           <Text style={styles.progressBarTitle}>{item.title === 'Exercise' ? item.title : 'Lesson'}</Text>
           <TouchableOpacity style={{...styles.cCircleContainerOuter, ...styles.cCircleContainerSmallOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!Utils.unlockLesson(index, completed, item.id)}>
@@ -214,7 +215,7 @@ export const LessonScreen = ({ navigation, route }) => {
               ListEmptyComponent = {() => (
                 <Empty icon={'group'} title='No Chapter Found' subtitle='Try again later.'/>
               )}
-            keyExtractor = {(item, index) => 'lessonId_' + item.id.toString() +'_lessonIndex_' + index.toString()}/>
+            keyExtractor = {(item, index) => ('lessonId_' + item.id +'_lessonIndex_' + index).toString()}/>
             
           </View>
           <Menu navigation={navigation} activeMenu={'CHAPTER'}></Menu>

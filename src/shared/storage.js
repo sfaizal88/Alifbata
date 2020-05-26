@@ -10,6 +10,7 @@
 // REACT NATIVE IMPORT
 import React from 'react';
 import { AsyncStorage } from 'react-native';
+//import AsyncStorage from '@react-native-community/async-storage';
 
 /**
 * Set inside storage

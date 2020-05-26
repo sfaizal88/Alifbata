@@ -15,6 +15,7 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 // ALL SHARED FILES
 import { Colors } from './colors';
 import { Setting } from './setting';
+import { Fonts } from './fonts';
 import  * as Utils from './utils';
 
 /* LAYOUT - STARTS */
@@ -30,7 +31,7 @@ const layoutStyle ={
 	body: {
 		flex: 1,
 		paddingTop: Utils.isIpad() ? RFValue(10) : 10,
-		paddingBottom: Utils.isIpad() ? RFValue(10) : 10,
+		paddingBottom: Utils.isIpad() ? RFValue(10) : 300,
 		paddingHorizontal: Utils.isIpad() ? RFValue(5) : 5,
         flexDirection: 'column',
     	backgroundColor: Colors.white,//Colors.appBg
@@ -39,7 +40,7 @@ const layoutStyle ={
  		borderTopLeftRadius: 20,
     	borderBottomRightRadius: 20,
  		borderBottomLeftRadius: 20,
- 		overflow: 'hidden'
+ 		overflow: 'hidden',
 
 	},
 	headerContainer: {
@@ -60,12 +61,12 @@ const layoutStyle ={
 		alignItems:'center',
 	},
 	stackheaderLeftContainer: {
-		left: 15,
-		top: RFValue(20)
+		left: Utils.isAndroid() ?  0 : 15,
+		top: Utils.isAndroid() ?  0 : RFValue(20)
 	},
 	headerTitle: {
+		...Setting.fontWeight700,
 		fontSize: Setting.sTextSize,
-		fontWeight: '700',
 		textTransform: 'uppercase',
 		alignItems:'center',
 		letterSpacing: 2,
@@ -78,7 +79,7 @@ const layoutStyle ={
 	headerSubTitle: {
 		paddingTop: 5,
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		textTransform: 'uppercase',
 		textAlign: 'center',
 		letterSpacing: 2,
@@ -120,7 +121,7 @@ const navBarStyle ={
  	},
  	mainNavBarText: {
  		fontSize: Setting.usTextSize,
- 		fontWeight: '600',
+ 		...Setting.fontWeight600,
  		textTransform: 'uppercase'
  	}
 }
@@ -182,7 +183,7 @@ const specialIconStyle = {
   	poweredBy: {
   		color: Colors.grayM,
   		fontSize: Setting.sTextSize,
-  		fontWeight: '400',
+  		...Setting.fontWeight400,
   		alignSelf: 'center',
   		marginTop: 15
   	},
@@ -198,20 +199,20 @@ const specialIconStyle = {
   		borderBottomWidth:0,
   	},
   	redoLabel: {
-  		fontWeight: '500',
+  		...Setting.fontWeight500,
   		marginTop: 20,
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         marginRight: 20,
         textAlign: 'center'
   	},
   	nextLessonLabel: {
-  		fontWeight: '500',
+  		...Setting.fontWeight500,
   		marginTop: 20,
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         marginLeft: 20
   	},
   	circleIcon: {
@@ -222,11 +223,11 @@ const specialIconStyle = {
   	},
   	score: {
   		fontSize: Setting.scoreSize,
-  		fontWeight: '700',
+  		...Setting.fontWeight700,
   		color: Colors.grayDarkest
   	},
   	darkHigh: {
-  		fontWeight: 'bold',
+  		...Setting.fontWeightBold,
   		color: Colors.grayDarkest
   	},
   	noContainer: {
@@ -240,7 +241,7 @@ const specialIconStyle = {
   	},
   	qno: {
   		fontSize: RFValue(17),
-  		fontWeight: '700', 
+  		...Setting.fontWeight700, 
   		color: Colors.white,
         fontSize: Setting.sTextSize,
   	},
@@ -261,6 +262,11 @@ const specialIconStyle = {
   		borderTopLeftRadius: 0,
   		alignItems: 'center',
 		justifyContent: 'center'
+  	},
+  	disableOverlayHide: {
+  		width: 0,
+  		opacity: 0,
+  		backgroundColor: 'rgba(0, 0, 0, 0)',
   	},
   	disableOverlayLabel: {
   		position: 'absolute',
@@ -479,14 +485,14 @@ const spacingStyle = {
 	},
 	listType2Title: {
 		fontSize: Setting.sxTextSize,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		paddingBottom: 3,
 		color: Colors.grayDarkest,
 		textTransform: 'uppercase'
 	},
 	listType2Descr: {
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '400',
+		...Setting.fontWeight400,
 		color: Colors.grayDarkest
 	},
  	listType2RightIcon: {
@@ -513,7 +519,7 @@ const spacingStyle = {
 		textAlign: 'center',
 		flex: 1,
 		lineHeight: 30,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		fontSize: Setting.nTextSize
 
 	},
@@ -528,13 +534,13 @@ const spacingStyle = {
 		fontSize: Setting.nTextSize,
 		lineHeight: 18,
 		paddingBottom: 20,
-		fontWeight: '400',
+		...Setting.fontWeight400,
 		paddingHorizontal: 20
 	},
 	contentBodyTitle: {
 		color: Colors.grayDarkest,
 		fontSize: Setting.nTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		lineHeight: 20,
 		paddingBottom: 10,
 		paddingTop: 20
@@ -713,7 +719,7 @@ const sliderStyle = {
     },
     slideTitle: {
         fontSize: RFValue(42),
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
 		top: -50,
@@ -732,7 +738,7 @@ const sliderStyle = {
     },
     slideDesc: {
         fontSize: Setting.nTextSize,
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         color: Colors.grayDarkest,
 		textAlign: 'center',
 		top: 30,
@@ -745,19 +751,19 @@ const sliderStyle = {
     slideType2Title: {
     	top: -30,
         fontSize: RFValue(130),
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         //backgroundColor: '#ccc',
         textAlign: 'center',
   		textAlignVertical: 'center',
     },
     slideType2Label: {
-		fontWeight: '600',
+		...Setting.fontWeight600,
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
     },
     slideType2Desc: {
         color: Colors.darkSilver,
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         fontSize: Setting.h2TextSize
     },
     slideType3: {
@@ -773,7 +779,7 @@ const sliderStyle = {
     },
     slideType3Title: {
         fontSize: Setting.h4TextSize,
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         top: 0,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
@@ -787,7 +793,7 @@ const sliderStyle = {
 		paddingHorizontal: 40,
 		lineHeight: 25,
         color: Colors.grayDark,
-        fontWeight: '400', 
+        ...Setting.fontWeight400, 
         marginBottom: 15
     },
     topContainer: {
@@ -797,7 +803,7 @@ const sliderStyle = {
 		justifyContent: 'flex-end',
     },
     slideLabel: {
-		fontWeight: '500',
+		...Setting.fontWeight500,
         color: Colors.grayDarkest,
         fontSize: Setting.nTextSize,
     },
@@ -810,7 +816,7 @@ const sliderStyle = {
     },
     bigArabLetter: {
         fontSize: Utils.isIpad() ? RFValue(80) : RFValue(100),
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         color: Colors.grayDarkest,
 		shadowOffset:{  width: 1,  height: 1  },
 		shadowColor: Colors.grayDarkest,
@@ -838,7 +844,7 @@ const sliderStyle = {
     },
     mediumArabLetter: {
         fontSize: RFValue(35),
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         color: Colors.white,
 		shadowOffset:{  width: 1,  height: 1  },
 		shadowColor: Colors.grayDarkest,
@@ -854,7 +860,7 @@ const sliderStyle = {
     	backgroundColor: Colors.blueDark,
 		alignItems: 'center',
 		justifyContent: 'center',
-		fontWeight: '600',
+		...Setting.fontWeight600,
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
         margin: 5,
@@ -865,7 +871,7 @@ const sliderStyle = {
         shadowOpacity: 0.5
     },
     wSlideLabel: {
-		fontWeight: '500',
+		...Setting.fontWeight500,
         color: Colors.white,
         fontSize: Setting.sTextSize,
     },
@@ -889,7 +895,7 @@ const sliderStyle = {
 		flexDirection: 'row'
     },
     infoMessage: {
-		fontWeight: '400',
+		...Setting.fontWeight400,
 		paddingBottom: 3,
 		color: Colors.grayDarkest,
 		textTransform: 'capitalize',
@@ -917,7 +923,7 @@ const sliderStyle = {
     },
     slideSubDesc: {
         fontSize: Setting.h6TextSize,
-        fontWeight: '600',
+        ...Setting.fontWeight600,
         color: Colors.grayDarkest,
 		textAlign: 'center',
 		paddingHorizontal: 40,
@@ -952,17 +958,17 @@ const pageStyle = {
 	},
 	cHeaderTitle: {
 		fontSize: Setting.h2TextSize,
-		fontWeight: '700',
+		...Setting.fontWeight700,
 		color: Colors.grayDarkest,
 	},
 	ctitle: {
 		fontSize: RFValue(70),
-		fontWeight: '300',
+		...Setting.fontWeight300,
 		color: Colors.grayDarkest,
 	},
 	csubtitle: {
 		fontSize: Setting.nTextSize,
-		fontWeight: '400',
+		...Setting.fontWeight400,
 		color: Colors.grayDark
 	},
 	csubtitlebig: {
@@ -976,35 +982,38 @@ const pageStyle = {
  		position: 'absolute',
  		bottom: (Setting.DEVICE_HEIGHT / 3) - 30,
  		right: 10,
- 		fontWeight: 'bold'
+ 		...Setting.fontWeightBold
  	},
  	buttonPrev: {
  		position: 'absolute',
  		bottom: (Setting.DEVICE_HEIGHT / 3) - 30,
  		left: 10,
- 		fontWeight: 'bold'
+ 		...Setting.fontWeightBold
  	},
  	nextBtn: {
  		color: Colors.white,
- 		fontWeight: '600',
- 		left: 2,
- 		alignItems: 'center'
+ 		...Setting.fontWeight600,
+ 		alignItems: 'center',
+	    justifyContent: 'center',
+		alignSelf: 'center',
  	},
  	prevBtn: {
  		color: Colors.white,
- 		fontWeight: '600',
- 		left: 0,
- 		alignItems: 'center'
+ 		...Setting.fontWeight600,
+ 		alignItems: 'center',
+	    justifyContent: 'center',
+		alignSelf: 'center',
  	},
  	buttonCircle: {
 		width: RFValue(35),
 	    height: RFValue(35),
 	    backgroundColor: Colors.primary,
-	    opacity: 0.4,
+	    opacity: Utils.isAndroid() ? 0.8 :0.4,
 	    borderRadius: RFValue(20),
 	    justifyContent: 'center',
 	    alignItems: 'center',
-	    bottom: Utils.isIpad() ? RFValue(10) : 0
+	    bottom: Utils.isIpad() ? RFValue(10) : 0,
+	    textAlign: 'center'
  	},
  	navDark: {
  		color: Colors.primary
@@ -1019,11 +1028,11 @@ const pageStyle = {
  	prevNext: {
  		fontSize: RFValue(80),
  		color: Colors.fBorderColor,
- 		fontWeight: '500'
+ 		...Setting.fontWeight500
  	},
  	doneBtn: {
  		fontSize: RFValue(16),
- 		fontWeight: '500'
+ 		...Setting.fontWeight500
  	},
  	doneBtnLabel: {
  		color: Colors.green
@@ -1063,12 +1072,12 @@ const pageStyle = {
  	lightBtnTextLarge: {
  		color: Colors.white,
  		fontSize: Setting.nTextSize,
- 		fontWeight: '600'
+ 		...Setting.fontWeight600,
  	},
  	lightBtnText: {
  		color: Colors.white,
  		fontSize: Setting.sTextSize,
- 		fontWeight: '600'
+ 		...Setting.fontWeight600,
  	},
  	disableBtnText: {
  		color: Colors.lightDisable
@@ -1076,12 +1085,12 @@ const pageStyle = {
  	darkBtnText: {
  		color: Colors.grayDarkest,
  		fontSize: Setting.sTextSize,
- 		fontWeight: '600'
+ 		...Setting.fontWeight600,
  	},
  	darkBtnTextLarge: {
  		color: Colors.grayDarkest,
  		fontSize: Setting.nTextSize,
- 		fontWeight: '600'
+ 		...Setting.fontWeight600,
  	},
  	selectedOption: {
  		backgroundColor: Colors.selectedOpt, 
@@ -1130,7 +1139,7 @@ const pageStyle = {
 	},
 	modelTitle: {
 		fontSize: Setting.h4TextSize,
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         color: Colors.grayDarkest,
         textAlign: 'center',
 	},
@@ -1140,7 +1149,7 @@ const pageStyle = {
 	},
 	modelmTitle: {
 		fontSize: RFValue(50),
-        fontWeight: '700',
+        ...Setting.fontWeight700,
         color: Colors.grayDarkest,
         textAlign: 'center',
 
@@ -1154,17 +1163,17 @@ const pageStyle = {
 		paddingHorizontal: 10,
 	},
 	modellText: {
-		fontWeight: '400',
+		...Setting.fontWeight400,
         color: Colors.grayDarkest,
         fontSize: Setting.nTextSize,
 	},
 	modellSubText: {
-		fontWeight: '500',
+		...Setting.fontWeight500,
         color: Colors.grayDarkest,
         fontSize: Setting.sTextSize,
 	},
     modelLabel: {
-		fontWeight: '600',
+		...Setting.fontWeight600,
         color: Colors.grayDarkest,
         fontSize: Setting.nTextSize,
     },
@@ -1246,13 +1255,13 @@ const pageStyle = {
 	},
 	dLType1Title: {
 		fontSize: Setting.nTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		color: Colors.grayDarkest,
 		textTransform: 'capitalize'
 	},
 	dLType1Desc: {
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		color: Colors.grayDark,
 		textAlign: 'left',
 	},
@@ -1280,7 +1289,7 @@ const pageStyle = {
 	},
 	dLType1RightBtnLabel: {
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		paddingTop: 0,
 		paddingLeft: 5,
 		paddingRight: 5,
@@ -1311,23 +1320,23 @@ const pageStyle = {
  	},
 	dbLabel: {
 		fontSize: Setting.h5TextSize,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		color: Colors.grayDarkest,
 		marginTop: 10
 	},
 	dbDesc: {
 		fontSize: Setting.sxTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		color: Colors.grayDarkest
 	},
 	dbBDesc: {
 		fontSize: Setting.sTextSize,
-		fontWeight: '700',
+		...Setting.fontWeight700,
 		color: Colors.grayDarkest
 	},
 	dbTitle: {
 		fontSize: Setting.vlTextSize,
-		fontWeight: '300',
+		...Setting.fontWeight300,
 		color: Colors.grayDarkest
 	},
 	dashBox1: {
@@ -1360,33 +1369,18 @@ const pageStyle = {
 		backgroundColor: Colors.primary,
 		shadowColor: Colors.primary,
 	},
-	bottomDashboard: {
-		backgroundColor: Colors.white,
-		paddingBottom: 70,
-		paddingTop: 10,
-		borderTopLeftRadius: RFValue(20),
-		borderTopRightRadius: RFValue(20),
-		paddingLeft: 5,
-		//shadowOffset:{  width: -2,  height: -2  },
-		//shadowColor: Colors.grayDarkest,
-		//shadowOpacity: 0.4,
-		//shadowRadius: 2
-	},
-	topDashboard: {
-		backgroundColor:'#fff'
-	},
 	topDashboardText: {
 		color: Colors.primary
 	},
 	dashboardTitle: {
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		fontSize: Setting.h4TextSize,
 		color: Colors.primary,
 		marginHorizontal: 15
 	},
 	dashboardSubTitle: {
 		textTransform: 'uppercase',
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		fontSize: Setting.xxxsTextSize,
 		color: Colors.grayLight,
 		marginHorizontal: 15,
@@ -1400,22 +1394,22 @@ const pageStyle = {
 		justifyContent: 'center',
 		paddingTop: 30,
 		paddingBottom: 20,
-		height: Utils.isIpad() ? RFValue(150) : 190,
+		height: Utils.isIpad() ? RFValue(150) : (Utils.isAndroid() ? RFValue(150) : 190),
 		paddingHorizontal: 6,
 		shadowOffset:{  width: 5,  height: 5  },
 		shadowColor: Colors.grayDarkest,
 		shadowOpacity: 0.4,
-		marginHorizontal: 15
+		marginHorizontal: Utils.isAndroid() ? RFValue(7) : 15
 	},
 	skillTitle: {
 		fontSize: Setting.xxsTextSize,
 		textTransform: 'uppercase',
-		fontWeight: 'bold',
+		...Setting.fontWeightBold,
 		marginTop: 20
 	},
 	skillDesc: {
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		marginTop: 5
 	}
 }
@@ -1452,7 +1446,7 @@ const pageStyle = {
   		right: 0,
   		width: '100%',
   		backgroundColor: '#ecf0f1',
-  		opacity: 0.3,
+  		opacity: Utils.isAndroid() ? 0.5 : 0.3,
   		borderRadius: RFValue(100),
   		borderTopRightRadius: 0,
   		borderTopLeftRadius: 0,
@@ -1473,7 +1467,7 @@ const chapterSliderStyle = {
     },
     cSlideTitle: {
         fontSize: RFValue(28),
-        fontWeight: '500',
+        ...Setting.fontWeight500,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
 		textAlign: 'center',
@@ -1486,7 +1480,7 @@ const chapterSliderStyle = {
   		letterSpacing: 2
     },
     cSlideSubTitle: {
-        fontWeight: Utils.isIpad() ? 'bold' : '500',
+        ...Setting.fontWeight500,
         fontSize: Utils.isIpad() ? Setting.h6TextSize : Setting.nTextSize,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
@@ -1526,7 +1520,7 @@ const chapterSliderStyle = {
     cCircleNo: {
         fontSize: RFValue(70),
         color: Colors.white,
-        fontWeight: 'bold',
+        ...Setting.fontWeightBold,
 		textShadowColor: Colors.grayDarkest,
   		textShadowOffset: {width: -2, height: -2},
   		textShadowRadius: 2,
@@ -1536,7 +1530,7 @@ const chapterSliderStyle = {
     },
     cSlideDesc: {
         fontSize: Setting.h6TextSize,
-        fontWeight: '600',
+        ...Setting.fontWeight600,
         color: Colors.white,
 		textAlign: 'center',
 		paddingHorizontal: 40,
@@ -1554,7 +1548,15 @@ const chapterSliderStyle = {
     },
     cSlideChatLine: {
     	fontSize: Setting.sTextSize,
-        fontWeight: '400',
+        ...Setting.fontWeight400,
+        color: Colors.grayDark,
+		textAlign: 'center',
+		paddingHorizontal: Utils.isIpad() ? 70 : 30
+    },
+    cSlideChatMinLine: {
+    	fontStyle: 'italic',
+    	fontSize: Setting.sxTextSize,
+        ...Setting.fontWeight400,
         color: Colors.grayDark,
 		textAlign: 'center',
 		paddingHorizontal: Utils.isIpad() ? 70 : 30
@@ -1576,7 +1578,7 @@ const chapterSliderStyle = {
 	},
 	cSlideBtnLabel: {
 		fontSize: Setting.nTextSize,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		paddingTop: 2,
 		paddingLeft: 10,
 		paddingRight: 10,
@@ -1611,7 +1613,7 @@ const chartStyle = {
 		textTransform: 'uppercase',
 		textAlign: 'center',
 		letterSpacing: 1.5,
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		fontSize: Setting.h4TextSize,
 	},
 	progressBarNo: {
@@ -1622,7 +1624,7 @@ const chartStyle = {
 		textAlign: 'center',
 		top: '50%',//RFPercentage
 		fontSize: RFValue(45),
-		fontWeight: '600',
+		...Setting.fontWeight600,
 		color: Colors.grayDarkest
 	},
 	progressBar: {
@@ -1653,6 +1655,7 @@ const menuStyle = {
 		paddingTop: 10,
 		paddingBottom: 10,
 		paddingHorizontal: 5,
+		elevation: Utils.isAndroid() ? 2 : 1
 		//borderWidth: 1,
 		//borderColor: Colors.grayDark
 	},
@@ -1664,7 +1667,7 @@ const menuStyle = {
 /* QUIZ - STARTS */
 const quizStyle = {
 	optionQuestion: {
-		fontWeight: '500',
+		...Setting.fontWeight500,
         color: Colors.grayDarkest,
         fontSize: Setting.h6TextSize,
         textAlign: 'center',
@@ -1710,11 +1713,16 @@ const budgesStyle = {
 		opacity: 1
 	},
 	activeBadge: {
-		opacity: 1
+		opacity: 1,
+		backgroundColor: Colors.primary,
+		borderColor: Colors.primary,
+	},
+	badgeFlat: {
+		height: Utils.isAndroid() ? '100%' : '100%'
 	},
 	badgeLabel: {
 		fontSize: Setting.xxsTextSize,
-		fontWeight: '500',
+		...Setting.fontWeight500,
 		color: Colors.grayDarkest,
 		marginTop: 5,
         textAlign: 'center',
@@ -1733,9 +1741,9 @@ const budgesStyle = {
 		paddingBottom: RFValue(10),
 		paddingHorizontal: RFValue(10),
 		borderWidth: 2,
-		backgroundColor: Colors.primary,
-		borderColor: Colors.primary,
-		opacity: 0.3
+		backgroundColor: Utils.isAndroid() ? Colors.grayLightest : Colors.primary,
+		borderColor: Utils.isAndroid() ? Colors.grayLightest : Colors.primary,
+		opacity: Utils.isAndroid() ? 0.4 : 0.3
 	},
 	squareBadgeContainer: {
 		flex: 1,

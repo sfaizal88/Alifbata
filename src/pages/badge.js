@@ -50,6 +50,8 @@ export const BadgeScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
+		    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+		    StatusBar.setBackgroundColor(Colors.primary);
 			// ALL CHAPTERS
 			setState(Chapters.allChapter);
 			//Storage._clearAllStorage();
@@ -107,9 +109,11 @@ export const BadgeScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Badges" icon="dashboard"/>
-	    	<View style={[styles.body, styles.pt20, styles.overflow]}>
+	    	<View style={[styles.body, styles.pt20, styles.pb70]}>
 	    		<FlatList data={Data.badges} extraData={Data.badges}
-                    showsHorizontalScrollIndicator={true}
+	    			style={Utils.isAndroid() ? styles.badgeFlat : ''}
+	    			contentContainerStyle={{background: Colors.red}}
+                    showsHorizontalScrollIndicator={false}
                     numColumns={3}
                     renderItem = { ({item, index}) =>  (
                       <View style={styles.badgeContainer} key={index}>
@@ -119,9 +123,11 @@ export const BadgeScreen = ({ navigation }) => {
 							<Text style={[styles.badgeLabel]}>{item.text}</Text>
 	    				</View>
                     )}
-                keyExtractor = {(item, index) => 'badgeIndex_' + index.toString()}/>
+                keyExtractor = {(item, index) => ('badgeIndex_' + index).toString()}/>
 	        </View>
+
 	  		</SafeAreaView>
+
 	  		<Menu navigation={navigation} activeMenu={'BADGE'}></Menu>
 	  	</>
   	);
