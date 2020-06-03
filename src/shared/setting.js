@@ -46,4 +46,5 @@ export const Setting = {
   fontWeight600: fontStyles.fontWeight600,
   fontWeight700: fontStyles.fontWeight700,
   fontWeightBold: fontStyles.fontWeightBold,
+  fontWeightBolder: fontStyles.fontWeighBolder
 };

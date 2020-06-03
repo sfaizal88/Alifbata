@@ -11,6 +11,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
+//import { HeaderBackButton } from '@react-navigation/stack';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
@@ -59,14 +60,21 @@ export const QuizScreen = ({ navigation, route }) => {
   	const [isAnswered, setIsAnswered]           = useState(false);
   	const [correctAnswer, setCorrectAnswer]     = useState('');
   	const [enableScroll, setEnableScroll]       = useState(false);
-	const [showSmash, setShowSmash]             = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
+	const [showSmash, setShowSmash]             = useState({enable: false, type: 'WRONG'});
 	const [scoreCard, setScoreCard]             = useState({score: 0, total: Constant.GENERIC.QUIZ_COUNT});
 
 	// LOCAL VARIABLE DECLARE
-	let score         = scoreCard.score;
+	let score = scoreCard.score;
+	//var quizInterval;
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
+		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
+		/*navigation.addListener('focus', () => {
+			navigation.setOptions({
+		    	headerLeft: (navigation) => (<HeaderBackButton tintColor={Colors.white} label={' '} onPress={clearAllTimer}/>)
+		    });
+		});*/
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		//navigation.addListener('focus', () => {
 			// GENERATE QUIX
@@ -80,6 +88,14 @@ export const QuizScreen = ({ navigation, route }) => {
 		setScreenIsWaiting(false);
 	}, []);
   	
+  	const clearAllTimer = () => {
+  		alert(123);
+		// CLEAR THE INTERVAL
+    	clearInterval(quizInterval);
+		// BACK TO PREVIOUS PAGE
+		navigation.goBack();
+	}
+
   	/**
 	* GENERATE
 	* @input  Array - Array of oBJECT
@@ -91,8 +107,6 @@ export const QuizScreen = ({ navigation, route }) => {
     		let quizCount = Utils.isNotEmpty(item) ? JSON.parse(item) : 0;
 			// FORMATTED DATA
 			let quizData = QuizData.generateQuiz(quizObj.data, quizObj.id, quizCount);
-			console.log('Stored index in quiz file TOALL - ' + (quizData.length - 2));
-    		console.log('------------------ENDS------------------');
 			// SAVE THE STATE
 			setState(quizData);
 		});
@@ -126,10 +140,10 @@ export const QuizScreen = ({ navigation, route }) => {
 		  // ADDING THE SCORE
 		  score = scoreCard.score + 1;
 		  // SHOW SMASH SCREEN
-		  setShowSmash({...showSmash, enable: true, icon: 'check', color: Colors.green, audioType: 'CORRECT'});
+		  setShowSmash({...showSmash, enable: true, type: 'CORRECT'});
 		} else {
 		  // SHOW SMASH SCREEN
-		  setShowSmash({...showSmash, enable: true, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
+		  setShowSmash({...showSmash, enable: true, type: 'WRONG'});
 		}
 		// SHOW CORRECT ANSWER
 		setTimeout(() => { 
@@ -198,6 +212,8 @@ export const QuizScreen = ({ navigation, route }) => {
 	* @return NA
 	*/
 	const _onSlideChange = (index, lastIndex) => {
+		// CLEAR THE INTERVAL
+		//clearInterval(quizInterval);
 		// CHECK WHETHER ITS COMPLETED SCREEN THEN HIDE THE PREVIOUS BUTTON
 		if ([Constant.GENERIC.QUIZ_INTRO].indexOf(state[index].type) > -1) {
 			setEnablePrevBtn(false);
@@ -216,8 +232,10 @@ export const QuizScreen = ({ navigation, route }) => {
 			setEnablePrevBtn(false);
 			setEnableNextBtn(false);
 			setEnableScroll(false);
-         	// PLAY THE AUDIO
-         	Utils.playAudio(Constant.GENERIC.QUIZ_AUDIO, 0.01);
+         	/*quizInterval = setInterval(() => {
+         		// PLAY THE AUDIO
+	    		Utils.playAudio(Constant.GENERIC.HEART_BEAT_AUDIO);
+	    	}, 1500);*/
 		} else if (state[index].type === Constant.GENERIC.QUIZ_COMPLETE) {
 			setEnablePrevBtn(false);
 			setEnableNextBtn(false);
@@ -338,9 +356,3 @@ export const QuizScreen = ({ navigation, route }) => {
       </View>
     );
 }
-
-/*
-
-<Icon name="refresh" color={Colors.primary} size={40} type="font-awesome" underlayColor="transparent" onPress={redoTest} containerStyle={[styles.mh20]}/>
-<Text style={[styles.redoLabel, styles.mt0, styles.mr0]} onPress={redoQuiz}>Replay Game</Text>
-*/

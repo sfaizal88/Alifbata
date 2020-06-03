@@ -43,7 +43,6 @@ export const COMMON_SECTION = [
 	{id: 9960 ,key: 9960, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_INTRO_DETAILS}, // 10
 	{id: 9961 ,key: 9961, en: '', ar: '', type: Constant.GENERIC.EXERCISE_INTRO}, // 11
 	{id: 9962 ,key: 9962, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_LESSON_COMPLETE}, // 12
-	{id: 9963 ,key: 9963, en: '', ar: '', type: Constant.GENERIC.FOUR_LETTER_CHAPTER_COMPLETE} // 13
 ];
 
 // BASIC ARABIC ALPHABET

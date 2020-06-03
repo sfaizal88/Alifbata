@@ -60,7 +60,8 @@ export const QuizNavigation = ({navigation}) => {
     transitionSpec: {
       open: config,
       close: config,
-    }
+    },
+    gestureEnabled: false
   };
   
 

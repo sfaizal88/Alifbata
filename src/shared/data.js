@@ -12,6 +12,8 @@ import * as Constant from './constant';
 
 // DATA
 import * as Chapters from '../data/chapters';
+import {GeneralDataQuiz, JahannamDataQuiz, JannahDataQuiz, PillarsDataQuiz, ProphetsDataQuiz, QuranDataQuiz, SunnahDataQuiz} from '../data/';
+import * as General from '../data/quiz/general';
 
 import { Colors } from './colors';
 // INTRO SLIDE DATA
@@ -69,6 +71,23 @@ export const introSlides = [
 
 
 // BADGE DATA
+export const howToPlayHeadsUp = [
+  { id: 1, img: require('../../assets/img/game/3.png'), title: 'Guess the word', desc: 'Hold the phone on your forehead (Lets call as "Play Position"). Guess the word while your friends act, sing or describe the clues.' },
+  { id: 2, img: require('../../assets/img/tilt-down.png'), title: 'Tilt Up\n to Pass the word', desc: 'Tilt up the phone so the screen faces the sky if you want to pass and bring it back to normal position (Play Position) for next word.' },
+  { id: 3, img: require('../../assets/img/tilt-up.png'), title: 'Tilt Down\n if you guess correctly', desc: 'Tilt down the phone so the screen faces the floor if you guess correctly and then bring it to normal position (Play Position) for next word.'  },
+  { id: 4, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
+];
+
+// BADGE DATA
+export const howToPlaySpyLetter = [
+  { id: 1, img: require('../../assets/img/drag.png'), title: 'Find the\nmissing letter', desc: 'Drag a letter from the given 12  random letter from the option box and drop inside the missing letter box which has white background. To remove the letter, just click once on the letter, it will be removed.' },
+  { id: 2, img: require('../../assets/img/pass.png'), title: 'Pass a word', desc: 'If you feel hard, click "PASS" button, it will show next word.' },
+  { id: 3, img: require('../../assets/img/check.png'), title: 'Check a word', desc: 'If you want to check a word after finishing the puzzle, click the "CHECK" button.'  },
+  { id: 4, img: require('../../assets/img/help.png'), title: "Clue or Help", desc: 'If you need help assistance or clue to find the word, click the Help icon.' },
+  { id: 5, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
+];
+
+// BADGE DATA
 export const badges = [
   { id: 1, img: require('../../assets/img/badges/chapter1.png'), text: 'Knowledge' },
   { id: 2, img: require('../../assets/img/badges/chapter2.png'), text: 'Strength' },
@@ -82,7 +101,8 @@ export const badges = [
   { id: 10, img: require('../../assets/img/badges/chapter10.png'), text: 'Faith' },
   { id: 11, img: require('../../assets/img/badges/chapter11.png'), text: 'Power' },
   { id: 12, img: require('../../assets/img/badges/chapter12.png'), text: 'Memory' },
-  { id: 13, img: require('../../assets/img/badges/chapter13.png'), text: 'Abundance' }];
+  { id: 13, img: require('../../assets/img/badges/chapter13.png'), text: 'Abundance' }
+];
 
 // TOTALS
 export const totalChapter = Chapters.allChapter.filter(item => {return item.active}).length;
@@ -99,6 +119,7 @@ export const dashboardHelpList = [
     bgColor: '#2aabab',
     color: '#fff',
     active: true,
+    type: 'octicon',
     path: 'Chapter'
   },
   {
@@ -109,6 +130,7 @@ export const dashboardHelpList = [
     bgColor: Colors.red,
     color: '#fff',
     active: true,
+    type: 'octicon',
     path: 'QuizNavigation' 
   },
   {
@@ -119,6 +141,7 @@ export const dashboardHelpList = [
     bgColor: '#f2b645',
     color: '#fff',
     active: true,
+    type: 'octicon',
     path: 'Badge' 
   },
   {
@@ -129,8 +152,129 @@ export const dashboardHelpList = [
     bgColor: '#6972cf',
     color: '#fff',
     active: true,
+    type: 'octicon',
     path: 'StepsNavigation' 
   },
+  {
+    id: 5,
+    title: 'Game',
+    desc: 'Have fun',
+    icon: 'games',
+    bgColor: '#3498db',
+    color: '#fff',
+    active: true,
+    type: '',
+    path: 'GameNavigation' 
+  },
+];
+
+// DASHBOARD QUIZ
+export const quizDashboardList = [
+  {
+    id: 1, title: 'Prophets of Islam', desc: '25 Prophets',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/prayer.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 0 } }
+  },
+  {
+    id: 2, title: 'Pillars of Islam', desc: '5 Pillars',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/pillars.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 1 } }
+  },
+  {
+    id: 3, title: 'The Holy Quran', desc: 'All Revelation',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/quran_gr.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 2 } }
+  },
+  {
+    id: 5, title: 'Jannah', desc: 'Paradise',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/heaven.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 4 } }
+  },
+  {
+    id: 6, title: 'Jahannam', desc: 'Hell fire',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/fire.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 5 } }
+  },
+  /*{
+    id: 7, title: 'Sunnah', desc: 'Teaching of Prophet',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/heart.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 6 } }
+  },*/
+  {
+    id: 8, title: 'More', desc: 'View all quiz',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+   img: require('../../assets/img/more.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'QuizNavigation', data: { screen: 'QuizList', params: { slideIndex: 0 } }
+  },
 ]
+
+// DASHBOARD KNOWLEDGE
+export const knowledgeDashboardList = [
+  {
+    id: 1, title: 'Angels in Islam', desc: 'Major Angels',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/angel.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 1 } }
+  },
+  {
+    id: 2, title: 'About Five Pillars', desc: '5 Pillars',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/steps/pillars.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 2 } }
+  },
+  {
+    id: 3, title: 'Miracles of Prophets', desc: '25 Prophets',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/prayer.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 0 } }
+  },
+  {
+    id: 4, title: 'Quran Verses', desc: 'Life changing verses',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/steps/verse.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 3 } }
+  },
+  {
+    id: 5, title: 'How to do Wudu', desc: 'Wudu steps',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/steps/wudu.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 10 } }
+  },
+  {
+    id: 6, title: 'How to drink Water', desc: 'Drinking steps',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/steps/drinking.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 11 } }
+  },
+  {
+    id: 7, title: 'More', desc: 'All Knowledge',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+   img: require('../../assets/img/more.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 0 } }
+  },
+]
+
+// DASHBOARD GAMES
+export const gameDashboardList = [
+  {
+    id: 1, title: 'Spy Word', desc: 'Find me', showHowtoPlay: false,
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/game/2.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, path: 'GameNavigation', data: { screen: 'GameList', params: { slideIndex: 0 } }
+  },
+  {
+    id: 2, title: 'Charades', desc: 'Act and find', showHowtoPlay: true,
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/game/3.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, path: 'GameNavigation', data: { screen: 'GameList', params: { slideIndex: 1 } }
+  }
+]
+
 // SafeAreaView setting
 export const SafeAreaViewSetting = {top: 'always'};

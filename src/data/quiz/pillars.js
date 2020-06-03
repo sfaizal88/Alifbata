@@ -632,4 +632,44 @@ options: Utils.shuffle([
 {id: 4, option: 'Due to sorrow'}
 ])
 },
+	{
+		question: 'What is Fard Prayer?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'You should never pray this'},
+			{id: 2, option: 'Optional'},
+			{id: 3, option: 'Mandatory'},
+			{id: 4, option: 'Not a type of prayer'}
+		])
+	},
+	{
+		question: 'What is Sunnah Prayer?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'You should never pray this'},
+			{id: 2, option: 'Optional'},
+			{id: 3, option: 'Mandatory'},
+			{id: 4, option: 'Not a type of prayer'}
+		])
+	},
+	{
+		question: 'What is said to announce the time of prayer?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Azhaan'},
+			{id: 2, option: 'Isha'},
+			{id: 3, option: 'Iqama'},
+			{id: 4, option: 'Imam'}
+		])
+	},
+	{
+		question: 'Towards what do you pray?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Does not matter'},
+			{id: 2, option: 'The Kabah'},
+			{id: 3, option: 'Any corner'},
+			{id: 4, option: 'South'}
+		])
+	},
 ];

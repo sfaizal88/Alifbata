@@ -27,7 +27,7 @@ export const Loader = (props) => {
   
   // RENDER HTML
   return (
-    <Modal transparent={true} animationType="none" visible={showLoader}>
+    <Modal transparent={true} animationType="none" visible={showLoader} supportedOrientations={['portrait', 'landscape', 'landscape-left', 'landscape-right']}>
       <View style={styles.loaderContainer}>
         <View style={styles.subLoaderContainer}>
           <ActivityIndicator animating={true} color={Colors.grayDark} size="large" />

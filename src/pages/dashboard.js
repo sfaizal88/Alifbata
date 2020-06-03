@@ -66,8 +66,8 @@ export const DashboardScreen = ({ navigation }) => {
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
-	    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
-	    StatusBar.setBackgroundColor(Colors.primary);
+		// UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+	    Utils.setStatusBarColor(Colors.primary);
 		// LOAD
 		getAllCompleted();
 		// LOAD
@@ -82,8 +82,8 @@ export const DashboardScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
-		    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
-		    StatusBar.setBackgroundColor(Colors.primary);
+			// UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+		    Utils.setStatusBarColor(Colors.primary);
 			// UPDATE STATUS COLOR
       		StatusBar.setBarStyle('light-content');
 			// LOAD
@@ -162,11 +162,12 @@ export const DashboardScreen = ({ navigation }) => {
     * @input  Object - Single chapter details object
     * @return NA
     */
-	const _navigate = (path) => {
+	const _navigate = (path, data = {}) => {
 	    // PLAY THE CLICK AUDIO
 	    Sound.mainMenuClicked();
+	    console.log(JSON.stringify(data));
 		// NAVIGATING TO DIFFERENT PATH
-		navigation.navigate(path)
+		navigation.navigate(path, data);
 	}
 
 	/**
@@ -188,7 +189,7 @@ export const DashboardScreen = ({ navigation }) => {
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
 	    	<MHeader title="Assalamu Alaikum" icon="dashboard"/>
-	    	<ScrollView style={[styles.body, styles.pt30]}>
+	    	<ScrollView style={[styles.body, styles.pt30]} contentContainerStyle={styles.pb70}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>
 				    <Text style={[styles.progressBarNo, styles.topDashboardText]}>{trophy}</Text>
@@ -229,15 +230,65 @@ export const DashboardScreen = ({ navigation }) => {
 			    showsHorizontalScrollIndicator={false}
 			    data={Data.dashboardHelpList}
 			    renderItem = { ({item, index}) =>  (
-                  	<TouchableOpacity style={{...styles.skillContainer, backgroundColor: item.bgColor}} key={index} onPress={() => _navigate(item.path)}>
-    					<Icon name={item.icon} color={item.color} size={RFValue(45)}  type='octicon' underlayColor="transparent" />
-    					<Text style={{...styles.skillTitle, color: item.color}}>{item.title}</Text>
-    					<Text style={{...styles.skillDesc, color: item.color}}>{item.desc}</Text>
+                  	<TouchableOpacity style={[styles.skillContainer, {backgroundColor: item.bgColor}]} key={index} onPress={() => _navigate(item.path)}>
+    					<Icon name={item.icon} color={item.color} size={RFValue(45)}  type={item.type ? item.type : ''} underlayColor="transparent" />
+    					<Text style={[styles.skillTitle, {color: item.color}, styles.centerView]}>{item.title}</Text>
+    					<Text style={[styles.skillDesc, {color: item.color}, styles.centerView]}>{item.desc}</Text>
 						
     				</TouchableOpacity>
                 )}
 			    keyExtractor = {(item, index) => ('helpfullIndex_' + index).toString()}/>
-	    			
+
+			    <Text style={[styles.dashboardTitle, styles.mt20]}>Islamic Quiz</Text>
+    			<Text style={styles.dashboardSubTitle}>Pick by Topic and attend</Text>
+	    		<FlatList
+	    		nestedScrollEnabled = {false}
+			    horizontal
+			    showsHorizontalScrollIndicator={false}
+			    data={Data.quizDashboardList}
+			    renderItem = { ({item, index}) =>  (
+                  	<TouchableOpacity style={[styles.skillContainer, styles.skillContainerType2, {backgroundColor: item.bgColor}]} key={index} onPress={() => _navigate(item.path, item.data)}>
+    					<Image source={item.img} style={styles.skillImage}/>
+    					<Text style={[styles.skillTitle, {color: item.color}, styles.centerView]}>{item.title}</Text>
+    					<Text style={[styles.skillDesc, {color: item.color}, styles.centerView]}>{item.desc}</Text>
+						
+    				</TouchableOpacity>
+                )}
+			    keyExtractor = {(item, index) => ('helpfullIndex_' + index).toString()}/>
+
+			    <Text style={[styles.dashboardTitle, styles.mt20]}>Islamic Knowledge</Text>
+    			<Text style={styles.dashboardSubTitle}>Details in Steps</Text>
+	    		<FlatList
+	    		nestedScrollEnabled = {false}
+			    horizontal
+			    showsHorizontalScrollIndicator={false}
+			    data={Data.knowledgeDashboardList}
+			    renderItem = { ({item, index}) =>  (
+                  	<TouchableOpacity style={[styles.skillContainer, styles.skillContainerType2, {backgroundColor: item.bgColor}]} key={index} onPress={() => _navigate(item.path, item.data)}>
+    					<Image source={item.img} style={styles.skillImage}/>
+    					<Text style={[styles.skillTitle, {color: item.color}, styles.centerView]}>{item.title}</Text>
+    					<Text style={[styles.skillDesc, {color: item.color}, styles.centerView]}>{item.desc}</Text>
+						
+    				</TouchableOpacity>
+                )}
+			    keyExtractor = {(item, index) => ('helpfullIndex_' + index).toString()}/>
+
+			    <Text style={[styles.dashboardTitle, styles.mt20]}>Games</Text>
+    			<Text style={styles.dashboardSubTitle}>Play and Learn</Text>
+	    		<FlatList
+	    		nestedScrollEnabled = {false}
+			    horizontal
+			    showsHorizontalScrollIndicator={false}
+			    data={Data.gameDashboardList}
+			    renderItem = { ({item, index}) =>  (
+                  	<TouchableOpacity style={[styles.skillContainer, styles.skillContainerType2, {backgroundColor: item.bgColor}]} key={index} onPress={() => _navigate(item.path, item.data)}>
+    					<Image source={item.img} style={styles.skillImage}/>
+    					<Text style={[styles.skillTitle, {color: item.color}, styles.centerView]}>{item.title}</Text>
+    					<Text style={[styles.skillDesc, {color: item.color}, styles.centerView]}>{item.desc}</Text>
+						
+    				</TouchableOpacity>
+                )}
+			    keyExtractor = {(item, index) => ('helpfullIndex_' + index).toString()}/>
 	        </ScrollView>
 	        <Menu navigation={navigation} activeMenu={'HOME'}></Menu>
 	  		</SafeAreaView>

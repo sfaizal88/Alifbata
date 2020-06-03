@@ -602,5 +602,46 @@ options: Utils.shuffle([
 {id: 4, option: "3 months"}
 ])
 }*/
+	{
+		question: "What is the Arabic term used for the interpretation of the Quran?",
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: "Al Baqarah"},
+			{id: 2, option: "Notes"},
+			{id: 3, option: "Hadith"},
+			{id: 4, option: "Tafseer"}
+		])
+	},
+	{
+		question: "Who is the first Caller of Azan in Islam?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: "Bilal ibn Rabah"},
+			{id: 2, option: "Abu Bakr RA"},
+			{id: 3, option: "Prophet Muhammad (PBUH)"},
+			{id: 4, option: "Musailamah Kazzab"}
+		])
+	},
+	{
+		question: "Which Surah (chapter) of the Quran is recited in every rakath of salah (prayers)?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: "Al-Fatihah (chapter 1)"},
+			{id: 2, option: "Al-Ikhlas (chapter 112)"},
+			{id: 3, option: "An-Nas (chapter 114)"},
+			{id: 4, option: "Al-Ala (chapter 87)"}
+		])
+	},
+	{
+		question: "Which prayer does Allah mention in the Holy Quran to especially guard?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: "Fajr Salah"},
+			{id: 2, option: "Asar Salah"},
+			{id: 3, option: "Zuhr Salah"},
+			{id: 4, option: "Maghrib prayers"}
+		])
+	},
+
 ];
 

@@ -51,5 +51,7 @@ export const Colors = {
   robinEggBlue: '#3498db',
   lightDisable: '#ccc',
   selectedOpt: '#3498db',
-  gold:'#f2c40f'
+  gold:'#f2c40f',
+  turquoise: '#3ac5aa',
+  help: '#1abc9c'
 };

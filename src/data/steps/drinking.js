@@ -19,7 +19,6 @@ export const data = [
 		title: "Prophet Adam (A.S)",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'First Human',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '1.png'),
 		details: 'Adam (A.S) was the first human being created by Allah SWT. Adam was taught the names of all things, language, speech and the ability to communicate. Hawwa was created from Adam’s (A.S) rib as his partner.',
 	},

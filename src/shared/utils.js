@@ -9,13 +9,13 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useEffect, useState} from 'react';
-import { Alert, View, Text, Platform, PlatformIOSStatic, Dimensions } from 'react-native';
-//import {isTablet} from 'react-native-device-info';
+import { Alert, View, Text, Platform, PlatformIOSStatic, Dimensions, StatusBar } from 'react-native';
 import Device from 'react-native-device-detection';
 import { Icon } from 'react-native-elements';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
 import Sound from 'react-native-sound';
+import Orientation from 'react-native-orientation';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL SHARED FILES
@@ -48,6 +48,34 @@ export const isInternetConnected = () => {
 };
 
 /**
+* Feature used to set status bar color
+*
+* @input  String color
+* @return NA
+*/
+export const setStatusBarColor = (statusBarColor) => {
+  if (Platform.OS === 'android') {
+    StatusBar.setBackgroundColor(Platform.OS === 'android' ? statusBarColor : null );
+  }
+};
+
+/**
+* Feature used to convert URL to html tags
+*
+* @input  String content
+* @return String Formatted content url to anchor tag
+*/
+export const setOrientation = (orientation) => {
+    if (orientation === 'LANDSCAPE') {
+      //Orientation.unlockAllOrientations();
+      Orientation.lockToLandscape();
+    }  else if (orientation === 'PORTRAIT') {
+      //Orientation.unlockAllOrientations();
+      Orientation.lockToPortrait();
+    }
+};
+
+/**
 * Feature used to convert URL to html tags
 *
 * @input  String content
@@ -75,6 +103,20 @@ export const codeToArabic = (code) => {
     return entities.decode(code)
 };
 
+
+/**
+* Feature used to shuffle
+*
+* @input  Array  Array of number or object
+*/
+export const shuffleArray = (arry) => {
+  for(let i = arry.length - 1; i > 0; i--){
+    let j = Math.floor(Math.random() * i)
+    let temp = arry[i]
+    arry[i] = arry[j]
+    arry[j] = temp
+  }
+}
 
 /**
 * Check minimum pass mark

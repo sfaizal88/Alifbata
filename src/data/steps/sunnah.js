@@ -13,6 +13,37 @@ import * as Utils from '../../shared/utils';
 
 // ALL CHAPTER
 let imgURL = '../../../assets/img/steps/prophetnames/'
+// 1. Be gentle with your wife.
+// 2. Laugh, play and joke with your wife.
+// 3. Keep in touch with your relatives and friends.
+// 4. Look after your neighbour.
+// 5. Give gifts
+// 6. Be nice to your parents.
+// 7. Learn Quran and teach it
+// 8. Always smell good.
+// 9 Be silent if you dont like the food.
+// 10. Forgive the person who cause you grief.
+// 11. Make Wudu before sleeping
+// 12. Climb up say Allahu Akbar , stepping down say Subhan Allah.
+// 13. Help build a Masjid.
+// 14. Try to calm yourself when angry.
+// 15. Meet your brother with a smile.
+// 16. In a gathering of three or more, dont whisper.
+// 17. Clean your bed before going to sleep
+// 18. Speak what is good or keep silent.
+// 19. Plant a tree or sow seed
+// 20. Show kindness to animals
+// 21. Give charity.
+// 22. Pray istikhara when making a decision.
+// 23. Keep yourself clean
+// 24. Look after orphans
+// 25. Get married
+// 26. Hide the fault of others
+// 27. Love for your brother what you love for yourself.
+// 28. Sleep on your right side and with wudhu
+// 29. Show mercy to youngsters
+// 30. Smile
+// 31. Avoid wasting water
 export const data = [
 	{
 		id: 1,

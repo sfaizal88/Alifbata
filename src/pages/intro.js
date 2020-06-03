@@ -44,8 +44,8 @@ export const IntroScreen = ({navigation}) => {
           if (Utils.isNotEmpty(item)) {
             onFinished();
           } else {
-            // SETTING THE BACKGROUND
-            StatusBar.setBackgroundColor(Data.introSlides[0].backgroundColor);
+            // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+            Utils.setStatusBarColor(Data.introSlides[0].backgroundColor);
             SplashScreen.hide();
           }
         });
@@ -128,9 +128,8 @@ export const IntroScreen = ({navigation}) => {
     * @return NA
     */
     const _onSlideChange = (index, lastIndex) => {
-        if (Utils.isAndroid) {
-            StatusBar.setBackgroundColor(Data.introSlides[index].backgroundColor);
-        }
+        // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+        Utils.setStatusBarColor(Data.introSlides[index].backgroundColor);
     }
 
 

@@ -35,10 +35,11 @@ import { QuizNavigation } from './src/component/navigation/quizNavigator';
 import {DashboardScreen} from './src/pages/dashboard';
 import { BadgeScreen } from './src/pages/badge';
 import { StepsNavigation } from './src/component/navigation/stepsNavigator';
+import { GameNavigation } from './src/component/navigation/gameNavigator';
 
 // ALL COMPONENT FILES
 import { IntroScreen  } from './src/pages/intro';
-
+console.disableYellowBox = Constant.GENERIC.DISABLE_LOG;
 export default  App = ({navigation}) => {
 
   // DECLARE NAVIGATION
@@ -67,7 +68,8 @@ export default  App = ({navigation}) => {
 
   // USE EFFECT ON LOAD PROCESS
   useEffect(() => {
-    //StatusBar.setHidden(true);
+    // SET PORTRAIT ORIENTATION
+    Utils.setOrientation('PORTRAIT');
     // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
     StatusBar.setBackgroundColor(Colors.primary);
     // UPDATE STATUS COLOR
@@ -87,6 +89,7 @@ export default  App = ({navigation}) => {
             <Stack.Screen name="QuizNavigation" component={QuizNavigation}  options={{...navigatorConfig}}/>
             <Stack.Screen name="Badge" component={BadgeScreen}  options={{...navigatorConfig}}/>
             <Stack.Screen name="StepsNavigation" component={StepsNavigation}  options={{...navigatorConfig}}/>
+            <Stack.Screen name="GameNavigation" component={GameNavigation}  options={{...navigatorConfig}}/>
           </Stack.Navigator>
         </NavigationContainer>
       </AppContext.Provider>

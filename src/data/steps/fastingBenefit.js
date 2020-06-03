@@ -24,7 +24,6 @@ export const data = [
 		title: "Benefit 1",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Detoxifies\nthe human body',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '1.png'),
 		details: 'Detoxifies the human body.',
 	},
@@ -33,7 +32,6 @@ export const data = [
 		title: "Benefit 2",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Improve\nthe metabolisam',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '2.png'),
 		details: 'Improve the metabolisam.',
 	},
@@ -42,7 +40,6 @@ export const data = [
 		title: "Benefit 3",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Can lead\nto weight-loss',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '3.png'),
 		details: 'Can lead to weight-loss.',
 	},
@@ -51,7 +48,6 @@ export const data = [
 		title: "Benefit 4",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Keep\ncholesterol',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '4.png'),
 		details: "Keep cholesterol.",
 	},
@@ -60,7 +56,6 @@ export const data = [
 		title: "Benefit 5",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Satisfies\nthe heart and soul',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '5.png'),
 		details: "Satisfies the heart and soul"
 	},
@@ -69,7 +64,6 @@ export const data = [
 		title: "Benefit 6",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Improves\nfaith in Allah (SAW)',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '6.png'),
 		details: 'Improves faith in Allah (SAW)'
 	}

@@ -53,7 +53,7 @@ export const DetailsScreen = ({ navigation, route }) => {
   const [activeState, setActiveState] = useState({});
   const [enablePrevBtn, setEnablePrevBtn] = useState(true);
   const [enableNextBtn, setEnableNextBtn] = useState(true);
-  const [showSmash, setShowSmash]   = useState({enable: false, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
+  const [showSmash, setShowSmash]   = useState({enable: false, type: 'WRONG'});
   const [savedAnswered, setSavedAnswered] = useState({});
   const [isAnswered, setIsAnswered] = useState(false);
   const [enableScroll, setEnableScroll] = useState(true);
@@ -381,10 +381,10 @@ export const DetailsScreen = ({ navigation, route }) => {
       // ADDING THE SCORE
       score = scoreCard.score + 1;
       // SHOW SMASH SCREEN
-      setShowSmash({...showSmash, enable: true, icon: 'check', color: Colors.green, audioType: 'CORRECT'});
+      setShowSmash({...showSmash, enable: true, type: 'CORRECT'});
     } else {
       // SHOW SMASH SCREEN
-      setShowSmash({...showSmash, enable: true, icon: 'remove', color: Colors.red, audioType: 'WRONG'});
+      setShowSmash({...showSmash, enable: true, type: 'WRONG'});
     }
     // MOVE TO NEXT QUESTION
     setTimeout(() => { 

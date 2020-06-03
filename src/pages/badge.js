@@ -50,8 +50,8 @@ export const BadgeScreen = ({ navigation }) => {
 	useEffect(() => {
 		// WHEN USER PRESS TAB, TRIGGER WILL OCCUR
 		navigation.addListener('focus', () => {
-		    // UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
-		    StatusBar.setBackgroundColor(Colors.primary);
+			// UPDATE STATUS BACKGROUND COLOR, WORK ONLY FOR ANDROID
+		    Utils.setStatusBarColor(Colors.primary);
 			// ALL CHAPTERS
 			setState(Chapters.allChapter);
 			//Storage._clearAllStorage();

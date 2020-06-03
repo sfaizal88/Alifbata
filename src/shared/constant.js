@@ -5,15 +5,24 @@
 *
 * @author - Faizal
 * @date   - 14 April 2020
+* aliflaammeem.onmoney@gmail.com
 *
 ***/
 // REACT NATIVE IMPORT
 import React from 'react';
 
+// LOCAL VARIABLE DECLARE
+const host = 'http://aliflaammeem.iwaymen.com';
+
 // DECLARE TYPE CONSTANT
 export const TYPE = {
 	UPDATE_APP_CONTEXT: 'UPDATE_APP_CONTEXT'
 };
+
+export const URL = {
+  // ALL GET API CALL
+  SEND_FEEDBACK : host + "/php/sendFeedback.php",
+}
 
 // DECLARE GENERIC CONSTANT
 export const GENERIC = {
@@ -68,6 +77,10 @@ export const GENERIC = {
 	COMPLETE_AUDIO: require('../../assets/audio/yay.mp3'),
 	SCORE_SAD_AUDIO: require('../../assets/audio/incomplete.mp3'),//
 	MENU_CLICK_AUDIO: require('../../assets/audio/menu-sparkle-clicked.mp3'),// menu-sparkle-clicked menu-clicked
+	LAST_TICK_AUDIO: require('../../assets/audio/last-tick.mp3'),
+	DROP_LETTER_AUDIO: require('../../assets/audio/drop.mp3'),
+	GAME_OVER_AUDIO: require('../../assets/audio/wrong.mp3'),
+	HEART_BEAT_AUDIO: require('../../assets/audio/heartbeat.mp3'),
 	NUMBER: 'N',
 	TEXT: 'T',
 	F_LETTER_C: '&#1614;',
@@ -75,7 +88,25 @@ export const GENERIC = {
 	F_END: '&#1576;&#1615;',
 	F_M_START: '&#1576;&#1614;',
 	F_M_END: '&#1576;&#1615;',
-
+	HEADSUP_GAME_TIMER: 90,
+	HEADSUP_GAME_FINAL_TIMER: 80,
+	HEADSUP_READY_TIMER: 3,
+	HEADSUP_GAME_INTRO: 'hup_i',
+	HEADSUP_GAME: 'hup_g',
+	HEADSUP_GAME_SCORE: 'hup_s',
+	HEADSUP_PASS: 'PASS',
+	HEADSUP_CORRECT: 'CORRECT',
+	SENSOR: true,
+	DISABLE_LOG: true,
+	CORRECT_ANSWER: 'CORRECT_ANSWER',
+	PASS_QUESTION: 'PASS_QUESTION',
+	TOTAL_MLETTER_OPTION: 12,
+	MLETTER_GAME_TIMER: 90,
+	MLETTER_GAME_FINAL_TIMER: 80,
+	MLETTER_GAME_MISSING_LETTER_PERT: 45,
+	NAME_MAX_LENGTH: 30,
+	EMAIL_MAX_LENGTH: 100,
+	MESSAGE_MAX_LENGTH: 500,
 };
 
 // DECLARE STORAGE CONSTANT
@@ -84,7 +115,18 @@ export const STORAGE = {
 	COMPLETED_STARS:  'completedStars',
 	VISITED: 'visited',
 	QUIZ_QUESTION_COUNT: 'quizQuestionCount',
+	MLETTER_UNI_LIST: 'missingLetterUniList',
+	HEADSUP_UNI_LIST: 'headsupUniList',
 };
 
 // SUKUN
 export const SUKUN = '&#1618;';//2303
+
+// DECLARE ERROR CODE CONSTANT
+export const MESSAGE = {
+    ERROR_001: 'Please fill all required fields.',
+    ERROR_002: 'Name should contain only alphabets and space.',
+    ERROR_003: 'Invalid Email ID. Please provide a valid email address.',
+    ERROR_004: 'Please provide valid Message. Only alphanumeric and the following special characters are allowed ,-_.?()&><.',
+    ERROR_005: 'Something went wrong. Plea(s)e try again later.',
+}

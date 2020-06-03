@@ -18,6 +18,7 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { styles  } from '../../shared/stylesheet';
 import { Colors } from '../../shared/colors';
 import * as Sound from '../../shared/sound';
+import * as Utils from '../../shared/utils';
 
 export const Menu = ( props ) => {
   const {
@@ -31,6 +32,7 @@ export const Menu = ( props ) => {
   * @return NA
   */
   const _navigate = (path) => {
+    Utils.setOrientation('PORTRAIT');
     // PLAY THE CLICK AUDIO
     Sound.mainMenuClicked();
     // NAVIGATING TO LESSON SCREEN WITH SINGAPORE CHAPTER OBJECT
@@ -39,7 +41,7 @@ export const Menu = ( props ) => {
 
 	// RENDER HTML
 	return (
-		<View style={styles.menuContainer}>
+		<View style={[styles.menuContainer, props.menuContainerStyle]}>
   			<View style={styles.menus}>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Home')}>
             <Icon name="home" color={activeMenu === 'HOME' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
@@ -52,6 +54,9 @@ export const Menu = ( props ) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('StepsNavigation')}>
             <Icon name="broadcast" color={activeMenu === 'STEPS' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('GameNavigation')}>
+            <Icon name="games" color={activeMenu === 'GAME' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)}/>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.flex1, styles.centerView]} onPress={() => _navigate('Badge')}>
             <Icon name="gift" color={activeMenu === 'BADGE' ? Colors.greenBlue : Colors.grayDark} size={RFValue(24)} type='octicon'/>

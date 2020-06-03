@@ -157,6 +157,12 @@ const errorStyle = {
 /* ERROR - ENDS */
 /* SPECIAL ICONS - STARTS */
 const specialIconStyle = {
+	borderRadiusZero: {
+		borderTopRightRadius: 0,
+ 		borderTopLeftRadius: 0,
+    	borderBottomRightRadius: 0,
+ 		borderBottomLeftRadius: 0,
+	},
 	loaderContainer: {
 		flex: 1,
 		alignItems: "center",
@@ -276,12 +282,39 @@ const specialIconStyle = {
   	},
   	fLetter: {
   		color: Colors.red
+  	},
+  	imgText: {
+  		...Setting.fontWeight700, 
+  		color: Colors.grayDarkest,
+ 		fontSize: RFValue(50),
+ 		top: RFValue(-40)
+  	},
+  	imgNo: {
+ 		fontSize: RFValue(40),
+  	},
+  	stepNoContainer: {
+  		backgroundColor: Colors.primary, 
+  		paddingTop: RFValue(10), 
+    	paddingBottom: RFValue(10), 
+    	borderRadius: RFValue(10), 
+    	marginHorizontal: RFValue(20),
+    	paddingHorizontal: RFValue(30), 
+  	},
+  	stepNo: {
+		fontSize: Setting.nTextSize,
+        ...Setting.fontWeight600,
+        color: Colors.white,
+		textAlign: 'center',
+		paddingBottom: 0,
   	}
 }
 /* SPECIAL ICONS - ENDS */
 
 /* SPACING - STARTS */
 const spacingStyle = {
+	t0: {
+		top: 0
+	},
 	t80n: {
 		top: RFValue(-80)
 	},
@@ -315,6 +348,9 @@ const spacingStyle = {
 	},
 	ph0: {
 		paddingHorizontal: 0
+	},
+	ph5: {
+		paddingHorizontal: 5
 	},
 	ph10: {
 		paddingHorizontal: 10
@@ -596,6 +632,13 @@ const alignStyle = {
 	rowDirection: {
 		flexDirection: 'row'
 	},
+	rowDirectionWrap: {
+		flexDirection: 'row',
+		flexWrap: 'wrap'
+	},
+	rowNoWrap: {
+		flexWrap: 'wrap'
+	},
 	column: {
 		flex: 1,
 		flexDirection: 'column'
@@ -625,6 +668,10 @@ const alignStyle = {
 	centerViewT: {
 		alignItems: "center",
 		justifyContent: "flex-start"
+	},
+	centerViewB: {
+		alignItems: "center",
+		justifyContent: "flex-end"
 	},
 	centerViewLeft: {
 		alignItems: "flex-start",
@@ -723,6 +770,16 @@ const sliderStyle = {
         color: Colors.grayDarkest,
 		alignSelf: 'center',
 		top: -50,
+		textAlign: 'center',
+		shadowOffset:{  width: 1,  height: 1  },
+		shadowColor: Colors.grayDarkest,
+		shadowOpacity: 0.5,
+    },
+    slideTitleNoTop: {
+        fontSize: RFValue(42),
+        ...Setting.fontWeight700,
+        color: Colors.grayDarkest,
+		alignSelf: 'center',
 		textAlign: 'center',
 		shadowOffset:{  width: 1,  height: 1  },
 		shadowColor: Colors.grayDarkest,
@@ -1066,6 +1123,9 @@ const pageStyle = {
  	successBtn: {
  		backgroundColor: Colors.green,
  	},
+ 	dangerBtn: {
+ 		backgroundColor: Colors.red,
+ 	},
  	secondaryBtn: {
  		backgroundColor: Colors.borderColor,
  	},
@@ -1103,7 +1163,64 @@ const pageStyle = {
  	wrongOption: {
  		backgroundColor: Colors.red, 
  		borderColor: Colors.red,
- 	}
+ 	},
+	textfieldLabel: {
+		alignSelf: 'flex-start',
+ 		fontSize: Setting.xxsTextSize,
+ 		fontWeight: '600',
+ 		textTransform: 'uppercase',
+ 		color: Colors.grayDarkest,
+		position: 'absolute',
+		zIndex: 1,
+		top: -4,
+		left: 20,
+		backgroundColor: Colors.white
+	},
+	textfieldContainer: {
+		height: 45,
+		backgroundColor: Colors.white,
+		borderWidth: 1,
+		borderColor: Colors.fBorderColor,
+		borderRadius: 5,
+		paddingHorizontal: 0,
+		paddingBottom: 0,
+		margin: 0,
+		marginTop: 5
+	},
+	textfield: {
+		padding: 12,
+		fontSize: Setting.nTextSize,
+	},
+ 	inputContainer: {
+ 		padding: 0,
+ 		marginBottom: 15,
+ 		marginTop: 10,
+		justifyContent: "center",
+		alignItems: "center"
+ 	},
+	errorText: {
+		padding: 0,
+		marginBottom: 0,
+		alignSelf: 'flex-start'
+	},
+	textfieldLabelExtra: {
+		position: 'relative',
+		top: 7,
+	},
+	textarea: {
+		padding: 12,
+		fontSize: 16,
+		backgroundColor: Colors.white,
+		borderWidth: 1,
+		borderColor: Colors.fBorderColor,
+		borderRadius: 5,
+		paddingHorizontal: 10,
+		paddingBottom: 10,
+		paddingTop: 10,
+		marginHorizontal: 10,
+		maxHeight: 120,
+		marginBottom: 20
+	},
  }
 /* FORM FIELDS - ENDS */
 
@@ -1137,6 +1254,16 @@ const pageStyle = {
 		alignItems: "center",
 		elevation: 5
 	},
+	smashLabel: {
+		fontSize: RFValue(80),
+        ...Setting.fontWeightBolder,
+        color: Colors.white
+	},
+	smashDesc: {
+		fontSize: RFValue(16),
+        ...Setting.fontWeightBolder,
+        color: Colors.white
+	},
 	modelTitle: {
 		fontSize: Setting.h4TextSize,
         ...Setting.fontWeight500,
@@ -1145,7 +1272,7 @@ const pageStyle = {
 	},
 	modelTitleContainer: {
 		paddingTop: 10,
-		paddingBottom: 20
+		paddingBottom: 0
 	},
 	modelmTitle: {
 		fontSize: RFValue(50),
@@ -1158,14 +1285,14 @@ const pageStyle = {
 		fontSize: RFValue(80),
 	},
 	modellBody: {
-		paddingTop: 10,
+		paddingTop: 5,
 		paddingBottom: 10,
 		paddingHorizontal: 10,
 	},
 	modellText: {
 		...Setting.fontWeight400,
         color: Colors.grayDarkest,
-        fontSize: Setting.nTextSize,
+        fontSize: Setting.sTextSize,
 	},
 	modellSubText: {
 		...Setting.fontWeight500,
@@ -1384,7 +1511,7 @@ const pageStyle = {
 		fontSize: Setting.xxxsTextSize,
 		color: Colors.grayLight,
 		marginHorizontal: 15,
-		marginBottom: 25
+		marginBottom: 15
 	},
 	skillContainer: {
 		marginBottom: 10,
@@ -1405,13 +1532,23 @@ const pageStyle = {
 		fontSize: Setting.xxsTextSize,
 		textTransform: 'uppercase',
 		...Setting.fontWeightBold,
-		marginTop: 20
+		marginTop: 20,
+		textAlign: 'center'
 	},
 	skillDesc: {
 		fontSize: Setting.xxsTextSize,
 		...Setting.fontWeight500,
-		marginTop: 5
-	}
+		marginTop: 5,
+		textAlign: 'center'
+	},
+	skillImage: {
+		width: RFValue(60),
+		height: RFValue(60)
+	},
+	skillContainerType2: {
+		borderWidth: 1,
+		borderColor: Colors.borderColor
+	},
 }
 /* DASHBOARD - ENDS */
 /* PATTERN - STARTS */
@@ -1480,7 +1617,7 @@ const chapterSliderStyle = {
   		letterSpacing: 2
     },
     cSlideSubTitle: {
-        ...Setting.fontWeight500,
+        ...Setting.fontWeight600,
         fontSize: Utils.isIpad() ? Setting.h6TextSize : Setting.nTextSize,
         color: Colors.grayDarkest,
 		alignSelf: 'center',
@@ -1507,7 +1644,20 @@ const chapterSliderStyle = {
 		shadowColor: Colors.fBorderColor,
 		shadowOpacity: 0.8,
 		shadowRadius: 20,
-		borderWidth: 10,
+		padding: 20,
+		borderWidth: RFValue(10),
+    },
+    cCircleContainerAnimate: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: RFValue(100),
+  		opacity: 0.9,
+		shadowOffset:{  width: 0,  height: 0 },
+		shadowColor: Colors.fBorderColor,
+		shadowOpacity: 0.8,
+		shadowRadius: 20,
+		padding: 20,
+		borderWidth: RFValue(20),
     },
     cCircleContainerSmallOuter: {
   		borderWidth: RFValue(40),
@@ -1552,6 +1702,15 @@ const chapterSliderStyle = {
         color: Colors.grayDark,
 		textAlign: 'center',
 		paddingHorizontal: Utils.isIpad() ? 70 : 30
+    },
+    cSlideChatMinLineContainer: {
+    	backgroundColor: Colors.primary, 
+    	marginTop: 10,
+    	paddingTop: 10, 
+    	paddingBottom: 10, 
+    	paddingHorizontal: 5, 
+    	borderRadius: 10, 
+    	marginHorizontal: RFValue(20)
     },
     cSlideChatMinLine: {
     	fontStyle: 'italic',
@@ -1785,6 +1944,14 @@ const imagesStyle = {
 		width: RFValue(120),
 		height: RFValue(120)
 	},
+	img150: {
+		width: RFValue(150),
+		height: RFValue(150)
+	},
+	img170: {
+		width: RFValue(170),
+		height: RFValue(170)
+	},
 	img80: {
 		width: RFValue(80),
 		height: RFValue(80)
@@ -1801,12 +1968,151 @@ const imagesStyle = {
 		width: RFValue(200),
 		height: RFValue(200)
 	},
+	img200R1: {
+		height: Utils.isIpad() ? RFValue(300) : RFValue(200),
+        aspectRatio: 1, // <-- this
+        resizeMode: 'contain', //optional
+	},
 	img30: {
 		width: RFValue(30),
 		height: RFValue(30)
 	}
 }
 /* IMAGES - ENDS */
+/* HEADS UP GAME - STARTS */
+const headsupGameStyle = {
+	timeoutContainer: {
+		width: RFValue(30),
+		height: RFValue(30),
+        justifyContent: 'center',
+        alignItems: 'center',
+		borderRadius: RFValue(20),
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		width: '100%',
+		textAlign: 'center'
+	},
+	timeoutLabel: {
+		color: Colors.white,
+ 		fontSize: Setting.h5TextSize,
+ 		...Setting.fontWeightBold,
+	},
+	headsupWord: {
+		color: Colors.white,
+ 		fontSize: RFPercentage(10), //RFPercentage RFValue
+ 		...Setting.fontWeightBolder,
+ 		textAlign: 'center',
+		alignSelf: 'center'
+	},
+	headsupWordM: {
+ 		fontSize: RFPercentage(8),
+	},
+	headsupWordContainer: {
+		flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+	}
+}
+/* HEADS UP GAME - ENDS */
+/* MISSING LETTER GAME - STARTS */
+const mLetterGameStyle = {
+	optionBox: {
+		width: RFValue(40),
+		height: RFValue(40),
+        justifyContent: 'center',
+        alignItems: 'center',
+		borderRadius: RFValue(5),
+		textAlign: 'center',
+		backgroundColor: Colors.primary,
+		borderColor: Colors.primary,
+		borderWidth: 1,
+		marginHorizontal: 3,
+		marginBottom: 5,
+		flexShrink: 1
+	},
+	optionBoxBig: {
+		backgroundColor: Colors.gold,
+		borderColor: '#e6ba0c',
+		width: RFValue(50),
+		height: RFValue(50)
+	},
+	answerBox: {
+		backgroundColor: Colors.robinEggBlue,
+		borderColor: Colors.robinEggBlue,
+	},
+	fillupBox: {
+		backgroundColor: Colors.white,
+		borderColor: '#e6ba0c',
+	},
+	filledBox: {
+		backgroundColor: Colors.white,
+		borderColor: Colors.gold,
+ 		textShadowColor: '#e6ba0c',
+	},
+	optionBoxLabel: {
+		color: Colors.white,
+ 		fontSize: Setting.h5TextSize,
+ 		...Setting.fontWeightBold,
+ 		textTransform: 'uppercase'
+	},
+	optionBoxLabelBig: {
+		color: Colors.grayDarkest,
+ 		...Setting.fontWeightBolder,
+ 		textTransform: 'uppercase',
+ 		fontSize: RFValue(38),
+ 		textShadowColor: '#e6ba0c',
+ 		textShadowOffset: {width: -1, height: 1},
+ 		textShadowRadius: 1
+	},
+	filledBoxLabel: {
+		color: Colors.grayDarkest
+	},
+	helpContent: {
+		color: Colors.white,
+ 		fontSize: Setting.h6TextSize,
+ 		...Setting.fontWeight600,
+ 		paddingHorizontal: 20,
+ 		textAlign: 'center',
+ 		paddingTop: RFValue(60)	
+	},
+	answerContainer: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+		paddingTop: 10,
+		paddingBottom: 10,
+		paddingHorizontal: 10,
+		borderRadius: 10,
+		margin: 5
+	},
+	fillUpContainer: {
+		backgroundColor: Colors.silver
+	}
+}
+/* MISSING LETTER GAME - ENDS */
+/* ANIMATED - STARTS */
+const animatedStyle = {
+	countdownTimer: {
+		color: Colors.white,
+ 		fontSize: RFValue(1), 
+ 		...Setting.fontWeightBolder,
+ 		textAlign: 'center',
+		alignSelf: 'center',
+		paddingHorizontal: 15,
+		paddingTop: 10,
+		paddingBottom: 10,
+		margin: 10,
+		borderRadius: 5
+	},
+	answerLabel: {
+		...Setting.fontWeight500,
+		fontSize: Setting.h6TextSize,
+		color: Colors.white
+	}
+}
+/* ANIMATED - ENDS */
 export const styles = StyleSheet.create({
 	...navBarStyle,
 	...errorStyle,
@@ -1829,5 +2135,8 @@ export const styles = StyleSheet.create({
 	...menuStyle,
 	...quizStyle,
 	...budgesStyle,
-	...imagesStyle
+	...imagesStyle,
+	...headsupGameStyle,
+	...mLetterGameStyle,
+	...animatedStyle
 });

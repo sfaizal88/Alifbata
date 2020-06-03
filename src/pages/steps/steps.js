@@ -9,10 +9,11 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useState, useEffect, useContext} from 'react';
-import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
+import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity, ScrollView } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { Html5Entities } from 'html-entities'; 
 
 // ALL PAGE FILES
 import { MHeader  } from '../layout/header';
@@ -38,6 +39,9 @@ export const StepsScreen = ({ navigation, route }) => {
   const [screenIsWaiting, setScreenIsWaiting] = useState(true);
   const [state, setState]                     = useState(route.params?.stepsData ? route.params.stepsData : []);
   const [listView, setListView]               = useState(false);
+
+  // LOCAL VARIABLE DECLARE
+  const entities = new Html5Entities();
 
   // USE EFFECT ON LOAD PROCESS
   useEffect(() => {
@@ -71,22 +75,33 @@ export const StepsScreen = ({ navigation, route }) => {
   * @return Tags
   */
   const generateItem = ({ item, index }) => {
-      return (
-          <View  underlayColor="transparent" style={styles.cSlide} key={'QUIZ_TYPE3_' + index}>
-            <Text style={{...styles.progressBarTitle, top: -50}}>{item.title}</Text>
-            <Image source={item.img} style={styles.img120}/>
-            <Text style={[styles.cSlideSubTitle, styles.cSlideMSubTitle, styles.mt20]}>{item.desc}</Text>
-            <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
-            <Text style={[styles.cSlideChatMinLine, styles.mt10, item.moreDetails ? '' : styles.displayN]}>{item.moreDetails}</Text>
-            <Button onPress={() => _slideMove(index + 1)} 
-              icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
-              title={ "Next" } 
-              buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
-              containerStyle={styles.cSlideBtnContainer, styles.displayN}
-              titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}
-              iconRight={true}/>
+    return (
+      <View underlayColor="transparent" style={styles.cSlide} key={'QUIZ_TYPE3_' + index}>
+        <Text style={[styles.progressBarTitle, {top: -50}, item.titleType === Constant.GENERIC.TEXT ? '' : styles.displayN]}>{item.title}</Text>
+        <View style={[item.titleType === Constant.GENERIC.NUMBER ? styles.stepNoContainer : styles.displayN, {top: -50}]}>
+          <Text style={[styles.progressBarTitle, styles.stepNo]}>{item.title}</Text>
+        </View>
+        <Image source={item.img} style={[styles.img120, item.img ? '' : styles.displayN, item.imgStyle ? item.imgStyle : '']}/>
+        <TouchableOpacity style={[styles.cCircleContainerOuter, {borderColor: item.bgColor}, (item.imgText && item.imgType === Constant.GENERIC.NUMBER) ? '' : styles.displayN]} underlayColor="transparent">
+          <View style={[styles.cCircleContainer, {backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}]}>
+            <Text style={[styles.cCircleNo, styles.imgNo]}>{item.imgText}</Text>
           </View>
-        );
+        </TouchableOpacity>
+        <Text style={[styles.imgText, (item.imgText && item.imgType === Constant.GENERIC.TEXT) ? '' : styles.displayN]}>{item.imgText}</Text>
+        <Text style={[styles.cSlideSubTitle, styles.mt20]}>{item.desc}</Text>
+        <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
+        <View style={[styles.cSlideChatMinLineContainer, item.moreDetails ? '' : styles.displayN]}>
+          <Text style={[styles.cSlideChatMinLine, styles.whiteText]}>{entities.decode('&#8220;')}{item.moreDetails}{entities.decode('&#8221;')}</Text>
+        </View>
+        <Button onPress={() => _slideMove(index + 1)} 
+          icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
+          title={ "Next" } 
+          buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
+          containerStyle={styles.cSlideBtnContainer, styles.displayN}
+          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}
+          iconRight={true}/>
+      </View>
+    );
   }
 
   // RENDER HTML
@@ -94,7 +109,7 @@ export const StepsScreen = ({ navigation, route }) => {
     <>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
-        <MHeader title={state.title} subtitle={state.desc}/>
+        <MHeader title={state.title}/>
         <Icon iconStyle={styles.displayN} name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" />
         <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
           <AppIntroSlider

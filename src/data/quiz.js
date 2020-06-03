@@ -66,7 +66,7 @@ export const quizList = [
     id: 4,
     title: 'General',
     desc: 'Islam, which means submission to God, is a monotheistic religion, believing in one God (i.e. Allah).',
-    data:  [...General.data, ...Prophets.data, ...Pillars.data, ...Quran.data],
+    data:  [...General.data],
     img: require('../../assets/img/idea.png'),
     bgColor: '#34495e',
     active: true

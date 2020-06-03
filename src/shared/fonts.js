@@ -58,6 +58,12 @@ export const fontStyles = StyleSheet.create({
     fontWeightBold: {
         ...Platform.select({
             ios: { fontWeight: 'bold' },
+            android: { fontFamily: 'Roboto-Bold'},
+        }),
+    },
+    fontWeighBolder: {
+        ...Platform.select({
+            ios: { fontWeight: 'bold'},
             android: { fontFamily: 'Roboto-Black'},
         }),
     },
