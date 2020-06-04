@@ -290,7 +290,7 @@ const specialIconStyle = {
  		top: RFValue(-40)
   	},
   	imgNo: {
- 		fontSize: RFValue(40),
+ 		fontSize: RFValue(30),
   	},
   	stepNoContainer: {
   		backgroundColor: Colors.primary, 
@@ -1736,7 +1736,7 @@ const chapterSliderStyle = {
 		backgroundColor: Colors.gold,
 	},
 	cSlideBtnLabel: {
-		fontSize: Setting.nTextSize,
+		fontSize: Utils.isIpad() ? Setting.nTextSize : Setting.sTextSize,
 		...Setting.fontWeight600,
 		paddingTop: 2,
 		paddingLeft: 10,
@@ -2013,6 +2013,14 @@ const headsupGameStyle = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+	},
+	headsupBorder: {
+		flex: 1,
+		borderWidth: 3,
+		borderColor: Colors.white,
+		marginTop: 20,
+		borderRadius: 25,
+		paddingTop: 5
 	}
 }
 /* HEADS UP GAME - ENDS */

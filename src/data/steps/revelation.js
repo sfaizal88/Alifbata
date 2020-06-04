@@ -47,7 +47,7 @@ export const data = [
 		id: 4,
 		title: "Torah",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'Revealed to\Prophet Musa (A.S)',
+		desc: 'Revealed to\nProphet Musa (A.S)',
 		img: require(imgURL + '4.png'),
 		details: "Torah was revealed to Prophet Musa (A.S). The word Torah appears eighteen times in the Holy Quran.",
 	}

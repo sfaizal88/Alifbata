@@ -325,8 +325,8 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 				  	</Animated.Text>
 
 				  	<Text style={[styles.headsupWord, startTimer || !isHoldProperly ? styles.displayN : '']}>{word}</Text>
-			      </View>
-				</View>
+			    </View>
+			</View>
 		</SafeAreaView>
       </View>
     );

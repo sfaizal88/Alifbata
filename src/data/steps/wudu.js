@@ -14,7 +14,7 @@ import * as Utils from '../../shared/utils';
 import { styles  } from '../../shared/stylesheet';
 
 // ALL CHAPTER
-
+// https://sunnah.com/bukhari/4/23
 export const data = [
 	{
 		id: 1,
@@ -24,7 +24,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/1.png'),
 		imgStyle: styles.img200R1,
-		details: 'Say Bismillah and wash your "hands" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "hand" two or three times is Sunnah.',
+		details: 'Say Bismillah and wash your "hands" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "hand" two or three times is Sunnah.',
 	},
 	{
 		id: 2,
@@ -34,7 +34,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/2.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "mouth" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "mouth" two or three times is Sunnah.',
+		details: 'Wash your "mouth" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "mouth" two or three times is Sunnah.',
 	},
 	{
 		id: 3,
@@ -44,7 +44,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/3.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "nose" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "nose" two or three times is Sunnah.',
+		details: 'Wash your "nose" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "nose" two or three times is Sunnah.',
 	},
 	{
 		id: 4,
@@ -54,7 +54,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/4.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "face" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "face" two or three times is Sunnah.',
+		details: 'Wash your "face" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "face" two or three times is Sunnah.',
 	},
 	{
 		id: 5,
@@ -64,7 +64,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/5.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "hands up to the elbows" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "hands up to the elbows"  two or three times is Sunnah.',
+		details: 'Wash your "hands up to the elbows" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "hands up to the elbows"  two or three times is Sunnah.',
 	},
 	{
 		id: 6,
@@ -74,7 +74,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/6.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "wipe your head" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "wipe your head" two or three times is Sunnah.',
+		details: '"Wipe your head" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "wipe your head" two or three times is Sunnah.',
 	},
 	{
 		id: 7,
@@ -84,16 +84,16 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/7.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "ears" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "ears" two or three times is Sunnah.',
+		details: 'Wash your "ears" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "ears" two or three times is Sunnah.',
 	},
 	{
 		id: 8,
 		title: 'Step 8',
 		titleType: Constant.GENERIC.NUMBER,
-		desc: 'Wash your Feets',
+		desc: 'Wash both your\nfeets up to ankle',
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/8.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your "feets" once (Al-Bukhaari (157) narrated by Ibn `Abbas:), although washing your "feets" two or three times is Sunnah.',
+		details: 'Wash both your "feets up to ankle" once (Al-Bukhaari (157) narrated by Ibn Abbas), although washing your "feets" two or three times is Sunnah.',
 	}
 ]

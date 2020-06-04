@@ -52,6 +52,6 @@ export const data = [
 		titleType: Constant.GENERIC.NUMBER,
 		desc: 'Hajj',
 		img: require(imgURL + '5.png'),
-		details: 'Hajj (Pilgrimage) is the fifth and final pillar of Islam. It is an Islamic pilgrimage to the holy city of Mecca (in Saudi Arabia) in the month of Dhul Hijjah, the twelth month of the Islamic calendar. It is mandatory for physically and financially able Muslims to perform Hajj at least once in a lifetime.',
+		details: 'Hajj (Pilgrimage) is the fifth and final pillar of Islam. It is an Islamic pilgrimage to the holy city of Mecca (in Saudi Arabia) in the month of Dhul Hijjah, the twelfth month of the Islamic calendar. It is mandatory for physically and financially able Muslims to perform Hajj at least once in a lifetime.',
 	},
 ]

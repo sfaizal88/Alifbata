@@ -23,10 +23,10 @@ export const data = [
 		id: 1,
 		title: "Bismillah",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'In the name\nof Allah ',
+		desc: 'In the name\nof Allah',
 		img: require(imgURL + '1.png'),
-		details: 'Bismillah used extensively in everyday life, said as the opening of each action in order to receive blessing from Allah SAW.',
-		moreDetails: ""// Add data here if u want to see in double quotes
+		details: 'We say Bismillah before beginning any action or speech to consciously ask Allah SWT to be with us throughout. Receive a blessing from Allah SWT. It is a powerful phrase that completes our actions and adds immense reward and Barakah to everything that follows it.',
+		moreDetails: "Don't start any work or conversation directly, instead Say 'Bismillah' and start."
 	},
 	{
 		id: 2,
@@ -34,7 +34,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Praise be\nto Allah',
 		img: require(imgURL + '2.png'),
-		details: 'It means All and Total praise is for Allaah . It is used to thank Allah SAW for work accomplished or replying yes or positive to a question if the work has been done satisfactorily .',
+		details: 'We say Alhamdhulillah to express our gratitude for Allah SWT’s blessings and goodness. It means all praise to Allah alone. Alhamdhulillah is usually used when something good happens but we should also remember to say Alhamdhulillah during difficult times. By doing so, we shift focus to the goodness and place reliance on Allah SWT, as He knows best.',
 		moreDetails: "Don't say 'I am fine', Say 'Alhamdhulillah'."
 	},
 	{
@@ -43,8 +43,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Glory be\nto Allah',
 		img: require(imgURL + '3.png'),
-		details: 'Subhanallah used during the prayer (salat), supplication (dua), during a sermon (khutba) in the mosque and commonly throughout the day. It is sometimes used to express shock or amazement.',
-		moreDetails: "Don't say 'wow', Say 'Subhanallah'."
+		details: 'We say Subhanallah to express our amazement. It is often used during prayer, supplication, and sermon to praise Allah SWT or to exclaim in awe at His attributes, bounties, or creation.',
+		moreDetails: "Don't say 'wow'. Say 'Subhanallah'."
 	},
 	{
 		id: 4,
@@ -52,24 +52,26 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'I seek forgiveness\nfrom Allah',
 		img: require(imgURL + '4.png'),
-		details: "Astaghfirullah used when you feel that sadness within you, when you are disturbed and frustrated, when anxiety surrounds you.",
+		details: "We say Astaghfirullah when we want to seek Allah SWT’s forgiveness for a sin we committed or when we feel disappointed, disturbed, anxious, or frustrated.",
+		moreDetails: "Don't say 'oh noo or any bad words'. Say 'Astaghfirullah'."
 	},
 	{
 		id: 5,
 		title: "Allahu Akbar",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'Allah is most great',
+		desc: 'Allah is the greatest',
 		img: require(imgURL + '5.png'),
-		details: "Allahu Akbar used when something great happen. Example: After the birth of a child as a means of praising Allah SAW.",
+		details: "We say Allahu Akbar to express excitement and to remind ourselves that Allah SWT is the Supreme being.",
+		moreDetails: "Don't say 'I did or praise yourself'. Say 'Allahu Akbar'."
 	},
 	{
 		id: 6,
 		title: "Assalammu Alaikum",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'Peace be up on you',
+		desc: 'Peace be upon you',
 		img: require(imgURL + '6.png'),
-		details: "Assalammu Alaikum is a religious salutation among Muslims when greeting. Assalammu Alaikum means 'Peace be up on you'.",
-		moreDetails: "Don't say 'Hello', Say 'Assalammu Alaikum'."
+		details: "We say Assalammu Alaikum to greet a fellow Muslim or when bidding farewell. Assalammu Alaikum means 'Peace be up on you'.",
+		moreDetails: "Don't say 'Hello'. Say 'Assalammu Alaikum'."
 	},
 	{
 		id: 7,
@@ -77,7 +79,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Peace be up on you too',
 		img: require(imgURL + '7.png'),
-		details: "Walaikum Assalam is a religious salutation among Muslims when greeting back. Walaikum Assalam means 'Peace be up on you too'.",
+		details: "We say Walaikum Assalam to greet back a fellow Muslim. Walaikum Assalam means 'Peace be upon you too'.",
+		moreDetails: "To greet back don't say 'Hello'. Say 'Walaikum Assalam'."
 	},
 	{
 		id: 8,
@@ -85,24 +88,26 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'I leave you in\nthe custody of Allah.',
 		img: require(imgURL + '8.png'),
-		details: "When two people are about to be spread apart long distances and don’t know when they will next see each other next. You’re basically wishing them a safe journey on their travels.",
+		details: "When two people are about to be spread apart long distances and don’t know when they will see each other again, they wish it to each other as Fi Amanillah. Fi Amanillah means 'I leave you in\nthe custody of Allah'.",
+		moreDetails: "Don't say 'Bye'. Say 'Fi Amanillah'."
 	},
 	{
 		id: 9,
 		title: "Insha Allah",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'if Allah wills',
+		desc: 'If Allah wills',
 		img: require(imgURL + '9.png'),
-		details: "Insha Allah is commonly used to refer to events that one hopes will happen in the future.",
+		details: "Insha Allah is commonly used to refer to events that one hopes will happen in the future if Allah wills.",
 		moreDetails: "Don't say '0k', Say 'Insha Allah'."
 	},
 	{
 		id: 10,
-		title: "Barakallahu feek",
+		title: "Barakallah Fik",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'The blessings of\nAllah upon you',
 		img: require(imgURL + '10.png'),
-		details: "Barakallahu feek is commonly used when responding to somebody saying Jazakallah to indicate that they realize it is God's blessing and not their own which is being transmitted.",
+		details: "Barakallah Fik is often said as a way to express thanks to another person. Its literal meaning is not thank you. It’s an expression to show gratitude and direct blessings of Allah SAW towards that person. ",
+		moreDetails: "Don't say 'Thank you', Say 'Barakallah Fik'."
 	},
 	{
 		id: 11,
@@ -110,7 +115,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Allah has willed it',
 		img: require(imgURL + '11.png'),
-		details: "Masha Allah is used when you see something good and don't want to give the evil eye.",
+		details: "Masha Allah is used to expressing appreciation, joy, praise, or thankfulness for an event or when you see something good and don't want to give the evil eye.",
 		moreDetails: "Don't say 'great', Say 'Masha Allah'."
 	}
 ]

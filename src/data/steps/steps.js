@@ -109,13 +109,13 @@ export const data = [
 	},
 	{
 		id: 8,
-		title: 'Quran Knowledge',
+		title: 'The Holy Quran',
 		data: Quran.data,
-		desc: 'How much do you\nknow about Quran?',
+		desc: 'Facts about\nthe Holy Quran',
 		bgColor: '#c44569',
 		active: true,
 		img: require('../../../assets/img/steps/quran.png'),
-		details: "The Holy Quran was revealed to Prophet Muhammad (pbuh) in the Cave of Hira.",
+		details: "Quran, the last revelation of Allah SWT, was revealed to Prophet Muhammad (PBUH) by Angel Jibril. It was first revealed in the Cave of Hira (Mecca) on Laylat al-Qadr (Night of Power) in the Islamic month of Ramadhan.",
 	},
 	{
 		id: 9,
@@ -125,7 +125,7 @@ export const data = [
 		bgColor: '#34495e',
 		active: true,
 		img: require('../../../assets/img/steps/revelation.png'),
-		details: "Four Revelation in Islam Torah revealed to Prophet Musa (A.S), the Zabur revealed to Prophet Dawud (A.S), the Injeel revealed to Prophet Isa (A.S), and the Quran revealed to Prophet Muhammad (pbuh).",
+		details: "In Islamic belief, Wahi (Revelation) is the sending of Allah's words to mankind, delivered by His messenger Prophets.",
 	},
 	{
 		id: 10,
