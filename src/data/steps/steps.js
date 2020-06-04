@@ -135,7 +135,7 @@ export const data = [
 		bgColor: '#e66767',
 		active: true,
 		img: require('../../../assets/img/steps/frequentWords.png'),
-		details: "What are the Frequently used words, during which time and the meaning.",
+		details: "What are the frequently used Arabic words by humans and it's purpose.",
 	},
 	{
 		id: 11,

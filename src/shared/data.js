@@ -72,19 +72,20 @@ export const introSlides = [
 
 // BADGE DATA
 export const howToPlayHeadsUp = [
-  { id: 1, img: require('../../assets/img/game/3.png'), title: 'Guess the word', desc: "Hold the phone on your forehead (Lets call as 'Play Position'). Guess the word while your friend's act, sing, or describe the clues." },
-  { id: 2, img: require('../../assets/img/tilt-down.png'), title: 'Tilt-up\n to Pass the word', desc: 'Tilt-up the phone, so the screen faces the sky if you want to pass and bring it back to the normal position (Play Position) for the next word.' },
-  { id: 3, img: require('../../assets/img/tilt-up.png'), title: 'Tilt-down\n if you guess correctly', desc: 'Tilt-down the phone, so the screen faces the floor if you guess correctly and then bring it to the normal position (Play Position) for the next word.'  },
+  { id: 1, img: require('../../assets/img/game/3.png'), title: 'Guess the word', desc: "To start the game, a player must hold the phone upright (“Play Position”) on his forehead, while the others act out the word shown on the screen." },
+  { id: 2, img: require('../../assets/img/tilt-down.png'), title: 'Tilt-up\n to Pass the word', desc: 'If the player guesses the word correctly, tilt down the phone so the screen faces the floor. Then bring back to Play Position for the next word.' },
+  { id: 3, img: require('../../assets/img/tilt-up.png'), title: 'Tilt-down\n if you guess correctly', desc: 'If you want to skip the word, tilt up the phone so the screen faces the sky. Then bring back to Play Position for the next word.'  },
   { id: 4, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
 ];
 
 // BADGE DATA
 export const howToPlaySpyLetter = [
-  { id: 1, img: require('../../assets/img/drag.png'), title: 'Drag and drop\nmissing letter', desc: 'Drag a letter from the given 12 random letters and drop inside the missing white space. To remove the letter from the word, just click once on the letter you dropped, it will be removed.' },
-  { id: 2, img: require('../../assets/img/pass.png'), title: 'Pass the word', desc: 'If you feel hard, click the "PASS" button, it will show the next word.' },
-  { id: 3, img: require('../../assets/img/check.png'), title: 'Check the word', desc: 'Click the "CHECK" button, if you want to check a word whether it is correct or not after arranging the letters.'},
-  { id: 4, img: require('../../assets/img/help.png'), title: "Need Clue", desc: 'If you need a clue to find the word then click the "Help" icon.' },
-  { id: 5, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
+  { id: 1, img: require('../../assets/img/drag.png'), title: 'Drag and drop\nmissing letter', desc: 'You need to fill the blank spaces with the correct letters to form the word. Drag a letter from the given 12 letters to the blank spaces.' },
+  { id: 2, img: require('../../assets/img/remove.png'), title: 'Remove the letter', desc: 'To remove the letter from the word, click on the letter once.' },
+  { id: 3, img: require('../../assets/img/help.png'), title: "Need Clue", desc: 'If you need a clue, click on the “Help” icon in the center.' },
+  { id: 4, img: require('../../assets/img/pass.png'), title: 'Pass the word', desc: 'If you want to skip the word, click on “Pass” for the next word.' },
+  { id: 5, img: require('../../assets/img/check.png'), title: 'Check the word', desc: 'To check the word after finishing the puzzle, click on “Check”.'},
+  { id: 6, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
 ];
 
 // BADGE DATA

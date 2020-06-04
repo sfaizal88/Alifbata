@@ -25,7 +25,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'In the name\nof Allah',
 		img: require(imgURL + '1.png'),
-		details: 'We say Bismillah before beginning any action or speech to consciously ask Allah SWT to be with us throughout. Receive a blessing from Allah SWT. It is a powerful phrase that completes our actions and adds immense reward and Barakah to everything that follows it.',
+		details: 'We say "Bismillah" before beginning any action or speech to consciously ask Allah SWT to be with us throughout. Receive a blessing from Allah SWT. It is a powerful phrase that completes our actions and adds immense reward and Barakah to everything that follows it.',
 		moreDetails: "Don't start any work or conversation directly, instead Say 'Bismillah' and start."
 	},
 	{
@@ -34,7 +34,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Praise be\nto Allah',
 		img: require(imgURL + '2.png'),
-		details: 'We say Alhamdhulillah to express our gratitude for Allah SWT’s blessings and goodness. It means all praise to Allah alone. Alhamdhulillah is usually used when something good happens but we should also remember to say Alhamdhulillah during difficult times. By doing so, we shift focus to the goodness and place reliance on Allah SWT, as He knows best.',
+		details: 'We say "Alhamdhulillah" to express our gratitude for Allah SWT’s blessings and goodness. It means all praise to Allah alone. Alhamdhulillah is usually used when something good happens but we should also remember to say Alhamdhulillah during difficult times. By doing so, we shift focus to the goodness and place reliance on Allah SWT, as He knows best.',
 		moreDetails: "Don't say 'I am fine', Say 'Alhamdhulillah'."
 	},
 	{
@@ -43,7 +43,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Glory be\nto Allah',
 		img: require(imgURL + '3.png'),
-		details: 'We say Subhanallah to express our amazement. It is often used during prayer, supplication, and sermon to praise Allah SWT or to exclaim in awe at His attributes, bounties, or creation.',
+		details: 'We say "Subhanallah" to express our amazement. It is often used during prayer, supplication, and sermon to praise Allah SWT or to exclaim in awe at His attributes, bounties, or creation.',
 		moreDetails: "Don't say 'wow'. Say 'Subhanallah'."
 	},
 	{
@@ -52,7 +52,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'I seek forgiveness\nfrom Allah',
 		img: require(imgURL + '4.png'),
-		details: "We say Astaghfirullah when we want to seek Allah SWT’s forgiveness for a sin we committed or when we feel disappointed, disturbed, anxious, or frustrated.",
+		details: 'We say "Astaghfirullah" when we want to seek Allah SWT’s forgiveness for a sin we committed or when we feel disappointed, disturbed, anxious, or frustrated.',
 		moreDetails: "Don't say 'oh noo or any bad words'. Say 'Astaghfirullah'."
 	},
 	{
@@ -61,7 +61,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Allah is the greatest',
 		img: require(imgURL + '5.png'),
-		details: "We say Allahu Akbar to express excitement and to remind ourselves that Allah SWT is the Supreme being.",
+		details: 'We say "Allahu Akbar" to express excitement and to remind ourselves that Allah SWT is the Supreme being.',
 		moreDetails: "Don't say 'I did or praise yourself'. Say 'Allahu Akbar'."
 	},
 	{
@@ -70,16 +70,16 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Peace be upon you',
 		img: require(imgURL + '6.png'),
-		details: "We say Assalammu Alaikum to greet a fellow Muslim or when bidding farewell. Assalammu Alaikum means 'Peace be up on you'.",
+		details: 'We say "Assalammu Alaikkum" to greet a fellow Muslim or when bidding farewell. Assalammu Alaikum means "Peace be up on you".',
 		moreDetails: "Don't say 'Hello'. Say 'Assalammu Alaikum'."
 	},
 	{
 		id: 7,
-		title: "Walaikum Assalam",
+		title: "Wa Alaikkum Assalam",
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Peace be up on you too',
 		img: require(imgURL + '7.png'),
-		details: "We say Walaikum Assalam to greet back a fellow Muslim. Walaikum Assalam means 'Peace be upon you too'.",
+		details: "We say 'Wa Alaikkum Assalam' in response to a fellow Muslim’s greeting (i.e. Assalammu Alaikum). Walaikum Assalam means 'Peace be upon you too'.",
 		moreDetails: "To greet back don't say 'Hello'. Say 'Walaikum Assalam'."
 	},
 	{

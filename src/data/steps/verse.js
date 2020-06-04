@@ -47,7 +47,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '3.png'),
 		moreDetails: 'Kind words and the covering of faults are better than charity followed by injury. Allah is free of all wants, and He is Most-Forbearing. (2:263)',
-		details: 'In our daily lives, we encounter many people and may not always be aware of the struggles they are facing. Sometimes, the simple acts of kindness (e.g. exchanging positive conversation or simple smile) can be life-changing for someone. On covering of other’s faults, Prophet Muhammad (PBUH) told us that Allah SWT will cover our faults on the Day of Judgment if we cover the faults of others in this life.'
+		details: 'In our daily lives, we encounter many people and may not always be aware of the struggles they are facing. Often, the simple acts of kindness (e.g. exchanging positive conversation or simple smile) can be life-changing for someone. On covering of other’s faults, Prophet Muhammad (PBUH) told us that Allah SWT will cover our faults on the Day of Judgment if we cover the faults of others in this life.'
 	},
 	{
 		id: 4,
@@ -57,7 +57,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require(imgURL + '4.png'),
 		moreDetails: "When my servant asks thee concerning Me, I am indeed close (to them). I listen to the prayer of every suppliant when he calleth on Me. (2:186)",
-		details: 'Supplication (Dua), a powerful connection between Allah SWT and His servants, is the essence of worship. Allah SWT wants us to know that he is always very close us – listening, guiding, helping and answering us. Hadith tells us that every time we ask Allah SWT for something, we either get exactly what we asked for, or something better.'
+		details: 'Supplication (Dua), a powerful connection between Allah SWT and His servants, is the essence of worship. Allah SWT wants us to know that he is always very close us. Listening, guiding, helping and answering us. Hadith tells us that every time we ask Allah SWT for something, we either get exactly what we asked for, or something better.'
 	},
 	{
 		id: 5,

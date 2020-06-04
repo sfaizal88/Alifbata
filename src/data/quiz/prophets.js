@@ -98,7 +98,7 @@ export const data = [
 	{id: 1, option: 'Abdullah'},
 	{id: 2, option: 'Abdur Rahman'},
 	{id: 3, option: 'Abu Talib'},
-	{id: 4, option: 'Abd al-Muttalib'}
+	{id: 4, option: 'Abdul Muttalib'}
 	])
 	},
 	{

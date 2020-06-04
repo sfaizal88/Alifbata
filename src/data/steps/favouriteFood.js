@@ -25,7 +25,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Fig',
 		img: require(imgURL + '1.png'),
-		details: 'Figs are high in natural sugars, minerals and soluble fibre. Figs are rich in minerals including potassium, calcium, magnesium, iron and copper and are a good source of antioxidant vitamins A and K that contribute to health and wellness.',
+		details: 'Quran mentioned about "Fig" in many places. Figs are high in natural sugars, minerals, and soluble fiber.',
+		moreDetails: 'By the fig and the olive (Surah At-Tin 95:1).'
 	},
 	{
 		id: 2,
@@ -49,7 +50,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Olive oil',
 		img: require(imgURL + '4.png'),
-		details: 'Olive oil is extracted from the olive fruit. Helps prevent diabetes, controls cholesterol and much more.',
+		details: 'Quran mentioned about "Olive" at 7 places. Olive oil is extracted from the olive fruit. It helps prevent diabetes, controls cholesterol, and much more. Quran also mentioned about "Olive" in Surah At-Tin (95:1).',
+		moreDetails: 'By the fig and the olive (Surah At-Tin 95:1).'
 	},
 	{
 		id: 5,
@@ -65,7 +67,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Grapes',
 		img: require(imgURL + '6.png'),
-		details: 'The nutrients in grapes may help protect against cancer, eye problems, cardiovascular disease, and other health conditions. Resveratrol is a key nutrient in grapes that may offer health benefits. Grapes are a good source of fiber, potassium, and a range of vitamins and other minerals.',
+		details: 'Quran mentioned about "Graphs" at 8 places. Grape is one of the best natural sources for glucose & fructose and has a lot of health benefits. Graphs help to remove weariness, fights Anemia, good for liver, kidney & digestive system, lowers high blood pressure, and good for heart & treating bronchitis.',
+		moreDetails: 'And We brought forth for you thereby gardens of palm trees and grapevines in which for you are abundant fruits and from which you eat (Surah Al-Muminun 23:19). In other places Surah Ar-Rad (13:4), Surah Al-Isra (17:91), Surah Al-Kahf (18:32), Surah Al-Anam (6:99), Surah Ya-Sin (36:34), Surah Al-Baqarah (2:266) and Surah An-Naba (78:32).'
 	},
 	{
 		id: 7,
@@ -81,7 +84,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Pomegranate',
 		img: require(imgURL + '8.png'),
-		details: 'Eating pomegranates removes the excess fat and prevents the hardening of artery walls. Pomegranate helps to pump the level of oxygen in our blood. Due to anti-oxidants present in pomegranate, it fights free radicals, reduces cholesterol and prevents blood clot.',
+		details: 'Quran mentioned about "Pomegranate" at 3 places. Eating pomegranates removes the excess fat and prevents the hardening of artery walls. Pomegranate helps to pump the level of oxygen in our blood. Due to anti-oxidants present in pomegranate, it fights free radicals, reduces cholesterol, and prevents blood clots.',
+		moreDetails: ' In both of them are fruit and palm trees and pomegranates (Surah Ar-Rahman 23:19). In other places Surah Al-Anam (6:141) and Surah Al-Anam (6:99).'
 	},
 	{
 		id: 9,
@@ -97,7 +101,8 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Honey',
 		img: require(imgURL + '10.png'),
-		details: 'Honey has been linked to health benefits like improved heart health, wound healing, and blood antioxidant status.',
+		details: 'Quran mentioned about "Honey" at 2 places. Honey has been linked to health benefits like improving heart health, wound healing, and blood antioxidant status.',
+		moreDetails: 'And your Lord inspired to the bee, "Take for yourself among the mountains, houses, and among the trees and [in] that which they construct (Surah An-Nahl 16:68). In other places Surah An-Nahl (16:69).'
 	},
 	{
 		id: 11,
