@@ -28,6 +28,7 @@ import { Empty  } from '../../component/complex/empty';
 import { Menu  } from '../../component/complex/menu';
 import { HowToPlayHeadsUp  } from '../../component/model/howToPlayHeadsUp';
 import { HowToPlaySpyLetter  } from '../../component/model/howToPlaySpyLetter';
+import { HowToPlayRunner  } from '../../component/model/howtoPlayRunner';
 
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
@@ -48,6 +49,7 @@ export const GameListScreen = ({ navigation, route }) => {
   	const [listView, setListView]               = useState(false);
   	const [showHowtoPlayHU, setShowHowtoPlayHU] = useState(false);
   	const [showHowtoPlaySL, setShowHowtoPlaySL] = useState(false);
+  	const [showHowtoPlayRG, setShowHowtoPlayRG] = useState(false);
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
@@ -109,6 +111,8 @@ export const GameListScreen = ({ navigation, route }) => {
 	    	setShowHowtoPlayHU(true);	
 	    } else if ( type === 'SL') {
 	    	setShowHowtoPlaySL(true);
+	    } else if ( type === 'RG') {
+	    	setShowHowtoPlayRG(true);
 	    }
 	}
 
@@ -167,6 +171,7 @@ export const GameListScreen = ({ navigation, route }) => {
 	  		<Menu navigation={navigation} activeMenu={'GAME'}></Menu>
 	  		<HowToPlayHeadsUp show={showHowtoPlayHU} handleClose={() => setShowHowtoPlayHU(false)}/>
 	  		<HowToPlaySpyLetter show={showHowtoPlaySL} handleClose={() => setShowHowtoPlaySL(false)}/>
+	  		<HowToPlayRunner show={showHowtoPlayRG} handleClose={() => setShowHowtoPlayRG(false)}/>
 	  	</>
   	);
 }

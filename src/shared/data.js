@@ -70,7 +70,7 @@ export const introSlides = [
 ];
 
 
-// BADGE DATA
+// HOW TO PLAY STEPS IN HEADS UP GAME
 export const howToPlayHeadsUp = [
   { id: 1, img: require('../../assets/img/game/3.png'), title: 'Guess the word', desc: "To start the game, a player must hold the phone upright (“Play Position”) on his forehead, while the others act out the word shown on the screen." },
   { id: 2, img: require('../../assets/img/tilt-down.png'), title: 'Tilt-up\n to Pass the word', desc: 'If the player guesses the word correctly, tilt down the phone so the screen faces the floor. Then bring back to Play Position for the next word.' },
@@ -78,7 +78,7 @@ export const howToPlayHeadsUp = [
   { id: 4, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
 ];
 
-// BADGE DATA
+// HOW TO PLAY STEPS IN SPY LETTER GAME
 export const howToPlaySpyLetter = [
   { id: 1, img: require('../../assets/img/drag.png'), title: 'Drag and drop\nmissing letter', desc: 'You need to fill the blank spaces with the correct letters to form the word. Drag a letter from the given 12 letters to the blank spaces.' },
   { id: 2, img: require('../../assets/img/remove.png'), title: 'Remove the letter', desc: 'To remove the letter from the word, click on the letter once.' },
@@ -86,6 +86,12 @@ export const howToPlaySpyLetter = [
   { id: 4, img: require('../../assets/img/pass.png'), title: 'Pass the word', desc: 'If you want to skip the word, click on “Pass” for the next word.' },
   { id: 5, img: require('../../assets/img/check.png'), title: 'Check the word', desc: 'To check the word after finishing the puzzle, click on “Check”.'},
   { id: 6, img: require('../../assets/img/countdown.png'), title: "Time's Up", desc: 'Guess as many words as you can before the timer runs out!' }
+];
+
+// HOW TO PLAY STEPS IN RUNNER GAME
+export const howToPlayRunner = [
+  { id: 1, img: require('../../assets/img/game/4.png'), title: 'Drag and drop\nmissing letter', desc: 'You need to fill the blank spaces with the correct letters to form the word. Drag a letter from the given 12 letters to the blank spaces.' },
+  { id: 2, img: require('../../assets/img/mosque.png'), title: 'Remove the letter', desc: 'To remove the letter from the word, click on the letter once.' }
 ];
 
 // BADGE DATA
@@ -218,43 +224,49 @@ export const quizDashboardList = [
 // DASHBOARD KNOWLEDGE
 export const knowledgeDashboardList = [
   {
-    id: 1, title: 'Angels in Islam', desc: 'Major Angels',
+    id: 1, title: 'How to do Wudu', desc: 'Wudu steps',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
-    img: require('../../assets/img/angel.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
-    active: true, path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 1 } }
+    img: require('../../assets/img/steps/wudu.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'font-awesome', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 1 } }
   },
   {
-    id: 2, title: 'About Five Pillars', desc: '5 Pillars',
-    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
-    img: require('../../assets/img/steps/pillars.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
-    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 2 } }
-  },
-  {
-    id: 3, title: 'Miracles of Prophets', desc: '25 Prophets',
+    id: 2, title: 'Miracles of Prophets', desc: '25 Prophets',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/prayer.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 0 } }
   },
   {
-    id: 4, title: 'Quran Verses', desc: 'Life changing verses',
+    id: 3, title: 'Umrah', desc: 'How to perform Umrah',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
-    img: require('../../assets/img/steps/verse.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    img: require('../../assets/img/steps/hajj.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 2 } }
+  },
+  {
+    id: 4, title: 'Angels in Islam', desc: 'Major Angels',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/angel.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 5 } }
+  },
+  {
+    id: 5, title: 'Arabic Words', desc: 'Frequently used words',
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/steps/frequentWords.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 3 } }
   },
   {
-    id: 5, title: 'How to do Wudu', desc: 'Wudu steps',
+    id: 6, title: 'Friday Sunnah', desc: 'Sunnah acts of Jummah',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
-    img: require('../../assets/img/steps/wudu.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
-    active: true, type: 'font-awesome', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 10 } }
+    img: require('../../assets/img/steps/prayer.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 8 } }
   },
   {
-    id: 6, title: 'How to drink Water', desc: 'Drinking steps',
+    id: 7, title: 'Drinking Water', desc: 'How to drink',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/steps/drinking.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 11 } }
   },
   {
-    id: 7, title: 'More', desc: 'All Knowledge',
+    id: 8, title: 'More', desc: 'All Knowledge',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
    img: require('../../assets/img/more.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'font-awesome', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 0 } }
@@ -264,7 +276,7 @@ export const knowledgeDashboardList = [
 // DASHBOARD GAMES
 export const gameDashboardList = [
   {
-    id: 1, title: 'Spy Word', desc: 'Find me', showHowtoPlay: false,
+    id: 1, title: 'Spy Word', desc: 'Find me', showHowtoPlay: true,
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/game/2.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, path: 'GameNavigation', data: { screen: 'GameList', params: { slideIndex: 0 } }
@@ -274,6 +286,12 @@ export const gameDashboardList = [
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/game/3.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, path: 'GameNavigation', data: { screen: 'GameList', params: { slideIndex: 1 } }
+  },
+  {
+    id: 3, title: 'Runner', desc: 'Who reach mosque', showHowtoPlay: true,
+    //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
+    img: require('../../assets/img/game/4.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
+    active: true, path: 'GameNavigation', data: { screen: 'GameList', params: { slideIndex: 2 } }
   }
 ]
 

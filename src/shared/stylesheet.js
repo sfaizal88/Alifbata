@@ -1590,6 +1590,10 @@ const pageStyle = {
   		alignItems: 'center',
 		justifyContent: 'center'
   	},
+  	topPattern: {
+  		justifyContent: Utils.isIpad() ? 'center' : 'flex-start',
+  		paddingTop: Utils.isIpad() ? 0 : RFPercentage(10)
+  	}
  }
 /* PATTERN - STARTS */
 /* CHAPTER SLIDER - STARTS */
@@ -1600,7 +1604,7 @@ const chapterSliderStyle = {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 0,
-        top: -20
+        //top: -20
     },
     cSlideTitle: {
         fontSize: RFValue(28),
@@ -2100,6 +2104,109 @@ const mLetterGameStyle = {
 	}
 }
 /* MISSING LETTER GAME - ENDS */
+/* RUNNER GAME - STARTS */
+const runnerGameStyle = {
+	roadleft: {
+		flex: 1,
+		backgroundColor: Colors.road,
+		textAlign: 'center',
+		alignItems: "center",
+		marginBottom: -5,
+		marginTop: -5,
+		borderStyle: 'dashed',
+		borderWidth: 5,
+		borderColor: Colors.white,
+		marginRight: -2.5,
+		zIndex: 2
+	},
+	roadRight: {
+		flex: 1,
+		backgroundColor: Colors.road,
+		textAlign: 'center',
+		alignItems: "center",
+		marginBottom: -5,
+		marginTop: -5,
+		borderStyle: 'dashed',
+		borderWidth: 5,
+		borderColor: Colors.white,
+		marginLeft: -2.5,
+		zIndex: 2
+	},
+	grassField: {
+		flex: 2,
+		backgroundColor: '#d3d3d3',
+		alignItems: "center",
+		justifyContent: "center",
+		zIndex: 1,
+	},
+	player1: {
+		backgroundColor: Colors.red,
+		width: RFValue(35),
+		height: RFValue(35),
+		borderRadius: 100,
+		bottom: 0,
+		position: 'absolute',
+		textAlign: 'center',
+		color: Colors.white,
+		marginBottom: 20,
+		zIndex: 2
+	},
+	player1Control: {
+		backgroundColor: Colors.red,
+		width: RFValue(120),
+		height: RFValue(120),
+		borderRadius: 150,
+		alignItems: "center",
+		justifyContent: "center",
+		borderRadius: 0,
+	},
+	player2: {
+		backgroundColor: Colors.robinEggBlue,
+		width: RFValue(35),
+		height: RFValue(35),
+		borderRadius: 100,
+		bottom: 0,
+		position: 'absolute',
+		textAlign: 'center',
+		color: Colors.white,
+		marginBottom: 20,
+		zIndex: 2
+	},
+	player2Control: {
+		backgroundColor: Colors.robinEggBlue,
+		width: RFValue(120),
+		height: RFValue(120),
+		borderRadius: 150,
+		alignItems: "center",
+		justifyContent: "center",
+		borderRadius: 0,
+		//height: '100%'
+	},
+	mosque: {
+		top: 0,
+		textAlign: 'center',
+	},
+	winnerFlag: {
+		width: '100%',
+		zIndex: 1,
+		marginTop: RFValue(55),
+	},
+	runnerIcon: {
+		tintColor: Colors.white,
+		width: RFValue(60),
+		height: RFValue(60)
+	},
+	mosqueFlag: {
+		backgroundColor: Colors.road,
+		width: RFValue(60),
+		zIndex: 3,
+		position: 'absolute',
+		height: 60,
+		top: RFValue(35),
+		left: RFValue(-30)
+	}
+}
+/* RUNNER GAME - ENDS */
 /* ANIMATED - STARTS */
 const animatedStyle = {
 	countdownTimer: {
@@ -2146,5 +2253,6 @@ export const styles = StyleSheet.create({
 	...imagesStyle,
 	...headsupGameStyle,
 	...mLetterGameStyle,
-	...animatedStyle
+	...animatedStyle,
+	...runnerGameStyle
 });

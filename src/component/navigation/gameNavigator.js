@@ -22,6 +22,7 @@ import BackIcon from '../../../assets/img/back.png';
 // ALL MODULE PAGE FILES
 import { GameListScreen  } from '../../pages/game/gameList';
 import { HeadsupGameScreen } from '../../pages/game/headsup';
+import { RunnerGameScreen } from '../../pages/game/runner';
 import { HeadsupScoreScreen } from '../../pages/game/headsupScore';
 import { MissingLetterScreen } from '../../pages/game/missingLetter';
 import { MissingLetterScoreScreen } from '../../pages/game/missingLetterScore';
@@ -90,6 +91,7 @@ export const GameNavigation = ({navigation}) => {
         <Stack.Screen name="MissingLetterScore" component={MissingLetterScoreScreen}  options={{...navConfig, headerLeft: null}} />
         <Stack.Screen name="HeadsupScore" component={HeadsupScoreScreen}  options={{...navConfig}} />
         <Stack.Screen name="HeadsupGame" component={HeadsupGameScreen}  options={{...navConfig}} />
+        <Stack.Screen name="RunnerGame" component={RunnerGameScreen}  options={{...navConfig}} />
         <Stack.Screen name="GameList" component={GameListScreen}  options={{...navConfig}} />
       </Stack.Navigator>
     </>

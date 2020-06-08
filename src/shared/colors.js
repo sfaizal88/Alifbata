@@ -53,5 +53,6 @@ export const Colors = {
   selectedOpt: '#3498db',
   gold:'#f2c40f',
   turquoise: '#3ac5aa',
-  help: '#1abc9c'
+  help: '#1abc9c',
+  road: '#6c6d71'
 };

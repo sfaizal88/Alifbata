@@ -110,13 +110,3 @@ export const HowToPlayHeadsUp = (props) => {
     </>
     );
 } 
-
-/*
-<Button onPress={() => _slideMove(index + 1)} 
-icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
-title={ "Next" } 
-buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
-containerStyle={styles.cSlideBtnContainer}
-titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}
-iconRight={true}/>
-*/

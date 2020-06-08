@@ -642,6 +642,536 @@ options: Utils.shuffle([
 			{id: 4, option: "Maghrib prayers"}
 		])
 	},
+	{
+		question: 'To whom was the Quran revealed?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammed (pbuh)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Isa (as)'},
+			{id: 4, option: 'Prophet Ilias (as)'}
+		])
+	},
+	{
+		question: 'The first verses of the Qurʾan to be revealed were from which surah?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Al Alaq'},
+			{id: 2, option: 'Surah Qaf'},
+			{id: 3, option: 'Surah Yaseen'},
+			{id: 4, option: 'Surah Al Mulk'}
+		])
+	},
+	{
+		question: 'Which of these animals is NOT mentioned in the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Giraffe'},
+			{id: 2, option: 'Elephant'},
+			{id: 3, option: 'Donkey'},
+			{id: 4, option: 'Camel'}
+		])
+	},
+	{
+		question: 'Which is the only month mentioned in the Quran?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Muharram'},
+			{id: 2, option: 'Safar'},
+			{id: 3, option: 'Rajab'},
+			{id: 4, option: 'Ramadan'}
+		])
+	},
+	{
+		question: 'Who is the only woman to be mentioned in the Quran by name?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Khadijah'},
+			{id: 2, option: 'Aishah'},
+			{id: 3, option: 'Fatimah'},
+			{id: 4, option: 'Maryam'}
+		])
+	},
+	{
+		question: 'Who is the only companion mentioned by name in the Quran?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Abu Bakr'},
+			{id: 2, option: 'Umar'},
+			{id: 3, option: 'Zayd'},
+			{id: 4, option: 'Talha'}
+		])
+	},
+	{
+		question: 'Which is the only Surah in the Quran which does not start with "Bismillah..."?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Al-Maidah'},
+			{id: 2, option: 'Surah Al-Araf'},
+			{id: 3, option: 'Surah At-Taubah'},
+			{id: 4, option: 'Surah Yusuf'}
+		])
+	},
+	{
+		question: 'Which Surah has the name "Allah" in every verse?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Al-Kahf'},
+			{id: 2, option: 'Surah Luqman'},
+			{id: 3, option: 'Surah Al-Ikhlaas'},
+			{id: 4, option: 'Surah Al-Mujadilah'}
+		])
+	},
+	{
+		question: 'What was the interval between the first and the second revelation?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '2 years and six months'},
+			{id: 2, option: '3 Years'},
+			{id: 3, option: '1 Years and two months'},
+			{id: 4, option: 'Six months'}
+		])
+	},
+	{
+		question: 'How long did Prophet Muhammed (peace be upon him) received the revelation of the Qur’an in Makkah?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: '5 Years'},
+			{id: 2, option: '13 Years'},
+			{id: 3, option: '2 Years'},
+			{id: 4, option: '8 Years'}
+		])
+	},
+	{
+		question: 'How long did Prophet Muhammed (Sallallahu Alaihi Wasallam) received the revelation of the Qur’an in Madinah?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '6 Years'},
+			{id: 2, option: '12 Years'},
+			{id: 3, option: '15 Years'},
+			{id: 4, option: '10 Years'}
+		])
+	},
+	{
+		question: 'Where was the first Surah revealed?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'In Madinah'},
+			{id: 2, option: 'In Jersulam'},
+			{id: 3, option: 'Abyssinia'},
+			{id: 4, option: 'In Makkah'}
+		])
+	},
+	{
+		question: 'Where was the last Surah revealed?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'In Madinah'},
+			{id: 2, option: 'In Jersulam'},
+			{id: 3, option: 'Abyssinia'},
+			{id: 4, option: 'In Makkah'}
+		])
+	},
+	{
+		question: 'How many years did it take for the complete revelation of the Quran?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '21 years'},
+			{id: 2, option: '20 years'},
+			{id: 3, option: '22 years'},
+			{id: 4, option: '23 years'}
+		])
+	},
+	{
+		question: 'Which Surah (chapter) of the Qur’an is to be read compulsorily in each raka’at of the Salah (Prayer)?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Al-Fatihah'},
+			{id: 2, option: 'Surah Al-Kausar'},
+			{id: 3, option: 'Surah Al-Baqarah'},
+			{id: 4, option: 'Al-Huda'}
+		])
+	},
+	{
+		question: 'How many Makki Surahs (chapters) are there in the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '86 chapters'},
+			{id: 2, option: '45 chapters'},
+			{id: 3, option: '33 chapters'},
+			{id: 4, option: '80 chapters'}
+		])
+	},
+	{
+		question: 'How many Madani Surahs(chapters) are there in the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '28 chapters'},
+			{id: 2, option: '20 chapters'},
+			{id: 3, option: '24 chapters'},
+			{id: 4, option: '22 chapters'}
+		])
+	},
+	{
+		question: 'Who is the first ‘Haafiz’ (memorizer) of the Qur’an?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammed (pbuh)'},
+			{id: 2, option: "Ali ibn Abi Talib"},
+			{id: 3, option: "Umar ibn Al-Khattab"},
+			{id: 4, option: "Uthman ibn Affan"},
+		])
+	},
+	{
+		question: 'Which category of creature does the Qur’an put ‘Iblees’ into?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'None of the options'},
+			{id: 2, option: 'Human'},
+			{id: 3, option: 'Angel'},
+			{id: 4, option: 'Jinn'}
+		])
+	},
+	{
+		question: 'What is the scale or measure of one’s dignity according to the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Thaqwa'},
+			{id: 2, option: 'Deed'},
+			{id: 3, option: 'None of the option'},
+			{id: 4, option: 'Stars'}
+		])
+	},
+	{
+		question: 'Who were the three non-prophets whose names are mentioned with due respect in the Quran?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Luqman'},
+			{id: 2, option: 'Zulqarnain'},
+			{id: 3, option: 'Aziz of Egypt'},
+			{id: 4, option: 'Prophet Muhammed (pbuh)'}
+		])
+	},
+	{
+		question: 'In which part of the Qur’an do you find ‘Ayat-ul-Kursi’ (Verse of the Throne)?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'In Surah Al-Fatihah'},
+			{id: 2, option: 'In Surah Al-Kausar'},
+			{id: 3, option: 'In Surah Al-Hud'},
+			{id: 4, option: 'In Surat Al-Baqarah'}
+		])
+	},
+	{
+		question: 'Who was the Prophet mentioned in the Quran whose three generations were prophets?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Idris (as)'},
+			{id: 2, option: 'Prophet Hud (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Ibrahim (as)'}
+		])
+	},
+	{
+		question: 'According to the Qur’an who is “khaatamun Nabiyyeen”?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Idris (as)'},
+			{id: 2, option: 'Prophet Muhammed (pbuh)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Ibrahim (as)'}
+		])
+	},
+	{
+		question: 'According to the Quran what other name is given to the city of Madinah?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Bakkah'},
+			{id: 2, option: 'al-Quds'},
+			{id: 3, option: 'Bethlehem'},
+			{id: 4, option: 'Yathrib'}
+		])
+	},
+	{
+		question: 'Whose Generation is known as “Bani Israeel” according to the Quran?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammed (pbuh)'},
+			{id: 2, option: 'Prophet Yaqoob (as)'},
+			{id: 3, option: 'Prophet Nuh (as)'},
+			{id: 4, option: 'Prophet Saleh (as)'}
+		])
+	},
+	{
+		question: 'How many Sajdahs are there in the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '14 Sajdahs'},
+			{id: 2, option: '23 Sajdahs'},
+			{id: 3, option: '4 Sajdahs'},
+			{id: 4, option: '33 Sajdahs'}
+		])
+	},
+	{
+		question: 'In which year were the punctuation signs put into the Quran (Fatah, Damma and Kasra)?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '143 Hijri'},
+			{id: 2, option: '233 Hijri'},
+			{id: 3, option: '167 Hijri'},
+			{id: 4, option: '342 Hijri'}
+		])
+	},
+	{
+		question: 'By which leaders were the punctuation signs put into the Quran (Fatah, Damma and Kasra)?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Command of Hujaaj ibn Yusuf'},
+			{id: 2, option: 'Command of Prophet Muhamed (pbuh)'},
+			{id: 3, option: 'Command of Umar ibn Al-Khattab'},
+			{id: 4, option: 'Command of Abu Bakr'}
+		])
+	},
+	{
+		question: 'Which Surah was revealed twice?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Faateha'},
+			{id: 2, option: 'In Surah Al-Kausar'},
+			{id: 3, option: 'In Surah Al-Hud'},
+			{id: 4, option: 'In Surat Al-Baqarah'}
+		])
+	},
+	{
+		question: 'Which Surah in the Quran has the name of a blessed woman?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Surah Maryam'},
+			{id: 2, option: 'Surah Husnara'},
+			{id: 3, option: 'Surah Khadijah'},
+			{id: 4, option: 'Surah Fathimah'}
+		])
+	},
+	{
+		question: 'How many times did the blessed name Muhammad (pbuh) & Ahamed (pbuh) appear in the Quran?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '4'},
+			{id: 2, option: '3'},
+			{id: 3, option: '1'},
+			{id: 4, option: '5'}
+		])
+	},
+	{
+		question: 'How many times did the blessed name Prophet Ahmed (pbuh) appear in the Quran?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '4'},
+			{id: 2, option: '3'},
+			{id: 3, option: '1'},
+			{id: 4, option: '5'}
+		])
+	},
+	{
+		question: 'How many names of Angels are mentioned in the Quran?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '8'},
+			{id: 2, option: '6'},
+			{id: 3, option: '10'},
+			{id: 4, option: '12'}
+		])
+	},
+	{
+		question: 'How many names of Prophets are mentioned in the Quran?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '25'},
+			{id: 2, option: '12'},
+			{id: 3, option: '1,24,000'},
+			{id: 4, option: '23'}
+		])
+	},
+	{
+		question: 'How was Hazrat Hawa created?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'From the left rib of Hazrat Adam (as)'},
+			{id: 2, option: 'Clay'},
+			{id: 3, option: 'Fire'},
+			{id: 4, option: 'From the right rib of Hazrat Adam (as)'}
+		])
+	},
+	{
+		question: 'When there was an argument between the two sons of Hazrat Adam (as), who was killed?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Qaabil'},
+			{id: 2, option: 'Haabil'},
+			{id: 3, option: 'None of the options'},
+			{id: 4, option: 'Hawaa'}
+		])
+	},
+	{
+		question: '"You alone we worship and you alone do we ask for help" is a phrase from which Surah ?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Al-Ikhlas'},
+			{id: 2, option: 'Al-Fatihah'},
+			{id: 3, option: 'Al-Kawthar'},
+			{id: 4, option: 'Al-Asr'}
+		])
+	},
+	{
+		question: 'What is the meaning of An-Nas ?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'The dawn'},
+			{id: 2, option: 'The opening'},
+			{id: 3, option: 'The people'},
+			{id: 4, option: 'The night'}
+		])
+	},
+	{
+		question: 'What is the meaning of Al-Falaq ?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'The dawn'},
+			{id: 2, option: 'The people'},
+			{id: 3, option: 'The opening'},
+			{id: 4, option: 'The victory'}
+		])
+	},
+	{
+		question: 'What is the meaning of Al-Fil ?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Elephant'},
+			{id: 2, option: 'Spider'},
+			{id: 3, option: 'Lion'},
+			{id: 4, option: 'Dinosaur'}
+		])
+	},
+	{
+		question: 'What is the meaning of "Astaghfirullah" ?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'I ask Allah for Forgiveness'},
+			{id: 2, option: 'We are for Allah'},
+			{id: 3, option: 'Accept our prayer'},
+			{id: 4, option: 'None of the above'}
+		])
+	},
+	{
+		question: 'What is the first duty of a Muslim ?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Salat'},
+			{id: 2, option: 'Saum'},
+			{id: 3, option: 'Hajj'},
+			{id: 4, option: 'Shahadah'}
+		])
+	},
+	{
+		question: '"That the human being is created in the best of moulds" is a verse from?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Sura al Takathur'},
+			{id: 2, option: 'Sura al Tin'},
+			{id: 3, option: 'Sura al Asr'},
+			{id: 4, option: 'Sura Al Maun'}
+		])
+	},
+	{
+		question: 'The meaning of Bayyinah is?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'The Most High'},
+			{id: 2, option: 'The Night Star'},
+			{id: 3, option: 'The Clear Evidence'},
+			{id: 4, option: 'The Overwhelming Event'}
+		])
+	},
+	{
+		question: 'What does Jahiliyyah mean ?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Peace Treaty'},
+			{id: 2, option: 'Politeness'},
+			{id: 3, option: 'Ignorance'},
+			{id: 4, option: 'None of the options'}
+		])
+	},
+	{
+		question: "What's the translation of Dinul Fitrah ?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Religion of Peace'},
+			{id: 2, option: 'Religion of Nature'},
+			{id: 3, option: 'Religious nature'},
+			{id: 4, option: 'None of the options'}
+		])
+	},
+	{
+		question: 'Which chapter in the Quran does not start with the Basmallah (in the name of Allah)?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Al-Fateha'},
+			{id: 2, option: 'Al-Ikhlas'},
+			{id: 3, option: 'At-Taubah'},
+			{id: 4, option: 'At-Baqarah'}
+		])
+	},/*
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},*/
 
 ];
 

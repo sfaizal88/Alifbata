@@ -153,6 +153,7 @@ export const StepsListScreen = ({ navigation, route }) => {
 	    	
 	    	<View style={[styles.body, styles.p0, styles.pb15, listView ? styles.displayN : '']}>
 				<AppIntroSlider
+				ref={ref => this.AppIntroSlider = ref}
 				dotClickEnabled={false}
 				activeDotStyle={{backgroundColor:  'rgba(0, 0, 0, 0)'}} 
 				dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}

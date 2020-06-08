@@ -770,5 +770,595 @@ export const data = [
 			{id: 4, option: '15'}
 		])
 	},
+	{
+		question: 'To which prophet did Allah directly spoke to?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Ibrahim (as)'},
+			{id: 4, option: 'Prophet Yusuf (as)'}
+		])
+	},
+	{
+		question: 'To which Prophet did Allah order to build an Ark?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Nuh (as)'},
+			{id: 4, option: 'Prophet Yusuf (as)'}
+		])
+	},
+	{
+		question: 'What is the single most important message from Allah that all the messengers brought?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'To eat, drink and to remain happy'},
+			{id: 2, option: 'To worship Allah alone and no one else'},
+			{id: 3, option: 'To worship all idols and deities'},
+			{id: 4, option: 'That they were messengers of Allah'}
+		])
+	},
+	{
+		question: 'Which prophet has been mentioned in the Quran as a friend of Allah?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Isa (as)'},
+			{id: 3, option: 'Prophet Nuh (as)'},
+			{id: 4, option: 'Prophet Ibrahim (as)'}
+		])
+	},
+	{
+		question: 'He could cure the blind and bring dead people back to life?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Isa (as)'},
+			{id: 3, option: 'Prophet Yusuf (as)'},
+			{id: 4, option: 'Prophet Idris (as)'}
+		])
+	},
+	{
+		question: 'This prophet received the Zabur and was the father of Prophet Sulaiman?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Dawud (as)'},
+			{id: 3, option: 'Prophet Nuh (as)'},
+			{id: 4, option: 'Prophet Zakariya (as)'}
+		])
+	},
+	{
+		question: 'This prophet was able to turn his staff into a real-live snake, a task so amazing that even the magicians at the time were baffled?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Nuh (as)'},
+			{id: 4, option: 'Prophet Zakariya (as)'}
+		])
+	},
+	{
+		question: 'Who looked after the prophet after his mother died?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Abd al-Muttalib'},
+			{id: 2, option: 'Abu Sufyan'},
+			{id: 3, option: 'Abdul Malik Mujahid'},
+			{id: 4, option: 'Abu Talib'}
+		])
+	},
+	{
+		question: 'Prophet Muhammad (saw) used to meditate in a cave on which mountain?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Hira'},
+			{id: 2, option: 'Nour'},
+			{id: 3, option: 'Badir'},
+			{id: 4, option: 'Eti'}
+		])
+	},
+	{
+		question: 'Who was The daughter of Prophet Muhammad (SAW) who married Ali ibn Abi Talib?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Zainab (RA)'},
+			{id: 2, option: 'Fatimah (RA)'},
+			{id: 3, option: 'Ruqayyah (RA)'},
+			{id: 4, option: 'Jumada (RA)'}
+		])
+	},
+	{
+		question: 'How old was the prophet when his mother died?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: '6'},
+			{id: 2, option: '2'},
+			{id: 3, option: '5'},
+			{id: 4, option: '10'}
+		])
+	},
+	{
+		question: 'How long did the Prophet Muhammad (saw) preach for?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '25 Years'},
+			{id: 2, option: '19 Years'},
+			{id: 3, option: '23 Years'},
+			{id: 4, option: '16 Years'}
+		])
+	},
+	{
+		question: 'What are pilgrims re-enacting when they run between the two hills?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: "Prophet Muhammad's (pbuh) journey"},
+			{id: 2, option: "Prophet Ibrahim's (as) search for Ishmail"},
+			{id: 3, option: "Hajar's search for water"},
+			{id: 4, option: "Prophet Adam's (as) search for Haawa"}
+		])
+	},
+	{
+		question: "Which prophet's wife ran between the two hills (Safa and Marwa) for water?",
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Ibrahim (as)'},
+			{id: 4, option: 'Prophet Yusuf (as)'}
+		])
+	},
+	{
+		question: 'Who ran between the two hills (Safa and Marwa) for water?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Hajar (RA)'},
+			{id: 2, option: 'Haawa (RA)'},
+			{id: 3, option: 'Fathima (RA)'},
+			{id: 4, option: 'Ayisha (RA)'}
+		])
+	},
+	{
+		question: 'Muslims complete tawaf?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'In a clockwise direction'},
+			{id: 2, option: 'While facing the Kaaba'},
+			{id: 3, option: 'In a counter-clockwise direction'},
+			{id: 4, option: 'In silence'}
+		])
+	},
+	{
+		question: 'Where did Adam and Haawa find each other after exile from heaven?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Mecca'},
+			{id: 2, option: 'Mina'},
+			{id: 3, option: 'Medina'},
+			{id: 4, option: 'Arafat'}
+		])
+	},
+	{
+		question: 'What is the miracle of Prophet Saleh?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Quran'},
+			{id: 2, option: 'Pregnant She-Camel'},
+			{id: 3, option: 'Ark'},
+			{id: 4, option: 'Dream Interpreter'}
+		])
+	},
+	{
+		question: 'Which prophet was sent to Samood?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Saleh (as)'},
+			{id: 2, option: 'Prophet Muhammad (pbuh)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Which prophet split the moon?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Saleh (as)'},
+			{id: 2, option: 'Prophet Muhammad (pbuh)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Which prophet came after Prophet Nuh (AS)?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Hud (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Which prophet sent for the people of ad?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Hud (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Saleh (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Who is the mother of prophet Ismail (as)?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Hajar (RA)'},
+			{id: 2, option: 'Haawa (RA)'},
+			{id: 3, option: 'Fathima (RA)'},
+			{id: 4, option: 'Ayisha (RA)'}
+		])
+	},
+	{
+		question: 'How many time did Hajar kept running backwards and forwards between Mount Safa and Mount Marwa?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '10'},
+			{id: 2, option: '4'},
+			{id: 3, option: '7'},
+			{id: 4, option: '4'}
+		])
+	},
+	{
+		question: 'Which angel brought the message saying that the Kaaba should be built near the Well of Zamzam to Prophet Ibrahim (AS)?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Angel Mikail'},
+			{id: 2, option: 'Angel Azrael'},
+			{id: 3, option: 'Angel Jibril'},
+			{id: 4, option: 'Angel Israfil'}
+		])
+	},
+	{
+		question: 'Who is the mother of Prophet Ishaq (as)?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Hajar'},
+			{id: 2, option: 'Sarah'},
+			{id: 3, option: 'Haawa'},
+			{id: 4, option: 'Ayisha'}
+		])
+	},
+	{
+		question: 'How many son Prophet Ishaq (as) had?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '3'},
+			{id: 2, option: '4'},
+			{id: 3, option: '2'},
+			{id: 4, option: '1'}
+		])
+	},
+	{
+		question: 'How long did Prophet Yunus stay in the whale?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: '4 days'},
+			{id: 2, option: '3 days and 3 nights'},
+			{id: 3, option: '2 nights'},
+			{id: 4, option: '4 days and 4 nights'}
+		])
+	},
+	{
+		question: 'Who killed Habil?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Qabil'},
+			{id: 2, option: 'Adam'},
+			{id: 3, option: 'Abu Qubays'},
+			{id: 4, option: 'Tajweed'}
+		])
+	},
+	{
+		question: 'Who thought Qabil to bury Habil?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'A bird'},
+			{id: 2, option: 'Prophet Adam (as)'},
+			{id: 3, option: 'Camel'},
+			{id: 4, option: 'Sheep'}
+		])
+	},
+	{
+		question: "What was first son of Prophet Adam (as)?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: "Qabil"},
+			{id: 2, option: "Habil"},
+			{id: 3, option: "Abu Qubays"},
+			{id: 4, option: "Tajweed"}
+		])
+	},
+	{
+		question: "People of Samood lived where during Prophet Saleh time?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: "Al-Haram"},
+			{id: 2, option: "Al-Hajr"},
+			{id: 3, option: "Abu Qubays"},
+			{id: 4, option: "Iram"}
+		])
+	},
+	{
+		question: 'Which prophet sent to Ninevah?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Hud (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Yunus (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Which prophet sent for the people of Midian?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Yunus (as)'},
+			{id: 4, option: 'Prophet Dawud (as)'}
+		])
+	},
+	{
+		question: 'Which prophet sent for the people of Sodom to abandon their homosexual acts?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Yunus (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet has the ability to soften iron using his bare hands?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Dawud (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet has the ability to control the wind?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Sulaiman (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Where is Prophet Isa coming?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Damascus'},
+			{id: 2, option: 'Mecca'},
+			{id: 3, option: 'Madinah'},
+			{id: 4, option: 'Jersulam'}
+		])
+	},
+	{
+		question: 'Which prophet was floated down the Nile by his mother to escape death?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Idris (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet took care of Maryam (AS)?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Shuaib (as)'},
+			{id: 2, option: 'Prophet Zakariyya (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet was the first to read and write?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Adam (as)'},
+			{id: 2, option: 'Prophet Ibris (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Who brought the Bani Israel out of their wanderings after Prophets Musa and Harun passed away?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Yushua'},
+			{id: 2, option: 'Ibris'},
+			{id: 3, option: 'Qabil'},
+			{id: 4, option: 'Jersulam'}
+		])
+	},
+	{
+		question: 'Prophet Muhammad PBUH was directly decended from which prophet?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Adam (as)'},
+			{id: 2, option: 'Prophet Ismael (as)'},
+			{id: 3, option: 'Prophet Musa (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: "Prophet Lut's people lived in which city?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Sodom'},
+			{id: 2, option: 'Ad'},
+			{id: 3, option: 'Madinah'},
+			{id: 4, option: 'Hajar'}
+		])
+	},
+	{
+		question: 'Who was the first prophet to sew?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Adam (as)'},
+			{id: 2, option: 'Prophet Ismael (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: "Which prophet's people were punished by thunderous sound, earthquakes, and thunderstorms?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Adam (as)'},
+			{id: 2, option: 'Prophet Saleh (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet will return to face Dajjal?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Saleh (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: "Which prophet was raised in the household of Fir'aun (Pharoah)?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Lut (as)'}
+		])
+	},
+	{
+		question: 'Which prophet hid in a cave because the king wanted to kill him?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Ilias (as)'}
+		])
+	},
+	{
+		question: "Which prophet spoke as a baby to defend his mother's honor?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Isa (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Ilias (as)'}
+		])
+	},
+	{
+		question: "Which prophet's nation was punished with strong winds?",
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Hud (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Ilias (as)'}
+		])
+	},
+	{
+		question: 'Which prophet prefered being alone in nature to the company of people?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Yahya (as)'},
+			{id: 2, option: 'Prophet Musa (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Ilias (as)'}
+		])
+	},
+	{
+		question: 'Which Prophet (as) propagated religion for more then 950 years?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Nuh (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Yusuf (as)'}
+		])
+	},
+	{
+		question: 'The punishment of the people of Prophet Hud was a storm. How long did the storm last?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '1 day'},
+			{id: 2, option: '5 day'},
+			{id: 3, option: '8 day'},
+			{id: 4, option: '10 day'}
+		])
+	},
+	{
+		question: "What does Prophet Musa's stick turn into?",
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Bird'},
+			{id: 2, option: 'Snake'},
+			{id: 3, option: 'Tiger'},
+			{id: 4, option: 'Camel'}
+		])
+	},
+	{
+		question: 'What are the companions of the Prophet called?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Sahabah'},
+			{id: 2, option: 'Friends'},
+			{id: 3, option: 'Ansar'},
+			{id: 4, option: 'None of the options'}
+		])
+	},
+	{
+		question: 'Which Prophet Addressed the ruler Nimrod?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Nuh (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Ibrahim (as)'}
+		])
+	},
+	{
+		question: 'The Prophet Musa (pbuh) was sent to the people of?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Samud'},
+			{id: 2, option: 'Ad'},
+			{id: 3, option: 'Mecca'},
+			{id: 4, option: 'Israil'}
+		])
+	},
+	{
+		question: 'The foundations of the Kabah were laid by?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Prophet Muhammad (pbuh)'},
+			{id: 2, option: 'Prophet Nuh (as)'},
+			{id: 3, option: 'Prophet Idris (as)'},
+			{id: 4, option: 'Prophet Adam (as)'}
+		])
+	},
 ]
 

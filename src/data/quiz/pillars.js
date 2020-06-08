@@ -672,4 +672,354 @@ options: Utils.shuffle([
 			{id: 4, option: 'South'}
 		])
 	},
+	{
+		question: 'Which pillar of Islam is the Hajj?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1st'},
+			{id: 2, option: '2nd'},
+			{id: 3, option: '4th'},
+			{id: 4, option: '5th'}
+		])
+	},
+	{
+		question: 'In order to attend the Hajj, you must be a?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Muslim'},
+			{id: 2, option: 'Person from the Middle East'},
+			{id: 3, option: 'Christain'},
+			{id: 4, option: 'Tourist'}
+		])
+	},
+	{
+		question: 'During the Hajj, all pilgrims must wear the traditional garbs of?',
+		answer: 1,
+		options: Utils.shuffle([
+			{id: 1, option: 'Ihram'},
+			{id: 2, option: 'Abraham'},
+			{id: 3, option: 'Mecca'},
+			{id: 4, option: 'Khaba'}
+		])
+	},
+	{
+		question: 'Pilgrims throw rocks at a pillar representing the evils in life?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Jesus'},
+			{id: 2, option: 'The pillars of Islam'},
+			{id: 3, option: 'Satan'},
+			{id: 4, option: 'Gabriel'}
+		])
+	},
+	{
+		question: 'Pilgrims walk around the Kaba around how many times?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: '4'},
+			{id: 2, option: '5'},
+			{id: 3, option: '7'},
+			{id: 4, option: '8'}
+		])
+	},
+	{
+		question: 'Pillars of Islam are also called?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Qadr ul Islam'},
+			{id: 2, option: 'Arkanal Islam'},
+			{id: 3, option: 'Yusuf Islam'},
+			{id: 4, option: 'Fi Amanillah'}
+		])
+	},
+	{
+		question: 'What is the first duty of a Muslim ?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Salat'},
+			{id: 2, option: 'Saum'},
+			{id: 3, option: 'Hajj'},
+			{id: 4, option: 'Shahadah'}
+		])
+	},
+	{
+		question: 'What is one unit of prayer called ?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Fard'},
+			{id: 2, option: 'Rakah'},
+			{id: 3, option: 'Juz'},
+			{id: 4, option: 'Sunnah'}
+		])
+	},
+	{
+		question: 'Al-Rahman means?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'The Most Knowledgable'},
+			{id: 2, option: 'The Most Powerful'},
+			{id: 3, option: 'The Most Merciful'},
+			{id: 4, option: 'All the options'}
+		])
+	},
+	{
+		question: 'What do we call the optional prayers ?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Fard'},
+			{id: 2, option: 'Sunnah'},
+			{id: 3, option: 'Nafl'},
+			{id: 4, option: 'None of the options'}
+		])
+	},
+	{
+		question: 'Fajr, Zuhr, Asr, Maghrib and Isha are all what salat?',
+		answer: 3,
+		options: Utils.shuffle([
+			{id: 1, option: 'Sunnah'},
+			{id: 2, option: 'Nafil'},
+			{id: 3, option: 'Fard'},
+			{id: 4, option: 'None of the options'}
+		])
+	},
+	{
+		question: 'When is Witr salat offered ?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'After Fajr'},
+			{id: 2, option: 'After Isha'},
+			{id: 3, option: 'After Maghrib'},
+			{id: 4, option: 'After Zuhr'}
+		])
+	},
+	{
+		question: 'When do we pray Fajr?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'At Night'},
+			{id: 2, option: 'Before Sunrise'},
+			{id: 3, option: 'After Sunrise'},
+			{id: 4, option: 'Afternoon'}
+		])
+	},
+	{
+		question: 'What was revealed during the month of Ramadan?',
+		answer: 2,
+		options: Utils.shuffle([
+			{id: 1, option: 'Torah'},
+			{id: 2, option: 'Quran'},
+			{id: 3, option: 'Hadith'},
+			{id: 4, option: 'Injeel'}
+		])
+	},
+	{
+		question: 'In Ramadan you must also abstain from?',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: 'Bad Temper'},
+			{id: 2, option: 'Speaking'},
+			{id: 3, option: 'Working'},
+			{id: 4, option: 'None of the options'}
+		])
+	},/*
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},
+	{
+		question: '1341413413413413413413',
+		answer: 4,
+		options: Utils.shuffle([
+			{id: 1, option: '1341341341'},
+			{id: 2, option: '314134'},
+			{id: 3, option: '1341341s'},
+			{id: 4, option: '13413413'}
+		])
+	},*/
 ];

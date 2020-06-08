@@ -290,7 +290,7 @@ export const data = [
 			{id: 3, option: 'Salat-al-Janazaa'},
 			{id: 4, option: 'Salat-al-Death'}
 		])
-	},
+	}/*,
 	{
 		question: '1341413413413413413413',
 		answer: 4,
@@ -510,4 +510,5 @@ export const data = [
 			{id: 3, option: '1341341s'},
 			{id: 4, option: '13413413'}
 		])
-	}]
+	}*/
+]

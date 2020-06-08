@@ -259,7 +259,7 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 		_subscription = accelerometer.subscribe(({ x, y, z }) => {
 			let pitch = Math.atan2(-x, -z) * 180 / Math.PI;// In degrees 55 25
 			let roll = Math.atan2(-y, -x) * 180 / Math.PI;// In degrees
-			if (-20 > pitch  && pitch > -50 && !isChanged && showForeHeadMsg) {
+			if (-15 > pitch  && pitch > -50 && !isChanged && showForeHeadMsg) {
 				showForeHeadMsg = true
 				isChanged = true;
 				_generateWords(Constant.GENERIC.HEADSUP_PASS);
@@ -270,7 +270,7 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 			} else if (-75 > pitch && pitch > -150 && !showForeHeadMsg) {
 				showForeHeadMsg = true;
 				setIsHoldProperly(true);
-			} else if (-15 < pitch) {
+			} else if (-10 < pitch) {
 				showForeHeadMsg = false;
 				setIsHoldProperly(false);
 			}

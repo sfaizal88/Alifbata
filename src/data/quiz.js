@@ -78,7 +78,7 @@ export const quizList = [
     data:  Jannah.data,
     img: require('../../assets/img/heaven.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-    active: false
+    active: true
   },
   {
     id: 6,
@@ -87,7 +87,7 @@ export const quizList = [
     data:  Jahannam.data,
     img: require('../../assets/img/fire.png'),
     bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-    active: false
+    active: true
   },
   {
     id: 7,
