@@ -103,7 +103,7 @@ export const RunnerGameScreen = ({ navigation, route }) => {
 		} else if (!player1Result && !player2Result) {
           	Utils.playAudio(Constant.GENERIC.COMPLETE_AUDIO);
 			setPlayer1Result(true);
-			Utils.alert('Player 1 Won', 'Wow. Player 1 reach the Mosque first.', ['Play again', 'Exit'], 
+			Utils.alert('Player red Won', 'Wow. Player red reach the Mosque first.', ['Play again', 'Exit'], 
         	[() => _resetGame(), () => _navigate(), ], ['', '']);
 		}
 	}
@@ -122,7 +122,7 @@ export const RunnerGameScreen = ({ navigation, route }) => {
 		} else if (!player2Result && !player1Result) {
           	Utils.playAudio(Constant.GENERIC.COMPLETE_AUDIO);
 			setPlayer2Result(true);
-			Utils.alert('Player 2 Won', 'Wow. Player 2 reach the Mosque first.', ['Play again', 'Exit'], 
+			Utils.alert('Player blue Won', 'Wow. Player blue reach the Mosque first.', ['Play again', 'Exit'], 
         	[() => _resetGame(), () => _navigate(), ], ['', '']);
 		}
 	}

@@ -15,7 +15,8 @@ import { Icon } from 'react-native-elements';
 import NetInfo from "@react-native-community/netinfo";
 import { Html5Entities } from 'html-entities'; 
 import Sound from 'react-native-sound';
-import Orientation from 'react-native-orientation';
+//import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 // ALL SHARED FILES
@@ -66,13 +67,25 @@ export const setStatusBarColor = (statusBarColor) => {
 * @return String Formatted content url to anchor tag
 */
 export const setOrientation = (orientation) => {
-    if (orientation === 'LANDSCAPE') {
-      //Orientation.unlockAllOrientations();
-      Orientation.lockToLandscape();
-    }  else if (orientation === 'PORTRAIT') {
-      //Orientation.unlockAllOrientations();
-      Orientation.lockToPortrait();
-    }
+    /*if (Platform.OS === 'android') {
+      let androidOrientation = require('react-native').NativeModules.Orientation;
+      if (orientation === 'LANDSCAPE') {
+        //Orientation.unlockAllOrientations();
+        androidOrientation.lockToLandscape();
+      }  else if (orientation === 'PORTRAIT') {
+        //Orientation.unlockAllOrientations();
+        androidOrientation.lockToPortrait();
+      }
+    } else {*/
+      if (orientation === 'LANDSCAPE') {
+        //Orientation.unlockAllOrientations();
+        Orientation.lockToLandscape();
+      }  else if (orientation === 'PORTRAIT') {
+        //Orientation.unlockAllOrientations();
+        Orientation.lockToPortrait();
+      }
+    //}
+    
 };
 
 /**

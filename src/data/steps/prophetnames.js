@@ -145,7 +145,7 @@ export const data = [
 	titleType: Constant.GENERIC.TEXT,
 	desc: 'Patience & Generosity',
 	img: require(imgURL + '16.png'),
-	details: "Dhu'l-kifl (A.S) is the messenger of Allah SWT famous for his patience and generosity.",
+	details: "Dhu'l-kifl (A.S) is the messenger of Allah SWT Known for his patience and generosity.",
 	},
 	{
 	id: 17,

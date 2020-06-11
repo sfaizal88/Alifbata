@@ -27,7 +27,7 @@ export const data = [
 		bgColor: '#c0392b',
 		desc: 'Total Number of\nJuz',
 		imgText: '30',
-		details: 'The Quran is divided into 30 parts and each part is called a "Juz". Some use these divisions to facilitate recitation of the Quran in a month (e.g. during Ramadhan). The first Juz is called "Alif Laam Meem".',
+		details: 'The Quran is divided into 30 parts and each part is called a "Juz". Some use these divisions to facilitate recitation of the Quran in a month (e.g. during Ramadhan). Juz 1 starts from "Surah Al Fatiha".',
 	},
 	{
 		id: 2,

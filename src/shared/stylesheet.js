@@ -699,6 +699,10 @@ const alignStyle = {
 	displayB: {
 		display: 'flex'
 	},
+	displayOpaN: {
+		display: 'none',
+		opacity: 0
+	},
 	selfC: {
 		alignSelf: 'center',
 	},
@@ -1969,8 +1973,8 @@ const imagesStyle = {
 		height: RFPercentage(4)
 	},
 	img200: {
-		width: RFValue(200),
-		height: RFValue(200)
+		width: Utils.isIpad() ? RFValue(250) : RFValue(200),
+		height: Utils.isIpad() ? RFValue(250) : RFValue(200),
 	},
 	img200R1: {
 		height: Utils.isIpad() ? RFValue(300) : RFValue(200),

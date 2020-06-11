@@ -90,8 +90,9 @@ export const howToPlaySpyLetter = [
 
 // HOW TO PLAY STEPS IN RUNNER GAME
 export const howToPlayRunner = [
-  { id: 1, img: require('../../assets/img/game/4.png'), title: 'Drag and drop\nmissing letter', desc: 'You need to fill the blank spaces with the correct letters to form the word. Drag a letter from the given 12 letters to the blank spaces.' },
-  { id: 2, img: require('../../assets/img/mosque.png'), title: 'Remove the letter', desc: 'To remove the letter from the word, click on the letter once.' }
+ { id: 1, img: require('../../assets/img/2player.png'), title: '2-Player Game', desc: 'This is a 2-player game – one Red player and one Blue player.' },
+ { id: 2, img: require('../../assets/img/game/4.png'), title: 'Click on Walk Icon', desc: 'Each player has to click on the Walk Icon of their respective colors. The more clicks, the further they will move.' },
+ { id: 3, img: require('../../assets/img/mosque.png'), title: 'Reach Mosque', desc: 'There is a Mosque at the end of the running lanes. The first player to reach the Mosque wins.' }
 ];
 
 // BADGE DATA

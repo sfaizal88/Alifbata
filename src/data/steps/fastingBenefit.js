@@ -25,7 +25,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Detoxifies Body',
 		img: require(imgURL + '1.png'),
-		details: 'Fasting serves as a healthy way of detoxing especially when you keep yourself hydrated and consume fruits and light vegetables.',
+		details: 'Serves as a healthy way of detoxing your body by abstaining from food during day time.',
 	},
 	{
 		id: 2,

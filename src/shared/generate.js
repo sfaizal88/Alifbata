@@ -143,6 +143,9 @@ export const generateExerciseUI = (originalData, lessonNo, chapter) => {
 * @return Object   
 */
 const generateLesson = (contentArry, lessonNo, chapter, data) => {
+  if (parseInt(lessonNo) === 0) {
+      contentArry.unshift(Common.COMMON_SECTION[13]);
+  }
   return {
     id: parseInt(lessonNo) + 1,
     title: 'Lesson ' + (lessonNo + 1),

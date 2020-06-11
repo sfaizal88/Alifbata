@@ -20,7 +20,7 @@ export const data = [
 		titleType: Constant.GENERIC.NUMBER,
 		desc: 'Faith',
 		img: require(imgURL + '1.png'),
-		details: "Shahadah (Faith) is the first pillar of Islam. One becomes a believing Muslim by reciting this phrase with conviction: 'Laa ilaahaa illallaah. Muhammadun rasoolullaah.' This means 'There is no God except Allah and Prophet Muhammad (PBUH) is the Messenger of Allah.'",
+		details: "Shahadah (Faith) is the first pillar of Islam. One becomes a believing Muslim by reciting this phrase with conviction: 'Laa ilaahaa illallaah. Mohammad Rasoolullah..' This means 'There is no God except Allah and Prophet Muhammad (PBUH) is the Messenger of Allah.'",
 	},
 	{
 		id: 2,

@@ -20,11 +20,11 @@ export const data = [
 		id: 1,
 		title: 'Step 1',
 		titleType: Constant.GENERIC.NUMBER,
-		desc: 'Make Niyyat',
+		desc: 'Make Niyyah',
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/1.png'),
 		imgStyle: styles.img200R1,
-		details: 'Start by making Niyyat (intention) to perform wuḍu and to cleanse yourself.',
+		details: 'Start by making Niyyah (intention) to perform wuḍu and to cleanse yourself.',
 	},
 	{
 		id: 2,
@@ -105,11 +105,11 @@ export const data = [
 		id: 9,
 		title: 'Step 9',
 		titleType: Constant.GENERIC.NUMBER,
-		desc: 'Wash both your\nfeets up to ankle',
+		desc: 'Wash both your\nfeet up to ankle',
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/8.png'),
 		imgStyle: styles.img200R1,
-		details: 'Wash your right feet up to ankles and in between the toes once*. Repeat for the left feet.',
+		details: 'Wash your right feet up to ankle and in between the toes once*. Repeat for the left feet.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	}
 ]

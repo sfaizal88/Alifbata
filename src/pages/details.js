@@ -44,6 +44,7 @@ import StarIcon from '../../assets/img/star.png';
 import MedalIcon from '../../assets/img/medal.png';
 import DifferentIcon from '../../assets/img/different.png';
 import IncompleteIcon from '../../assets/img/incomplete.png';
+import ReadIcon from '../../assets/img/read.png';
 
 export const DetailsScreen = ({ navigation, route }) => {
 
@@ -741,6 +742,19 @@ export const DetailsScreen = ({ navigation, route }) => {
           <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Alphabet\nPosition'}</Text>
           <View style={styles.slideImageContainer}><Image source={DifferentIcon} style={styles.img120}/></View>
           <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>{'The basic 28 Arabic alphabets change shape according to their position in a word. The 4 positions are Isolated and Beginning, Middle & End of word. In each lesson of this chapter, the Arabic letter will be shown in these positions.'}</Text>
+          <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
+            title={"Start"} 
+            buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
+            containerStyle={[styles.cSlideBtnContainer, Utils.isIpad() ? styles.mt20: styles.mt50]}
+            titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
+        </View>
+      );
+    } else if (item.type === Constant.GENERIC.FIRST_LESSON_INTRO) {
+      return (
+        <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
+          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Welcome'}</Text>
+          <View style={styles.slideImageContainer}><Image source={ReadIcon} style={styles.img120}/></View>
+          <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>{'Assalaamu alaikum, Each lesson will have some topic, test to attend. Once you complete the lesson, next lesson will be unlocked. All the best.'}</Text>
           <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Start"} 
             buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 

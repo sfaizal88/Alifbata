@@ -30,6 +30,8 @@ import * as Verse from './verse';
 import * as Angels from './angels';
 import * as FrequentWords from './frequentWords';
 import * as Revelation from './revelation';
+import * as JannahGates from './jannahGates';
+import * as RiverJannah from './riverJannah';
 
 import { Colors } from '../../shared/colors';
 
@@ -65,7 +67,7 @@ export const data = [
 		bgColor: '#bee99d',
 		active: true,
 		img: require('../../../assets/img/steps/umrah.png'),
-		details: 'Umrah is the pilgrimage to Mecca performed at any time of the year, unlike Hajj which is done during specific dates.',
+		details: 'Umrah is the pilgrimage to Mecca performed at any time of the year, unlike Hajj which is performed during the the month of DUL HAJJ.',
 	},
 	{
 		id: 4,
@@ -115,7 +117,7 @@ export const data = [
 		bgColor: '#34495e',
 		active: true,
 		img: require('../../../assets/img/steps/verse.png'),
-		details: ' Each and every verse of Quran is a gem. However, there are few which life-changing.',
+		details: ' Each and every verse of Quran is a gem. However, there are a few which is life changing.',
 	},
 	{
 		id: 9,
@@ -169,16 +171,36 @@ export const data = [
 	},
 	{
 		id: 14,
+		title: 'Jannah Gates',
+		data: JannahGates.data,
+		desc: '8 Gates in Jannah',
+		bgColor: '#34495e',
+		active: true,
+		img: require('../../../assets/img/steps/gate.png'),
+		details: 'Islamic describes Jannah as having eight gates. Each gates has a name that describes the types or characteristics of the people who will be admitted through it.',
+	},
+	{
+		id: 15,
+		title: 'River',
+		data: RiverJannah.data,
+		desc: 'River in Jannah',
+		bgColor: '#60a3bc',
+		active: true,
+		img: require('../../../assets/img/steps/river.png'),
+		details: 'Islamic describes Jannah as having four rivers. River names are Saihan, Jaihan, Furat and Nil and also its described in Quran at "Surah Muhammad Verse 15"',
+	},
+	{
+		id: 16,
 		title: 'Major Sunnah',
 		data: Sunnah.data,
 		desc: 'Major Sunnah in Islam',
 		bgColor: '#34495e',
-		active: false,
+		active: true,
 		img: require('../../../assets/img/steps/good.png'),
 		details: 'Sayings and Teachings of Prophet Muhammad (pbuh).',
 	},
 	{
-		id: 15,
+		id: 17,
 		title: 'Mahram',
 		data: Mahram.data,
 		desc: 'Know your Mahram\nin Islam',
@@ -188,7 +210,7 @@ export const data = [
 		details: "Mahram is with whom marriage would be considered haram and concealment of the body with hijab, is not obligatory.",
 	},
 	{
-		id: 16,
+		id: 18,
 		title: "Favourite food",
 		data: FavouriteFood.data,
 		desc: "Prophet Muhammed's (pbuh)\nfavourite food",

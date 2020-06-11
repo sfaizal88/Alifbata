@@ -52,7 +52,7 @@ export const data = [
 	},
 	{
 		id: 3,
-		title: 'Walk',
+		title: 'Mosque Walker',
 		data: [],
 		showHowtoPlay: true,
 		modelType: 'RG',
@@ -61,7 +61,7 @@ export const data = [
 		path: 'RunnerGame',
 		active: true,
 		img: require('../../../assets/img/game/4.png'),
-		details: 'Act out the word shown without saying anything. For instructions, click on “How to Play” below.',
+		details: 'Be the first to reach the Mosque. For instructions, click on “How to Play” below.',
 	}/*,
 	{
 		id: 3,

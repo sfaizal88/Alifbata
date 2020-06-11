@@ -184,7 +184,7 @@ export const ChapterScreen = ({ navigation }) => {
 			<Icon iconStyle={styles.displayN} name="bullseye" color={Colors.white} size={40} type='font-awesome' onPress={() => setListView(!listView)} containerStyle={{position: 'absolute', right: '5%', top: '5%', display: 'none'}} underlayColor="transparent" iconStyle={{display: 'none'}}/>
 			<View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
 				<AppIntroSlider
-				dotClickEnabled={false}
+				dotClickEnabled={true}
 				activeDotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}} 
 				dotStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
 				showDoneButton={false} 

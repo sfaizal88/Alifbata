@@ -15,8 +15,6 @@ import {SafeAreaView} from 'react-navigation';
 import { HeaderBackButton } from '@react-navigation/stack';
 import { DraxProvider, DraxView } from 'react-native-drax';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { accelerometer, setUpdateIntervalForType, SensorTypes, gyroscope } from "react-native-sensors";
-
 // ALL COMPONENT
 import { Loader  } from '../../component/complex/loader';
 import { SmashScreen  } from '../../component/complex/smashScreen';

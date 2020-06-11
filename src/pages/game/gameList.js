@@ -15,7 +15,6 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import AppIntroSlider from 'react-native-app-intro-slider';
 
-//import { DeviceMotion } from 'expo-sensors';
 // ALL PAGE FILES
 import { MHeader  } from '../layout/header';
 
@@ -131,7 +130,7 @@ export const GameListScreen = ({ navigation, route }) => {
             <Image source={item.img} style={styles.img200}/>
             <Text style={[styles.cSlideSubTitle, styles.mt20]}>{item.desc}</Text>
             <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
-            <View style={[styles.slideImageContainer, styles.rowDirection]}>
+            <View style={[styles.slideImageContainer, styles.rowDirection, Utils.isIpad() ? styles.mt15 : '']}>
 				<Button onPress={() => _navigate(item)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
 				  title={"Start"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
 				  containerStyle={[styles.cSlideBtnContainer, styles.ph5, Utils.isIpad() ? styles.mt0 : '']}
