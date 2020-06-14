@@ -27,7 +27,7 @@ const layoutStyle ={
 	safeViewContainer: {
     	flex: 1,
     	backgroundColor: Colors.blueDarkest,//Colors.primary
-    	zIndex: 1
+    	//zIndex: 1
 	},
 	body: {
 		flex: 1,
@@ -63,7 +63,8 @@ const layoutStyle ={
 	},
 	stackheaderLeftContainer: {
 		left: Utils.isAndroid() ?  0 : 15,
-		top: Utils.isAndroid() ?  0 : RFValue(20)
+		top: Utils.isAndroid() ?  0 : RFValue(20),
+		zIndex: 6
 	},
 	headerTitle: {
 		...Setting.fontWeight700,

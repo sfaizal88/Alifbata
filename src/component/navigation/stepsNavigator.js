@@ -56,7 +56,11 @@ export const StepsNavigation = ({navigation}) => {
     headerBackTitleVisible: false,
     headerTransparent: true,
     headerLeftContainerStyle: styles.stackheaderLeftContainer,
-    gestureDirection: 'horizontal'
+    animationEnabled: true,
+    transitionSpec: {
+      open: config,
+      close: config,
+    },
   };
   
 

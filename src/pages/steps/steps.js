@@ -110,9 +110,9 @@ export const StepsScreen = ({ navigation, route }) => {
   return (
     <>
         <Loader show={screenIsWaiting} />
-        <SafeAreaView style={styles.safeViewContainer}>
+        <SafeAreaView style={[styles.safeViewContainer]}>
         <MHeader title={state.title}/>
-        <View style={[styles.body, styles.p0, listView ? styles.displayN : '']}>
+        <View style={[styles.body, styles.p0, styles.pb15]}>
           <AppIntroSlider
             scrollEnabled={true}
             dotClickEnabled={false}
@@ -127,7 +127,7 @@ export const StepsScreen = ({ navigation, route }) => {
             renderNextButton={Utils.renderNextButton}
             renderPrevButton={Utils.renderPrevButton}/>
         </View>
-          <Menu navigation={navigation} activeMenu={'STEPS'}></Menu>
+        <Menu navigation={navigation} activeMenu={'STEPS'}></Menu>
         </SafeAreaView>
       </>
     );

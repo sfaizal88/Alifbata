@@ -26,15 +26,14 @@ export const MHeader = (props) => {
   	// RENDER HTML
 	return (
 		<>
-			<View style={[{backgroundColor: Colors.white}, props.title ? '' : styles.displayN]}>
-				<View style={[styles.headerContainer, props.headerContainerStyle]}>
-					<View style={[styles.headerInnerContainer]}>
-						<Text style={styles.headerTitle}>{props.title}</Text>
-						<Text style={[styles.headerSubTitle, props.subtitle ? '' : styles.displayN]}>{props.subtitle}</Text>
-					</View>
-					<Icon name="question" color={Colors.white} size={RFValue(24)} type='octicon' containerStyle={{position: 'absolute', right: RFValue(20), zIndex: 99999}} underlayColor="transparent"  onPress={() => setShowFeedbackModel(true)}/>
-			
-	      			
+			<View style={[styles.rowDirection, {backgroundColor: Colors.primary, zIndex:66666, height: RFValue(55), backgroundColor: Colors.primary}, props.title ? '' : styles.displayN, props.headerContainerStyle]}>
+				<View style={[styles.flex1]}></View>
+				<View style={[styles.flex7, styles.headerInnerContainer, styles.centerView]}>
+					<Text style={styles.headerTitle}>{props.title}</Text>
+					<Text style={[styles.headerSubTitle, props.subtitle ? '' : styles.displayN]}>{props.subtitle}</Text>
+				</View>
+				<View style={[styles.flex1, styles.centerView]} onTouchStart={() => setShowFeedbackModel(true)} underlayColor="transparent">
+					<Icon name="question" color={Colors.white} size={RFValue(35)} type='octicon' underlayColor="transparent"/>
 				</View>
 	      	</View>
 	      	<FeedbackModel show={showFeedbackModel} handleClose={() => setShowFeedbackModel(false)}/>
