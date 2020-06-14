@@ -76,7 +76,7 @@ export const StepsScreen = ({ navigation, route }) => {
   */
   const generateItem = ({ item, index }) => {
     return (
-      <ScrollView underlayColor="transparent" contentContainerStyle={[styles.cSlide, item.topStyle]} key={'QUIZ_TYPE3_' + index}>
+      <ScrollView underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide,  item.topStyle]} key={'QUIZ_TYPE3_' + index}>
         <View style={[item.titleType === Constant.GENERIC.TEXT ? '' : styles.displayN, {marginBottom: 30}]}>
           <Text style={[styles.progressBarTitle]}>{item.title}</Text>
         </View>
@@ -95,13 +95,7 @@ export const StepsScreen = ({ navigation, route }) => {
         <View style={[styles.cSlideChatMinLineContainer, item.moreDetails ? '' : styles.displayN]}>
           <Text style={[styles.cSlideChatMinLine, styles.whiteText]}>{entities.decode('&#8220;')}{item.moreDetails}{entities.decode('&#8221;')}</Text>
         </View>
-        <Button onPress={() => _slideMove(index + 1)} 
-          icon={<Icon name={'angle-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
-          title={ "Next" } 
-          buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 
-          containerStyle={styles.cSlideBtnContainer, styles.displayN}
-          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}
-          iconRight={true}/>
+        <View style={[styles.cslideBottomHeight]}></View>
       </ScrollView>
     );
   }

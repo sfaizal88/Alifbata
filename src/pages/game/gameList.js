@@ -119,11 +119,11 @@ export const GameListScreen = ({ navigation, route }) => {
     * Feature used to generate each slide
     *
     * @input  Object - Slider object
-    * @return Tags
+    * @return Tags 
     */
     const generateItem = ({ item, index }) => {
         return (
-          <View  underlayColor="transparent" style={styles.cSlide} key={'GAME_TYPE3_' + index}>
+          <ScrollView  underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide]} key={'GAME_TYPE3_' + index}>
           	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<View style={[styles.chapterLesOverlay]}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}</Text>
@@ -141,7 +141,8 @@ export const GameListScreen = ({ navigation, route }) => {
 				  titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
 			</View>
   			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
-          </View>
+  			<View style={[styles.cslideBottomHeight]}></View>
+          </ScrollView>
         );
     }
 

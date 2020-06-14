@@ -117,7 +117,7 @@ export const QuizListScreen = ({ navigation, route }) => {
     const generateItem = ({ item, index }) => {
     	console.log('Quiz Name: ' + item.title + ' Quiz, Total questions: ' + item.data.length);
         return (
-          <View  underlayColor="transparent" style={styles.cSlide} key={'LIST_TYPE3_' + index}>
+          <ScrollView  underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide]} key={'LIST_TYPE3_' + index}>
           	<View style={[styles.chapterLesOverlay]}></View>
           	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}{'\nQuiz'}</Text>
@@ -140,7 +140,8 @@ export const QuizListScreen = ({ navigation, route }) => {
   				disabledTitleStyle={styles.cSlideBtnLabel}
   				/>
   			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
-          </View>
+  			<View style={[styles.cslideBottomHeight]}></View>
+          </ScrollView>
         );
     }
 

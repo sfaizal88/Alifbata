@@ -151,7 +151,7 @@ export const ChapterScreen = ({ navigation }) => {
     const generateItem = ({ item, index }) => {
     	let keyIndex = ('CHAPTER_' + index + Math.floor((Math.random() * 200) + 1)).toString();
         return (
-          <ScrollView  underlayColor="transparent" contentContainerStyle={styles.cSlide} key={keyIndex}>
+          <ScrollView  underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide]} key={keyIndex}>
           	<View style={[styles.chapterLesOverlay]}></View>
           	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<Text style={[styles.progressBarTitle, item.active ? '' : styles.displayN]}>{'Chapter'}</Text>
@@ -171,6 +171,7 @@ export const ChapterScreen = ({ navigation }) => {
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}/>
   			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
+        	<View style={[styles.cslideBottomHeight]}></View>
           </ScrollView>
         );
     }

@@ -116,12 +116,12 @@ export const BadgeScreen = ({ navigation }) => {
                     showsHorizontalScrollIndicator={false}
                     numColumns={3}
                     renderItem = { ({item, index}) =>  (
-                      <View style={styles.badgeContainer} key={index}>
-	    				<View style={[styles.circleBadge, completed.indexOf('chapter' + item.id) > -1 ? styles.activeBadge : '']}>
-							<Image source={item.img} style={styles.badge}/>
+	                    <View style={styles.badgeContainer} key={index}>
+		    				<View style={[styles.circleBadge, completed.indexOf('chapter' + item.id) > -1 ? styles.activeBadge : '']}>
+								<Image source={item.img} style={styles.badge}/>
 							</View>
 							<Text style={[styles.badgeLabel]}>{item.text}</Text>
-	    				</View>
+		    			</View>
                     )}
                 keyExtractor = {(item, index) => ('badgeIndex_' + index).toString()}/>
 	        </View>

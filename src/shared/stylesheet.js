@@ -1608,13 +1608,25 @@ const pageStyle = {
 /* PATTERN - STARTS */
 /* CHAPTER SLIDER - STARTS */
 const chapterSliderStyle = {
+	cslideBottomHeight: {
+		height: Utils.isAndroid() ? 70 : 40
+	},
 	cSlide: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 0,
+        paddingTop: 20,
         //top: -20
+    },
+    cSlideAndroid: {
+    	flexGrow: 1,
+    	flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 0,
+        paddingTop: 20,
     },
     cSlideTitle: {
         fontSize: RFValue(28),
