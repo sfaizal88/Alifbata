@@ -752,9 +752,9 @@ export const DetailsScreen = ({ navigation, route }) => {
     } else if (item.type === Constant.GENERIC.FIRST_LESSON_INTRO) {
       return (
         <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
-          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Welcome'}</Text>
+          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Welcome to Lesson 1'}</Text>
           <View style={styles.slideImageContainer}><Image source={ReadIcon} style={styles.img120}/></View>
-          <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>{'Assalaamu alaikum, Each lesson will have some topic, test to attend. Once you complete the lesson, next lesson will be unlocked. All the best.'}</Text>
+          <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>{'Assalaamu Alaikum. This chapter has several lessons. You will begin with Lesson 1 and continue with the rest of the lessons. Once you’ve completed a lesson and passed the mini-tests, the next lesson will be unlocked. To complete the Chapter, you will have to finish all the lessons and the Exercise at the end. All the best!'}</Text>
           <Button onPress={() => nextSlide(index)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
             title={"Start"} 
             buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive]} 

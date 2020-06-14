@@ -21,7 +21,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Prayers (Salaat)',
 		img: require(imgURL + '1.png'),
-		details: 'The believers who were punctual and attentive in their prayers. Allah promised great rewards for those who prayed with sincerity & faith will be allowed to enter Jannah through "Baab As-Salaat".',
+		details: 'Allah SAW has promised great rewards for those who prayed with sincerity & faith. The believers who were punctual and attentive in their prayers will be allowed to enter Jannah through "Baab As-Salaat".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	},
@@ -39,7 +39,7 @@ export const data = [
 		id: 3,
 		title: "Baab As-Sadaqah",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'Charity',
+		desc: 'Charity (Sadaqah)',
 		img: require(imgURL + '3.png'),
 		details: 'The believers who were charitable and gave Sadaqah in the way of Allah will be allowed to enter Jannah through "Baab As-Sadaqah".',
 		imgStyle: styles.img200,
@@ -51,7 +51,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Fasting',
 		img: require(imgURL + '4.png'),
-		details: 'The believers who kept their fast with sincerity and to attain the blessings of Allah will be allowed to enter Jannah through "Baab Ar-Rayyaan".',
+		details: 'The believers who kept their fast with sincerity to attain the Allah SAW’s blessings will be allowed to enter Jannah through "Baab Ar-Rayyaan".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	},
@@ -61,7 +61,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Hajj',
 		img: require(imgURL + '5.png'),
-		details: 'The believers who observe the Hajj pilgrimage will be allowed to enter Jannah through "Baab Al-Hajj".',
+		details: 'The believers who performed the Hajj pilgrimage will be allowed to enter Jannah through "Baab Al-Hajj".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	},
@@ -71,7 +71,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Control anger and \n forgive others',
 		img: require(imgURL + '6.png'),
-		details: 'The believers who control their anger and forgive others will be allowed to enter Jannah through "Baab Al-Kaazimeen Al-Ghaiz Wal Aafina Anin Naas".',
+		details: 'The believers who controlled their anger and forgave others will be allowed to enter Jannah through "Baab Al-Kaazimeen Al-Ghaiz Wal Aafina Anin Naas".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	},
@@ -81,7 +81,7 @@ export const data = [
 		titleType: Constant.GENERIC.TEXT,
 		desc: 'Faith and \ntrust in Allah',
 		img: require(imgURL + '7.png'),
-		details: 'The believers who have sincere faith and trust in Allah, and who strives to follow the commands of Allah will be allowed to enter Jannah through "Baab Al-Iman".',
+		details: 'The believers who had sincere faith and trust in Allah SAW, and who strived to follow His commands will be allowed to enter Jannah through "Baab Al-Iman".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	},
@@ -89,9 +89,9 @@ export const data = [
 		id: 8,
 		title: "Baab Al-Dhikr",
 		titleType: Constant.GENERIC.TEXT,
-		desc: 'Remembered Allah\nand did Dhikr',
+		desc: 'Dhikr \n(Remembrance of Allah SAW)',
 		img: require(imgURL + '8.png'),
-		details: 'The believers who constantly remembered Allah and did Dhikr will be allowed to enter Jannah through "Baab Al-Dhikr".',
+		details: 'The believers who constantly performed Dhikr, remembering Allah SAW, will be allowed to enter Jannah through "Baab Al-Dhikr".',
 		imgStyle: styles.img200,
 		topStyle: styles.topPattern
 	}

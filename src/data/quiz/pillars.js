@@ -32,7 +32,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "On what day of the week do many Muslims try to attend a mosque for Jummah prayer?",
+question: "On what day of the week do Muslims perform Jummah prayer?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Friday"},
@@ -146,7 +146,7 @@ question: "What is the adhan?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "A clock showing time for prayers in a mosque"},
-{id: 2, option: "A call to prayer recited from a mosque"},
+{id: 2, option: "A call to prayer recited"},
 {id: 3, option: "A prayer mat in a mosque"},
 {id: 4, option: "A story"}
 ])
@@ -203,7 +203,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Muslims travel to worship in the holy city of mecca at least once in their life if possible. What is this?",
+question: "Muslims travel to worship in the holy city of mecca at least once in their life if possible. What is this called?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Pilgramage"},
@@ -216,7 +216,7 @@ options: Utils.shuffle([
 question: "What is the Islamic declaration of faith in a single God and in Muhammad as his messenger called?",
 answer: 3,
 options: Utils.shuffle([
-{id: 1, option: "Pilgramage"},
+{id: 1, option: "Pilgrimage"},
 {id: 2, option: "Charity"},
 {id: 3, option: "Belief"},
 {id: 4, option: "Prayer"}
@@ -226,7 +226,7 @@ options: Utils.shuffle([
 question: "What is the act of giving part of their income to care for the poor called?",
 answer: 2,
 options: Utils.shuffle([
-{id: 1, option: "Pilgramage"},
+{id: 1, option: "Pilgrimage"},
 {id: 2, option: "Charity"},
 {id: 3, option: "Belief"},
 {id: 4, option: "Prayer"}
@@ -248,12 +248,12 @@ answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "The number of times the Prophet Muhammad performed the Hajj in his lifetime."},
 {id: 2, option: "The number of times the Prophet Abraham (PBUH) tried to build the Kaabah before he succeeded."},
-{id: 3, option: "The number of times Hagar ran back and forth between the hills searching for water for her son, Prophet Ishmael (PBUH)."},
+{id: 3, option: "The number of times Hajar ran back and forth between the hills searching for water for her son, Prophet Ishmael (PBUH)."},
 {id: 4, option: "The number of miles the Prophet Muhammad travelled from Medina to Mecca to perform the Hajj."}
 ])
 },
 {
-question: "How many times do the Muslims circumambulate the Kaabah?",
+question: "How many times do the Muslims circle the Kaabah?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "1"},
@@ -299,14 +299,14 @@ options: Utils.shuffle([
 {id: 1, option: "Every year"},
 {id: 2, option: "Once in five years"},
 {id: 3, option: "Once in a decade"},
-{id: 4, option: "Once in their lifetime, if they are physically and financially able"}
+{id: 4, option: "Atleast once in their lifetime, if they are physically and financially able"}
 ])
 },
 {
 question: "What is considered to be the most important part of the Hajj?",
 answer: 3,
 options: Utils.shuffle([
-{id: 1, option: "When pilgrims circumambulate the Kaabah"},
+{id: 1, option: "When pilgrims circle the Kaabah"},
 {id: 2, option: "When pilgrims stone the Pillars representing the devil"},
 {id: 3, option: "The day the pilgrims spend praying on the Plains of Mount Arafat"},
 {id: 4, option: "Days spent in Mina and Muzdalifah"}
@@ -403,7 +403,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which Surah (chapter) of the Quran is recited in every rakath of salah (prayers)?",
+question: "Which Surah (chapter) of the Quran is recited in every rakah of salah (prayers)?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "Al-Ikhlas (chapter 112)"},
@@ -493,7 +493,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which night is specified in the Quran as a night greater than 1,000 months?",
+question: "Which night is specified in the Quran as The night greater than 1,000 months?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "Night of Barat (Shab-e-Barat)"},
@@ -663,7 +663,7 @@ options: Utils.shuffle([
 		])
 	},
 	{
-		question: 'Towards what do you pray?',
+		question: 'Salah is performed facing the direction of?',
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: 'Does not matter'},
@@ -673,7 +673,7 @@ options: Utils.shuffle([
 		])
 	},
 	{
-		question: 'Which pillar of Islam is the Hajj?',
+		question: 'Which pillar of Islam is The Hajj?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: '1st'},
@@ -703,17 +703,17 @@ options: Utils.shuffle([
 		])
 	},
 	{
-		question: 'Pilgrims throw rocks at a pillar representing the evils in life?',
+		question: 'Pilgrims throw rocks at a pillar during Hajj which is a symbolic representation of?',
 		answer: 3,
 		options: Utils.shuffle([
-			{id: 1, option: 'Jesus'},
-			{id: 2, option: 'The pillars of Islam'},
+			{id: 1, option: 'Nafs'},
+			{id: 2, option: 'Greed'},
 			{id: 3, option: 'Satan'},
-			{id: 4, option: 'Gabriel'}
+			{id: 4, option: 'BackBiting'}
 		])
 	},
 	{
-		question: 'Pilgrims walk around the Kaba around how many times?',
+		question: 'How many times does the Pilgrims circle around The Kabah?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: '4'},
@@ -767,13 +767,13 @@ options: Utils.shuffle([
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Fard'},
-			{id: 2, option: 'Sunnah'},
-			{id: 3, option: 'Nafl'},
+			{id: 2, option: 'All the options'},
+			{id: 3, option: 'Sunnah and Nafl'},
 			{id: 4, option: 'None of the options'}
 		])
 	},
 	{
-		question: 'Fajr, Zuhr, Asr, Maghrib and Isha are all what salat?',
+		question: 'What type of Salah is Fajr, Zuhr, Asr, Maghrib and Isha?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Sunnah'},
@@ -814,7 +814,7 @@ options: Utils.shuffle([
 	},
 	{
 		question: 'In Ramadan you must also abstain from?',
-		answer: 4,
+		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Bad Temper'},
 			{id: 2, option: 'Speaking'},

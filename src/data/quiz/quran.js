@@ -12,7 +12,7 @@ import * as Utils from '../../shared/utils';
 
 export const data = [
 {
-question: "How many verses are there in the Quran?",
+question: "How many verses are there in The Quran?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: '6,236'},
@@ -22,7 +22,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Over how many years was the Quran revealed?",
+question: "Over how many years was The Quran revealed?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: '21'},
@@ -42,7 +42,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Name the shortest surah in the Quran?",
+question: "Name the shortest surah in The Quran?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: 'Surah Ikhlas'},
@@ -62,8 +62,8 @@ options: Utils.shuffle([
 ])
 },
 {// noanswer
-question: "What is the final surah in the Quran?",
-answer: 3,
+question: "What is the final surah in The Quran?",
+answer: 1,
 options: Utils.shuffle([
 {id: 1, option: 'Surah Al Nas'},
 {id: 2, option: 'Surah Al Asr'},
@@ -87,7 +87,7 @@ answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'A house in Jannah'},
 {id: 2, option: 'All sins of the day are forgiven'},
-{id: 3, option: 'A years sins are washed aways'},
+{id: 3, option: 'A years sins are washed away'},
 {id: 4, option: "The reward of reciting the entire Quran"}
 ])
 },
@@ -112,7 +112,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Name the longest Surah in the Quran?",
+question: "Name the longest Surah in The Quran?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: 'Surah Yasin'},
@@ -122,7 +122,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Who is the author of the Quran?",
+question: "Who is the author of The Quran?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Almighty Allah"},
@@ -142,7 +142,7 @@ options: Utils.shuffle([
 ])
 },*/
 {
-question: "Who is mentioned in the Quran, who has the right to be worshiped?",
+question: "Who is mentioned in The Quran, who has the right to be worshiped?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "All deities"},
@@ -172,7 +172,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Through which angel were some of the verses of the Quran revealed?",
+question: "Through which angel were some of the verses of The Quran revealed?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Jibril"},
@@ -182,7 +182,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which of these animals is NOT mentioned in the Quran?",
+question: "Which of these animals is NOT mentioned in The Quran?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "Giraffe"},
@@ -192,7 +192,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which is the only month mentioned in the Quran?",
+question: "Which is the only month mentioned in The Quran?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "Muharram"},
@@ -202,7 +202,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Who is the only woman to be mentioned in the Quran by name?",
+question: "Who is the only woman to be mentioned in The Quran by name?",
 answer: 4,
 options: Utils.shuffle([
 {id: 1, option: "Khadijah"},
@@ -212,7 +212,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "Which is the only Surah in the Quran which does not start with 'Bismillah...'",
+question: "Which is the only Surah in The Quran which does not start with 'Bismillah...'",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "Surah Al-Ma'idah"},
@@ -232,7 +232,7 @@ options: Utils.shuffle([
 ])
 },*/
 {
-question: "Which surah is considered as one third (1/3) of the Quran?",
+question: "Which surah is considered as one third (1/3) of The Quran?",
 answer: 3,
 options: Utils.shuffle([
 {id: 1, option: "Surah Ya Seen"},
@@ -242,7 +242,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many Manzils are there in the Quran?",
+question: "How many Manzils are there in The Quran?",
 answer: 1,
 options: Utils.shuffle([
 {id: 1, option: "7"},
@@ -252,7 +252,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many times did the blessed name Prohet Muhammad (pbuh) appear in the Quran?",
+question: "How many times did the blessed name Prohet Muhammad (pbuh) appear in The Quran?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "40"},
@@ -472,7 +472,7 @@ options: Utils.shuffle([
 ])
 },
 {
-question: "How many Surahs in the Quran have the titles named after different Prophets?",
+question: "How many Surahs in the Quran have the title named after different Prophets?",
 answer: 2,
 options: Utils.shuffle([
 {id: 1, option: "30"},
@@ -654,7 +654,7 @@ options: Utils.shuffle([
 	},
 	{
 		question: 'The first verses of the Qurʾan to be revealed were from which surah?',
-		answer: 4,
+		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Surah Al Alaq'},
 			{id: 2, option: 'Surah Qaf'},
@@ -679,7 +679,7 @@ options: Utils.shuffle([
 			{id: 1, option: 'Muharram'},
 			{id: 2, option: 'Safar'},
 			{id: 3, option: 'Rajab'},
-			{id: 4, option: 'Ramadan'}
+			{id: 4, option: 'Ramadhan'}
 		])
 	},
 	{
@@ -836,13 +836,13 @@ options: Utils.shuffle([
 		question: 'What is the scale or measure of one’s dignity according to the Quran?',
 		answer: 1,
 		options: Utils.shuffle([
-			{id: 1, option: 'Thaqwa'},
+			{id: 1, option: 'Taqwa'},
 			{id: 2, option: 'Deed'},
 			{id: 3, option: 'None of the option'},
 			{id: 4, option: 'Stars'}
 		])
 	},
-	{
+	/*{
 		question: 'Who were the three non-prophets whose names are mentioned with due respect in the Quran?',
 		answer: 4,
 		options: Utils.shuffle([
@@ -851,7 +851,7 @@ options: Utils.shuffle([
 			{id: 3, option: 'Aziz of Egypt'},
 			{id: 4, option: 'Prophet Muhammed (pbuh)'}
 		])
-	},
+	},*/
 	{
 		question: 'In which part of the Qur’an do you find ‘Ayat-ul-Kursi’ (Verse of the Throne)?',
 		answer: 4,
@@ -1056,10 +1056,10 @@ options: Utils.shuffle([
 		question: 'What is the meaning of "Astaghfirullah" ?',
 		answer: 4,
 		options: Utils.shuffle([
-			{id: 1, option: 'I ask Allah for Forgiveness'},
+			{id: 1, option: 'All the options'},
 			{id: 2, option: 'We are for Allah'},
 			{id: 3, option: 'Accept our prayer'},
-			{id: 4, option: 'None of the above'}
+			{id: 4, option: 'None of the options'}
 		])
 	},
 	{
@@ -1113,7 +1113,7 @@ options: Utils.shuffle([
 		])
 	},
 	{
-		question: 'Which chapter in the Quran does not start with the Basmallah (in the name of Allah)?',
+		question: 'Which chapter in the Quran does not start with the Bismillah (in the name of Allah)?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Al-Fateha'},

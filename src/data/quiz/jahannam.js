@@ -71,6 +71,8 @@ export const data = [
 			{id: 4, option: '6'}
 		])
 	},
+	//Fazil - we need to check on the all the gates names of Jahannam..
+	//https://www.nairaland.com/1205996/names-7-gates-jahannam-8
 	{
 		question: 'What is the first gate name in Jahannam?', // 9:81 && 4:56
 		answer: 1,
@@ -162,7 +164,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Who will be in the lowest depths of the Fire. you will find no helper for them?', // 4: 145
+		question: 'Who will be in the lowest depths of the Fire and you will find no helper for them?', // 4: 145
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Polytheists'},
@@ -236,13 +238,13 @@ export const data = [
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: 'Shawwal'},
-			{id: 2, option: 'Ramadan'},
+			{id: 2, option: 'Ramadhan'},
 			{id: 3, option: 'Muharram'},
 			{id: 4, option: 'Safar'}
 		])
 	},
 	{
-		question: 'How many Angels will carry the Throne of Allah Subhanah on the Day of Judgment?',
+		question: 'How many Angels will carry the Throne of Allah(SWT) on the Day of Judgment?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: '8'},

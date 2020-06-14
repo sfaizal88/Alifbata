@@ -133,7 +133,7 @@ export const data = [
 		])
 	},
 	{
-		question: "Which door in Jannah is particularly restricted for those who suppress or control their anger toward other Muslims and are forgiving toward other everyone?",
+		question: "Which door in Jannah is particularly reserved for those who suppress or control their anger toward other Muslims and are forgiving toward other everyone?",
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Bāb al-Kāẓimīn al-Ghayẓ wa-al-‘Āfīn ‘an al-Nās'},
@@ -153,7 +153,7 @@ export const data = [
 		])
 	},
 	{
-		question: "Those who constantly and excessively remember Allah (dhikr) will be admitted through which door in Jannah?",
+		question: "Those who constantly and excessively remember Allah(SWT) through dhikr will be admitted through which door in Jannah?",
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Baab As-Sadaqah'},
@@ -193,7 +193,7 @@ export const data = [
 		])
 	},*/
 	{
-		question: "Which is the heaven heaven?",
+		question: "Which is the highest heaven?",
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Jannat-ul-Firdous'},
@@ -263,7 +263,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Who is first martyr of Islam?',
+		question: 'Who is the first martyr of Islam?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: "Sumayya"},
@@ -273,7 +273,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which angel guard the gate of heaven?',
+		question: 'Which angel guard the gates of heaven?',
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: "Angel Jibril"},
@@ -344,11 +344,11 @@ export const data = [
 	},
 	{
 		question: 'Which river of Jannah is not in Earth?',
-		answer: 1,
+		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: "Nil"}, // Nile
 			{id: 2, option: 'Furat'}, // Euphrates
-			{id: 3, option: 'Nil'}, // Nile
+			{id: 3, option: 'Saihan'}, // Saihan
 			{id: 4, option: 'None of the Options'}
 		])
 	},
@@ -373,7 +373,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which mountain are from Jannah (Paradise)', 
+		question: 'Which mountain is from Jannah (Paradise)', 
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: "Mount Uhud"}, 

@@ -99,7 +99,7 @@ export const FeedbackModel = (props) => {
 
             <View style={[styles.modellBody]}>
 
-              <Text style={[styles.modellText, styles.tCenter, styles.pb40]}>Assalaamu Aliakum, we would like to hear from you, if you have any doubts, need help, would like to add some more specific topic or if you find any faults. Please feel free to write to us by filling the below form.</Text>
+              <Text style={[styles.modellText, styles.tCenter, styles.pb40]}>Assalamu Alaikum, Do drop us a note (by filling the below form) if you need any help or to give us your feedback and suggestions.</Text>
               <Input maxLength={Constant.GENERIC.NAME_MAX_LENGTH} label='Name' labelStyle={styles.textfieldLabel} placeholder='Name' value={state.name}  name='name' onChangeText={(text) => updateState(text, 'name')}
               inputContainerStyle={styles.textfieldContainer} inputStyle={styles.textfield} containerStyle={styles.inputContainer}/>
               <Input maxLength={Constant.GENERIC.EMAIL_MAX_LENGTH} label='Email Id' labelStyle={styles.textfieldLabel} placeholder='Email Id' value={state.email_id}  name='email_id' onChangeText={(text) => updateState(text, 'email_id')}

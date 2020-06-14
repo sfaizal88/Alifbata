@@ -381,17 +381,17 @@ export const MissingLetterScreen = ({ navigation, route }) => {
         <SafeAreaView style={[styles.safeViewContainer, {backgroundColor: bgGame}]} forceInset={{ bottom: 'never'}}>
         	<DraxProvider>
 				<View style={[styles.body, styles.p0, styles.mh0, {backgroundColor: bgGame}, styles.centerView]}>
-					<View style={[styles.timeoutContainer, styles.mt20, startTimer ? styles.displayN : '']}>
+					<View style={[styles.timeoutContainer, styles.mt20, startTimer ? styles.displayOpaN : '']}>
 				  		<Text style={[styles.timeoutLabel]}>{timer}</Text>
 				  	</View>
-				  	<Animated.Text style={[ styles.countdownTimer, startTimer ? '' : styles.displayN, { fontSize: readyNoOpacity }]}>
+				  	<Animated.Text style={[ styles.countdownTimer, startTimer ? '' : styles.displayOpaN, { fontSize: readyNoOpacity }]}>
 				  	{startTimer}
 				  	</Animated.Text>
-				  	<View style={[styles.columnDirection, startTimer ? styles.displayN : '']}>
+				  	<View style={[styles.columnDirection, startTimer ? styles.displayOpaN : '']}>
 			  			<View style={[styles.flex1, showHelp ? styles.centerViewB : styles.centerViewB, styles.pb40]}>
-			  				<Text style={[showHelp ? styles.displayN : '', mLetter.help.content ? '' : styles.displayN, styles.helpContent]}>{mLetter.help.content}</Text>
-			  				<Image style={[showHelp ? styles.displayN : '', mLetter.help.img ? '' : styles.displayN, styles.img150]} source={mLetter.help.img}/>
-			  				<TouchableOpacity onPress={() => _generateHelp()} underlayColor="transparent" style={[showHelp ? '' : styles.displayN]}>
+			  				<Text style={[showHelp ? styles.displayOpaN : '', mLetter.help.content ? '' : styles.displayOpaN, styles.helpContent]}>{mLetter.help.content}</Text>
+			  				<Image style={[showHelp ? styles.displayOpaN : '', mLetter.help.img ? '' : styles.displayOpaN, styles.img150]} source={mLetter.help.img}/>
+			  				<TouchableOpacity onPress={() => _generateHelp()} underlayColor="transparent" style={[showHelp ? '' : styles.displayOpaN]}>
 							  	<Animated.View style={[styles.cCircleContainerOuter, styles.cCircleContainerSmallOuter, {borderColor: Colors.white, borderWidth: circleOutter}]} underlayColor="transparent">
 					            	<Animated.View style={[styles.cCircleContainerAnimate, styles.cCircleContainerSmall, {borderWidth: circleInner, backgroundColor: Colors.lightWhite, borderColor: Colors.lightWhite, shadowColor: Colors.lightWhite}]}>
 					            		<Image source={HelpIcon} style={{width: RFValue(80), height: RFValue(80)}}/>

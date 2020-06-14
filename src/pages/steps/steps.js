@@ -76,7 +76,7 @@ export const StepsScreen = ({ navigation, route }) => {
   */
   const generateItem = ({ item, index }) => {
     return (
-      <ScrollView underlayColor="transparent" contentContainerStyle={[styles.cSlide, item.topStyle, {flex: 1}]} key={'QUIZ_TYPE3_' + index}>
+      <ScrollView underlayColor="transparent" contentContainerStyle={[styles.cSlide, item.topStyle]} key={'QUIZ_TYPE3_' + index}>
         <View style={[item.titleType === Constant.GENERIC.TEXT ? '' : styles.displayN, {marginBottom: 30}]}>
           <Text style={[styles.progressBarTitle]}>{item.title}</Text>
         </View>
@@ -90,8 +90,8 @@ export const StepsScreen = ({ navigation, route }) => {
           </View>
         </TouchableOpacity>
         <Text style={[styles.imgText, (item.imgText && item.imgType === Constant.GENERIC.TEXT) ? '' : styles.displayN]}>{item.imgText}</Text>
-        <Text style={[styles.cSlideSubTitle, styles.mt20]}>{item.desc}</Text>
-        <Text style={[styles.cSlideChatLine, styles.mt20]}>{item.details}</Text>
+        <Text style={[styles.cSlideSubTitle, styles.mt20, item.desc ? '' : styles.displayN]}>{item.desc}</Text>
+        <Text style={[styles.cSlideChatLine, styles.mt20, item.details ? '' : styles.displayN]}>{item.details}</Text>
         <View style={[styles.cSlideChatMinLineContainer, item.moreDetails ? '' : styles.displayN]}>
           <Text style={[styles.cSlideChatMinLine, styles.whiteText]}>{entities.decode('&#8220;')}{item.moreDetails}{entities.decode('&#8221;')}</Text>
         </View>

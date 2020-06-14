@@ -12,7 +12,7 @@ import * as Utils from '../../shared/utils';
 
 export const data = [
 	{
-	question: 'What creation is Shaytaan?',
+	question: 'What amoung the below creations of Allah(SWT) was the Shaytaan created from?',
 	answer: 4,
 	options: Utils.shuffle([
 	{id: 1, option: 'Human'},
@@ -28,7 +28,7 @@ export const data = [
 	{id: 1, option: 'Religion'},
 	{id: 2, option: 'Muslim'},
 	{id: 3, option: 'Peace'},
-	{id: 4, option: 'A person that submits to God'}
+	{id: 4, option: 'A person who submits to God'}
 	])
 	},
 	{
@@ -76,13 +76,13 @@ export const data = [
 	answer: 2,
 	options: Utils.shuffle([
 	{id: 1, option: 'Verses from the Quran'},
-	{id: 2, option: 'Saying and or traditions of Prophet Muhammad (pbuh)'},
+	{id: 2, option: 'Sayings and or traditions of Prophet Muhammad (pbuh)'},
 	{id: 3, option: 'Books'},
 	{id: 4, option: 'Notes'}
 	])
 	},
 	{
-	question: 'Why did Shaytan not bow down to Adam (as) when asked by Allah ?',
+	question: 'Why did Shaytan not bow down to Adam (as) when commanded by Allah ?',
 	answer: 3,
 	options: Utils.shuffle([
 	{id: 1, option: 'Because Shaytan was scared'},
@@ -203,7 +203,7 @@ export const data = [
 	},
 	{
 	question: "Who was the first man in the world?",
-	answer: 3,
+	answer: 4,
 	options: Utils.shuffle([
 	{id: 1, option: "Idris (as)"},
 	{id: 2, option: "Qabil"},
@@ -366,7 +366,7 @@ export const data = [
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: "Rabi' al-awwal"},
-			{id: 2, option: "Dhu al-Hijjah"},
+			{id: 2, option: "Muharram"},
 			{id: 3, option: "Shawwal"},
 			{id: 4, option: "Ramadan"}
 		])
@@ -415,7 +415,7 @@ export const data = [
 		question: "What is the most blessed month? ",
 		answer: 1,
 		options: Utils.shuffle([
-			{id: 1, option: "Ramadan"},
+			{id: 1, option: "Ramadhan"},
 			{id: 2, option: "Shawwal"},
 			{id: 3, option: "Safar"},
 			{id: 4, option: "Muharram"}
@@ -492,7 +492,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'How many Angels will carry the Throne of Allah Subhanah on the Day of Judgment?',
+		question: 'How many Angels will carry the Throne of Allah(SWT) on the Day of Judgment?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: '8'},
@@ -542,7 +542,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'The Mahdi (the rightly guided caliph) will appear before the end of time. How long will he reign on this Earth before his death?',
+		question: 'The Mahdi (the rightly guided calipha) will appear before the end of time. How long will he reign on this Earth before his death?',
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: '12-14 years'},
@@ -601,6 +601,7 @@ export const data = [
 			{id: 4, option: 'No foods are banned'}
 		])
 	},
+	/*Fazil - You may need to rethink on this question. Remove it in my opinion.
 	{
 		question: 'Eating which of the following animals is allowed according to Sunni Islam?',
 		answer: 2,
@@ -611,6 +612,7 @@ export const data = [
 			{id: 4, option: 'Dogs'}
 		])
 	},
+	// Fazil - You may need to rethink on this question. Remove it in my opinion. Islam doesn't prohibit any food but flesh of pig and that of the one which was not slaughtered in the name if Allah.
 	{
 		question: 'Islam forbids which of the following meat to be eaten?',
 		answer: 4,
@@ -620,7 +622,7 @@ export const data = [
 			{id: 3, option: 'Mouse'},
 			{id: 4, option: 'All the Options'}
 		])
-	},
+	},*/
 	{
 		question: 'What is a common meat that Muslims are not allowed to eat?',
 		answer: 4,
@@ -732,7 +734,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'This sahabi was among the richest youth of Makkah but he gave up everything for Islam?',
+		question: 'This sahabi was amongst the richest youth of Makkah but he gave up everything for Islam?',
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: 'Abu Bakr (RA)'},
@@ -911,9 +913,10 @@ export const data = [
 			{id: 4, option: 'Iman'}
 		])
 	},
+	//Fazil Answer should be Kaaba... check this with your version
 	{
 		question: 'The house of Allah (s.w.t.) in Makkah is called?',
-		answer: 4,
+		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Church'},
 			{id: 2, option: 'Masjid Al-Aqsa'},
@@ -1056,7 +1059,7 @@ export const data = [
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: 'Rajab'},
-			{id: 2, option: 'Ramadan'},
+			{id: 2, option: 'Ramadhan'},
 			{id: 3, option: 'Shaban'},
 			{id: 4, option: 'Muharram'}
 		])
@@ -1081,7 +1084,7 @@ export const data = [
 			{id: 4, option: 'Injeel'}
 		])
 	},
-	{
+	/*{
 		question: 'In Ramadan you must also abstain from?',
 		answer: 4,
 		options: Utils.shuffle([
@@ -1090,7 +1093,7 @@ export const data = [
 			{id: 3, option: 'Working'},
 			{id: 4, option: 'None of the options'}
 		])
-	},
+	},*/
 	{
 		question: 'What is the plural of hadith?',
 		answer: 2,
@@ -1142,7 +1145,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Who invented the Islamic Calendar begin?',
+		question: 'Who invented the Islamic Calendar?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Umar (ra)'},

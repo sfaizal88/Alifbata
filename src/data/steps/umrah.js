@@ -41,7 +41,7 @@ export const data = [
 		id: 3,
 		title: "STEP 3",
 		titleType: Constant.GENERIC.NUMBER,
-		desc: 'Tawaaf (Circumambulation around Kaaba)',
+		desc: 'Tawaaf (Circling around Kaaba)',
 		img: require(imgURL + '2.png'),
 		details: 'Tawaaf refers to pilgrims circling the Kaaba 7 times counterclockwise. Start at the Black Stone and lift your hands in the direction of the Black Stone, saying Allahu Akbar. After completion of the seven rounds, go to the station of Ibrahim (Maqam Ibrahim) and perform two rakaats Salah.',
 		imgStyle: styles.img200,

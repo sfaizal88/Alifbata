@@ -12,7 +12,7 @@ import React, {useState, useEffect, useRef } from 'react';
 import {StyleSheet, Text, View , SafeAreaView, StatusBar, Animated } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import { HeaderBackButton } from '@react-navigation/stack';
-//import { accelerometer, setUpdateIntervalForType, SensorTypes, gyroscope } from "react-native-sensors";
+import { accelerometer, setUpdateIntervalForType, SensorTypes, gyroscope } from "react-native-sensors";
 
 // ALL COMPONENT
 import { Loader  } from '../../component/complex/loader';

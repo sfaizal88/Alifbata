@@ -1041,7 +1041,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'How long did Prophet Yunus stay in the whale?',
+		question: 'How long did Prophet Yunus stay inside the whales tummy?',
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: '4 days'},
@@ -1071,7 +1071,7 @@ export const data = [
 		])
 	},
 	{
-		question: "What was first son of Prophet Adam (as)?",
+		question: "Who was the first son of Prophet Adam (as)?",
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: "Qabil"},
@@ -1081,7 +1081,7 @@ export const data = [
 		])
 	},
 	{
-		question: "People of Samood lived where during Prophet Saleh time?",
+		question: "Where did People of Samood lived during Prophet Saleh time?",
 		answer: 2,
 		options: Utils.shuffle([
 			{id: 1, option: "Al-Haram"},
@@ -1091,7 +1091,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which prophet sent to Ninevah?',
+		question: 'Which prophet was sent to Ninevah?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Prophet Hud (as)'},
@@ -1101,7 +1101,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which prophet sent for the people of Midian?',
+		question: 'Which prophet was sent for the people of Midian?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Prophet Shuaib (as)'},
@@ -1111,7 +1111,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which prophet sent for the people of Sodom to abandon their homosexual acts?',
+		question: 'Which prophet was sent for the people of Sodom to abandon their homosexual acts?',
 		answer: 4,
 		options: Utils.shuffle([
 			{id: 1, option: 'Prophet Shuaib (as)'},
@@ -1141,7 +1141,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Where is Prophet Isa coming?',
+		question: 'Where Prophet Isa will come?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Damascus'},
@@ -1151,7 +1151,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which prophet was floated down the Nile by his mother to escape death?',
+		question: 'Which prophet was left to float on river Nile by his mother to escape death?',
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: 'Prophet Shuaib (as)'},
@@ -1201,7 +1201,7 @@ export const data = [
 		])
 	},
 	{
-		question: "Prophet Lut's people lived in which city?",
+		question: "Prophet Lut(as) people lived in which city?",
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Sodom'},

@@ -254,7 +254,7 @@ export const knowledgeDashboardList = [
     img: require('../../assets/img/steps/frequentWords.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 3 } }
   },
-  {
+  /*{
     id: 6, title: 'Friday Sunnah', desc: 'Sunnah acts of Jummah',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/steps/prayer.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
@@ -265,7 +265,7 @@ export const knowledgeDashboardList = [
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
     img: require('../../assets/img/steps/drinking.png'), bgColor: Colors.grayLightest, color: Colors.grayDarkest,
     active: true, type: 'octicon', path: 'StepsNavigation', data: { screen: 'StepsList', params: { slideIndex: 11 } }
-  },
+  },*/
   {
     id: 8, title: 'More', desc: 'All Knowledge',
     //icon: 'organization', bgColor: '#c44569', color: '#fff', type: 'octicon',
