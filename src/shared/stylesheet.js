@@ -307,6 +307,10 @@ const specialIconStyle = {
         color: Colors.white,
 		textAlign: 'center',
 		paddingBottom: 0,
+  	},
+  	noBRBottom: {
+  		borderBottomRightRadius: 0,
+  		borderBottomLeftRadius: 0
   	}
 }
 /* SPECIAL ICONS - ENDS */

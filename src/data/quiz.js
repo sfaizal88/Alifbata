@@ -59,7 +59,7 @@ export const quizList = [
     desc: 'The Holy Quran was revealed to Prophet Muhammad (pbuh) in the Cave of Hira.',
     data:  Quran.data,
     img: require('../../assets/img/quran.png'),
-    bgColor: Colors.red,
+    bgColor: '#B33771',
     active: true
   },
   {
@@ -77,7 +77,7 @@ export const quizList = [
     desc: "The after-life paradise, described as “gardens of pleasure” in the Quran (31:8), is achieved by living religiously, asking Allah’s forgiveness and doing good deeds in this life.",
     data:  Jannah.data,
     img: require('../../assets/img/heaven.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: '#b33939',
     active: true
   },
   {
@@ -86,7 +86,7 @@ export const quizList = [
     desc: 'The after-life hell to punish the evildoers. Punishments are carried in accordance with the degree of evil one has done during his life.',
     data:  Jahannam.data,
     img: require('../../assets/img/fire.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: '#ccae62',
     active: true
   },
   {
@@ -95,7 +95,7 @@ export const quizList = [
     desc: 'Sayings and teachings of Prophet Muhammad (pbuh).',
     data:  Sunnah.data,
     img: require('../../assets/img/heart.png'),
-    bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
+    bgColor: '#596275',
     active: false
   }
 ]
