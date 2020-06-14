@@ -32,7 +32,9 @@ export const MHeader = (props) => {
 						<Text style={styles.headerTitle}>{props.title}</Text>
 						<Text style={[styles.headerSubTitle, props.subtitle ? '' : styles.displayN]}>{props.subtitle}</Text>
 					</View>
-	      			<Icon name="question" color={Colors.white} size={RFValue(24)} type='octicon' containerStyle={{position: 'absolute', right: RFValue(20)}} underlayColor="transparent"  onPress={() => setShowFeedbackModel(true)}/>
+					<Icon name="question" color={Colors.white} size={RFValue(24)} type='octicon' containerStyle={{position: 'absolute', right: RFValue(20), zIndex: 99999}} underlayColor="transparent"  onPress={() => setShowFeedbackModel(true)}/>
+			
+	      			
 				</View>
 	      	</View>
 	      	<FeedbackModel show={showFeedbackModel} handleClose={() => setShowFeedbackModel(false)}/>

@@ -26,7 +26,8 @@ const layoutStyle ={
 	},
 	safeViewContainer: {
     	flex: 1,
-    	backgroundColor: Colors.blueDarkest//Colors.primary
+    	backgroundColor: Colors.blueDarkest,//Colors.primary
+    	zIndex: 1
 	},
 	body: {
 		flex: 1,
@@ -1809,7 +1810,8 @@ const menuStyle = {
 		bottom: Utils.isIpad() ? RFValue(17) : 17,
 		marginHorizontal: 70,
 		left: 0,
-		right: 0
+		right: 0,
+		zIndex: 2
 	},
 	menus: {
 		flexDirection: 'row',

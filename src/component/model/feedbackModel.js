@@ -110,12 +110,12 @@ export const FeedbackModel = (props) => {
             
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
-                  <TouchableHighlight onPress={() => close()} style={[styles.btn, styles.secondaryBtn, {width: 100}]}>
+                  <TouchableHighlight underlayColor="transparent" onPress={() => close()} style={[styles.btn, styles.secondaryBtn, {width: 100}]}>
                     <Text style={[styles.darkBtnText, {textAlign: 'center'}]}>Close</Text>
                   </TouchableHighlight>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
-                  <TouchableHighlight onPress={() => submitForm()} style={[styles.btn, styles.primaryBtn, {width: 100}]}>
+                  <TouchableHighlight underlayColor="transparent" onPress={() => submitForm()} style={[styles.btn, styles.primaryBtn, {width: 100}]}>
                     <Text style={[styles.lightBtnText, {textAlign: 'center'}]}>Send</Text>
                   </TouchableHighlight>
                 </View>
