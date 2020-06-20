@@ -9,7 +9,7 @@
 ***/
 // REACT NATIVE IMPORT
 import React, {useState, useEffect, useContext} from 'react';
-import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity } from 'react-native';
+import { RefreshControl, StyleSheet, Text, View , FlatList, TouchableHighlight, SafeAreaView, Image, StatusBar, TouchableOpacity, ScrollView } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 //import { HeaderBackButton } from '@react-navigation/stack';
 import AppIntroSlider from 'react-native-app-intro-slider';
@@ -272,57 +272,59 @@ export const QuizScreen = ({ navigation, route }) => {
     let keyIndex = 'QUIZ_' + index + Math.floor((Math.random() * 200) + 1);
     if (item.type === Constant.GENERIC.QUIZ_INTRO) {
       return (
-        <View style={{...styles.slide, backgroundColor: Colors.grayLightest}} key={keyIndex}>
-          <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
-          <View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.img120}/></View>
-          <Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. <Text style={styles.darkHigh}>Keep attempting the quiz for more new questions.</Text>{'\n \n Ready? Lets go!'}</Text>
-          <Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
+        <ScrollView contentContainerStyle={[Utils.isAndroid() ? styles.slideAndroid : styles.slide, {backgroundColor: Colors.grayLightest}]} key={keyIndex}>
+          	<Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Islamic Quiz'}</Text>
+          	<View style={styles.slideImageContainer}><Image source={ExamIcon} style={styles.img120}/></View>
+          	<Text style={[styles.slideDesc, Utils.isIpad() ? styles.descM : '']}>Quiz will have {Constant.GENERIC.QUIZ_COUNT} questions. <Text style={styles.darkHigh}>Keep attempting the quiz for more new questions.</Text>{'\n \n Ready? Lets go!'}</Text>
+          	<Button onPress={() => nextSlide(0)} icon={<Icon name={'play'} size={RFValue(15)} color={Colors.grayDarkest} type='font-awesome'/>}
               title={<><Text>Start</Text>{'\n'}<Text style={{fontSize: 12}}>new questions</Text></>} 
               buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, {height: RFValue(50)}]} 
               containerStyle={[styles.cSlideBtnContainer, styles.mt50]}
               titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-        </View>
+        	<View style={[styles.cslideBottomHeight]}></View>
+        </ScrollView>
       );
     }  else if (item.type === Constant.GENERIC.QUIZ_SCORE) {
       return (
-        <View style={[styles.slide, styles.slideType3]} key={keyIndex}>
-        <Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Score Board'}</Text>
-        <View style={styles.slideType3ImageContainer}>
-          <Image source={StarIcon} style={styles.slideType3Image}/>
-        </View>
-        <Text style={styles.slideType3Title}>Masha Allah</Text>
-        <Text style={[styles.slideType3Desc, Utils.isIpad() ? styles.descM : '', Utils.isIpad() ? styles.mb0: '']}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. <Text style={styles.darkHigh}>Redo the Quiz for more new questions.</Text></Text>
-         <View style={[styles.slideImageContainer, styles.rowDirection, Utils.isIpad() ? '' : styles.mt15]}>
-            <Button onPress={redoTest} icon={<Icon name={'refresh'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
-              title={<><Text>Replay for</Text>{'\n'}<Text style={{fontSize: 12}}>new questions</Text></>} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20, {height: RFValue(50)}]} 
-              containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']}
-              titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-	          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
-	          title={"All Quiz"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
-	          containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']} iconRight={true}
-	          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
-          </View>
-      </View>
+        <ScrollView contentContainerStyle={[Utils.isAndroid() ? styles.slideAndroid : styles.slide, styles.slideType3]} key={keyIndex}>
+        	<Text style={[styles.slideTitle, styles.slideTitleQuestion]}>{'Score Board'}</Text>
+	        <View style={styles.slideType3ImageContainer}>
+	          <Image source={StarIcon} style={styles.slideType3Image}/>
+	        </View>
+	        <Text style={styles.slideType3Title}>Masha Allah</Text>
+	        <Text style={[styles.slideType3Desc, Utils.isIpad() ? styles.descM : '', Utils.isIpad() ? styles.mb0: '']}>Answered <Text style={styles.darkHigh}>{scoreCard.score} out of {scoreCard.total}</Text> correctly. {'\nYou won'} <Text style={styles.darkHigh}>{scoreCard.score} Star(s)</Text>. <Text style={styles.darkHigh}>Redo the Quiz for more new questions.</Text></Text>
+	        <View style={[styles.slideImageContainer, styles.rowDirection, Utils.isIpad() ? '' : styles.mt15]}>
+	            <Button onPress={redoTest} icon={<Icon name={'refresh'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
+	              title={<><Text>Replay for</Text>{'\n'}<Text style={{fontSize: 12}}>new questions</Text></>} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20, {height: RFValue(50)}]} 
+	              containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']}
+	              titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
+		          <Button onPress={() => navigation.goBack()} icon={<Icon name={'chevron-right'} size={RFValue(18)} color={Colors.grayDarkest} type='font-awesome'/>}
+		          title={"All Quiz"} buttonStyle={[styles.cSlideBtn, styles.cSlideBtnActive, styles.ph20]} 
+		          containerStyle={[styles.cSlideBtnContainer, styles.ph10, Utils.isIpad() ? styles.mt0 : '']} iconRight={true}
+		          titleStyle={[styles.cSlideBtnLabel, styles.cSlideBtnLabelLight]}/>
+	         </View>
+        	<View style={[styles.cslideBottomHeight]}></View>
+      </ScrollView>
       );
     } else if (item.type === Constant.GENERIC.QUIZ_EXERCISE) {
       return (
-        <View style={[styles.slide, styles.slideType2, styles.centerView]} key={keyIndex}>
-        	
-	        <View style={styles.noContainer}><Text style={styles.qno}>{index}</Text></View>
-	        	<Text style={styles.optionQuestion}>{item.question}</Text>
-	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[0].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
-	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[0].option}</Text>
-	            </TouchableOpacity>
-	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[1].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
-	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[1].option}</Text>
-	            </TouchableOpacity>
-	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[2].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
-	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[2].option}</Text>
-	            </TouchableOpacity>
-	            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[3].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
-	            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[3].option}</Text>
-	            </TouchableOpacity>
-        	</View>
+        <ScrollView contentContainerStyle={[Utils.isAndroid() ? styles.slideAndroid : styles.slide, styles.slideType2, styles.centerView]} key={keyIndex}>
+        	<View style={styles.noContainer}><Text style={styles.qno}>{index}</Text></View>
+        	<Text style={styles.optionQuestion}>{item.question}</Text>
+            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[0].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[0].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[0], item.answer, index)}>
+            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[0].option}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[1].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[1].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[1], item.answer, index)}>
+            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[1].option}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[2].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[2].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[2], item.answer, index)}>
+            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[2].option}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} underlayColor="transparent" style={[styles.optionContainer, (item.options[3].id === savedAnswered.id) ? styles.selectedOption : '', correctAnswer === item.options[3].id ? styles.correctOption : '']} onPress={() => _findAnswer(item.options[3], item.answer, index)}>
+            	<Text style={[styles.lightBtnText, styles.centerView, styles.tCenter]} >{item.options[3].option}</Text>
+            </TouchableOpacity>
+        	<View style={[styles.cslideBottomHeight]}></View>
+        </ScrollView>
       );
     } 
   }

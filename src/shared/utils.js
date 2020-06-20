@@ -79,7 +79,7 @@ export const setOrientation = (orientation) => {
     } else {*/
       if (orientation === 'LANDSCAPE') {
         //Orientation.unlockAllOrientations();
-        Orientation.lockToLandscape();
+        Orientation.lockToLandscapeRight();
       }  else if (orientation === 'PORTRAIT') {
         //Orientation.unlockAllOrientations();
         Orientation.lockToPortrait();

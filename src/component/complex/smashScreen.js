@@ -30,6 +30,7 @@ export const SmashScreen = (props) => {
         transparent = true,
         show = {},
         isShowModel,
+        isTimed = true,
         content
   } = props
 
@@ -49,6 +50,15 @@ export const SmashScreen = (props) => {
       bgColor: Colors.green,
       type: 'ICON',
       word: ''
+    },
+    HEADSUP_CORRECT: {
+      audio: Constant.GENERIC.CORRECT_AUDIO,
+      icon: 'check', 
+      color: Colors.white,
+      bgColor: Colors.green,
+      type: 'ICON',
+      word: '',
+      desc: 'Hold device upright (vertical) to continue'
     },
     PASS: {
       audio: Constant.GENERIC.WRONG_AUDIO,
@@ -81,9 +91,11 @@ export const SmashScreen = (props) => {
   useEffect(() => {
     if (props.show.enable) {
         Utils.playAudio(smashData[props.show.type].audio, 0.3);
-        setTimeout(() => { 
-          isShowModel({...show, enable: false});
-        }, 1000);
+        if (!props.show.timerOff) {
+          setTimeout(() => { 
+            isShowModel({...show, enable: false});
+          }, 1000);
+        }
     }
   }, [props.show.enable]);
 
@@ -95,7 +107,7 @@ export const SmashScreen = (props) => {
           <Icon iconStyle={[smashData[props.show.type].type === 'ICON' ? '' : styles.displayN]} name={smashData[props.show.type].icon} color={smashData[props.show.type].color} size={Setting.smashIconSize} type="font-awesome" underlayColor="transparent"/>
           
           <Text style={[smashData[props.show.type].type === 'WORD' ? '' : styles.displayN, styles.smashLabel, styles.centerView]}>{smashData[props.show.type].word}</Text>
-          <Text style={[smashData[props.show.type].type === 'WORD' && smashData[props.show.type].desc ? '' : styles.displayN, styles.smashDesc, styles.centerView]}>{smashData[props.show.type].desc}</Text>
+          <Text style={[smashData[props.show.type].desc ? '' : styles.displayN, styles.smashDesc, styles.centerView]}>{smashData[props.show.type].desc}</Text>
 
         </View>
       </View>

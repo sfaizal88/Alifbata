@@ -23,7 +23,7 @@ export const data = [
 		img: require(imgURL + '1.png'),
 		details: 'Clipping nails and removing extra hair.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 2,
@@ -33,7 +33,7 @@ export const data = [
 		img: require(imgURL + '2.png'),
 		details: 'Taking a ritual purificatory bath.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 3,
@@ -43,7 +43,7 @@ export const data = [
 		img: require(imgURL + '3.png'),
 		details: 'Dressing in finest clothes.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 4,
@@ -53,7 +53,7 @@ export const data = [
 		img: require(imgURL + '4.png'),
 		details: 'Using miswak fights tooth decay and cavities.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 5,
@@ -63,7 +63,7 @@ export const data = [
 		img: require(imgURL + '5.png'),
 		details: 'Wearing perfume.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 6,
@@ -73,7 +73,7 @@ export const data = [
 		img: require(imgURL + '6.png'),
 		details: 'Reading Surat Al-Kahf.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 7,
@@ -83,7 +83,7 @@ export const data = [
 		img: require(imgURL + '7.png'),
 		details: 'Proceeding early (preferably by walking) to the mosque to be in the first few rows.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 8,
@@ -93,7 +93,7 @@ export const data = [
 		img: require(imgURL + '8.png'),
 		details: 'Listening to Friday sermon attentively.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 9,
@@ -103,7 +103,7 @@ export const data = [
 		img: require(imgURL + '9.png'),
 		details: 'Sending abundant prayers and salutations upon Prophet Muhammad (PBUH).',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	},
 	{
 		id: 10,
@@ -113,6 +113,6 @@ export const data = [
 		img: require(imgURL + '10.png'),
 		details: 'Supplicating to Allah SWT abundantly especially during the last hour before sunset.',
 		imgStyle: styles.img200,
-		topStyle: styles.topPattern
+		//topStyle: styles.topPattern
 	}
 ]

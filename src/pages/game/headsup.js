@@ -52,12 +52,13 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 	const [startTimer, setStartTimer]           = useState(getReady[Constant.GENERIC.HEADSUP_READY_TIMER]);
 	const [bgGame, setBgGame]                   = useState(Colors.robinEggBlue);
 	const [timer, setTimer]                     = useState(Constant.GENERIC.HEADSUP_GAME_TIMER);
-	const [showSmash, setShowSmash]             = useState({enable: false, type: 'HEADSUP_PASS'});
+	const [showSmash, setShowSmash]             = useState({enable: false, type: 'HEADSUP_PASS', timerOff: false});
 
 	// ANIMATION
-	const readyNoOpacity = useRef(new Animated.Value(0)).current;
-	const listOfWords    = useRef(route.params.gameData.data);
-	const answerList     = useRef([]);
+	const readyNoOpacity   = useRef(new Animated.Value(0)).current;
+	const listOfWords      = useRef(route.params.gameData.data);
+	const answerList       = useRef([]);
+	let mobilePosition     = '';// PASS, CORRECT, NORMAL, FOREHEAD
 
 	// USE EFFECT ON LOAD PROCESS
 	useEffect(() => {
@@ -110,8 +111,8 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 		    // GENERATE WORD
 			_getUniqueList();
 			if (Constant.GENERIC.SENSOR) {
-				setUpdateIntervalForType(SensorTypes.accelerometer, 200);
-				setUpdateIntervalForType(SensorTypes.gyroscope, 200);
+				setUpdateIntervalForType(SensorTypes.accelerometer, 300);
+				setUpdateIntervalForType(SensorTypes.gyroscope, 300);
 				// SUBSCRIBE LISTERN
 				_subscribe();
 			}
@@ -167,7 +168,7 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
     		// CLEAR THE INTERVAL TIME IN FINAL 10 SECOND TIME OUT
     		clearInterval(gameCDIntervalLast10Second);
     		// SHOW GAME OVER SMASH SCREEN
-		  	setShowSmash({...showSmash, enable: true, type: 'GAMEOVER'});
+		  	setShowSmash({...showSmash, enable: true, type: 'GAMEOVER', timerOff: false});
 			// PLAY TICK SOUND
 			Utils.playAudio(Constant.GENERIC.GAME_OVER_AUDIO, 0.2);
     		// NAVIGATE TO RESULT PAGE AFTER SHOWING GAME OVER SCREEN
@@ -194,7 +195,24 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 	* @input  Array - Array of oBJECT
 	* @return Array
 	*/
-	const _generateWords = (trigger) => {
+	const _generateWords = () => {
+		// FIND THE WORDS
+		let randomIndex = Math.floor((Math.random() * (listOfWords.current.length - 1)) + 1);
+		// PICK THE WORD
+		generatedWord   = listOfWords.current[randomIndex];
+		// UPDATE THE STATE
+		setWord(generatedWord);
+		// REMOVE USED OBJECT FROM LIST
+		listOfWords.current.splice(randomIndex, 1);
+		
+	}
+
+	/**
+	* GENERATE
+	* @input  Array - Array of oBJECT
+	* @return Array
+	*/
+	const _checkWords = (trigger) => {
 		console.log('Word - ' + generatedWord);
 		// CHECKING THE ANSWER
 		if (trigger === Constant.GENERIC.HEADSUP_CORRECT) {
@@ -203,28 +221,15 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 			// UPDATE THE ANSWER LIST
 			answerList.current = answers;
 		  	// SHOW SMASH SCREEN
-		  	setShowSmash({...showSmash, enable: true, type: 'CORRECT'});
+		  	setShowSmash({...showSmash, enable: true, type: 'HEADSUP_CORRECT', timerOff: true});
 		} else if (trigger === Constant.GENERIC.HEADSUP_PASS) {
 			// GENERATE ANSWER LIST
 			let answers = [...answerList.current, {word: generatedWord, type: Constant.GENERIC.PASS_QUESTION}];
 			// UPDATE THE ANSWER LIST
 			answerList.current = answers;
 		  	// SHOW SMASH SCREEN
-		  	setShowSmash({...showSmash, enable: true, type: 'HEADSUP_PASS'});
+		  	setShowSmash({...showSmash, enable: true, type: 'HEADSUP_PASS', timerOff: true});
 		}
-		// SHOW CORRECT ANSWER
-		// FIND THE WORDS
-		let randomIndex = Math.floor((Math.random() * (listOfWords.current.length - 1)) + 1);
-		// PICK THE WORD
-		generatedWord   = listOfWords.current[randomIndex];
-		// UPDATE THE STATE
-		setWord(generatedWord);
-		// UPDATE 
-		isChanged = false;
-		//console.log('Before add - ' + listOfWords.current.length);
-		// REMOVE USED OBJECT FROM LIST
-		listOfWords.current.splice(randomIndex, 1);
-		//console.log('After add - ' + listOfWords.current.length);
 		
 	}
 
@@ -259,19 +264,28 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 		_subscription = accelerometer.subscribe(({ x, y, z }) => {
 			let pitch = Math.atan2(-x, -z) * 180 / Math.PI;// In degrees 55 25
 			let roll = Math.atan2(-y, -x) * 180 / Math.PI;// In degrees
-			if (-15 > pitch  && pitch > -50 && !isChanged && showForeHeadMsg) {
-				showForeHeadMsg = true
-				isChanged = true;
-				_generateWords(Constant.GENERIC.HEADSUP_PASS);
-			} else if (-130 > pitch && pitch > -170 && !isChanged && showForeHeadMsg) {
-				showForeHeadMsg = true;
-				isChanged = true;
-				_generateWords(Constant.GENERIC.HEADSUP_CORRECT);
-			} else if (-75 > pitch && pitch > -150 && !showForeHeadMsg) {
-				showForeHeadMsg = true;
-				setIsHoldProperly(true);
-			} else if (-10 < pitch) {
+			console.log('Pitch: ' + pitch + ', Roll: ' + roll);
+			// PASS POSITION
+			if (-15 > pitch  && pitch > -50 && mobilePosition !== 'PASS' && !showForeHeadMsg) {
+				console.log('Pass Mode');
+				mobilePosition = 'PASS';
+				_checkWords(Constant.GENERIC.HEADSUP_PASS);
+			} else if (-130 > pitch && pitch > -170 && mobilePosition !== 'CORRECT' && !showForeHeadMsg) {
+				console.log('Correct Mode');
+				mobilePosition = 'CORRECT';
+				_checkWords(Constant.GENERIC.HEADSUP_CORRECT);
+			} else if (-80 > pitch && pitch > -110 && mobilePosition !== 'NORMAL') {
+				setShowSmash({...showSmash, enable: false});
+				console.log('Normal Mode');
+				mobilePosition = 'NORMAL';
 				showForeHeadMsg = false;
+				setIsHoldProperly(true);
+				_generateWords();
+			} else if (-10 < pitch) {
+				setShowSmash({...showSmash, enable: false});
+				mobilePosition = 'FOREHEAD';
+				console.log('Place on your forehead Mode');
+				showForeHeadMsg = true;
 				setIsHoldProperly(false);
 			}
 			//console.log('Pitch - ' + pitch);

@@ -108,7 +108,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: 'Baab As-Sadaqah'},
 			{id: 2, option: 'Baab Al-Hajj'},
-			{id: 3, option: 'Baab As-Sadaqah'},
+			{id: 3, option: 'Baab As-Jihad'},
 			{id: 4, option: 'Baab Ar-Salaat'}
 		])
 	},
@@ -118,7 +118,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: 'Baab As-Sadaqah'},
 			{id: 2, option: 'Baab Al-Hajj'},
-			{id: 3, option: 'Baab As-Sadaqah'},
+			{id: 3, option: 'Baab As-Salaat'},
 			{id: 4, option: 'Baab Ar-Rayyaan'}
 		])
 	},
@@ -146,7 +146,7 @@ export const data = [
 		question: "Which door in Jannah is reserved for the entry for those who have sincere faith and trust in Allah and who strive to follow Allah's commands?",
 		answer: 2,
 		options: Utils.shuffle([
-			{id: 1, option: 'Baab As-Sadaqah'},
+			{id: 1, option: 'Baab Ar-Rayyaan'},
 			{id: 2, option: 'Baab Al-Iman'},
 			{id: 3, option: 'Baab As-Sadaqah'},
 			{id: 4, option: 'Bāb al-Kāẓimīn al-Ghayẓ wa-al-‘Āfīn ‘an al-Nās'}
@@ -246,7 +246,7 @@ export const data = [
 		question: 'Which bridge every human must pass on the Day of Judgment to enter Paradise?',
 		answer: 1,
 		options: Utils.shuffle([
-			{id: 1, option: "As-Sirāt"},
+			{id: 1, option: "As-Sirat"},
 			{id: 2, option: 'Jannat-ul-Firdous'},
 			{id: 3, option: 'Darul Maqaam'},
 			{id: 4, option: 'Darul Khuld'}
@@ -348,7 +348,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: "Nil"}, // Nile
 			{id: 2, option: 'Furat'}, // Euphrates
-			{id: 3, option: 'Saihan'}, // Saihan
+			{id: 3, option: 'Jaihan'}, // Saihan
 			{id: 4, option: 'None of the Options'}
 		])
 	},
@@ -373,7 +373,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'Which mountain is from Jannah (Paradise)', 
+		question: 'Which mountain is from Jannah (Paradise)?', 
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: "Mount Uhud"}, 

@@ -452,7 +452,7 @@ export const data = [
 		])
 	},
 	{
-		question: "What do you understand by the word Halal'?",
+		question: "What do you understand by the word Halal?",
 		answer: 3,
 		options: Utils.shuffle([
 			{id: 1, option: "Doubtful"},
@@ -784,7 +784,7 @@ export const data = [
 		])
 	},
 	{
-		question: 'From whom did humans learn about making graves?',
+		question: 'From whom did Qabil learn about making graves?',
 		answer: 1,
 		options: Utils.shuffle([
 			{id: 1, option: 'Crow'},
@@ -889,7 +889,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: 'Yarhamukallah'},
 			{id: 2, option: 'Ya Allah'},
-			{id: 3, option: 'Alhamdu lillah'},
+			{id: 3, option: 'Alhamdulillah'},
 			{id: 4, option: 'La Ilaha Illal Lah'}
 		])
 	},

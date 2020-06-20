@@ -169,7 +169,7 @@ export const data = [
 		options: Utils.shuffle([
 			{id: 1, option: 'Polytheists'},
 			{id: 2, option: 'People of the Book'},
-			{id: 3, option: '1341341s'},
+			{id: 3, option: 'Accidental death'},
 			{id: 4, option: 'Hypocrites'}
 		])
 	},

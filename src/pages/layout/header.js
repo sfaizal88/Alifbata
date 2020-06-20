@@ -20,6 +20,7 @@ import { FeedbackModel } from '../../component/model/feedbackModel';
 // ALL SHARED FILES
 import { styles  } from '../../shared/stylesheet';
 import { Colors } from '../../shared/colors';
+import * as Utils from '../../shared/utils';
 
 export const MHeader = (props) => {
   	const [showFeedbackModel, setShowFeedbackModel] = useState(false);
@@ -33,7 +34,7 @@ export const MHeader = (props) => {
 					<Text style={[styles.headerSubTitle, props.subtitle ? '' : styles.displayN]}>{props.subtitle}</Text>
 				</View>
 				<View style={[styles.flex1, styles.centerView]} onTouchStart={() => setShowFeedbackModel(true)} underlayColor="transparent">
-					<Icon name="question" color={Colors.white} size={RFValue(35)} type='octicon' underlayColor="transparent"/>
+					<Icon name="question" color={Colors.white} size={Utils.isAndroid() ? RFValue(35) : RFValue(24)} type='octicon' underlayColor="transparent"/>
 				</View>
 	      	</View>
 	      	<FeedbackModel show={showFeedbackModel} handleClose={() => setShowFeedbackModel(false)}/>

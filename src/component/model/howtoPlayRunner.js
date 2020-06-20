@@ -89,7 +89,7 @@ export const HowToPlayRunner = (props) => {
            <View style={[styles.modalView]}>
               <View style={[styles.modellBody]}>
                 <View  style={styles.modelTitleContainer}>
-                  <Text style={styles.modelTitle}>{'HOW TO PLAY\nWALK'}</Text>
+                  <Text style={styles.modelTitle}>{'HOW TO PLAY\nMOSQUE WALKER'}</Text>
                 </View>
                 <AppIntroSlider
                   dotClickEnabled={true}

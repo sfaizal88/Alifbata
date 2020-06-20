@@ -185,7 +185,7 @@ export const RunnerGameScreen = ({ navigation, route }) => {
       	<SmashScreen show={showSmash} isShowModel={setShowSmash}/>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={[styles.safeViewContainer, {backgroundColor: bgGame}]} forceInset={{ bottom: 'never', top: 'never'}}>
-			<View style={[styles.body, styles.p0, styles.mh0, {backgroundColor: bgGame}, styles.centerView]}>
+			<View style={[styles.body, styles.p0, styles.mh0, {backgroundColor: bgGame}, styles.centerView, Utils.isAndroid ? styles.noBRBottom : '']}>
 			  	<Animated.Text style={[ styles.countdownTimer, startTimer ? '' : styles.displayN, { fontSize: readyNoOpacity }]}>
 			  		{startTimer}
 			  	</Animated.Text>

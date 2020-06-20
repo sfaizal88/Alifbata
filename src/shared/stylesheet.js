@@ -768,6 +768,18 @@ const sliderStyle = {
 		shadowOffset:{  width: 2,  height: 2  },
 		shadowColor: Colors.grayDarkest,
 		shadowOpacity: 0.5,
+		paddingTop: 20,
+    },
+    slideAndroid: {
+    	flexGrow: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 0,
+		shadowOffset:{  width: 2,  height: 2  },
+		shadowColor: Colors.grayDarkest,
+		shadowOpacity: 0.5,
+		paddingTop: 20,
     },
     slideNoShadow: {
 		shadowOffset:{  width: 0,  height: 0  },
@@ -1609,7 +1621,7 @@ const pageStyle = {
 /* CHAPTER SLIDER - STARTS */
 const chapterSliderStyle = {
 	cslideBottomHeight: {
-		height: Utils.isAndroid() ? 70 : 40
+		height: Utils.isAndroid() ? 70 : 80
 	},
 	cSlide: {
         flex: 1,
@@ -1736,7 +1748,7 @@ const chapterSliderStyle = {
     	paddingBottom: 10, 
     	paddingHorizontal: 5, 
     	borderRadius: 10, 
-    	marginHorizontal: RFValue(20)
+    	marginHorizontal: RFPercentage(6)
     },
     cSlideChatMinLine: {
     	fontStyle: 'italic',
@@ -1744,7 +1756,7 @@ const chapterSliderStyle = {
         ...Setting.fontWeight400,
         color: Colors.grayDark,
 		textAlign: 'center',
-		paddingHorizontal: Utils.isIpad() ? 70 : 30
+		paddingHorizontal: Utils.isIpad() ? 70 : 10
     },
     cSlideBtnContainer: {
 		paddingHorizontal: 30,

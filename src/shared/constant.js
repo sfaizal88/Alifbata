@@ -26,6 +26,7 @@ export const URL = {
 
 // DECLARE GENERIC CONSTANT
 export const GENERIC = {
+	CHANGE_WORDS: 'WORDS',
 	COMPLETED: 1,
 	SUCCESS: 0,
 	FAILED:  -1,

@@ -115,7 +115,7 @@ export const StepsListScreen = ({ navigation, route }) => {
     */
     const generateItem = ({ item, index }) => {
         return (
-          <View  underlayColor="transparent" style={styles.cSlide} key={'LIST_TYPE3_' + index}>
+          <ScrollView  underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide, styles.topPattern]} key={'LIST_TYPE3_' + index}>
           	<View style={[styles.disableOverlay, item.active ? styles.disableOverlayHide : '']}></View>
           	<View style={[styles.chapterLesOverlay]}></View>
           	<Text style={[styles.progressBarTitle]}>{item.title}</Text>
@@ -139,7 +139,8 @@ export const StepsListScreen = ({ navigation, route }) => {
   				disabledStyle={styles.cSlideBtn}
   				disabledTitleStyle={styles.cSlideBtnLabel}/>
   			<Icon iconStyle={!item.active ? '' : styles.displayN} containerStyle={[styles.disableOverlayLabel, !item.active ? '' : styles.displayN]} name={'lock'} size={RFValue(50)} color={Colors.white} type='font-awesome'/>
-          </View>
+        	<View style={[styles.cslideBottomHeight]}></View>
+          </ScrollView>
         );
     }
 

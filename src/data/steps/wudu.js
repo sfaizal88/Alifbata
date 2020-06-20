@@ -25,6 +25,7 @@ export const data = [
 		img: require('../../../assets/img/steps/wudu/1.png'),
 		imgStyle: styles.img200R1,
 		details: 'Start by making Niyyah (intention) to perform wuḍu and to cleanse yourself.',
+		topStyle: styles.topPattern
 	},
 	{
 		id: 2,
@@ -34,6 +35,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/1.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Say Bismillah. Wash your right hand up to the wrist (and between the fingers) once* and repeat for the left hand.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	},
@@ -45,6 +47,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/2.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Using your right hand, put a small amount of water into your mouth, rinse your mouth once* and spit out the water.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	},
@@ -56,6 +59,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/3.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Wash your nose (nostrils) once* with a small amount of water.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	},
@@ -67,6 +71,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/4.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Wash your face from forehead to chin once*.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	},
@@ -78,6 +83,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/5.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Wash your right arm up to your elbow once* and repeat for the left arm.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	},
@@ -89,6 +95,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/6.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: '"Wipe your head" with wet fingers from the front to back to front hairline only once (all in one motion).',
 	},
 	{
@@ -99,6 +106,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/7.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Wipe the insides of your ears with your index fingers and the back of your ears with your thumb once simultaneously.'
 	},
 	{
@@ -109,6 +117,7 @@ export const data = [
 		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
 		img: require('../../../assets/img/steps/wudu/8.png'),
 		imgStyle: styles.img200R1,
+		topStyle: styles.topPattern,
 		details: 'Wash your right feet up to ankle and in between the toes once*. Repeat for the left feet.',
 		moreDetails: '*In Al-Bukhaari (157), Ibn Abbas narrates that washing twice or thrice is Sunnah.'
 	}

@@ -90,7 +90,7 @@ export const HowToPlaySpyLetter = (props) => {
 
               <View style={[styles.modellBody]}>
                 <View  style={styles.modelTitleContainer}>
-                  <Text style={styles.modelTitle}>{'HOW TO PLAY\nSPY LETTER'}</Text>
+                  <Text style={styles.modelTitle}>{'HOW TO PLAY\nSPY WORD'}</Text>
                 </View>
                 <AppIntroSlider
                   dotClickEnabled={true}

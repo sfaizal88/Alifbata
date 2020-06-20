@@ -181,16 +181,6 @@ export const data = [
 	},
 	{
 		id: 15,
-		title: 'River',
-		data: RiverJannah.data,
-		desc: 'River in Jannah',
-		bgColor: '#60a3bc',
-		active: true,
-		img: require('../../../assets/img/steps/river.png'),
-		details: 'Islamic describes Jannah as having four rivers. River names are Saihan, Jaihan, Furat and Nil and also its described in Quran at "Surah Muhammad Verse 15"',
-	},
-	{
-		id: 16,
 		title: 'Major Sunnah',
 		data: Sunnah.data,
 		desc: 'Major Sunnah in Islam',
@@ -198,6 +188,16 @@ export const data = [
 		active: true,
 		img: require('../../../assets/img/steps/good.png'),
 		details: 'Sayings and Teachings of Prophet Muhammad (pbuh).',
+	},
+	{
+		id: 16,
+		title: 'River',
+		data: RiverJannah.data,
+		desc: 'River in Jannah',
+		bgColor: '#60a3bc',
+		active: false,
+		img: require('../../../assets/img/steps/river.png'),
+		details: 'Islamic describes Jannah as having four rivers. River names are Saihan, Jaihan, Furat and Nil and also its described in Quran at "Surah Muhammad Verse 15"',
 	},
 	{
 		id: 17,
