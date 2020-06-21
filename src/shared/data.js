@@ -31,7 +31,7 @@ export const introSlides = [
   {
     key: 2,
     isLastPage: false,
-    title: 'Badges',
+    title: 'Knowledge',
     text: 'Collect a badge for every chapter completed.',
     image: require('../../assets/img/medal.png'),
     backgroundColor: '#34495e',
@@ -41,9 +41,9 @@ export const introSlides = [
   {
     key: 3,
     isLastPage: false,
-    title: 'Rewards',
+    title: 'Games',
     text: 'Earn stars, trophies and medals as you complete the lessons and play games.',
-    image: require('../../assets/img/gift.png'),
+    image: require('../../assets/img/2player.png'),
     backgroundColor: '#45aaf2',
     statusColor: '#45aaf2',
     color: Colors.white

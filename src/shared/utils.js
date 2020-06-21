@@ -49,6 +49,20 @@ export const isInternetConnected = () => {
 };
 
 /**
+* Feature used to convert URL to html tags
+*
+* @input  String content
+* @return String Formatted content url to anchor tag
+*/
+export const headsupSignToggle = (value) => {
+    if (Platform.OS === 'android') {
+       value = (value > 0) ? -Math.abs(value) : Math.abs(value);
+    }
+    return value;
+};
+
+
+/**
 * Feature used to set status bar color
 *
 * @input  String color
@@ -67,16 +81,6 @@ export const setStatusBarColor = (statusBarColor) => {
 * @return String Formatted content url to anchor tag
 */
 export const setOrientation = (orientation) => {
-    /*if (Platform.OS === 'android') {
-      let androidOrientation = require('react-native').NativeModules.Orientation;
-      if (orientation === 'LANDSCAPE') {
-        //Orientation.unlockAllOrientations();
-        androidOrientation.lockToLandscape();
-      }  else if (orientation === 'PORTRAIT') {
-        //Orientation.unlockAllOrientations();
-        androidOrientation.lockToPortrait();
-      }
-    } else {*/
       if (orientation === 'LANDSCAPE') {
         //Orientation.unlockAllOrientations();
         Orientation.lockToLandscapeRight();
@@ -84,7 +88,6 @@ export const setOrientation = (orientation) => {
         //Orientation.unlockAllOrientations();
         Orientation.lockToPortrait();
       }
-    //}
     
 };
 

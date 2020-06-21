@@ -39,7 +39,7 @@ import { GameNavigation } from './src/component/navigation/gameNavigator';
 
 // ALL COMPONENT FILES
 import { IntroScreen  } from './src/pages/intro';
-//console.disableYellowBox = Constant.GENERIC.DISABLE_LOG;
+console.disableYellowBox = Constant.GENERIC.DISABLE_LOG;
 export default  App = ({navigation}) => {
 
   // DECLARE NAVIGATION

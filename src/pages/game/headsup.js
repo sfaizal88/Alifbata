@@ -265,15 +265,31 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 			let pitch = Math.atan2(-x, -z) * 180 / Math.PI;// In degrees 55 25
 			let roll = Math.atan2(-y, -x) * 180 / Math.PI;// In degrees
 			console.log('Pitch: ' + pitch + ', Roll: ' + roll);
+			// MAKEING POSOTION TO NEGATIVE FOR ANDROID
+			pitch = Utils.headsupSignToggle(pitch);
 			// PASS POSITION
 			if (-15 > pitch  && pitch > -50 && mobilePosition !== 'PASS' && !showForeHeadMsg) {
-				console.log('Pass Mode');
-				mobilePosition = 'PASS';
-				_checkWords(Constant.GENERIC.HEADSUP_PASS);
+				if (Utils.isAndroid()) {
+					console.log('Correct Mode');
+					mobilePosition = 'CORRECT';
+					_checkWords(Constant.GENERIC.HEADSUP_CORRECT);
+				} else {
+					console.log('Pass Mode');
+					mobilePosition = 'PASS';
+					_checkWords(Constant.GENERIC.HEADSUP_PASS);
+				}
+				
 			} else if (-130 > pitch && pitch > -170 && mobilePosition !== 'CORRECT' && !showForeHeadMsg) {
-				console.log('Correct Mode');
-				mobilePosition = 'CORRECT';
-				_checkWords(Constant.GENERIC.HEADSUP_CORRECT);
+				if (Utils.isAndroid()) {
+					console.log('Pass Mode');
+					mobilePosition = 'PASS';
+					_checkWords(Constant.GENERIC.HEADSUP_PASS);
+				} else {
+					console.log('Correct Mode');
+					mobilePosition = 'CORRECT';
+					_checkWords(Constant.GENERIC.HEADSUP_CORRECT);
+				}
+				
 			} else if (-80 > pitch && pitch > -110 && mobilePosition !== 'NORMAL') {
 				setShowSmash({...showSmash, enable: false});
 				console.log('Normal Mode');
@@ -338,7 +354,7 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 				  	{startTimer}
 				  	</Animated.Text>
 
-				  	<Text style={[styles.headsupWord, startTimer || !isHoldProperly ? styles.displayN : '']}>{word}</Text>
+				  	<Text style={[styles.headsupWord, startTimer || !isHoldProperly ? styles.displayN : '', {textTransform: 'capitalize'}]}>{word}</Text>
 			    </View>
 			</View>
 		</SafeAreaView>

@@ -53,7 +53,7 @@ export const post = ({URL, body}) => {
 					reject(error);
 				});
 			} else {
-				Utils.alert('Failed', 'No Internet connection. Please make sure that Wi-Fi or mobile data is turned on, then try again.', ['Ok'], [() => console.log('Cancel Pressed')], ['cancel']);
+				Utils.alert('Failed', 'No Internet connection. Please make sure that Wi-Fi or mobile data is turned on, then try again.', ['Ok'], [() => reject('No Internet Connection.')], ['cancel']);
 			}
 		});
 	});	
