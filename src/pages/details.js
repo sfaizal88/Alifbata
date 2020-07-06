@@ -503,7 +503,7 @@ export const DetailsScreen = ({ navigation, route }) => {
             <View style={styles.noContainer}><Text style={styles.qno}>{scoreCard.questionNo}</Text></View>
             <View style={[styles.topContainer, styles.centerView, styles.pt15]}>
               <Text style={styles.slideLabel}>Pick the correct answer.</Text>
-              <Text style={[styles.bigArabLetter]} >{ Utils.convert2Arabic(item.answer)}</Text>
+              <Text style={[styles.bigArabLetter, item.answer.showImg ? styles.displayN : '']} >{ Utils.convert2Arabic(item.answer)}</Text>
               <Image source={item.answer.img} resizeMode={'contain'} style={[styles.arabicImg, item.answer.showImg ? '' : styles.displayN]}/>
             </View>
             <View style={styles.bottomContainer}>
@@ -690,28 +690,28 @@ export const DetailsScreen = ({ navigation, route }) => {
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[0].key === savedAnswered.key && item.data[0].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[0], item.answer, index)}>
-                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[0])}</Text>
-                    <Image source={item.data[0].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[0].showImg ? '' : styles.displayN]}/>
+                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5, item.data[0].showImg ? styles.displayN : '']}>{ Utils.convert2Arabic(item.data[0])}</Text>
+                    <Image source={item.data[0].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[0].showImg ? '' : styles.displayN, Utils.isAndroid() ? styles.mt10 : '']}/>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[1].key === savedAnswered.key && item.data[1].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[1], item.answer, index)}>
-                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[1])}</Text>
-                    <Image source={item.data[1].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[1].showImg ? '' : styles.displayN]}/>
+                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5, item.data[1].showImg ? styles.displayN : '']}>{ Utils.convert2Arabic(item.data[1])}</Text>
+                    <Image source={item.data[1].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[1].showImg ? '' : styles.displayN, Utils.isAndroid() ? styles.mt10 : '']}/>
                   </TouchableOpacity>
                 </View>
               </View>
               <View style={styles.rowDirection}>
                 <View style={[styles.flex1, styles.alignE]}>
                   <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[2].key === savedAnswered.key && item.data[2].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[2], item.answer, index)}>
-                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[2])}</Text>
-                    <Image source={item.data[2].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[2].showImg ? '' : styles.displayN]}/>
+                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5, item.data[2].showImg ? styles.displayN : '']}>{ Utils.convert2Arabic(item.data[2])}</Text>
+                    <Image source={item.data[2].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[2].showImg ? '' : styles.displayN, Utils.isAndroid() ? styles.mt10 : '']}/>
                   </TouchableOpacity>
                 </View>
                 <View style={[styles.flex1, styles.alignS]}>
                   <TouchableOpacity activeOpacity={1} style={[styles.slideSquare, (item.data[3].key === savedAnswered.key && item.data[3].en === savedAnswered.en) ? styles.selectedOption : '']} onPress={() => _findAnswer(item.data[3], item.answer, index)}>
-                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5]}>{ Utils.convert2Arabic(item.data[3])}</Text>
-                    <Image source={item.data[3].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[3].showImg ? '' : styles.displayN]}/>
+                    <Text style={[styles.mediumArabLetter, styles.pb10, Utils.isIpad() ? styles.pt10 : styles.pt5, item.data[3].showImg ? styles.displayN : '']}>{ Utils.convert2Arabic(item.data[3])}</Text>
+                    <Image source={item.data[3].img} resizeMode={'contain'} style={[styles.smallArabicImg, styles.whiteImage, item.data[3].showImg ? '' : styles.displayN, Utils.isAndroid() ? styles.mt10 : '']}/>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -859,7 +859,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       <SmashScreen show={showSmash} isShowModel={setShowSmash}/>
       <Loader show={screenIsWaiting} />
       <SafeAreaView style={styles.safeViewContainer}>
-      <MHeader title={state.title}/>
+      <MHeader title={state.title} hideShareIconIOS={true}/>
       <View style={[styles.body, styles.p0, styles.p0]}>
         <AppIntroSlider
         scrollEnabled={enableScroll}

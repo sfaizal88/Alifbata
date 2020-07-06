@@ -108,7 +108,7 @@ export const BadgeScreen = ({ navigation }) => {
 		<>
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
-	    	<MHeader title="Badges" icon="dashboard"/>
+	    	<MHeader title="Badges" icon="dashboard" showShareIcon={true} showFeedbackIcon={true}/>
 	    	<View style={[styles.body, styles.pt20, styles.pb70]}>
 	    		<FlatList data={Data.badges} extraData={Data.badges}
 	    			style={Utils.isAndroid() ? styles.badgeFlat : ''}

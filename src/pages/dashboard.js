@@ -188,7 +188,7 @@ export const DashboardScreen = ({ navigation }) => {
 		<>
         	<Loader show={screenIsWaiting} />
         	<SafeAreaView style={styles.safeViewContainer}>
-	    	<MHeader title="Assalamu Alaikum" icon="dashboard"/>
+	    	<MHeader title="Assalamu Alaikum" icon="dashboard" showShareIcon={true} showFeedbackIcon={true}/>
 	    	<ScrollView style={[styles.body, styles.pt30]} contentContainerStyle={styles.pb70}>
 	    		<View style={[showAwards === 'T' ? '' : styles.displayN]}>
 				    <Text style={[styles.progressBarTitle, styles.topDashboardText]}>Trophy</Text>

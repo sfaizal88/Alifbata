@@ -105,7 +105,7 @@ export const StepsScreen = ({ navigation, route }) => {
     <>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={[styles.safeViewContainer]}>
-        <MHeader title={state.title}/>
+        <MHeader title={state.title} hideShareIconIOS={true}/>
         <View style={[styles.body, styles.p0, styles.pb15]}>
           <AppIntroSlider
             scrollEnabled={true}

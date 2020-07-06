@@ -335,7 +335,7 @@ export const QuizScreen = ({ navigation, route }) => {
       	<SmashScreen show={showSmash} isShowModel={setShowSmash}/>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={styles.safeViewContainer}>
-        <MHeader title={title}/>
+        <MHeader title={title} hideShareIconIOS={true}/>
         <View style={[styles.body, styles.p0]}>
           <AppIntroSlider
           	scrollEnabled={enableScroll}

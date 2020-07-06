@@ -177,7 +177,7 @@ export const data = [
 		bgColor: '#34495e',
 		active: true,
 		img: require('../../../assets/img/steps/gate.png'),
-		details: 'Islamic describes Jannah as having eight gates. Each gates has a name that describes the types or characteristics of the people who will be admitted through it.',
+		details: 'Islam describes Jannah as having eight gates. Each gates has a name that describes the types or characteristics of the people who will be admitted through it.',
 	},
 	{
 		id: 15,
