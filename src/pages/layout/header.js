@@ -38,11 +38,11 @@ export const MHeader = (props) => {
 	return (
 		<>
 			<View style={[styles.rowDirection, {paddingLeft: 5, backgroundColor: Colors.primary, zIndex:66666, height: RFValue(55), backgroundColor: Colors.primary}, props.title ? '' : styles.displayN, props.headerContainerStyle]}>
-				<View style={[styles.flex1, styles.centerView, styles.alignS, props.showShareIcon || (!props.hideShareIconIOS && Platform.OS === 'ios') ? '' : styles.displayN, {paddingLeft: RFValue(10)}]} onTouchStart={() => onShare()} underlayColor="transparent">
-					<Icon name="share" color={Colors.white} size={Utils.isAndroid() ? RFValue(24) : RFValue(24)} underlayColor="transparent"/>
+				<View style={[styles.flex1, styles.centerView, styles.alignS, {paddingLeft: RFValue(10)}]} onTouchStart={() => onShare()} underlayColor="transparent">
+					<Icon name="share" color={Colors.white} size={Utils.isAndroid() ? RFValue(24) : RFValue(24)} underlayColor="transparent" iconStyle={[props.showShareIcon || (!props.hideShareIconIOS && Platform.OS === 'ios') ? '' : styles.displayN]}/>
 				</View>
 				<View style={[styles.flex7, styles.headerInnerContainer, styles.centerView]}>
-					<Text style={styles.headerTitle}>{props.title}</Text>
+					<Text style={[styles.headerTitle, {textAlign: 'center'}]}>{props.title}</Text>
 					<Text style={[styles.headerSubTitle, props.subtitle ? '' : styles.displayN]}>{props.subtitle}</Text>
 				</View>
 				<View style={[styles.flex1, styles.centerView, styles.alignE, props.showFeedbackIcon || Platform.OS === 'ios' ? '' : styles.displayN, {paddingRight: RFValue(10)}]} onTouchStart={() => setShowFeedbackModel(true)} underlayColor="transparent">
@@ -53,3 +53,4 @@ export const MHeader = (props) => {
       	</>
   	);
 }
+

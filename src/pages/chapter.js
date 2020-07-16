@@ -158,7 +158,7 @@ export const ChapterScreen = ({ navigation }) => {
             <TouchableOpacity style={{...styles.cCircleContainerOuter, borderColor: item.bgColor}} onPress={() => _navigate(item)} underlayColor="transparent" disabled={!Utils.unlockChapter(index, completed, item.id) || !item.active}>
             	<Icon name="check" color={Colors.white} size={RFValue(30)} type='octicon' containerStyle={Utils.chapterCompleted(completed, item.id) ? styles.cSlideCompletedIcon : styles.displayN}/>
             	<View style={{...styles.cCircleContainer, backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}}>
-            	<Text style={styles.cCircleNo}>{(index + 1)}</Text></View>
+            	<Text style={[styles.cCircleNo, {fontSize: RFValue(55)}]}>{(index + 1)}</Text></View>
             </TouchableOpacity>
             <Text style={styles.cSlideSubTitle}>{item.desc}</Text>
             <Text style={styles.cSlideChatLine}>{item.details}</Text>
