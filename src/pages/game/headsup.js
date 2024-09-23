@@ -213,7 +213,7 @@ export const HeadsupGameScreen = ({ navigation, route }) => {
 	* @return Array
 	*/
 	const _checkWords = (trigger) => {
-		console.log('Word - ' + generatedWord);
+		//console.log('Word - ' + generatedWord);
 		// CHECKING THE ANSWER
 		if (trigger === Constant.GENERIC.HEADSUP_CORRECT) {
 			// GENERATE ANSWER LIST

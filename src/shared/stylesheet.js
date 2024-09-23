@@ -625,7 +625,53 @@ const spacingStyle = {
 	},
 	darkText: {
 		color: Colors.grayDarkest
-	}
+	},
+	sectionBoxContainer: {
+		flexDirection: 'row',
+		borderRadius: RFValue(10),
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingTop: 5,
+		paddingBottom: 5,
+		//height: Utils.isIpad() ? RFValue(120) : (Utils.isAndroid() ? RFValue(120) : 170),
+		paddingHorizontal: 6,
+		shadowOffset:{  width: 5,  height: 5  },
+		shadowColor: Colors.grayDarkest,
+		shadowOpacity: 0.4,
+		marginHorizontal: Utils.isAndroid() ? RFValue(7) : 15,
+		backgroundColor: Colors.white,
+		borderWidth: 1,
+		borderColor: Colors.fBorderColor,
+		marginBottom: 15
+	},
+	sectionBoxTitle: {
+		fontSize: Setting.sTextSize,
+		textTransform: 'capitalize',
+		...Setting.fontWeight500,
+		textAlign: 'left',
+		color: Colors.grayDarkest,
+		marginBottom: 5
+	},
+	sectionBoxDesc: {
+		fontSize: Setting.xxsTextSize,
+		...Setting.fontWeight400,
+		color: Colors.grayDark,
+		textTransform: 'capitalize'
+	},
+	sectionBoxDescH1: {
+		fontSize: Setting.usTextSize,
+		...Setting.fontWeight500,
+		color: Colors.grayDark,
+		textTransform: 'uppercase',
+		alignSelf: 'center',
+		textAlign: 'center'
+	},
+	sectionBoxDescN: {
+		fontSize: Setting.h1TextSize,
+		...Setting.fontWeightBold,
+		color: Colors.red,
+		textTransform: 'capitalize'
+	},
 
  }
 /* BOX - ENDS */
@@ -2002,6 +2048,10 @@ const imagesStyle = {
 	img25: {
 		width: RFPercentage(4),
 		height: RFPercentage(4)
+	},
+	img60: {
+		width: RFValue(60),
+		height: RFValue(60)
 	},
 	img200: {
 		width: Utils.isIpad() ? RFValue(250) : RFValue(200),

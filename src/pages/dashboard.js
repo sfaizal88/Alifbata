@@ -165,7 +165,7 @@ export const DashboardScreen = ({ navigation }) => {
 	const _navigate = (path, data = {}) => {
 	    // PLAY THE CLICK AUDIO
 	    Sound.mainMenuClicked();
-	    console.log(JSON.stringify(data));
+	    //console.log(JSON.stringify(data));
 		// NAVIGATING TO DIFFERENT PATH
 		navigation.navigate(path, data);
 	}

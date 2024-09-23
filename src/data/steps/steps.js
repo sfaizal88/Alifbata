@@ -13,7 +13,7 @@ import * as Constant from '../../shared/constant';
 import * as Generate from '../../shared/generate';
 import * as Utils from '../../shared/utils';
 
-//STEPS
+//STEPS PHASE 1
 import * as Wudu from './wudu';
 import * as ProphetNames from './prophetnames';
 import * as Drinking from './drinking';
@@ -21,7 +21,6 @@ import * as FastingBenefit from './fastingBenefit';
 import * as FavouriteFood from './favouriteFood';
 import * as Sunnah from './sunnah';
 import * as Hajj from './hajj';
-import * as Mahram from './mahram';
 import * as Pillars from './pillars';
 import * as FridaySunnah from './fridaySunnah';
 import * as Quran from './quran';
@@ -31,7 +30,18 @@ import * as Angels from './angels';
 import * as FrequentWords from './frequentWords';
 import * as Revelation from './revelation';
 import * as JannahGates from './jannahGates';
-import * as RiverJannah from './riverJannah';
+
+// PHASE 2
+import * as HijabMen from './phase2/hijabMen';
+import * as HijabWomen from './phase2/hijabWomen';
+import * as ProphetParents from './phase2/prophetParents';
+import * as RiverJannah from './phase2/riverJannah';
+import * as MajorSin from './phase2/majorSin';
+import * as Tasbih from './phase2/tasbih';
+import * as Mahram4Male from './phase2/mahram4Male';
+import * as Mahram4Female from './phase2/mahram4Female';
+import * as Caliphs from './phase2/caliphs';
+import * as IslamicMonth from './phase2/islamicMonth';
 
 import { Colors } from '../../shared/colors';
 
@@ -47,7 +57,7 @@ export const data = [
 		bgColor: '#049991',
 		active: true,
 		img: require('../../../assets/img/steps/prophets.png'),
-		details: "Prophets are individuals who were sent by Allah to various communities to serve as examples of ideal human behavior and to spread God's message on Earth. ",
+		details: "Prophets are individuals who were sent by Allah to various communities to serve as examples of ideal human behavior and to spread God's message on Earth.",
 	},
 	{
 		id: 2,
@@ -191,32 +201,113 @@ export const data = [
 	},
 	{
 		id: 16,
-		title: 'River',
-		data: RiverJannah.data,
-		desc: 'River in Jannah',
-		bgColor: '#60a3bc',
-		active: false,
-		img: require('../../../assets/img/steps/river.png'),
-		details: 'Islamic describes Jannah as having four rivers. River names are Saihan, Jaihan, Furat and Nil and also its described in Quran at "Surah Muhammad Verse 15"',
+		title: 'Believing Men',
+		data: HijabMen.data,
+		desc: 'Hijab for Men',
+		bgColor: '#c44569',
+		active: true,
+		img: require('../../../assets/img/men.png'),
+		details: 'Tell the believing men to reduce [some] of their vision and guard their private parts. That is purer for them. Indeed, Allah is Acquainted with what they do. "Surah An-Nur Verse 30"',
 	},
 	{
 		id: 17,
-		title: 'Mahram',
-		data: Mahram.data,
-		desc: 'Know your Mahram\nin Islam',
-		bgColor: Constant.GENERIC.BG_COLORS[Math.floor((Math.random() * (Constant.GENERIC.BG_COLORS.length - 1)) + 1)],
-		active: false,
-		img: require('../../../assets/img/steps/mahram.png'),
-		details: "Mahram is with whom marriage would be considered haram and concealment of the body with hijab, is not obligatory.",
+		title: 'Believing Women',
+		data: HijabWomen.data,
+		desc: 'Hijab for Women',
+		bgColor: '#049991',
+		active: true,
+		img: require('../../../assets/img/women.png'),
+		details: 'Hijab is not just the presence of a headscarf, but has deeper underlying meanings that apply to both men and women.',
 	},
 	{
 		id: 18,
+		title: 'Major Sin',
+		data: MajorSin.data,
+		desc: 'Major Sin in Islam',
+		bgColor: '#34495e',
+		active: true,
+		img: require('../../../assets/img/sin.png'),
+		details: 'If you avoid the major sins which you are forbidden, We will remove from you your lesser sins and admit you to a noble entrance [into Paradise]. "Surah An-Nisa Verse 31"',
+	},
+	{
+		id: 19,
 		title: "Favourite food",
 		data: FavouriteFood.data,
 		desc: "Prophet Muhammed's (pbuh)\nfavourite food",
 		bgColor: '#c44569',
-		active: false,
+		active: true,
 		img: require('../../../assets/img/steps/food.png'),
 		details: "Prophet Muhammed's (pbuh) favourite food.",
 	},
+	{
+		id: 20,
+		title: 'Tasbih',
+		data: Tasbih.data,
+		desc: 'Tasbih is a\nform of dhikr',
+		bgColor: '#60a3bc',
+		active: true,
+		img: require('../../../assets/img/tasbih.png'),
+		details: "Tasbih is a form of dhikr that involves the repetitive utterances of short sentences in glorification of Allah in Islam",
+	},
+	{
+		id: 21,
+		title: 'River',
+		data: RiverJannah.data,
+		desc: 'River in Jannah',
+		bgColor: '#60a3bc',
+		active: true,
+		img: require('../../../assets/img/steps/river.png'),
+		details: 'Islamic describes Jannah as having four rivers. River of Water, Milk, Honey & Wine and also its described in Quran at "Surah Muhammad Verse 15"',
+	},
+	{
+		id: 22,
+		title: 'Mahram\nfor Male',
+		data: Mahram4Male.data,
+		desc: 'Know your Mahram\nin Islam for Male',
+		bgColor: '#c44569',
+		active: true,
+		img: require('../../../assets/img/men.png'),
+		details: "Mahram is with whom marriage would be considered haram and concealment of the body with hijab, is not obligatory.",
+	},
+	{
+		id: 23,
+		title: 'Mahram\nfor Female',
+		data: Mahram4Female.data,
+		desc: 'Know your Mahram\nin Islam for Female',
+		bgColor: '#049991',
+		active: true,
+		img: require('../../../assets/img/women.png'),
+		details: "Mahram is with whom marriage would be considered haram and concealment of the body with hijab, is not obligatory.",
+	},
+	{
+		id: 24,
+		title: 'Caliphs',
+		data: Caliphs.data,
+		desc: 'Leaders of Islam after\nProphet Muhammed (pbuh)',
+		bgColor: '#d1d8e0',
+		active: true,
+		img: require('../../../assets/img/leader.png'),
+		details: "Caliphs were the leaders of Islam that succeeded the Prophet Muhammad. We will see first 5 leaders of Islam that succeeded the Prophet Muhammad.",
+	},
+	{
+		id: 25,
+		title: 'Islamic Months',
+		data: IslamicMonth.data,
+		desc: 'Islamic Calendar\nand their significant',
+		bgColor: '#60a3bc',
+		active: true,
+		img: require('../../../assets/img/calendar.png'),
+		details: "Indeed, the number of months with Allah is twelve [lunar] months in the register of Allah [from] the day He created the heavens and the earth; of these, four are sacred... (Surah At-Tawbah verse 36)",
+	},
+	{
+		id: 26,
+		title: "Parents\nof Prophets",
+		data: ProphetParents.data,
+		desc: '25 Prophets \nand their Parents',
+		bgColor: '#049991',
+		active: false,
+		img: require('../../../assets/img/steps/prophets.png'),
+		details: "Prophets are individuals who were sent by Allah to various communities to serve as examples of ideal human behavior and to spread God's message on Earth.",
+	},
+
 ]

@@ -335,10 +335,44 @@ export const MissingLetterScreen = ({ navigation, route }) => {
 		// FILLED INDEX
 		let filledIndex = [...jumbleWordFlag, index];
 		mLetter.jumbleWord[index] = payload.dragLetter;
-		mLetter.choseLetters[payload.dragLetterIndex] = 0;
+		mLetter.choseLetters[payload.dragLetterIndex] = '0';
 		setJumbleWordFlag(filledIndex);
 		Utils.playAudio(Constant.GENERIC.DROP_LETTER_AUDIO, 0.4);
 	}
+
+	/**
+    * Letter dropped into the user missing box
+    *
+    * @input  Object - Single chapter details object
+    * @return NA
+    */
+	const _dragLetterOptionBox = (letter, index) => {
+		// FILLED INDEX
+		// FIND FIRST ZERO INDEX
+		let isAlreadyFilled = true;
+		let firstMissedIndex = mLetter.jumbleWord.indexOf("0");
+		if (firstMissedIndex > -1) {
+			isAlreadyFilled = false;
+			console.log(mLetter.jumbleWord);
+			let filledIndex = [...jumbleWordFlag, firstMissedIndex];
+			mLetter.jumbleWord[firstMissedIndex] = letter;
+
+			// EMPTY THE BOX FROM AVAIBALE LETTER BOX
+			mLetter.choseLetters[index] = "0";
+			setJumbleWordFlag(filledIndex);
+
+			// PLAY AUDIO ON PLACING IT
+			Utils.playAudio(Constant.GENERIC.DROP_LETTER_AUDIO, 0.4);
+		} 
+
+		let isAllFilled = mLetter.jumbleWord.indexOf("0");
+		if (isAllFilled === -1 && !isAlreadyFilled) {
+			_passWords(false);
+		}
+
+	}
+
+	
 
 	/**
     * Letter dropped into the option box
@@ -355,9 +389,9 @@ export const MissingLetterScreen = ({ navigation, route }) => {
 		  	filledIndex.splice(removeIndex, 1);
 		}
 		setJumbleWordFlag(filledIndex);
-		mLetter.jumbleWord[dragLetterIndex] = 0;
+		mLetter.jumbleWord[dragLetterIndex] = "0";
 
-		let optionIndex = mLetter.choseLetters.indexOf(0);
+		let optionIndex = mLetter.choseLetters.indexOf("0");
 		mLetter.choseLetters[optionIndex] = payloadLetter;
 	}
 
@@ -429,9 +463,9 @@ export const MissingLetterScreen = ({ navigation, route }) => {
 									{mLetter.choseLetters.map((item, index) => {
 										if (mLetter.choseLetters[index] != 0) {
 										return (
-											<DraxView onDragStart={() => { console.log('start drag'); }} style={[styles.optionBox, styles.optionBoxBig, mLetter.choseLetters[index] == 0 ? styles.fillupBox : '']} key={'OPTION_1' + index} payload={{dragLetter: mLetter.choseLetters[index], dragLetterIndex: index}}>
+											<TouchableOpacity onPress={() => _dragLetterOptionBox(mLetter.choseLetters[index], index)} onDragStart={() => { console.log('start drag'); }} style={[styles.optionBox, styles.optionBoxBig, mLetter.choseLetters[index] == 0 ? styles.fillupBox : '']} key={'OPTION_1' + index} payload={{dragLetter: mLetter.choseLetters[index], dragLetterIndex: index}}>
 											  <Text style={[styles.optionBoxLabelBig]}>{mLetter.choseLetters[index]}</Text>
-											</DraxView>
+											</TouchableOpacity>
 										)
 									} else if (mLetter.choseLetters[index] == 0) {
 										return (

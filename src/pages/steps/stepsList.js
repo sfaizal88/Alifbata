@@ -131,7 +131,7 @@ export const StepsListScreen = ({ navigation, route }) => {
             <Button onPress={() => _navigate(item)} 
             	underlayColor="transparent"
             	icon={<Icon name={item.active ? 'play' : 'lock'} size={RFValue(15)} color={item.active ? Colors.grayDarkest : Colors.white} type='font-awesome'/>}
-  				title={item.active ? "Play" : "Coming Soon"} 
+  				title={item.active ? "Start" : "Coming Soon"} 
   				buttonStyle={[styles.cSlideBtn, item.active ? styles.cSlideBtnActive : '']} 
   				containerStyle={styles.cSlideBtnContainer}
   				titleStyle={[styles.cSlideBtnLabel, item.active ? styles.cSlideBtnLabelLight : '']}
@@ -167,6 +167,29 @@ export const StepsListScreen = ({ navigation, route }) => {
 				renderNextButton={Utils.renderNextButton}
 				renderPrevButton={Utils.renderPrevButton}
 				onSlideChange={_onSlideChange}/>
+			</View>
+			<View style={[styles.body, styles.p0, styles.pb15, !listView ? styles.displayN : '']}>
+				<FlatList data={state}
+	              extraData={state}
+	              showsHorizontalScrollIndicator={true}
+	              renderItem = { ({item, index}) => (
+              		<TouchableOpacity style={[styles.sectionBoxContainer]} key={("TOPIC_" + index).toString()} onPress={() => _navigate(item)}>
+              			<View style={[{width: 90, paddingRight: 8}, styles.centerView]}>
+              				<Image source={item.img} style={[styles.img60]} resizeMode={'contain'}/>
+              			</View>
+              			<View style={[styles.flex1, styles.centerViewLeft]}>
+              				<Text style={[styles.sectionBoxTitle, styles.centerView]} numberOfLines={1}>{item.desc}</Text>
+              				<View style={[styles.rowAC, styles.selfS, item.details ? '' : styles.displayN]}>
+                          		<Icon name="book" color={Colors.grayDark} size={16} type="octicon"/>
+                          		<Text numberOfLines={2} style={[styles.sectionBoxDesc, styles.pl5, {textTransform: 'lowercase'}, styles.mr10]}>{item.details}</Text>
+                        	</View>
+              			</View>
+    				</TouchableOpacity>
+              )}
+              ListEmptyComponent = {() => (
+                <Empty icon={'book'} title='No Content Found' subtitle='Try again with different word.' extraStyle={styles.emptyExtra}/>
+              )}
+            	keyExtractor = {(item, index) => ('topics_index_' + index).toString()}/>
 			</View>
 	  		</SafeAreaView>
 	  		<Menu navigation={navigation} activeMenu={'STEPS'}></Menu>

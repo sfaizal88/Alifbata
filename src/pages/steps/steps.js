@@ -76,14 +76,17 @@ export const StepsScreen = ({ navigation, route }) => {
   */
   const generateItem = ({ item, index }) => {
     return (
-      <ScrollView underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide,  item.topStyle]} key={'QUIZ_TYPE3_' + index}>
+      <ScrollView underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide,  item.topStyle, styles.centerView]} key={'QUIZ_TYPE3_' + index} 
+        contentContainerStyle={{...item.topStyle, flexGrow: 1, alignItems: "center",   justifyContent: "center"}}>
         <View style={[item.titleType === Constant.GENERIC.TEXT ? '' : styles.displayN, {marginBottom: 30}]}>
           <Text style={[styles.progressBarTitle]}>{item.title}</Text>
         </View>
-        <View style={[item.titleType === Constant.GENERIC.NUMBER ? styles.stepNoContainer : styles.displayN, {marginBottom: 30}]}>
+        <View style={[item.titleType === Constant.GENERIC.NUMBER ? styles.stepNoContainer : styles.displayN, {marginBottom: 30, alignSelf: 'center'}]}>
           <Text style={[styles.progressBarTitle, , styles.stepNo]}>{item.title}</Text>
         </View>
-        <Image source={item.img} style={[styles.img120, item.img ? '' : styles.displayN, item.imgStyle ? item.imgStyle : '']} resizeMode={'contain'}/>
+        <View style={[styles.centerView]}>
+          <Image source={item.img} style={[styles.img120, item.img ? '' : styles.displayN, item.imgStyle ? item.imgStyle : '']} resizeMode={'contain'}/>
+        </View>
         <TouchableOpacity style={[styles.cCircleContainerOuter, {borderColor: item.bgColor}, (item.imgText && item.imgType === Constant.GENERIC.NUMBER) ? '' : styles.displayOpaN]} underlayColor="transparent">
           <View style={[styles.cCircleContainer, {backgroundColor: item.bgColor, borderColor: item.bgColor, shadowColor: item.bgColor}]}>
             <Text style={[styles.cCircleNo, styles.imgNo]}>{item.imgText}</Text>

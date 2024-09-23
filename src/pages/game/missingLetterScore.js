@@ -75,7 +75,7 @@ export const MissingLetterScoreScreen = ({ navigation, route }) => {
   return (
     <View style={styles.appbg}>
         <SafeAreaView style={[styles.safeViewContainer]}>
-        	<MHeader title={'Spy Word'}/>
+        	<MHeader title={'Spy Word'} hideShareIconIOS={true}/>
         	<ScrollView style={[styles.body, styles.p0, styles.pb15, styles.pt20]} contentContainerStyle={[styles.centerView, styles.column]}>
 	        	<View>
 	        	<Text style={[styles.slideTitleNoTop, styles.slideTitleQuestion]}>{'Score Board'}</Text>

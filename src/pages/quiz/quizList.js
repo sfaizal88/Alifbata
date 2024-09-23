@@ -115,7 +115,7 @@ export const QuizListScreen = ({ navigation, route }) => {
     * @return Tags
     */
     const generateItem = ({ item, index }) => {
-    	console.log('Quiz Name: ' + item.title + ' Quiz, Total questions: ' + item.data.length);
+    	//console.log('Quiz Name: ' + item.title + ' Quiz, Total questions: ' + item.data.length);
         return (
           <ScrollView  underlayColor="transparent" contentContainerStyle={[Utils.isAndroid() ? styles.cSlideAndroid : styles.cSlide]} key={'LIST_TYPE3_' + index}>
           	<View style={[styles.chapterLesOverlay]}></View>

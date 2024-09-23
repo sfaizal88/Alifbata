@@ -168,7 +168,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       else if (Constant.GENERIC.CHOOSE_BEST_EXERCISE === state.data[index].type) {
           // UPDATING THE FLAG
           if (!questionExerciseStarted && scoreCard.total === 0) {
-              console.log('Question was zero');
+              //console.log('Question was zero');
               // FINDING TOTAL BEST OF CHOISE QUESTION
               var totalQuestion = state.data.filter(item => {
                 return item.type === Constant.GENERIC.CHOOSE_BEST_EXERCISE;
@@ -214,7 +214,7 @@ export const DetailsScreen = ({ navigation, route }) => {
       else if (Constant.GENERIC.RANDOM_QUESTION_EXERCISE === state.data[index].type) {
           // UPDATING THE FLAG
           if (!randomExerciseStarted && scoreCard.total === 0) {
-              console.log('Question was zero');
+              //console.log('Question was zero');
               // FINDING TOTAL BEST OF CHOISE QUESTION
               var totalQuestion = state.data.filter(item => {
                 return item.type === Constant.GENERIC.RANDOM_QUESTION_EXERCISE;

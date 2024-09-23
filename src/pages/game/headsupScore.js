@@ -80,7 +80,7 @@ export const HeadsupScoreScreen = ({ navigation, route }) => {
     <View style={styles.appbg}>
         <Loader show={screenIsWaiting} />
         <SafeAreaView style={[styles.safeViewContainer]}>
-        	<MHeader title={'Charades Score'}/>
+        	<MHeader title={'Charades Score'} hideShareIconIOS={true}/>
         	<ScrollView style={[styles.body, styles.p0, styles.pb15, styles.pt20]}  contentContainerStyle={[styles.centerView, styles.column]}>
 	        	<View>
 		        	<Text style={[styles.slideTitleNoTop, styles.slideTitleQuestion]}>{'Score Board'}</Text>

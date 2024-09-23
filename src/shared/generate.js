@@ -189,7 +189,7 @@ export const generateQuiz = (data, quizId, quizCount) => {
   let questions = fetchQuizQuestion(originalData, quizId, quizCount);
   // LOOP THE ARRAY
   questions.forEach((item, index) => {
-    console.log('Question No. ' + (index + 1) + ', Question - ' + item.question);
+    //console.log('Question No. ' + (index + 1) + ', Question - ' + item.question);
     // LOCAL VARIABLE
     let quiz = {
       id:   index + 1,
